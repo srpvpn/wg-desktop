@@ -1,0 +1,187 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include "testaddonapi.h"
+
+#include <QQmlApplicationEngine>
+
+#include "addons/addon.h"
+#include "addons/addonapi.h"
+#include "addons/addonmessage.h"
+#include "addons/conditionwatchers/addonconditionwatcherjavascript.h"
+#include "feature/features.h"
+#include "helper.h"
+#include "qmlengineholder.h"
+#include "settingsholder.h"
+#include "urlopener.h"
+
+void TestAddonApi::env() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_env.js");
+  QVERIFY(!!a);
+  QVERIFY(a->conditionApplied());
+}
+
+void TestAddonApi::featurelist() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  // alwaysPort53 is an OverridableFeature, default off.
+  // Ensure it starts disabled for this test.
+  Feature::toggle(Feature::alwaysPort53, false);
+  QVERIFY(!Feature::isEnabled(Feature::alwaysPort53));
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_featurelist.js");
+  QVERIFY(!!a);
+  QVERIFY(a->conditionApplied());
+
+  QVERIFY(Feature::isEnabled(Feature::alwaysPort53));
+}
+
+void TestAddonApi::navigator() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_navigator.js");
+  QVERIFY(!!a);
+  QVERIFY(a->conditionApplied());
+}
+
+void TestAddonApi::settings() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  SettingsHolder::instance()->setAddonApiSetting(false);
+  QVERIFY(!SettingsHolder::instance()->addonApiSetting());
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_settings.js");
+  QVERIFY(!!a);
+  QVERIFY(a->conditionApplied());
+  QVERIFY(SettingsHolder::instance()->addonApiSetting());
+}
+
+void TestAddonApi::urlopener() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  UrlOpener* uo = UrlOpener::instance();
+  QVERIFY(!!uo);
+  uo->registerUrlLabel("aa", []() -> QString { return "http://foo.bar"; });
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_urlopener.js");
+  QVERIFY(!!a);
+  QVERIFY(a->conditionApplied());
+}
+
+void TestAddonApi::foobar() {
+  AddonApi::setConstructorCallback(
+      [](AddonApi* addonApi) { addonApi->insert("foobar", 42); });
+
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_foobar.js");
+  QVERIFY(!!a);
+  QVERIFY(a->conditionApplied());
+
+  AddonApi::setConstructorCallback(nullptr);
+}
+
+void TestAddonApi::settimedcallback() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonObject content;
+  content["id"] = "foo";
+  content["blocks"] = QJsonArray();
+
+  QJsonObject obj;
+  obj["message"] = content;
+
+  QObject parent;
+  Addon* message = AddonMessage::create(&parent, "foo", "bar", "name", obj);
+  QVERIFY(!!message);
+
+  AddonConditionWatcher* a = AddonConditionWatcherJavascript::maybeCreate(
+      message, ":/addons_test/api_settimedcallback.js");
+  QVERIFY(!!a);
+  QVERIFY(!a->conditionApplied());
+  QTRY_VERIFY_WITH_TIMEOUT(a->conditionApplied(), 3000);
+}
+
+static TestAddonApi s_testAddonApi;

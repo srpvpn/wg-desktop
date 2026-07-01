@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="addon.qml" datatype="plaintext" source-language="en" target-language="ru">
+    <body>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_1">
+        <source>Switch to an annual plan, and get all the same benefits at 50% less than the monthly plan:</source>
+        <target>Перейдите на годовой план и получите все те же преимущества на 50 % дешевле, чем при ежемесячном плане:</target>
+        <note annotates="source" from="developer">Standard text in a composer block</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_2.l_1">
+        <source>Protection for up to 5 devices</source>
+        <target>Защита до 5 устройств</target>
+        <note annotates="source" from="developer">Bullet unordered list item in a composer block</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_2.l_2">
+        <source>500+ servers in 30+ countries</source>
+        <target>Более 500 серверов в более чем 30 странах</target>
+        <note annotates="source" from="developer">Bullet unordered list item in a composer block</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_2.l_3">
+        <source>Device-level encryption</source>
+        <target>Шифрование на уровне устройства</target>
+        <note annotates="source" from="developer">Bullet unordered list item in a composer block</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_2.l_4">
+        <source>No bandwidth restrictions</source>
+        <target>Без ограничений по скорости</target>
+        <note annotates="source" from="developer">Bullet unordered list item in a composer block</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_2.l_5">
+        <source>No logging of your network activity</source>
+        <target>Без сбора вашей активности в Интернете</target>
+        <note annotates="source" from="developer">Bullet unordered list item in a composer block</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_3">
+        <source>Switch to an annual plan</source>
+        <target>Перейти на годовой план</target>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.block.c_4_1">
+        <source>Help</source>
+        <target>Справка</target>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.subtitle">
+        <source>Get the same protection, for half the price.</source>
+        <target>Получите ту же защиту за полцены.</target>
+        <note annotates="source" from="developer">Subtitle for a message view</note>
+      </trans-unit>
+      <trans-unit id="message.message_upgrade_to_annual_plan.title">
+        <source>Save 50% when you switch to an annual plan</source>
+        <target>Сэкономьте 50% при переходе на годовой план</target>
+        <note annotates="source" from="developer">Title for a message view</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,42 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+---
+loader: taskgraph.loader.transform:loader
+
+transforms:
+    - mozillavpn_taskgraph.transforms.requires_level:transforms
+    - mozillavpn_taskgraph.transforms.release_index:transforms
+    - taskgraph.transforms.task:transforms
+
+kind-dependencies:
+    - repackage-signing
+
+tasks:
+    macos/opt:
+        description: notarize mozillavpn macos app
+        worker-type: signing
+        requires-level: 3
+        dependencies:
+            repackage-signing: repackage-signing-macpkg
+        if-dependencies:
+            - repackage-signing
+        add-index-routes:
+            name: macos
+            type: build
+        treeherder:
+            symbol: Bn
+            kind: build
+            tier: 1
+            platform: macos/opt
+        worker:
+            implementation: scriptworker-signing
+            signing-type: "release-apple-notarization"
+            upstream-artifacts:
+                - taskId:
+                      task-reference: <repackage-signing>
+                  taskType: signing
+                  paths:
+                      - public/build/MozillaVPN.pkg
+                  formats:
+                      - apple_notarization

@@ -1,0 +1,9 @@
+#!/bin/sh
+action="$1"
+if [ "$action" = "upgrade" ]; then
+  if dpkg --compare-versions "$2" lt 2.3.0; then
+    killall -q mozillavpn || true
+  fi
+fi
+
+#DEBHELPER#

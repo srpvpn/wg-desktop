@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-script minSpecVersion="1.000000">
+    <title>title</title>
+    <background mime-type="image/png" file="background.png" alignment="left"/>
+    <welcome file="welcome.html" mime-type="text/html" />
+    <conclusion file="conclusion.html" mime-type="text/html" />
+    <options customize="never" allow-external-scripts="no" hostArchitectures="x86_64,arm64"/>
+    <domains enable_localSystem="true" />
+    <installation-check script="installCheck();"/>
+    <script>
+function installCheck() {
+    if(!(system.compareVersions(system.version.ProductVersion, '10.6.0') >= 0)) {
+        my.result.title = system.localizedString('unsupported_version_title');
+        my.result.message = system.localizedString('unsupported_version_message');
+        my.result.type = 'Fatal';
+        return false;
+    }
+    if(system.files.fileExistsAtPath('/Applications/Mozilla VPN.app')) {
+        my.result.title = system.localizedString('previous_build_title');
+        my.result.message = system.localizedString('previous_build_message');
+        my.result.type = 'Warning';
+        return false;
+    }
+    return true;
+}
+    </script>
+    <choices-outline>
+        <line choice="MozillaVPN"/>
+    </choices-outline>
+    <choice id="MozillaVPN" title="MozillaVPN">
+        <pkg-ref id="MozillaVPN.pkg"/>
+    </choice>
+    <pkg-ref id="MozillaVPN.pkg" auth="Root">MozillaVPN.pkg</pkg-ref>
+</installer-script>

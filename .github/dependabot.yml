@@ -1,0 +1,96 @@
+version: 2
+updates:
+#  # gitsubmodules in 3rdparty
+## Why is this disabled? 
+##  Dependabot cannot currently update from Tag -> Newer Tag
+#   Only to newer commits. Therefore it is not providing us the 
+#   updates we need :c
+#  - package-ecosystem: "gitsubmodule"
+#    directory: "/"
+#    schedule:
+#      interval: "monthly"
+#    labels:
+#      - "dependencies"
+# Android Wireguard-Go
+  - package-ecosystem: "gomod"
+    directory: "/android/daemon/tunnel/libwg-go"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    open-pull-requests-limit: 0 # Only Scan for Security Vulns
+    cooldown:
+      default-days: 7
+# Android JVM Dependencies 
+  - package-ecosystem: "gradle"
+    directory: "/android/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    open-pull-requests-limit: 0 # Only Scan for Security Vulns
+    cooldown:
+      default-days: 7
+# Rust dependencies
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    groups:
+      cargo: 
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
+# Taskcluster 
+  - package-ecosystem: "pip"
+    directory: "/taskcluster"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    groups:
+      taskcluster-pip: 
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
+# Python build deps
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+    groups:
+      build-tools-pip: 
+        patterns:
+          - "*"
+    # We should not update glean-parser unless we are updating the glean submodule.
+    ignore:
+      - dependency-name: "glean-parser"
+    cooldown:
+      default-days: 7
+# Functional Tests, tooling etc
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+    groups:
+      # NPM Dependencies are so unlikely to break things, let's group them into a weekly PR.
+      dev-npm: 
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 7
+# Github Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7

@@ -1,0 +1,240 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import QtQuick 2.5
+import QtQuick.Controls 2.14
+import QtQuick.Layouts 1.14
+import QtQuick.Window 2.1
+
+import Mozilla.Shared 1.0
+import Mozilla.VPN 1.0
+import components 0.1
+import "qrc:/nebula/utils/MZAssetLookup.js" as MZAssetLookup
+
+MZViewBase {
+    objectName: "viewAboutUs"
+    property bool listenForUpdateEvents:false
+    property string licenseURL: ""
+
+    _menuTitle: MZI18n.AboutUsTitle
+
+    _viewContentData: ColumnLayout {
+        spacing: MZTheme.theme.windowMargin
+        Layout.preferredWidth: parent.width
+        objectName: "aboutUsList"
+
+        ColumnLayout {
+            Layout.leftMargin: MZTheme.theme.windowMargin
+            Layout.rightMargin: MZTheme.theme.windowMargin
+            Layout.fillWidth: true
+            spacing: MZTheme.theme.windowMargin
+
+            ColumnLayout {
+                spacing: MZTheme.theme.windowMargin / 2
+
+                MZBoldLabel {
+                    text: "WG Desktop"
+                    Layout.fillWidth: true
+                }
+                MZTextBlock {
+                    Layout.fillWidth: true
+                    width: undefined
+                    text: "A standalone WireGuard desktop client."
+                }
+            }
+            MZBoldLabel {
+                text: MZI18n.AboutUsReleaseVersion
+            }
+            MZClickableRow {
+                property int marginOffset: MZTheme.theme.windowMargin / 2
+
+                id: copyVersionNumber
+
+                Accessible.name: MZI18n.AboutUsCopyVersionNumber.arg(releaseVersion.text)
+                Layout.leftMargin: -marginOffset
+                Layout.rightMargin: -marginOffset
+                Layout.topMargin: -MZTheme.theme.windowMargin
+                anchors {
+                    left: undefined
+                    right: undefined
+                    rightMargin: undefined
+                    leftMargin: undefined
+                }
+
+                Layout.fillWidth: true
+                Layout.preferredHeight: MZTheme.theme.rowHeight
+                onClicked: {
+                    MZUtils.storeInClipboard(releaseVersion.text)
+                    MZErrorHandler.requestAlert(MZErrorHandler.CopiedToClipboardConfirmationAlert);
+                }
+
+                RowLayout {
+                    id: versionRow
+                    anchors.left: parent.left
+                    anchors.leftMargin: parent.marginOffset
+                    anchors.right: parent.right
+                    anchors.verticalCenter: copyVersionNumber.verticalCenter
+                    spacing: parent.marginOffset
+
+                    MZTextBlock {
+                        id: releaseVersion
+                        text: MZEnv.buildNumber === "" ? MZEnv.versionString : (MZEnv.versionString + " (" + MZEnv.buildNumber + ")")
+                        width: undefined
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+                    Image {
+                        objectName: "copyVersionNumberIcon"
+                        source: MZAssetLookup.getImageSource("CopyTextColor")
+                        fillMode: Image.PreserveAspectFit
+                        Layout.rightMargin: copyVersionNumber.marginOffset
+                        Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+                    }
+                }
+            }
+            Rectangle {
+                id: divider
+
+                Layout.preferredHeight: 1
+                Layout.fillWidth: true
+                color: MZTheme.colors.divider
+            }
+        }
+
+        Repeater {
+           model: ListModel {
+               id: aboutUsListModel
+           }
+           delegate: MZExternalLinkListItem {
+               objectName: "aboutUsList-" + linkId
+               title: MZI18n[linkTitleId]
+               accessibleName: title
+               Layout.fillWidth: true
+               Layout.preferredHeight: MZTheme.theme.rowHeight
+               Layout.leftMargin: MZTheme.theme.windowMargin / 2
+               Layout.rightMargin: MZTheme.theme.windowMargin / 2
+
+               onClicked: {
+                   if (openView) {
+                       stackview.push(openView)
+                   }
+               }
+               iconSource: openUrl ? MZAssetLookup.getImageSource("ExternalLink") : MZAssetLookup.getImageSource("Chevron")
+               iconMirror: !openUrl && MZLocalizer.isRightToLeft
+               anchors.left: undefined
+               anchors.right: undefined
+           }
+           Component.onCompleted: {
+              aboutUsListModel.append({
+                   linkId: "license",
+                   linkTitleId: "AboutUsLicenses",
+                   openUrl: "",
+                   openView: "qrc:/qt/qml/Mozilla/VPN/screens/settings/ViewLicenses.qml"
+              });
+           }
+        }
+
+        MZButton {
+            id:updateButton
+            visible: false
+            Layout.fillWidth: true
+            Layout.leftMargin: MZTheme.theme.windowMargin
+            Layout.rightMargin: MZTheme.theme.windowMargin
+            leftPadding: MZTheme.theme.iconSize * 1.5 + MZTheme.theme.windowMargin * 1.25
+            rightPadding: MZTheme.theme.iconSize * 1.5 + MZTheme.theme.windowMargin * 1.25
+            wrapMode: Text.WordWrap
+
+            onClicked: {
+                listenForUpdateEvents=true;
+                updateButtonImageAnimation.start();
+                VPNReleaseMonitor.runSoon();
+            }
+            text: MZI18n.UpdateButtonCheckForUpdateButtonText
+            Image {
+                id:updateButtonImage
+                anchors {
+                    left: updateButton.left
+                    leftMargin: MZTheme.theme.windowMargin * 1.25
+                    verticalCenter: parent.verticalCenter
+                }
+                fillMode: Image.PreserveAspectFit
+                source: MZAssetLookup.getImageSource("RefreshArrows")
+                sourceSize.height: MZTheme.theme.iconSize * 1.5
+                sourceSize.width: MZTheme.theme.iconSize * 1.5
+                visible: true
+                z:6
+
+                SequentialAnimation {
+                    id: updateButtonImageAnimation
+                    running: false
+                    PropertyAnimation {
+                        target: updateButtonImage
+                        property: "rotation"
+                        from: 0
+                        to: 360
+                        duration: 2000
+                        loops: Animation.Infinite
+                    }
+                }
+            }
+        }
+    }
+    Connections {
+        target: VPNReleaseMonitor
+        function onUpdateRequiredOrRecommended() {
+            openUpdatePopup(true)
+        }
+        function onUpdateNotAvailable() {
+            openUpdatePopup(false);
+        }
+
+        function openUpdatePopup(updateAvailable) {
+            if(!listenForUpdateEvents){ return }
+
+            updatePopup.updateAvailable = updateAvailable;
+
+            if (updateAvailable) {
+                updateButtonImageAnimation.stop();
+                updatePopup.imageSrc = MZAssetLookup.getImageSource("RefreshArrowsWithWarning");
+                updatePopup.imageSize = Qt.size(80, 80)
+                updatePopup.title = MZI18n.UpdateButtonTitleOnUpdate
+                updatePopup.description = MZI18n.UpdateButtonDescriptionOnUpdate
+                updatePopup.buttonText = MZI18n.UpdateButtonActionOnUpdate
+            } else {
+                updateButtonImageAnimation.stop();
+                updatePopup.imageSrc = MZAssetLookup.getImageSource("RefreshArrowsWithCheckmark");;
+                updatePopup.imageSize = Qt.size(80, 80)
+                updatePopup.title = MZI18n.UpdateButtonTitleNoUpdate
+                updatePopup.description = MZI18n.UpdateButtonDescriptionNoUpdate2
+                updatePopup.buttonText = MZI18n.UpdateButtonActionNoUpdate
+            }
+            updatePopup.open()
+            listenForUpdateEvents=false;
+        }
+    }
+
+    MZSimplePopup {
+        id: updatePopup
+        property alias buttonText: popupBtn.text
+        property bool updateAvailable
+
+        anchors.centerIn: Overlay.overlay
+        imageSrc: MZAssetLookup.getImageSource("RefreshArrowsWithWarning")
+        imageSize: Qt.size(80, 80)
+        title: MZI18n.UpdateButtonTitleOnUpdate
+        description: MZI18n.UpdateButtonDescriptionOnUpdate
+        buttons: [
+            MZButton {
+                id: popupBtn
+                text: MZI18n.UpdateButtonActionOnUpdate
+                Layout.fillWidth: true
+                onClicked: {
+                   if (updatePopup.updateAvailable) {
+                       VPN.update()
+                   }
+                    updatePopup.close()
+                }
+            }
+        ]
+    }
+}

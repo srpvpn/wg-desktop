@@ -1,0 +1,116 @@
+name: Update Strings
+on:
+  schedule:
+    - cron: "0 7 * * 1,4" # Run Mon-Thu at 7AM UTC
+  workflow_dispatch:
+    inputs:
+      type:
+        description: Type of update (standard, nofile, matchid)
+        required: true
+        default: "standard"
+      branch:
+        description: Branch of mozilla-vpn-client
+        required: true
+        default: "main"
+jobs:
+  extract:
+    name: Extract strings
+    runs-on: ubuntu-latest
+    env:
+      QTVERSION: 6.2.4
+    steps:
+      - name: Clone l10n repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+          path: translationFiles
+      - name: Install Qt
+        run: |
+          python3 -m pip install aqtinstall
+          python3 -m aqt list-qt linux desktop
+          python3 -m aqt install-qt -O /opt linux desktop $QTVERSION
+      - name: Clone main code repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          persist-credentials: false
+          repository: mozilla-mobile/mozilla-vpn-client
+          fetch-depth: 0
+          path: vpn
+      - name: Set up Python 3
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.11"
+      - name: Install Python dependencies
+        run: |
+          pip install -r translationFiles/.github/scripts/requirements.txt
+      - name: Store ENV variables
+        id: env-variables
+        env:
+          BRANCH: ${{ github.event.inputs.branch || 'main' }}
+        run: |
+          vpn_branch="$BRANCH"
+          echo "vpn_branch=${vpn_branch}" >> $GITHUB_OUTPUT
+          if [ "${vpn_branch}" = "main" ]; then
+            echo "automation_branch=l10n_automation" >> $GITHUB_OUTPUT
+          else
+            echo "automation_branch=l10n_automation_${vpn_branch}" >> $GITHUB_OUTPUT
+          fi
+      - name: Extract new strings
+        run: |
+          # Manually add QT executables to path
+          export PATH=/opt/$QTVERSION/gcc_64/bin:$PATH
+
+          vpn_branch=${{ steps.env-variables.outputs.vpn_branch }}
+          # Check out different branch if specified
+          if [ "${vpn_branch}" != "main" ]; then
+            echo "Checking out branch: ${vpn_branch}"
+            (cd vpn && git checkout ${vpn_branch})
+          fi
+
+          # Extract strings for default and release branches
+          (cd vpn && ./scripts/utils/generate_ts.sh)
+
+          mv vpn/translations.ts ./translations.ts
+
+          # Convert main strings to XLIFF
+          python translationFiles/.github/scripts/extract_source_strings.py --input translations.ts --output translationFiles/en/mozillavpn.xliff
+
+          # Copy the extras.xliff file over
+          if [ -f "vpn/src/translations/extras/extras.xliff" ]; then
+            cp vpn/src/translations/extras/extras.xliff translationFiles/en/extras.xliff
+          fi
+
+          # Convert addon strings to XLIFF
+          addon_files="vpn/addon_ts/*.ts"
+
+          # Remove the addons folder and recreate it, to remove obsolete addons
+          rm -rf translationFiles/en/addons/
+
+          for f in $addon_files
+          do
+            addon_name=$(basename "$f" .ts)
+            echo "Extracting strings for addon: ${addon_name}.ts"
+            mkdir -p "translationFiles/en/addons/${addon_name}"
+            python translationFiles/.github/scripts/extract_source_strings.py --input "vpn/addon_ts/${addon_name}.ts" --output "translationFiles/en/addons/${addon_name}/strings.xliff"
+          done
+
+          # Create the addons shared strings file
+          (cd vpn && python ./scripts/utils/generate_shared_addon_xliff.py -i ./addons/strings.yaml -o ../translationFiles/en/addons/strings.xliff)
+          (cd translationFiles && python .github/scripts/clean_xliff_targets.py en/addons/strings.xliff)
+
+          # Ensure files in the en folder have target-language set to en-US
+          (cd translationFiles && python .github/scripts/set_target_language_en.py en)
+
+          # Update other locales
+          python translationFiles/.github/scripts/update_other_locales.py --reference en --path translationFiles/ --type "${{ github.event.inputs.type }}"
+
+          # Remove obsolete XLIFF files
+          python translationFiles/.github/scripts/remove_obsolete_files.py --reference en --path translationFiles/
+      - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          path: translationFiles
+          author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+          commit-message: Extract new strings and update all locales
+          branch: ${{ steps.env-variables.outputs.automation_branch }}
+          delete-branch: true
+          title: Extract new strings

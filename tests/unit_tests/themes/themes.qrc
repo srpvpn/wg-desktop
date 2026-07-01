@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/nebula/themes">
+        <file alias="color-themes/main.js">validcolormiddle.js</file>
+
+        <file alias="color-themes/foobar.js">validcolormiddle.js</file>
+
+        <file alias="color-themes/invalid_colors.js">invalidcolormiddle.js</file>
+
+        <file alias="color-themes/error_colors.js">error.js</file>
+
+        <file alias="colors.js">colorstart.js</file>
+        <file alias="theme-derived.js">colorend.js</file>
+        <file alias="sizing.js">ok.js</file>
+    </qresource>
+</RCC>

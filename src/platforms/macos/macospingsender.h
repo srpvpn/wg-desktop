@@ -1,0 +1,35 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#ifndef MACOSPINGSENDER_H
+#define MACOSPINGSENDER_H
+
+#include "pingsender.h"
+
+class QSocketNotifier;
+
+class MacOSPingSender final : public PingSender {
+  Q_OBJECT
+  Q_DISABLE_COPY_MOVE(MacOSPingSender)
+
+ public:
+  MacOSPingSender(const QHostAddress& source, QObject* parent = nullptr);
+  ~MacOSPingSender();
+
+  bool isValid() override { return (m_socket >= 0) || (m_socket6 >= 0); };
+
+  void sendPing(const QHostAddress& dest, quint16 sequence) override;
+
+ private slots:
+  void socketReady();
+  void icmp6SocketReady();
+
+ private:
+  QSocketNotifier* m_notifier = nullptr;
+  QSocketNotifier* m_notifier6 = nullptr;
+  int m_socket = -1;
+  int m_socket6 = -1;
+};
+
+#endif  // MACOSPINGSENDER_H

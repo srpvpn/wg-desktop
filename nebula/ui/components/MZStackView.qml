@@ -1,0 +1,43 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import QtQuick 2.0
+import QtQuick.Controls 2.14
+
+import Mozilla.Shared 1.0
+
+StackView {
+    id: stackView
+    property bool ready: !busy && !empty
+
+    Component.onCompleted: function(){
+        if(!currentItem && initialItem) {
+            // We don't show anything right now and inital item is set,
+            // On android if initialItem is anything But a component
+            // it will totaly parse that into garbage values and fail
+            //
+            // See https://github.com/mozilla-mobile/mozilla-vpn-client/pull/2638
+            console.error("Using the initialItem property does not work on some platforms. Use Component.onCompleted: stackview.push(someURI)");
+            MZUtils.exitForUnrecoverableError("Setting initialItem on a StackView is illegal. See previous logs for more information.")
+
+        }
+
+    }
+
+    Connections {
+        target: MZNavigator
+        function onGoBack(item) {
+            if (item === stackView) {
+                stackView.pop();
+            }
+        }
+    }
+
+    Connections {
+        target: window
+        function onUnwindStackView() {
+            stackview.pop(null);
+        }
+    }
+}

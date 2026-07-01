@@ -1,0 +1,26 @@
+name: vpn
+channels:
+  - conda-forge
+dependencies:
+  - clang=20.1.8
+  - clang-tools=20.1.8
+  - clangxx=20.1.8
+  - llvm=20.1.8
+  - llvmdev=20.1.8
+  - lld=20.1.8
+  - python=3.12
+  - nodejs=20.*
+  - pip=25.0
+  - rust=1.85.0
+  - rust-std-aarch64-pc-windows-msvc=1.85.0
+  - rust-std-x86_64-pc-windows-msvc=1.85.0
+  - compiler-rt=20.1.8
+  - compiler-rt_win-64
+  - cmake=4.2.1
+  - ninja=1.11.0
+  - conda-pack=0.8.0
+  - pip:
+      - -r requirements.txt
+      - -r taskcluster/scripts/requirements.txt
+variables:
+  QT_VERSION: 6.10.1

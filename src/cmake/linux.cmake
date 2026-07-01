@@ -1,0 +1,225 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+if("$ENV{container}" STREQUAL "flatpak")
+    set(DEFAULT_FLATPAK ON)
+endif()
+option(BUILD_FLATPAK "Build for Flatpak distribution" ${DEFAULT_FLATPAK})
+
+if(EXISTS /etc/debian_version)
+    set(DEFAULT_APPARMOR ON)
+endif()
+option(BUILD_APPARMOR "Build AppArmor profile" ${DEFAULT_APPARMOR})
+
+find_package(Qt6 REQUIRED COMPONENTS DBus)
+target_link_libraries(mozillavpn PRIVATE Qt6::DBus)
+
+# Linux platform source files
+target_sources(mozillavpn PRIVATE
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/dbustypes.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxappimageprovider.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxappimageprovider.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxapplistprovider.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxapplistprovider.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxnetworkwatcher.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxnetworkwatcher.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxnetworkwatcherworker.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxnetworkwatcherworker.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxpingsender.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxpingsender.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxutils.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxutils.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgappearance.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgappearance.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgcryptosettings.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgcryptosettings.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgnotificationhandler.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgnotificationhandler.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgportal.cpp
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgportal.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgstartatbootwatcher.h
+    ${CMAKE_SOURCE_DIR}/src/platforms/linux/xdgstartatbootwatcher.cpp
+)
+
+# Resolving the parent window handle for the XDG desktop portal on Wayland
+# needs the Gui internal header files on Qt 6.5.0 and later.
+target_link_libraries(mozillavpn PRIVATE Qt6::GuiPrivate)
+
+if(NOT BUILD_FLATPAK)
+    # Link to polkit
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(polkit REQUIRED IMPORTED_TARGET polkit-gobject-1)
+    target_link_libraries(mozillavpn PRIVATE PkgConfig::polkit)
+
+    if (QT_FEATURE_static)
+        find_package(Qt6 REQUIRED COMPONENTS WaylandClientPrivate)
+        qt_import_plugins(mozillavpn INCLUDE Qt6::QWaylandIntegrationPlugin)
+        qt_import_plugins(mozillavpn INCLUDE Qt6::QWaylandAdwaitaDecorationPlugin)
+        target_link_libraries(mozillavpn PRIVATE Qt6::WaylandClientPrivate)
+
+        qt_import_plugins(mozillavpn INCLUDE Qt6::QOffscreenIntegrationPlugin)
+    endif()
+
+    target_sources(mozillavpn PRIVATE
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxcontroller.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/linuxcontroller.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/dbusclient.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/dbusclient.h
+    )
+
+    # Linux daemon source files
+    target_sources(mozillavpn PRIVATE
+        ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-tools/contrib/embeddable-wg-library/wireguard.c
+        ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-tools/contrib/embeddable-wg-library/wireguard.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/apptracker.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/apptracker.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/dbusservice.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/dbusservice.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/dnsutilslinux.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/dnsutilslinux.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/iputilslinux.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/iputilslinux.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/linuxdaemon.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/linuxfirewall.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/linuxfirewall.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/wireguardutilslinux.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/wireguardutilslinux.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/polkithelper.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/polkithelper.h
+    )
+
+    target_compile_options(mozillavpn PRIVATE -DPROTOCOL_VERSION=\"1\")
+
+    set(DBUS_GENERATED_SOURCES)
+    qt_add_dbus_interface(DBUS_GENERATED_SOURCES
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/org.mozilla.vpn.dbus.xml dbus_interface)
+    qt_add_dbus_adaptor(DBUS_GENERATED_SOURCES
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/org.mozilla.vpn.dbus.xml
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/dbusservice.h
+        ""
+        dbus_adaptor)
+    target_sources(mozillavpn PRIVATE ${DBUS_GENERATED_SOURCES})
+
+    include(${CMAKE_SOURCE_DIR}/scripts/cmake/golang.cmake)
+    add_go_library(netfilter ${CMAKE_SOURCE_DIR}/linux/netfilter/netfilter.go)
+    target_link_libraries(mozillavpn PRIVATE netfilter)
+else()
+    # Linux source files for sandboxed builds
+    target_compile_definitions(mozillavpn PRIVATE MZ_FLATPAK)
+
+    # Network Manager controller
+    target_sources(mozillavpn PRIVATE
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrtypes.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrdevice.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrdevice.cpp
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrcontroller.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrcontroller.cpp
+    )
+endif()
+include(GNUInstallDirs)
+install(TARGETS mozillavpn)
+
+add_custom_command(
+    DEPENDS ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.desktop.sh
+    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+    COMMAND ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.desktop.sh -b ${CMAKE_INSTALL_FULL_BINDIR} -o ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+)
+
+add_custom_command(
+    DEPENDS ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.metainfo.sh
+    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+    COMMAND ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.metainfo.sh -d ${CMAKE_INSTALL_FULL_DATADIR} -o ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+)
+target_sources(mozillavpn PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+)
+set_source_files_properties(
+    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+    PROPERTIES
+        GENERATED TRUE
+        HEADER_FILE_ONLY TRUE
+)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
+
+configure_file(${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.releases.xml.in
+    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.releases.xml)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.releases.xml
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ui/resources/logo-generic.svg
+    RENAME org.mozilla.vpn.svg
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
+
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/16x16/org.mozilla.vpn.png
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/16x16/apps)
+
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/32x32/org.mozilla.vpn.png
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/32x32/apps)
+
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/48x48/org.mozilla.vpn.png
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/48x48/apps)
+
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/64x64/org.mozilla.vpn.png
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/64x64/apps)
+
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/128x128/org.mozilla.vpn.png
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/128x128/apps)
+
+if(NOT BUILD_FLATPAK)
+    install(FILES ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/org.mozilla.vpn.conf
+        DESTINATION /usr/share/dbus-1/system.d)
+
+    configure_file(${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/org.mozilla.vpn.dbus.service.in
+        ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.dbus.service)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.dbus.service
+        DESTINATION /usr/share/dbus-1/system-services)
+
+    pkg_get_variable(POLKIT_POLICY_DIR polkit-gobject-1 policydir)
+    install(FILES ${CMAKE_SOURCE_DIR}/src/platforms/linux/daemon/org.mozilla.vpn.policy
+        DESTINATION ${POLKIT_POLICY_DIR})
+
+    pkg_get_variable(POLKIT_DATA_DIR polkit-gobject-1 datadir)
+    if(NOT POLKIT_DATA_DIR)
+        set(POLKIT_DATA_DIR "/usr/share")
+    endif()
+    if(EXISTS /etc/debian_version)
+        install(FILES ${CMAKE_SOURCE_DIR}/linux/org.mozilla.vpn.rules-debian
+            RENAME org.mozilla.vpn.rules
+            DESTINATION ${POLKIT_DATA_DIR}/polkit-1/rules.d)
+        install(FILES ${CMAKE_SOURCE_DIR}/linux/org.mozilla.vpn.pkla
+            DESTINATION /var/lib/polkit-1/localauthority/55-org.mozilla.d/)
+    elseif(EXISTS /etc/redhat-release)
+        install(FILES ${CMAKE_SOURCE_DIR}/linux/org.mozilla.vpn.rules-others
+            RENAME org.mozilla.vpn.rules
+            DESTINATION ${POLKIT_DATA_DIR}/polkit-1/rules.d)
+    else()
+        message(INFO "Unknown Linux distribution, please install polkit rules manually")
+    endif()
+
+    pkg_check_modules(SYSTEMD systemd)
+    if("${SYSTEMD_FOUND}" EQUAL 1)
+        pkg_get_variable(SYSTEMD_UNIT_DIR systemd systemdsystemunitdir)
+    else()
+        set(SYSTEMD_UNIT_DIR /lib/systemd/system)
+    endif()
+    configure_file(${CMAKE_SOURCE_DIR}/linux/mozillavpn.service.in
+        ${CMAKE_CURRENT_BINARY_DIR}/mozillavpn.service)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/mozillavpn.service
+        DESTINATION ${SYSTEMD_UNIT_DIR})
+
+    install(SCRIPT ${CMAKE_SOURCE_DIR}/scripts/linux/postinst.cmake)
+endif()
+
+if(BUILD_APPARMOR)
+    configure_file(${CMAKE_SOURCE_DIR}/linux/apparmor.profile.in
+        ${CMAKE_CURRENT_BINARY_DIR}/apparmor.profile)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/apparmor.profile
+        DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/apparmor.d
+        RENAME "usr.bin.mozillavpn")
+endif()

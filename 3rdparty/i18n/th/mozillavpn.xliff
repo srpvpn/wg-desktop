@@ -1,0 +1,2487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="../../nebula/ui/components/MZSystemAlert.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.alert.authenticationError">
+        <source>Authentication error</source>
+        <target>การยืนยันตัวตนผิดพลาด</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.backendServiceError">
+        <source>Background service error</source>
+        <target>บริการเบื้องหลังผิดพลาด</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.deviceDisconnectedAndLogout">
+        <source>Signed out and device disconnected</source>
+        <target>ลงชื่อออกและตัดการเชื่อมต่ออุปกรณ์แล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.getIPRestrictionError">
+        <source>Operation not allowed from current location</source>
+        <target>การกระทำไม่ได้รับอนุญาตจากตำแหน่งปัจจุบัน</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.remoteServiceError">
+        <source>Remote service error</source>
+        <target>บริการระยะไกลผิดพลาด</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.subscriptionFailureError">
+        <source>Subscription failed</source>
+        <target>การสมัครสมาชิกล้มเหลว</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.tryAgain">
+        <source>Try again</source>
+        <target>ลองอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.unableToConnect">
+        <source>Unable to connect</source>
+        <target>ไม่สามารถเชื่อมต่อได้</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/extrastrings.h" datatype="c" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="macosinstaller.conclusion.message1_v2">
+        <source>The Mozilla VPN is successfully installed. You’re ready to start taking control of your online privacy.</source>
+        <target>ติดตั้ง Mozilla VPN สำเร็จแล้ว คุณพร้อมที่จะควบคุมความเป็นส่วนตัวบนโลกออนไลน์ของคุณแล้ว</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.conclusion.message2">
+        <source>Trouble with this installation?</source>
+        <target>มีปัญหาในการติดตั้งใช่หรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.conclusion.message31">
+        <source>Help</source>
+        <target>ช่วยเหลือ</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.conclusion.title">
+        <source>Success!</source>
+        <target>สำเร็จแล้ว!</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.previous_build.message">
+        <source>A previous installation of Mozilla VPN exists at /Applications/Mozilla VPN.app. This installer will remove the previous installation prior to installing. Please back up any data before proceeding.</source>
+        <target>มีการติดตั้ง Mozilla VPN ก่อนหน้านี้อยู่ที่ /Applications/Mozilla VPN.app ตัวติดตั้งนี้จะเอาการติดตั้งก่อนหน้าออกก่อนทำการติดตั้งใหม่ โปรดสำรองข้อมูลทั้งหมดก่อนดำเนินการต่อ</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.previous_build.title">
+        <source>Previous Installation Detected</source>
+        <target>ตรวจพบการติดตั้งก่อนหน้า</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.title">
+        <source>Mozilla VPN for macOS</source>
+        <target>Mozilla VPN สำหรับ macOS</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.unsupported_version.message">
+        <source>Mozilla VPN requires Mac OS X 10.6 or later.</source>
+        <target>Mozilla VPN ต้องใช้ Mac OS X 10.6 ขึ้นไป</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.unsupported_version.title">
+        <source>Unable to install</source>
+        <target>ไม่สามารถติดตั้งได้</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.welcome.message1">
+        <source>You will now be guided through the installation steps for the Mozilla VPN. Thank you for choosing your VPN from the trusted pioneer of internet privacy.</source>
+        <target>ตอนนี้คุณจะได้รับคำแนะนำเกี่ยวกับขั้นตอนการติดตั้งสำหรับ Mozilla VPN ขอบคุณที่เลือก VPN จากผู้บุกเบิกด้านความเป็นส่วนตัวบนอินเทอร์เน็ตที่เชื่อถือได้</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.welcome.message2">
+        <source>Click “Continue” to continue the setup.</source>
+        <target>คลิก “ดำเนินการต่อ” เพื่อทำการตั้งค่าต่อไป</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ipaddresslookup.cpp" datatype="cpp" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.connectionInfo.loading">
+        <source>Loading</source>
+        <target>กำลังโหลด</target>
+        <note annotates="source" from="developer">This refers to the current IP address, i.e. "IP: Loading".</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/platforms/macos/macosmenubar.cpp" datatype="cpp" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="menubar.file.close">
+        <source>Close</source>
+        <target>ปิด</target>
+      </trans-unit>
+      <trans-unit id="menubar.file.title">
+        <source>File</source>
+        <target>ไฟล์</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/ScreenBackendFailure.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.errors.somethingWentWrong">
+        <source>Something went wrong…</source>
+        <target>มีบางอย่างผิดพลาด…</target>
+      </trans-unit>
+      <trans-unit id="vpn.errors.tryAgain">
+        <source>Try Again</source>
+        <target>ลองอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.errors.unableToEstablishConnection">
+        <source>Unable to establish a connection at this time. We’re working hard to resolve the issue. Please try again shortly.</source>
+        <target>ไม่สามารถสร้างการเชื่อมต่อได้ในขณะนี้ เรากำลังทำงานอย่างหนักเพื่อแก้ไขปัญหานี้ โปรดลองอีกครั้งในภายหลัง</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/ScreenCrashReporting.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.crashreporter.description">
+        <source>The Mozilla VPN app quit unexpectedly. Would you like to send a crash report to help fix the issue?</source>
+        <target>แอป Mozilla VPN หยุดทำงานโดยไม่คาดคิด คุณต้องการส่งรายงานข้อขัดข้องเพื่อช่วยแก้ไขปัญหานี้หรือไม่?</target>
+        <note annotates="source" from="developer">Main text telling the user that we are asking for permission to send a crash report.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.dontSendButton">
+        <source>No thanks</source>
+        <target>ไม่ ขอบคุณ</target>
+        <note annotates="source" from="developer">User does not agree to send a crash report.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.mainHeading">
+        <source>Crash reporting</source>
+        <target>การรายงานข้อขัดข้อง</target>
+        <note annotates="source" from="developer">Label over description text section.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.sendButtonLabel">
+        <source>Send report</source>
+        <target>ส่งรายงาน</target>
+        <note annotates="source" from="developer">User agrees to send a crash report.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/devices/VPNDeviceListItem.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.devices.deviceAccessibleName">
+        <source>%1 %2</source>
+        <target>%1 %2</target>
+        <note annotates="source" from="developer">Example: "deviceName deviceDescription"</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/ViewHome.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="MozillaVPN">
+        <source>Mozilla VPN</source>
+        <target>Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.servers.currentLocation">
+        <source>current location - %1</source>
+        <target>ตำแหน่งปัจจุบัน - %1</target>
+        <note annotates="source" from="developer">Accessibility description for current location of the VPN server</note>
+      </trans-unit>
+      <trans-unit id="vpn.servers.selectLocation">
+        <source>Select location</source>
+        <target>เลือกตำแหน่ง</target>
+        <note annotates="source" from="developer">Select the Location of the VPN server</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/controller/ConnectionStability.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.connectionStability.checkConnection">
+        <source>Check Connection</source>
+        <target>ตรวจสอบการเชื่อมต่อ</target>
+        <note annotates="source" from="developer">Message displayed to the user when the connection is unstable or missing, asking them to check their connection.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionStability.noSignal">
+        <source>No Signal</source>
+        <target>ไม่มีสัญญาณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.connectionStability.unstable">
+        <source>Unstable</source>
+        <target>ไม่เสถียร</target>
+        <note annotates="source" from="developer">This refers to the user’s internet connection.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/controller/ControllerView.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.controller.activated">
+        <source>VPN is on</source>
+        <target>VPN เปิดอยู่</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.activating">
+        <source>Masking connection and location</source>
+        <target>ปกปิดการเชื่อมต่อและตำแหน่ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.activationSloagan">
+        <source>Turn on to protect your privacy</source>
+        <target>เปิดเพื่อปกป้องความเป็นส่วนตัวของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.active">
+        <source>Secure and private</source>
+        <target>ปลอดภัยและเป็นส่วนตัว</target>
+        <note annotates="source" from="developer">This refers to the user’s internet connection.</note>
+      </trans-unit>
+      <trans-unit id="vpn.controller.attemptingToConfirm">
+        <source>Attempting to confirm connection</source>
+        <target>กำลังพยายามยืนยันการเชื่อมต่อ</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.connectingState">
+        <source>Connecting…</source>
+        <target>กำลังเชื่อมต่อ…</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.deactivated">
+        <source>VPN is off</source>
+        <target>VPN ปิดอยู่</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.deactivating">
+        <source>Unmasking connection and location</source>
+        <target>เลิกปกปิดการเชื่อมต่อและตำแหน่ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.disconnecting">
+        <source>Disconnecting…</source>
+        <target>กำลังตัดการเชื่อมต่อ…</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.switching">
+        <source>Switching…</source>
+        <target>กำลังสลับ…</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.switchingDetail">
+        <source>From %1 to %2</source>
+        <target>จาก %1 ไปยัง %2</target>
+        <note annotates="source" from="developer">Switches from location 1 to location 2</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/controller/VPNToggle.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.toggle.off">
+        <source>Turn VPN off</source>
+        <target>ปิด VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.toggle.on">
+        <source>Turn VPN on</source>
+        <target>เปิด VPN</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/servers/ServerCountry.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="cities">
+        <source>Cities</source>
+        <target>เมือง</target>
+        <note annotates="source" from="developer">The title for the list of cities.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/settings/ViewLanguage.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.settings.language">
+        <source>Language</source>
+        <target>ภาษา</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.languageAccessibleName">
+        <source>%1 %2</source>
+        <target>%1 %2</target>
+        <note annotates="source" from="developer">This string is read by accessibility tools. %1 is the language name, %2 is the localized language name.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/settings/ViewNotifications.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.settings.guestWifiAlert">
+        <source>Guest Wi-Fi portal alert</source>
+        <target>การแจ้งเตือนพอร์ทัล Wi-Fi สำหรับผู้ใช้ภายนอก</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.guestWifiAlert.description">
+        <source>Get notified if a guest Wi-Fi portal is blocked due to VPN connection</source>
+        <target>รับการแจ้งเตือนถ้าพอร์ทัล Wi-Fi สำหรับผู้ใช้ภายนอกถูกปิดกั้นเนื่องจากการเชื่อมต่อ VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.connectionChange.description">
+        <source>Get notified when the connection status changes</source>
+        <target>รับการแจ้งเตือนเมื่อสถานะการเชื่อมต่อเปลี่ยนแปลง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.connectionChange2">
+        <source>Connection change notification</source>
+        <target>การแจ้งเตือนการเปลี่ยนแปลงการเชื่อมต่อ</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.serverSwitch.description">
+        <source>Get notified when you successfully switched servers</source>
+        <target>รับการแจ้งเตือนเมื่อคุณสลับเซิร์ฟเวอร์สำเร็จแล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.serverSwitch2">
+        <source>Server switching notification</source>
+        <target>การแจ้งเตือนการสลับเซิร์ฟเวอร์</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notifications">
+        <source>Notifications</source>
+        <target>การแจ้งเตือน</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.unsecuredNetworkAlert">
+        <source>Unsecured network alert</source>
+        <target>การแจ้งเตือนเครือข่ายไม่ปลอดภัย</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.unsecuredNetworkAlert.description">
+        <source>Get notified if you connect to an unsecured Wi-Fi network</source>
+        <target>รับการแจ้งเตือนถ้าคุณเชื่อมต่อกับเครือข่าย Wi-Fi ที่ไม่ปลอดภัย</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/settings/appPermissions/ViewAppPermissions.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.protectSelectedApps.addApplication">
+        <source>Add application</source>
+        <target>เพิ่มแอปพลิเคชัน</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.protectSelectedApps.searchApps">
+        <source>Search apps</source>
+        <target>ค้นหาแอป</target>
+        <note annotates="source" from="developer">Search bar placeholder text</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/sharedViews/ViewErrorFullScreen.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.errors.checkOutageUpdates">
+        <source>Check outage updates</source>
+        <target>ตรวจสอบข่าวสารการล่ม</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/sharedViews/ViewUpdate.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.updates.notNow">
+        <source>Not now</source>
+        <target>ยังไม่ทำตอนนี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateConnectionInsecureWarning">
+        <source>Your connection will not be secure while you update.</source>
+        <target>การเชื่อมต่อของคุณจะไม่ปลอดภัยในขณะที่คุณอัปเดต</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateNow">
+        <source>Update now</source>
+        <target>อัปเดตตอนนี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRecomended">
+        <source>Update recommended</source>
+        <target>แนะนำให้อัปเดต</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRecomended.description">
+        <source>Please update the app before you continue to use the VPN</source>
+        <target>โปรดอัปเดตแอปก่อนที่คุณจะใช้ VPN ต่อไป</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRequire.reason">
+        <source>We detected and fixed a serious bug. You must update your app.</source>
+        <target>เราตรวจพบและได้แก้ไขบั๊กร้ายแรงแล้ว คุณจะต้องอัปเดตแอปของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRequired">
+        <source>Update required</source>
+        <target>จำเป็นต้องอัปเดต</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="generated/l18nstrings_p.cpp" datatype="cpp" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="vpn.AndroidNotifications.GeneralNotifications">
+        <source>General Notifications</source>
+        <target>การแจ้งเตือนทั่วไป</target>
+        <note annotates="source" from="developer">A notification channel; so the user can subscribe to "General Notifications"</note>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.copyVersionNumber">
+        <source>Copy %1</source>
+        <target>คัดลอก %1</target>
+        <note annotates="source" from="developer">Accessible name for a button. %1 is the version number of the VPN client.</note>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.licenses">
+        <source>Licenses</source>
+        <target>สัญญาอนุญาต</target>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.privacyNotice">
+        <source>Privacy notice</source>
+        <target>ประกาศความเป็นส่วนตัว</target>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.releaseVersion">
+        <source>Release version</source>
+        <target>รุ่นที่ออก</target>
+        <note annotates="source" from="developer">Refers to the installed version. For example: 'Release Version: 1.23'</note>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.termsOfService">
+        <source>Terms of service</source>
+        <target>เงื่อนไขการให้บริการ</target>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.title">
+        <source>About us</source>
+        <target>เกี่ยวกับเรา</target>
+      </trans-unit>
+      <trans-unit id="vpn.accessibility.currentIndexFocusedOfTotalItemsInGroup">
+        <source>%1 of %2</source>
+        <target>%1 จาก %2</target>
+        <note annotates="source" from="developer">Used by screen readers to explain to users which item they are currently focused on, and how many items there are total in a group. For example, given a list with 15 items. If a user selects the 3rd item, we want the screen reader to read out "3 of 15". The %1 represents the index of the currently focused item by the screen reader. The %2 represents the total number of items in the group.</note>
+      </trans-unit>
+      <trans-unit id="vpn.accessibility.selected">
+        <source>Selected</source>
+        <target>เลือกอยู่</target>
+        <note annotates="source" from="developer">Used by screen reader to indicate that a user action selected an item.</note>
+      </trans-unit>
+      <trans-unit id="vpn.accessibility.selectedAndItemName">
+        <source>Selected item: %1</source>
+        <target>รายการที่เลือกอยู่: %1</target>
+        <note annotates="source" from="developer">Used by screen readers to denote that a particular item is currently selected. For example, given a segmented control with 2 items, where the first item is currently selected. We want the screen reader to read out "Selected, &lt;item name&gt;". The %1 represents the name of the selected item.</note>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.labelTitle">
+        <source>Bypass VPN for select traffic</source>
+        <target>ข้าม VPN สำหรับการรับส่งข้อมูลที่เลือก</target>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.learnMoreSentence">
+        <source>Learn more.</source>
+        <target>เรียนรู้เพิ่มเติม</target>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.subLabel">
+        <source>Allow RCS/MMS messaging, Apple features like CarPlay and AirDrop, and connections to local devices. May reduce network security.</source>
+        <target>อนุญาตการส่งข้อความ RCS/MMS คุณลักษณะของ Apple เช่น CarPlay และ AirDrop และการเชื่อมต่อกับอุปกรณ์เฉพาะที่ ซึ่งอาจลดความปลอดภัยของเครือข่าย</target>
+        <note annotates="source" from="developer">Make sure it's clear that this will allow major features (like messaging apps) to function, but potentially at the expense of some security.</note>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.vpnMustBeOff">
+        <source>VPN must be off to change this setting</source>
+        <target>VPN จะต้องปิดอยู่จึงจะเปลี่ยนการตั้งค่านี้ได้</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.actionPostActivation">
+        <source>You must turn off your VPN in order to see the portal, and turn it back on once you have logged in.</source>
+        <target>คุณต้องปิด VPN ของคุณเพื่อที่จะดูพอร์ทัล แล้วเปิดใหม่อีกครั้งเมื่อคุณเข้าสู่ระบบแล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.actionPreActivation">
+        <source>You can turn on your VPN once you have gained internet access by logging in to the portal.</source>
+        <target>คุณสามารถเปิด VPN เมื่อคุณเข้าถึงอินเทอร์เน็ตได้แล้วโดยการเข้าสู่ระบบในพอร์ทัล</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.buttonTextPostActivation">
+        <source>Turn off VPN</source>
+        <target>ปิด VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.buttonTextPreActivation">
+        <source>Okay</source>
+        <target>ตกลง</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.header">
+        <source>A captive portal is when the guest Wi-Fi you are using requires you to log in to get internet access.</source>
+        <target>พอร์ทัลคัดกรองคือหน้าที่แสดงขึ้นเมื่อเครือข่าย Wi-Fi สำหรับผู้ใช้ภายนอกซึ่งคุณกำลังใช้อยู่นั้นต้องการให้คุณเข้าสู่ระบบเพื่อเข้าถึงอินเทอร์เน็ต</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.title">
+        <source>Captive portal detected!</source>
+        <target>ตรวจพบพอร์ทัลคัดกรอง!</target>
+      </trans-unit>
+      <trans-unit id="vpn.cityAccessoryWidget.description">
+        <source>See current Mozilla VPN status, along with the current server.</source>
+        <note annotates="source" from="developer">More information about what the city widget contains - which is current VPN status and the current city server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.connectionInformation">
+        <source>Connection information</source>
+        <target>ข้อมูลการเชื่อมต่อ</target>
+        <note annotates="source" from="developer">Accessible label for the button that shows the IP info panel when clicked.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.errorMessage">
+        <source>Looks like there was an unexpected error while trying to connect. Please try again or check your connection.</source>
+        <target>ดูเหมือนว่าจะมีข้อผิดพลาดที่ไม่คาดคิดเกิดขึ้นขณะพยายามเชื่อมต่อ โปรดลองอีกครั้งหรือตรวจสอบการเชื่อมต่อของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.exitServerLabelIp">
+        <source>Exit Server IP:</source>
+        <target>IP เซิร์ฟเวอร์ขาออก:</target>
+        <note annotates="source" from="developer">Exit server IP label for IPV4. IP is the abbreviation for Internet Procol. This is followed by the user’s IPv4 address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.exitServerLabelIpv6">
+        <source>Exit Server IPv6:</source>
+        <target>IPv6 เซิร์ฟเวอร์ขาออก:</target>
+        <note annotates="source" from="developer">Exit server IP label for IPv6. IPv6 is the abbreviation for Internet Procol version 6. This is followed by the user’s IPv6 address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.highBulletOne">
+        <source>Streaming in 4K</source>
+        <target>สตรีมมิ่งในระบบ 4K</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for high speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.highBulletThree">
+        <source>Online gaming</source>
+        <target>เกมออนไลน์</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for high speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.highBulletTwo">
+        <source>High-speed downloads</source>
+        <target>ดาวน์โหลดความเร็วสูง</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for high speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelBitps">
+        <source>bit/s</source>
+        <target>บิต/วินาที</target>
+        <note annotates="source" from="developer">Bits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelGbitps">
+        <source>Gbit/s</source>
+        <target>กิกะบิต/วินาที</target>
+        <note annotates="source" from="developer">Gigabits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelKbitps">
+        <source>kbit/s</source>
+        <target>กิโลบิต/วินาที</target>
+        <note annotates="source" from="developer">Kilobits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelMbitps">
+        <source>Mbit/s</source>
+        <target>เมกะบิต/วินาที</target>
+        <note annotates="source" from="developer">Megabits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelPing">
+        <source>Ping</source>
+        <target>Ping</target>
+        <note annotates="source" from="developer">Latency of the connection</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelTbitps">
+        <source>Tbit/s</source>
+        <target>เทราบิต/วินาที</target>
+        <note annotates="source" from="developer">Terabits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelUpload">
+        <source>Upload</source>
+        <target>อัปโหลด</target>
+        <note annotates="source" from="developer">Label for the upload benchmark shown in the speed test view.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.listHeaderDefault">
+        <source>At your current speed, here’s what your device is optimized for:</source>
+        <target>ที่ความเร็วปัจจุบันของคุณ อุปกรณ์ของคุณได้ถูกเพิ่มประสิทธิภาพสำหรับ:</target>
+        <note annotates="source" from="developer">Headline for a list of things that the current connection is capable of.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.listHeaderSlow">
+        <source>It looks like the connection to this server location is a bit slow, you can try:</source>
+        <target>ดูเหมือนว่าการเชื่อมต่อกับตำแหน่งเซิร์ฟเวอร์นี้จะช้าเล็กน้อย คุณสามารถลอง:</target>
+        <note annotates="source" from="developer">Headline for a list of suggestions for troubleshooting the current connection.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.loadingIndicatorLabel">
+        <source>Testing speed…</source>
+        <target>กำลังทดสอบความเร็ว…</target>
+        <note annotates="source" from="developer">Shown to the user while waiting for the connection speed test results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.mediumBulletOne">
+        <source>Browsing the internet</source>
+        <target>การเรียกดูอินเทอร์เน็ต</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for medium speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.mediumBulletThree">
+        <source>Video conferencing</source>
+        <target>การประชุมทางวิดีโอ</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for medium speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.mediumBulletTwo">
+        <source>Streaming video</source>
+        <target>การสตรีมวิดีโอ</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for medium speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.metricsTitle">
+        <source>Connection information</source>
+        <target>ข้อมูลการเชื่อมต่อ</target>
+        <note annotates="source" from="developer">Title for the connection metrics view.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.restartSpeedTest">
+        <source>Restart speed test</source>
+        <target>เริ่มทดสอบความเร็วใหม่</target>
+        <note annotates="source" from="developer">Accessible label for the button to restart the speed test upon its completion.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.rotateIPAddress">
+        <source>Attempt to change IP address</source>
+        <note annotates="source" from="developer">Accessible label for the button to try to get a new server in the same location</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.startSpeedTest">
+        <source>Start speed test</source>
+        <target>เริ่มทดสอบความเร็ว</target>
+        <note annotates="source" from="developer">Accessible label for the button that opens the speed test view and initiates a speed test</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.troubleshootingBulletOne">
+        <source>Switching server locations</source>
+        <target>กำลังสลับตำแหน่งเซิร์ฟเวอร์</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection troubleshooting section</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.troubleshootingBulletThree">
+        <source>Switching back to a single-hop connection</source>
+        <target>กำลังสลับกลับไปใช้การเชื่อมต่อแบบจุดเดียว</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection troubleshooting section for multi-hop connections</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.troubleshootingBulletTwo">
+        <source>Checking your internet connection</source>
+        <target>กำลังตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection troubleshooting section</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.unitPing">
+        <source>ms</source>
+        <target>ms</target>
+        <note annotates="source" from="developer">milliseconds</note>
+      </trans-unit>
+      <trans-unit id="vpn.controller.regeneratingKey">
+        <source>Preparing your connection</source>
+        <target>กำลังเตรียมการเชื่อมต่อของคุณ</target>
+        <note annotates="source" from="developer">Connection subtitle label for the main screen when the app is regenerating WireGuard keys</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.crashOptInDialogDescription">
+        <source>Don’t show this again. Autosend crash reports to Mozilla.</source>
+        <target>ไม่ต้องแสดงข้อความนี้อีก ให้ส่งรายงานข้อขัดข้องไปยัง Mozilla</target>
+        <note annotates="source" from="developer">This is a description for a checkbox on the crash reporter dialog.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.mainTitle">
+        <source>Mozilla Crash Report</source>
+        <target>รายงานข้อขัดข้อง Mozilla</target>
+        <note annotates="source" from="developer">Main window title</note>
+      </trans-unit>
+      <trans-unit id="vpn.deleteAccount.authButtonLabel">
+        <source>Continue</source>
+        <target>ดำเนินการต่อ</target>
+      </trans-unit>
+      <trans-unit id="vpn.deleteAccount.buttonLabel">
+        <source>Delete account</source>
+        <target>ลบบัญชี</target>
+      </trans-unit>
+      <trans-unit id="vpn.devices.countLabel">
+        <source>%1 out of %2 devices added</source>
+        <target>เพิ่มอุปกรณ์ %1 จาก %2 เครื่องแล้ว</target>
+        <note annotates="source" from="developer">Label at the top of the "Devices" setting screen indicating the number of devices registered to the users account (1st arg) vs the max limit of devices available for their account (2nd arg)</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.limitDescription2">
+        <source>You’re using VPN on 5 devices. To add another device, please remove one.</source>
+        <target>คุณกำลังใช้ VPN บนอุปกรณ์ 5 เครื่อง ถ้าต้องการเพิ่มอุปกรณ์อื่น โปรดเอาอุปกรณ์ออกหนึ่งเครื่อง</target>
+        <note annotates="source" from="developer">Description of the "device limit" view describing why the device has not yet been added to the list of active devices (because we are at the device limit)</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.limitTitle">
+        <source>Device not added</source>
+        <target>ไม่ได้เพิ่มอุปกรณ์</target>
+        <note annotates="source" from="developer">Title of the "device limit" view stating that the device has not yet been added to the list of active devices (because we are at the device limit)</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionAddedDaysAgo">
+        <source>Added %1 days ago</source>
+        <target>เพิ่มเมื่อ %1 วันที่แล้ว</target>
+        <note annotates="source" from="developer">Device list item description for a device added days ago. %1 is the number of days.</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionAddedFewHoursAgo">
+        <source>Added a few hours ago (%1)</source>
+        <target>เพิ่มเมื่อ %1 ชั่วโมงที่แล้ว</target>
+        <note annotates="source" from="developer">Device list item description for a device added a few hours ago. %1 is the number of hours.</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionAddedOneHourAgo">
+        <source>Added less than an hour ago</source>
+        <target>เพิ่มเมื่อไม่ถึงหนึ่งชั่วโมงที่แล้ว</target>
+        <note annotates="source" from="developer">Device list item description for a device added less than 1 hour ago</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionCurrent">
+        <source>Current Device</source>
+        <target>อุปกรณ์ปัจจุบัน</target>
+        <note annotates="source" from="developer">Device list item description for the current device</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemRemoveDeviceAccessibility">
+        <source>Remove %1</source>
+        <target>เอา %1 ออก</target>
+        <note annotates="source" from="developer">Label used for accessibility on the button to remove a device. %1 is the name of the device.</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removePopupDescription">
+        <source>Please confirm you would like to remove %1.</source>
+        <target>โปรดยืนยันว่าคุณต้องการเอา %1 ออก</target>
+        <note annotates="source" from="developer">Description for the Remove Device popup. %1 is the name of the device being removed. The name is displayed on purpose on a new line."</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removePopupPrimaryButtonLabel">
+        <source>Remove</source>
+        <target>เอาออก</target>
+        <note annotates="source" from="developer">Label for the primary button for the Remove Device poup</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removePopupTitle">
+        <source>Remove device?</source>
+        <target>เอาอุปกรณ์ออกหรือไม่?</target>
+        <note annotates="source" from="developer">Title for the Remove Device popup</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removingTitle">
+        <source>Removing device…</source>
+        <target>กำลังเอาอุปกรณ์ออก…</target>
+        <note annotates="source" from="developer">Title for "Removing device" screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.sectionTitle">
+        <source>Devices</source>
+        <target>อุปกรณ์</target>
+        <note annotates="source" from="developer">Title for the menu bar when viewing the devices or device limit pages</note>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.bodyDNS">
+        <source>Using these privacy features will override your custom DNS.</source>
+        <target>การใช้คุณลักษณะความเป็นส่วนตัวเหล่านี้จะแทนที่ค่า DNS กำหนดเองของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.bodyPrivacy">
+        <source>Using a custom DNS will override your preferences in the privacy features page.</source>
+        <target>การใช้ DNS กำหนดเองจะแทนที่การกำหนดลักษณะของคุณในหน้าคุณลักษณะความเป็นส่วนตัว</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.primaryButton">
+        <source>Confirm</source>
+        <target>ยืนยัน</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.secondaryButton">
+        <source>Maybe later</source>
+        <target>ไว้ทีหลัง</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.titleDNS">
+        <source>Override DNS settings?</source>
+        <target>แทนที่การตั้งค่า DNS หรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.titlePrivacy">
+        <source>Override privacy features?</source>
+        <target>แทนที่คุณลักษณะความเป็นส่วนตัวหรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="vpn.freeTrials.freeTrialLabel">
+        <source>7-day free trial</source>
+        <target>ทดลองใช้ฟรี 7 วัน</target>
+      </trans-unit>
+      <trans-unit id="vpn.freeTrials.startYourFreeTrial">
+        <source>Sign up to start your 7-day free trial.</source>
+        <target>ลงทะเบียนเพื่อเริ่มการทดลองใช้ฟรี 7 วันของคุณ</target>
+        <note annotates="source" from="developer">This string appears above the 'Sign up' button on mobile onboarding views</note>
+      </trans-unit>
+      <trans-unit id="vpn.genericError.unexpected">
+        <source>Unexpected error</source>
+        <target>ข้อผิดพลาดที่ไม่คาดคิด</target>
+      </trans-unit>
+      <trans-unit id="vpn.genericPurchaseError.genericPurchaseErrorButton">
+        <source>Try Again</source>
+        <target>ลองอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.genericPurchaseError.genericPurchaseErrorHeader">
+        <source>Problem confirming subscription</source>
+        <target>เกิดปัญหาในการยืนยันการสมัครสมาชิก</target>
+      </trans-unit>
+      <trans-unit id="vpn.genericPurchaseError.genericPurchaseErrorText">
+        <source>An unexpected error has occurred, please try again. Visit our help center below to learn how to troubleshoot this issue or contact support.</source>
+        <target>เกิดข้อผิดพลาดที่ไม่คาดคิด โปรดลองอีกครั้ง ไปที่ศูนย์ช่วยเหลือของเราด้านล่างเพื่อเรียนรู้วิธีแก้ไขปัญหานี้หรือติดต่อฝ่ายสนับสนุน</target>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.developerOptions">
+        <source>Developer options</source>
+        <target>ตัวเลือกสำหรับนักพัฒนา</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.helpCenter">
+        <source>Help Center</source>
+        <target>ศูนย์ช่วยเหลือ</target>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.linkText">
+        <source>Help</source>
+        <target>ช่วยเหลือ</target>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.viewLogs">
+        <source>View Logs</source>
+        <target>ดูปูมบันทึก</target>
+        <note annotates="source" from="developer">Label for a clickable item in the Get-Help view</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.clear">
+        <source>Clear</source>
+        <target>ล้าง</target>
+        <note annotates="source" from="developer">Accessible label for clear button</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.close">
+        <source>Close</source>
+        <target>ปิด</target>
+        <note annotates="source" from="developer">Accessible label for close button</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.collapse">
+        <source>Collapse</source>
+        <target>ยุบ</target>
+        <note annotates="source" from="developer">Action used in the context of an expandable/collapsible card component</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.continue">
+        <source>Continue</source>
+        <target>ดำเนินการต่อ</target>
+        <note annotates="source" from="developer">Label for button used to proceed with an action</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.copied">
+        <source>Copied!</source>
+        <target>คัดลอกแล้ว!</target>
+        <note annotates="source" from="developer">Confirmation banner displayed after clicking a button to copy something.</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.copy">
+        <source>Copy</source>
+        <target>คัดลอก</target>
+        <note annotates="source" from="developer">Accessible button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.discoverNow">
+        <source>Discover now</source>
+        <target>ค้นพบเลย</target>
+        <note annotates="source" from="developer">Label for button used in intro modals to discover new features.</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.expand">
+        <source>Expand</source>
+        <target>ขยาย</target>
+        <note annotates="source" from="developer">Action used in the context of an expandable/collapsible card component</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.getStarted">
+        <source>Get started</source>
+        <target>เริ่มต้น</target>
+        <note annotates="source" from="developer">Label for a button used to begin something / proceed</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.goBack">
+        <source>Go back</source>
+        <target>ย้อนกลับ</target>
+        <note annotates="source" from="developer">Label for button used in intro modals to return to the app.</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.help">
+        <source>Help</source>
+        <target>ช่วยเหลือ</target>
+        <note annotates="source" from="developer">Action taken that will help the user</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.learnMore">
+        <source>Learn more</source>
+        <target>เรียนรู้เพิ่มเติม</target>
+        <note annotates="source" from="developer">Label for link to allow the user to learn more about a topic</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.next">
+        <source>Next</source>
+        <target>ถัดไป</target>
+        <note annotates="source" from="developer">Label for button used to proceed</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.noInternetConnection">
+        <source>No internet connection</source>
+        <target>ไม่มีการเชื่อมต่ออินเทอร์เน็ต</target>
+        <note annotates="source" from="developer">Status alert text</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.noThanks">
+        <source>No thanks</source>
+        <target>ไม่เป็นไร ขอบคุณ</target>
+        <note annotates="source" from="developer">Label for button used to not proceed with an action</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.paste">
+        <source>Paste</source>
+        <target>วาง</target>
+        <note annotates="source" from="developer">Label for button to paste value from clipboard into input</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.signOut">
+        <source>Sign out</source>
+        <target>ออกจากระบบ</target>
+        <note annotates="source" from="developer">Link title</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.vpnUser">
+        <source>VPN User</source>
+        <target>ผู้ใช้ VPN</target>
+        <note annotates="source" from="developer">Fallback string for users who have not specified a Display Name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesBody1">
+        <source>Adding a new device to your subscription is easy: just download and log in to Mozilla VPN on that device.</source>
+        <target>การเพิ่มอุปกรณ์ใหม่นั้นทำได้อย่างง่ายดาย เพียงแค่ดาวน์โหลดและเข้าสู่ระบบ Mozilla VPN บนอุปกรณ์นั้น</target>
+        <note annotates="source" from="developer">Body label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesBody2">
+        <source>To remove one of your added devices, select “Edit” on this screen and use the trash icon to remove the device you no longer want to use Mozilla VPN on.</source>
+        <target>ถ้าต้องการเอาอุปกรณ์ที่เพิ่มเข้ามาเครื่องใดเครื่องหนึ่งออก ให้เลือก “แก้ไข” บนหน้าจอนี้ และใช้ไอคอนถังขยะเพื่อเอาอุปกรณ์ที่คุณไม่ต้องการใช้ Mozilla VPN ออก</target>
+        <note annotates="source" from="developer">Body label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesHeader">
+        <source>Adding and removing devices</source>
+        <target>การเพิ่มและเอาอุปกรณ์ออก</target>
+        <note annotates="source" from="developer">Header label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesTitle">
+        <source>Device management</source>
+        <target>การจัดการอุปกรณ์</target>
+        <note annotates="source" from="developer">Title label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsBody1">
+        <source>Whenever you connect to a website, a DNS (domain name system) first turns the domain name (e.g. www.mozilla.org) into an IP address that allows your internet traffic to reach that destination.</source>
+        <target>เมื่อคุณเชื่อมต่อกับเว็บไซต์ ขั้นตอนแรก DNS (ระบบชื่อโดเมน) จะแปลงชื่อโดเมน (เช่น www.mozilla.org) ให้เป็นที่อยู่ IP ก่อน เพื่อให้การรับส่งข้อมูลทางอินเอทร์เน็ตของคุณนั้นเข้าถึงปลายทางนั้นได้</target>
+        <note annotates="source" from="developer">Body text for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsBody2">
+        <source>Mozilla VPN allows you to choose a custom DNS server if you prefer. If you use one, you won’t be able to use other privacy features in the VPN like tracker blocking.</source>
+        <target>Mozilla VPN ให้คุณเลือกเซิร์ฟเวอร์ DNS กำหนดเองได้ถ้าคุณต้องการ ถ้าคุณใช้เซิร์ฟเวอร์เหล่านั้น คุณจะไม่สามารถใช้คุณลักษณะความเป็นส่วนตัวอื่นๆ ใน VPN ได้ เช่น การปิดกั้นตัวติดตาม</target>
+        <note annotates="source" from="developer">Body text for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsHeader">
+        <source>What is a custom DNS?</source>
+        <target>DNS กำหนดเองคืออะไร?</target>
+        <note annotates="source" from="developer">Header label for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsTitle">
+        <source>Custom DNS settings</source>
+        <target>การตั้งค่า DNS กำหนดเอง</target>
+        <note annotates="source" from="developer">Title label for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsBody1">
+        <source>Excluded apps let you turn off VPN protection for specific apps, without turning off VPN protection for your entire device.</source>
+        <target>แอปที่ยกเว้นให้คุณปิดการป้องกันด้วย VPN สำหรับแอปนั้นๆ ได้ โดยไม่ต้องปิดการป้องกันด้วย VPN สำหรับอุปกรณ์ทั้งเครื่องของคุณ</target>
+        <note annotates="source" from="developer">Body label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsBody2">
+        <source>When you exclude an app, it will have access to your IP address and approximate location.</source>
+        <target>เมื่อคุณยกเว้นแอปใด แอปนั้นก็จะสามารถเข้าถึงที่อยู่ IP และตำแหน่งโดยประมาณของคุณได้</target>
+        <note annotates="source" from="developer">Body label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsBody3">
+        <source>You can use the settings under Settings &gt; Privacy features to block ads, block trackers, and block malware, even on excluded apps.</source>
+        <target>คุณสามารถใช้การตั้งค่าได้ภายใต้หัวข้อ การตั้งค่า &gt; คุณลักษณะความเป็นส่วนตัว เพื่อปิดกั้นโฆษณา ปิดกั้นตัวติดตาม และปิดกั้นมัลแวร์ แม้กระทั่งในแอปที่ยกเว้นก็ได้</target>
+        <note annotates="source" from="developer">Body label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsCTA">
+        <source>Open “Privacy features”</source>
+        <target>เปิด “คุณลักษณะความเป็นส่วนตัว”</target>
+        <note annotates="source" from="developer">Label for button that opens the "Privacy features" view from the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsHeader">
+        <source>What are excluded apps?</source>
+        <target>แอปที่ยกเว้นคืออะไร?</target>
+        <note annotates="source" from="developer">Header label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsTitle">
+        <source>Excluded apps</source>
+        <target>แอปที่ยกเว้น</target>
+        <note annotates="source" from="developer">Title label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationBody1">
+        <source>If you want maximum speed and reliability, choose one of the recommended locations in the “Single-hop” toggle. We’ve sorted them based on expected performance.</source>
+        <target>ถ้าคุณต้องการความเร็วและความน่าเชื่อถือในระดับสูงสุด ให้เลือกตำแหน่งที่แนะนำตำแหน่งหนึ่งในสวิตช์ “จุดเดียว” ซึ่งเราได้เรียงลำดับไว้ให้ตามประสิทธิภาพที่คาดหวัง</target>
+        <note annotates="source" from="developer">Body label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationBody2">
+        <source>If you want to add more privacy, switch to “Multi-hop” and add an additional server location. Multi-hop VPN routes your traffic through two server locations instead of one for extra security and privacy. This may also slow down your connection a bit.</source>
+        <target>ถ้าคุณต้องการเพิ่มความเป็นส่วนตัว ให้สลับไปเป็น “หลายจุด” และเพิ่มตำแหน่งเซิร์ฟเวอร์เพิ่มเติมเข้าไป VPN แบบหลายจุดจะจัดเส้นทางการรับส่งข้อมูลของคุณผ่านตำแหน่งเซิร์ฟเวอร์ 2 ตำแหน่งแทนที่จะเป็นตำแหน่งเดียว เพื่อความปลอดภัยและเป็นส่วนตัวยิ่งขึ้น ซึ่งอาจทำให้การเชื่อมต่อของคุณช้าลงเล็กน้อย</target>
+        <note annotates="source" from="developer">Body label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationHeader">
+        <source>Single-hop vs multi-hop</source>
+        <target>จุดเดียว vs หลายจุด</target>
+        <note annotates="source" from="developer">Header label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationTitle">
+        <source>Location selection</source>
+        <target>การเลือกตำแหน่ง</target>
+        <note annotates="source" from="developer">Title label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyBody1">
+        <source>Privacy features give you greater control over the types of content you see, helping you stay safe online.</source>
+        <target>คุณลักษณะความเป็นส่วนตัวให้คุณควบคุมชนิดเนื้อหาที่คุณต้องการเห็นได้มากขึ้น ช่วยให้คุณปลอดภัยอยู่เสมอบนโลกออนไลน์</target>
+        <note annotates="source" from="developer">Body label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyBody2">
+        <source>If you activate these features, they’ll overwrite any custom DNS you’re using. These protections are not a substitute for taking other security precautions — for example, while blocking malware you should still avoid downloading attachments in strange emails.</source>
+        <target>ถ้าคุณเปิดใช้งานคุณลักษณะเหล่านี้ คุณลักษณะเหล่านี้จะแทนที่ค่า DNS กำหนดเองทั้งหมดที่คุณกำลังใช้อยู่ การป้องกันเหล่านี้ไม่สามารถทดแทนมาตรการความปลอดภัยอื่นๆ ได้ ตัวอย่างเช่น ขณะที่ปิดกั้นมัลแวร์ คุณก็ควรหลีกเลี่ยงการดาวน์โหลดไฟล์แนบที่มากับอีเมลซึ่งดูแปลก</target>
+        <note annotates="source" from="developer">Body label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyHeader">
+        <source>What can privacy features do for me?</source>
+        <target>คุณลักษณะความเป็นส่วนตัวทำอะไรให้ฉันได้บ้าง?</target>
+        <note annotates="source" from="developer">Header label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyTitle">
+        <source>Privacy features</source>
+        <target>คุณลักษณะความเป็นส่วนตัว</target>
+        <note annotates="source" from="developer">Title label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.changeEmailLink">
+        <source>Change email</source>
+        <target>เปลี่ยนอีเมล</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.continueToSignIn">
+        <source>Continue to sign in</source>
+        <target>ดำเนินการต่อเพื่อลงชื่อเข้า</target>
+        <note annotates="source" from="developer">Button a user clicks after updating their Mozilla account settings so that they can re-attempt sign-in</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.createAccountButton">
+        <source>Create account</source>
+        <target>สร้างบัญชี</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.createPasswordLabel">
+        <source>Create password</source>
+        <target>สร้างรหัสผ่าน</target>
+        <note annotates="source" from="developer">This is a label displayed on the password creation screen.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.emailInputPlaceholder">
+        <source>Enter email</source>
+        <target>ใส่อีเมล</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.emailTokenResentAlert">
+        <source>We’ve resent your code to your email.</source>
+        <target>เราได้ส่งรหัสของคุณไปยังอีเมลของคุณอีกครั้งแล้ว</target>
+        <note annotates="source" from="developer">User has requested to send a new email containing the 6-digit pin to confirm their email address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.emailVerificationDescription">
+        <source>Open your email and enter the verification code that was sent.</source>
+        <target>เปิดอีเมลของคุณแล้วใส่รหัสยืนยันที่ถูกส่งไป</target>
+        <note annotates="source" from="developer">User has been sent a verification email containing a code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.enterEmailAddressDescription">
+        <source>Enter your email address to continue using Mozilla VPN</source>
+        <target>ใส่ที่อยู่อีเมลของคุณเพื่อใช้ Mozilla VPN ต่อไป</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.finishAccountCreationDescription2">
+        <source>Finish creating your Mozilla account to continue to Mozilla VPN</source>
+        <target>สร้างบัญชี Mozilla ของคุณให้เสร็จสิ้นเพื่อดำเนินการต่อไปยัง Mozilla VPN</target>
+        <note annotates="source" from="developer">User message prompting user to finish creating their account to use Mozilla VPN.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.forgotPasswordLink">
+        <source>Forgot your password?</source>
+        <target>ลืมรหัสผ่านของคุณใช่หรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.hidePassword">
+        <source>Hide password</source>
+        <target>ซ่อนรหัสผ่าน</target>
+        <note annotates="source" from="developer">Tooltip label for the eye icon in password input</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.informationUsageDisclaimer">
+        <source>We only use your email to create your account or sign in. We will never sell it to a third party.</source>
+        <target>เราใช้อีเมลของคุณเพื่อสร้างบัญชีของคุณเท่านั้นหรือลงชื่อเข้า เราจะไม่ขายให้กับบุคคลที่สาม</target>
+        <note annotates="source" from="developer">Non-op text that informs user about how Mozilla will not sell it to a third party.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidCodeErrorMessage">
+        <source>Invalid code. Please try again</source>
+        <target>รหัสไม่ถูกต้อง โปรดลองอีกครั้ง</target>
+        <note annotates="source" from="developer">User provided did not provide a correct security code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidEmailErrorMessage">
+        <source>Invalid email. Please try again</source>
+        <target>อีเมลไม่ถูกต้อง โปรดลองอีกครั้ง</target>
+        <note annotates="source" from="developer">Generic message for when user submits incorrect email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidEmailFormatErrorMessage">
+        <source>Email format not supported. Please try again with a different email</source>
+        <target>ไม่รองรับรูปแบบอีเมลนี้ โปรดลองอีกครั้งโดยใช้อีเมลแบบอื่น</target>
+        <note annotates="source" from="developer">User is providing us an email that is not formatted correctly. Ex. jsmith&amp;gmail.com</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidPasswordErrorMessage">
+        <source>Invalid password. Please try again</source>
+        <target>รหัสผ่านไม่ถูกต้อง โปรดลองอีกครั้ง</target>
+        <note annotates="source" from="developer">User has submitted an invalid password.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordHintCharacterLength">
+        <source>Must be at least 8 characters</source>
+        <target>ต้องมีอย่างน้อย 8 อักขระ</target>
+        <note annotates="source" from="developer">This is a hint for the user - they must provide a password with at least 8 characters</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordHintCommonPassword">
+        <source>Must not be a common password</source>
+        <target>ต้องไม่เป็นรหัสผ่านที่พบได้บ่อย</target>
+        <note annotates="source" from="developer">This is a hint for the user - password they provide must not be a common password. Ex. password.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordHintEmailAddressAsPassword">
+        <source>Must not be your email address</source>
+        <target>ต้องไม่ใช่ที่อยู่อีเมลของคุณ</target>
+        <note annotates="source" from="developer">This is a hint for the user - they must provide a password that does not match their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordInputLabel">
+        <source>Password</source>
+        <target>รหัสผ่าน</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordInputPlaceholder">
+        <source>Enter password</source>
+        <target>ใส่รหัสผ่าน</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.pleaseWait">
+        <source>Please wait…</source>
+        <target>โปรดรอ…</target>
+        <note annotates="source" from="developer">Headline on loading screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.problemEmailTypeNotSupported">
+        <source>Primary account email required for sign-in</source>
+        <target>ต้องใช้อีเมลบัญชีหลักเพื่อลงชื่อเข้า</target>
+        <note annotates="source" from="developer">App screen that informs the user there was an error signing them in - this is the message.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.problemSendingEmailErrorMessage">
+        <source>Sorry, we were unable to send you a verification code.</source>
+        <target>ขออภัย เราไม่สามารถส่งรหัสยืนยันให้คุณได้</target>
+        <note annotates="source" from="developer">App screen that informs the user there was an error sending them their verification code email - this is the message.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.problemSendingEmailTitle">
+        <source>Problem sending email…</source>
+        <target>เกิดปัญหาขณะส่งอีเมล…</target>
+        <note annotates="source" from="developer">App screen that informs the user there was an error sending them their verification code email - this is the title.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.productUpdateOptInDescription">
+        <source>I’d like to receive product update emails from Firefox.</source>
+        <target>ฉันต้องการรับอีเมลข่าวสารผลิตภัณฑ์จาก Firefox</target>
+        <note annotates="source" from="developer">Checkbox label for users to opt in, when creating an account, to receive product update emails from Firefox.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.reauthSignInSubtitle2">
+        <source>To continue, please confirm with your Mozilla account password.</source>
+        <target>เพื่อดำเนินการต่อ โปรดยืนยันด้วยรหัสผ่านสำหรับบัญชี Mozilla ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.resendCodeLink">
+        <source>Resend code</source>
+        <target>ส่งรหัสอีกครั้ง</target>
+        <note annotates="source" from="developer">This link allows the user to request for another 6-digit verification code to be sent to their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeInputPlaceholder">
+        <source>Enter 6-digit code</source>
+        <target>ใส่รหัส 6 หลัก</target>
+        <note annotates="source" from="developer">Placeholder text for input element asking user for TOTP 6-digit verification code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeLabel">
+        <source>Security code</source>
+        <target>รหัสความปลอดภัย</target>
+        <note annotates="source" from="developer">Label for input asking user for their security code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeSubtitle">
+        <source>Open your authentication app and enter the security code it provides.</source>
+        <target>เปิดแอปยืนยันตัวตนของคุณและใส่รหัสความปลอดภัยที่ได้มา</target>
+        <note annotates="source" from="developer">User is asked for a security code from their authentication app for verification.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeTitle">
+        <source>Enter security code</source>
+        <target>ใส่รหัสความปลอดภัย</target>
+        <note annotates="source" from="developer">Title for app screen asking user for their security code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.sessionEmailCodeInputPlaceholder">
+        <source>Enter 6-digit code</source>
+        <target>ใส่รหัส 6 หลัก</target>
+        <note annotates="source" from="developer">Placeholder text for input element asking user for 6-digit verification code from their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.showPassword">
+        <source>Show password</source>
+        <target>แสดงรหัสผ่าน</target>
+        <note annotates="source" from="developer">Tooltip label for the eye icon in password input</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInBlockedForOneMinute">
+        <source>You’ve made too many attempts to sign in. You won’t be able to try again with this account for 1 minute.</source>
+        <target>คุณพยายามลงชื่อเข้าหลายครั้งเกินไป คุณจะไม่สามารถลองลงชื่อเข้าด้วยบัญชีนี้อีกครั้งได้ภายใน 1 นาที</target>
+        <note annotates="source" from="developer">User has been unable to sign in correctly, they have a cool down period of 1 minute until they can try again.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInButton">
+        <source>Sign in</source>
+        <target>ลงชื่อเข้า</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInFailedPopupDescription">
+        <source>You’ve made too many attempts to sign in. You won’t be able to try again with this account for 15 minutes.</source>
+        <target>คุณพยายามลงชื่อเข้าหลายครั้งเกินไป คุณจะไม่สามารถลองลงชื่อเข้าด้วยบัญชีนี้อีกครั้งได้ภายใน 15 นาที</target>
+        <note annotates="source" from="developer">User has been unable to sign in correctly, they have a cool down period of 15 minutes until they can try again.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInFailedPopupTitle">
+        <source>Sign-in failed</source>
+        <target>การลงชื่อเข้าล้มเหลว</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInSubtitle2">
+        <source>Continue to Mozilla VPN by signing in with your Mozilla account</source>
+        <target>ดำเนินการต่อด้วย Mozilla VPN โดยลงชื่อเข้าด้วยบัญชี Mozilla ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionHeader">
+        <source>Create a password</source>
+        <target>สร้างรหัสผ่าน</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding. This is the header on the error screen.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine1">
+        <source>To finish setting up your Mozilla account, create a password in your account settings:</source>
+        <target>เพื่อตั้งค่าบัญชี Mozilla ของคุณให้เสร็จสิ้น ให้สร้างรหัสผ่านในหน้าการตั้งค่าบัญชีของคุณ:</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine2a">
+        <source>1. Go to &lt;a href="open-account"&gt;Create password&lt;/a&gt; in your Mozilla account settings.</source>
+        <target>1. ไปที่ &lt;a href="open-account"&gt;สร้างรหัสผ่าน&lt;/a&gt; ในหน้าการตั้งค่าบัญชี Mozilla ของคุณ</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding. Do not remove or translate the markup '&lt;a href="open-account"&gt;'.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine3">
+        <source>2. Create a password.</source>
+        <target>2. สร้างรหัสผ่าน</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine4">
+        <source>When your password is created, return to this screen and continue to sign in to Mozilla VPN.</source>
+        <target>เมื่อสร้างรหัสผ่านของคุณแล้ว ให้กลับมาที่หน้าจอนี้แล้วดำเนินการต่อเพื่อลงชื่อเข้าใช้ Mozilla VPN</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.stubAccountVerificationHeader">
+        <source>Check your email</source>
+        <target>ตรวจดูอีเมลของคุณ</target>
+        <note annotates="source" from="developer">User has tried to log into a Mozilla account before setting their password, which happens after email verification. This is the header on the error screen.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.stubAccountVerificationInstruction">
+        <source>We’ve sent an email to %1 with the verification link. Please follow the directions to set up your password and finish setting up your account.</source>
+        <target>เราได้ส่งอีเมลพร้อมลิงก์ยืนยันไปยัง %1 แล้ว โปรดทำตามคำแนะนำเพื่อตั้งค่ารหัสผ่านและตั้งค่าบัญชีของคุณให้เสร็จสิ้น</target>
+        <note annotates="source" from="developer">User has tried to log into a Mozilla account before setting their password, which happens after email verification. %1 is the email address associated with the account.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.termsOfServiceAndPrivacyDisclaimer">
+        <source>By continuing, you agree to the &lt;a href="terms-of-service"&gt;Terms of Service&lt;/a&gt; and the &lt;a href="privacy-notice"&gt;Privacy Notice&lt;/a&gt;.</source>
+        <target>เมื่อดำเนินการต่อ แสดงว่าคุณยอมรับ&lt;a href="terms-of-service"&gt;เงื่อนไขการให้บริการ&lt;/a&gt;และ&lt;a href="privacy-notice"&gt;ประกาศความเป็นส่วนตัว&lt;/a&gt;</target>
+        <note annotates="source" from="developer">Do not remove or translate the markup '&lt;a href="terms-of-service"&gt;', '&lt;a href="privacy-notice"&gt;', '&lt;/a&gt;'.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.unblockCodeInputPlaceholder">
+        <source>Enter 8-digit code</source>
+        <target>ใส่รหัส 8 หลัก</target>
+        <note annotates="source" from="developer">Placeholder text for input element asking user for 8-digit verification code from their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.verificationCodeTitle">
+        <source>Enter verification code</source>
+        <target>ใส่รหัสตรวจสอบ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.verifySecurityCodeButton">
+        <source>Verify</source>
+        <target>ยืนยัน</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.waitingForSignIn">
+        <source>Waiting for sign in and subscription confirmation…</source>
+        <target>กำลังรอการยืนยันลงชื่อเข้าและสมัครสมาชิก…</target>
+        <note annotates="source" from="developer">Headline on loading screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.criticalBadge">
+        <source>Critical</source>
+        <target>สำคัญ</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this is an important message</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.dateTimeYesterday">
+        <source>Yesterday</source>
+        <target>เมื่อวานนี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.deleteMessage">
+        <source>Delete message</source>
+        <target>ลบข้อความ</target>
+        <note annotates="source" from="developer">An action to delete a message from the users inbox</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.editButton">
+        <source>Edit</source>
+        <target>แก้ไข</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.emptyStateDescription">
+        <source>You’re up to date!</source>
+        <target>คุณดูข้อความครบหมดแล้ว!</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.emptyStateTitle">
+        <source>No messages</source>
+        <target>ไม่มีข้อความ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.extensionBadge">
+        <source>Extension</source>
+        <target>ส่วนขยาย</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains information about a Firefox browser extension</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.menuTitle">
+        <source>Messages</source>
+        <target>ข้อความ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.newUpdateBadge">
+        <source>New update</source>
+        <target>อัปเดตใหม่</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying an update to the app is available</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.searchBarPlaceholderText">
+        <source>Search messages</source>
+        <target>ค้นหาข้อความ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.subscriptionBadge">
+        <source>Subscription</source>
+        <target>การสมัครสมาชิก</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains information about the user's subscription</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.surveyBadge">
+        <source>Survey</source>
+        <target>แบบสำรวจ</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains a survey</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.warningBadge">
+        <source>Warning</source>
+        <target>คำเตือน</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this is a warning message</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.whatsNewBadge">
+        <source>What’s new</source>
+        <target>มีอะไรใหม่</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains information about what is new in the product</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.accountDropdownListItem">
+        <source>Account issues</source>
+        <target>ปัญหาบัญชี</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to account issues.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.disclaimerText">
+        <source>When you submit, Mozilla VPN will collect technical and interaction data with your email to help our support team understand your issue.</source>
+        <target>เมื่อคุณส่ง Mozilla VPN จะรวบรวมข้อมูลทางเทคนิคและการโต้ตอบพร้อมด้วยอีเมลของคุณเพื่อช่วยให้ฝ่ายสนับสนุนของเราเข้าใจปัญหาของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.dropdownLabel">
+        <source>Choose a category</source>
+        <target>เลือกหมวดหมู่</target>
+        <note annotates="source" from="developer">A user trying to submit feedback will use this dropdown to select the general topic related to the feedback.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.featureRequestDropdownListItem">
+        <source>Request features</source>
+        <target>ร้องขอคุณลักษณะ</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to requesting new features.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.issueFieldPlaceholder">
+        <source>Describe issue</source>
+        <target>อธิบายปัญหา</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.otherDropdownListItem">
+        <source>Other</source>
+        <target>อื่นๆ</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to issues not covered under the other categories.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.paymentDropdownListItem">
+        <source>Payment and billing</source>
+        <target>การชำระและเรียกเก็บเงิน</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to payment and billing.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.privacyNoticeLinkText">
+        <source>Mozilla VPN Privacy Notice</source>
+        <target>ประกาศความเป็นส่วนตัวของ Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.shareLogsCheckBoxSubtitle">
+        <source>Support will use this data to better diagnose your issue.</source>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.shareLogsCheckBoxTitle">
+        <source>Share logs with support</source>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.subjectFieldPlaceholder">
+        <source>Subject (optional)</source>
+        <target>หัวเรื่อง (ไม่บังคับ)</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportConfirmEmailPlaceholder">
+        <source>Confirm email address</source>
+        <target>ยืนยันที่อยู่อีเมล</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportEmailFieldLabel">
+        <source>Enter your email</source>
+        <target>ใส่อีเมลของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportEmailFieldPlaceholder">
+        <source>Email address</source>
+        <target>ที่อยู่อีเมล</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorBrowserButton">
+        <source>Try opening in browser</source>
+        <target>ลองเปิดในเบราว์เซอร์</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorButton">
+        <source>Try Again</source>
+        <target>ลองอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorHeader">
+        <source>Error submitting your support request</source>
+        <target>เกิดข้อผิดพลาดขณะส่งคำร้องขอสนับสนุนของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorText">
+        <source>An unexpected error has occurred, please try again.</source>
+        <target>เกิดข้อผิดพลาดที่ไม่คาดคิด โปรดลองอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportFieldHeader">
+        <source>How can we help you with Mozilla VPN?</source>
+        <target>คุณต้องการให้เราช่วยเกี่ยวกับ Mozilla VPN อย่างไรบ้าง?</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportNavLinkText">
+        <source>Contact support</source>
+        <target>ติดต่อฝ่ายสนับสนุน</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportPrimaryButtonText">
+        <source>Submit</source>
+        <target>ส่ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportResponseBody">
+        <source>Our support team will contact you at %1 once we’ve been able to look at your issue.</source>
+        <target>ทีมสนับสนุนของเราจะติดต่อคุณที่ %1 เมื่อเราตรวจสอบปัญหาของคุณได้แล้ว</target>
+        <note annotates="source" from="developer">The %1 represents the email used to complete the form</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportResponseButton">
+        <source>Done</source>
+        <target>เสร็จสิ้น</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportResponseHeader">
+        <source>Thank you!</source>
+        <target>ขอบคุณ!</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportSecondaryActionText">
+        <source>Cancel</source>
+        <target>ยกเลิก</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.technicaDropdownListItem">
+        <source>Technical issues</source>
+        <target>ปัญหาทางเทคนิค</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to technical issues.</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsActivate.phrases">
+        <source>Activate %@
+Turn on %@
+Turn %@ on
+Switch on %@
+Switch %@ on
+Connect %@
+Connect to %@
+</source>
+        <target>เปิด %@
+ใช้ %@
+ใช้งาน %@
+เริ่มใช้งาน %@
+เปิดใช้งาน %@
+เชื่อมต่อ %@
+เชื่อมต่อกับ %@
+</target>
+        <note annotates="source" from="developer">Siri phrase variants for activating the VPN via App Intents. Each line is a separate phrase Siri will recognize. Rules:
+ - Write natural, conversational phrases a user might say to Siri.
+ - Do NOT translate literally — write phrases natural in your language.
+ - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+ - Add or remove lines freely; your language may need fewer or more variants.
+ - No line should be a duplicate of another.
+</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsDeactivate.phrases">
+        <source>Deactivate %@
+Turn off %@
+Turn %@ off
+Switch off %@
+Switch %@ off
+Disconnect %@
+Disconnect from %@
+</source>
+        <target>ปิด %@
+หยุดใช้ %@
+เลิกใช้งาน %@
+ปิดการใช้งาน %@
+หยุดใช้งาน %@
+เลิกเชื่อมต่อ %@
+หยุดเชื่อมต่อ %@
+เลิกเชื่อมต่อกับ %@
+หยุดเชื่อมต่อกับ %@
+</target>
+        <note annotates="source" from="developer">Siri phrase variants for deactivating the VPN via App Intents. Each line is a separate phrase Siri will recognize. Rules:
+ - Write natural, conversational phrases a user might say to Siri.
+ - Do NOT translate literally — write phrases natural in your language.
+ - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+ - Add or remove lines freely; your language may need fewer or more variants.
+ - No line should be a duplicate of another.
+</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryDescription">
+        <source>Queries current Mozilla VPN connection status</source>
+        <target>ตรวจสอบสถานะการเชื่อมต่อปัจจุบันของ Mozilla VPN</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryResponseConnected">
+        <source>Mozilla VPN is currently connected</source>
+        <target>Mozilla VPN ถูกเชื่อมต่ออยู่ขณะนี้</target>
+        <note annotates="source" from="developer">Response given when the VPN is connected</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryResponseDisconnected">
+        <source>Mozilla VPN is currently disconnected</source>
+        <target>Mozilla VPN ถูกตัดการเชื่อมต่ออยู่ขณะนี้</target>
+        <note annotates="source" from="developer">Response given when the VPN is disconnected</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryTitle">
+        <source>Is the VPN currently connected?</source>
+        <target>ขณะนี้ VPN ถูกเชื่อมต่ออยู่หรือไม่?</target>
+        <note annotates="source" from="developer">Title used by system to offer to query VPN status</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.toggleDescription">
+        <source>Changes Mozilla VPN status</source>
+        <target>เปลี่ยนสถานะของ Mozilla VPN</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.toggleError">
+        <source>Error changing VPN status</source>
+        <target>เกิดข้อผิดพลาดในการเปลี่ยนสถานะ VPN</target>
+        <note annotates="source" from="developer">Generic error message used when toggling VPN fails early</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.toggleTitle">
+        <source>Toggle Mozilla VPN</source>
+        <target>เปิด/ปิด Mozilla VPN</target>
+        <note annotates="source" from="developer">Title used by system to offer to toggle VPN status</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffAction">
+        <source>Turn Off Mozilla VPN</source>
+        <target>ปิด Mozilla VPN</target>
+        <note annotates="source" from="developer">Title used by system to offer turning off VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffConfirmation">
+        <source>Mozilla VPN disconnected</source>
+        <target>ตัดการเชื่อมต่อ Mozilla VPN แล้ว</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning off VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffDescription">
+        <source>Deactivate the Mozilla VPN connection</source>
+        <target>ปิดใช้งานการเชื่อมต่อกับ Mozilla VPN</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffError">
+        <source>No active VPN connection</source>
+        <target>ไม่มีการเชื่อมต่อ VPN ที่ใช้งานอยู่</target>
+        <note annotates="source" from="developer">Error given by Siri when unable to turn off VPN due to a lack of existing connection</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnAction">
+        <source>Turn On Mozilla VPN</source>
+        <target>เปิด Mozilla VPN</target>
+        <note annotates="source" from="developer">Title used by system to offer turning on VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnAlreadyConnectedError">
+        <source>VPN is already connected</source>
+        <target>มีการเชื่อมต่อ VPN อยู่แล้ว</target>
+        <note annotates="source" from="developer">Error given by Siri when VPN already has an active connection</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnConfirmation">
+        <source>Mozilla VPN connected</source>
+        <target>เชื่อมต่อ Mozilla VPN แล้ว</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning on VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnConfirmationMultiHop">
+        <source>Mozilla VPN connected through %1$@ via %2$@</source>
+        <target>เชื่อมต่อ Mozilla VPN แล้วผ่าน %1$@ โดยผ่าน %2$@</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning on VPN. `%1$@` will be replaced with the exit city, and `%2$@` will be replaced with the entry city.</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnConfirmationSingleHop">
+        <source>Mozilla VPN connected through %@</source>
+        <target>เชื่อมต่อ Mozilla VPN แล้วผ่าน %@</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning on VPN. `%@` must be included, and it will be replaced with the name of the exit city.</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnDescription">
+        <source>Activate the Mozilla VPN connection</source>
+        <target>เปิดใช้งานการเชื่อมต่อกับ Mozilla VPN</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnError">
+        <source>Error turning on Mozilla VPN</source>
+        <target>เกิดข้อผิดพลาดในการเปิด Mozilla VPN</target>
+        <note annotates="source" from="developer">Error given by Siri when unable to turn on VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsQueryStatus.phrases">
+        <source>Is %@ currently active?
+Is %@ currently activated?
+Is %@ currently turned on?
+Is %@ currently switched on?
+Is %@ currently connected?
+Is %@ active?
+Is %@ activated?
+Is %@ turned on?
+Is %@ switched on?
+Is %@ connected?
+</source>
+        <target>%@ เปิดใช้งานอยู่หรือไม่?
+%@ ใช้งานอยู่หรือไม่?
+%@ เปิดอยู่หรือไม่?
+%@ เชื่อมต่ออยู่หรือไม่?
+%@ ทำงานอยู่หรือไม่?
+</target>
+        <note annotates="source" from="developer">Siri phrase variants for querying whether the VPN is active via App Intents. Each line is a separate phrase Siri will recognize. Rules:
+ - Write natural, conversational phrases a user might say to Siri.
+ - Do NOT translate literally — write phrases natural in your language.
+ - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+ - Add or remove lines freely; your language may need fewer or more variants.
+ - No line should be a duplicate of another.
+</note>
+      </trans-unit>
+      <trans-unit id="vpn.languageView.searchPlaceholder">
+        <source>Search languages</source>
+        <target>ค้นหาภาษา</target>
+        <note annotates="source" from="developer">Placeholder text for a search field that can be used to search through a list of languages</note>
+      </trans-unit>
+      <trans-unit id="vpn.languageView.systemLanguageButtonDescription">
+        <source>Mozilla VPN will use the default system language.</source>
+        <target>Mozilla VPN จะใช้ภาษาเริ่มต้นตามระบบ</target>
+        <note annotates="source" from="developer">the description for the system lagnague radio button</note>
+      </trans-unit>
+      <trans-unit id="vpn.languageView.systemLanguageButtonTitle">
+        <source>System language</source>
+        <target>ภาษาของระบบ</target>
+        <note annotates="source" from="developer">the title for the system language radio button</note>
+      </trans-unit>
+      <trans-unit id="vpn.logoAccessoryWidget.description">
+        <source>See current Mozilla VPN status.</source>
+        <note annotates="source" from="developer">More information about what the logo widget contains - which is simply current VPN status.</note>
+      </trans-unit>
+      <trans-unit id="vpn.logoAccessoryWidget.vpnOff">
+        <source>Mozilla VPN off</source>
+        <note annotates="source" from="developer">Shown as part of inline widget when VPN is inactive. If translation will be more than 16 characters, instead translate `VPN on` to keep this within available space.</note>
+      </trans-unit>
+      <trans-unit id="vpn.logoAccessoryWidget.vpnOn">
+        <source>Mozilla VPN on</source>
+        <note annotates="source" from="developer">Shown as part of inline widget when VPN is active. If translation will be more than 16 characters, instead translate `VPN on` to keep this within available space.</note>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.alreadyASubscriber">
+        <source>Already a subscriber?</source>
+        <target>เป็นสมาชิกอยู่แล้วใช่หรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.panelOneSubtitle">
+        <source>A safe, reliable and fast VPN. Built by the makers of Firefox.</source>
+        <target>VPN ที่ปลอดภัย เชื่อถือได้ และรวดเร็ว สร้างขึ้นโดยผู้สร้าง Firefox</target>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.panelOneTitle">
+        <source>Mozilla VPN</source>
+        <target>Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.signUpBtn">
+        <source>Sign up</source>
+        <target>ลงทะเบียน</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiFxaAccountError.fxaAccountErrorHeader">
+        <source>Problem confirming subscription</source>
+        <target>เกิดปัญหาในการยืนยันการสมัครสมาชิก</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiFxaAccountError.mozAccountErrorText">
+        <source>Your subscription is linked to another Mozilla account. You may need to sign in with a different email address.</source>
+        <target>การสมัครสมาชิกของคุณเชื่อมโยงกับบัญชี Mozilla อื่น คุณอาจต้องลงชื่อเข้าด้วยที่อยู่อีเมลอื่น</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiFxaAccountError.visitOurHelpCenter">
+        <source>Visit our help center to learn more about managing your subscriptions.</source>
+        <target>ไปที่ศูนย์ช่วยเหลือของเราเพื่อเรียนรู้เพิ่มเติมเกี่ยวกับการจัดการการสมัครสมาชิกของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.accessibleNameRecentConnection">
+        <source>%1 to %2</source>
+        <target>%1 ไปยัง %2</target>
+        <note annotates="source" from="developer">Accessible label that is used for recent multi-hop server connections. “%1” represents the entry server and “%2” the exit server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopArrowAltText">
+        <source>To</source>
+        <target>ไปยัง</target>
+        <note annotates="source" from="developer">This is alt text for an arrow showing the multi-hop route between servers. e.g. Atlanta TO Copenhagen</note>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopConnectionsHeader">
+        <source>Recent connections</source>
+        <target>การเชื่อมต่อล่าสุด</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopEntryLocationHeader">
+        <source>Select entry location</source>
+        <target>เลือกตำแหน่งขาเข้า</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopExitLocationHeader">
+        <source>Select exit location</source>
+        <target>เลือกตำแหน่งขาออก</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopInfoText">
+        <source>Exit location represents your main VPN server.</source>
+        <target>ตำแหน่งขาออกหมายถึงเซิร์ฟเวอร์ VPN หลักของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopToggleCTA">
+        <source>Multi-hop</source>
+        <target>หลายจุด</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.serverSearchResultsError">
+        <source>No results. Try a different search</source>
+        <target>ไม่มีผลลัพธ์ โปรดลองค้นหาด้วยคำอื่น</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.singleHopToggleCTA">
+        <source>Single-hop</source>
+        <target>จุดเดียว</target>
+      </trans-unit>
+      <trans-unit id="vpn.navBar.homeTab">
+        <source>Home</source>
+        <target>หน้าแรก</target>
+        <note annotates="source" from="developer">Label for the tab on the navigation bar that takes the user to the home screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.navBar.messagesTab">
+        <source>Messages</source>
+        <target>ข้อความ</target>
+        <note annotates="source" from="developer">Label for the tab on the navigation bar that takes the user to the messages inbox screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.navBar.settingsTab">
+        <source>Settings</source>
+        <target>การตั้งค่า</target>
+        <note annotates="source" from="developer">Label for the tab on the navigation bar that takes the user to the settings screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.networkSettings.multihopTitle">
+        <source>Multi-hop tunnel</source>
+        <target>อุโมงค์แบบหลายจุด</target>
+      </trans-unit>
+      <trans-unit id="vpn.notSignedInGoogle.googleModalBodyText">
+        <source>To continue subscribing, please sign in to your Google Account</source>
+        <target>ถ้าต้องการสมัครสมาชิกต่อไป โปรดลงชื่อเข้าใช้บัญชี Google ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.notSignedInGoogle.googleModalHeader">
+        <source>Sign in to Google Account</source>
+        <target>ลงชื่อเข้าใช้บัญชี Google</target>
+      </trans-unit>
+      <trans-unit id="vpn.notSignedInGoogle.googleModalLinkText">
+        <source>Go to Play Store</source>
+        <target>ไปที่ Play Store</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNConnectedMessages">
+        <source>Connected through %1</source>
+        <target>เชื่อมต่อที่ %1 แล้ว</target>
+        <note annotates="source" from="developer">%1 is the name of the city the VPN is connected to.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNConnectedTitle">
+        <source>VPN Connected</source>
+        <target>เชื่อมต่อ VPN แล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNDisconnectedMessage">
+        <source>Disconnected from %1</source>
+        <target>ตัดการเชื่อมต่อที่ %1 แล้ว</target>
+        <note annotates="source" from="developer">%1 is the name of the city the VPN disconnected from.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNDisconnectedTitle">
+        <source>VPN Disconnected</source>
+        <target>ตัดการเชื่อมต่อ VPN แล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNMultihopConnectedMessages">
+        <source>Connected through %1 via %2</source>
+        <target>เชื่อมต่อที่ %1 ผ่าน %2 แล้ว</target>
+        <note annotates="source" from="developer">%1 is the name of the exit server, %2 is the name of the entry server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNMultihopDisconnectedMessage">
+        <source>Disconnected from %1 and %2</source>
+        <target>ตัดการเชื่อมต่อที่ %1 และ %2 แล้ว</target>
+        <note annotates="source" from="developer">%1 is the name of the exit server, %2 is the name of the entry server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNSwitchedServersMessage">
+        <source>Switched from %1 to %2</source>
+        <target>สลับจาก %1 ไปยัง %2 แล้ว</target>
+        <note annotates="source" from="developer">%1 is the name of the initial server, %2 is the name of the destination server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNSwitchedServersTitle">
+        <source>VPN Switched Servers</source>
+        <target>VPN ทำการสลับเซิร์ฟเวอร์</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalBlockMessage2">
+        <source>The guest Wi-Fi network you’re connected to requires action. Click to turn off VPN to see the portal.</source>
+        <target>เครือข่าย Wi-Fi สำหรับผู้ใช้ภายนอกที่คุณเชื่อมต่อจำเป็นต้องมีการดำเนินการ คลิกเพื่อปิด VPN เพื่อดูหน้าพอร์ทัล</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalBlockTitle">
+        <source>Guest Wi-Fi portal blocked</source>
+        <target>พอร์ทัล Wi-Fi สำหรับผู้ใช้ภายนอกถูกปิดกั้น</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalUnblockMessage2">
+        <source>The guest Wi-Fi network you’re connected to may not be secure. Click to turn on VPN to secure your device.</source>
+        <target>เครือข่าย Wi-Fi สำหรับผู้ใช้ภายนอกที่คุณเชื่อมต่ออาจไม่ปลอดภัย คลิกเพื่อเปิด VPN เพื่อปกป้องอุปกรณ์ของคุณให้ปลอดภัย</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalUnblockTitle">
+        <source>Guest Wi-Fi portal detected</source>
+        <target>ตรวจพบพอร์ทัล Wi-Fi สำหรับผู้ใช้ภายนอก</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.connectionFailedMessage">
+        <source>Sorry, something went wrong with your VPN connection.</source>
+        <target>ขออภัย มีบางอย่างผิดพลาดกับการเชื่อมต่อ VPN ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.connectionFailedTitle">
+        <source>Connection failed</source>
+        <target>การเชื่อมต่อล้มเหลว</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.subscriptionNotFound">
+        <source>Your Mozilla VPN subscription cannot be found. Please open the app to resolve this subscription issue.</source>
+        <target>ไม่พบการสมัครสมาชิก Mozilla VPN ของคุณ โปรดเปิดแอปเพื่อแก้ไขปัญหานี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.unsecuredNetworkGeneric">
+        <source>Wi-Fi network is not secure. Click here to turn on VPN and secure your device.</source>
+        <target>Wi-Fi ไม่ปลอดภัย คลิกที่นี่เพื่อเปิด VPN และปกป้องอุปกรณ์ของคุณให้ปลอดภัย</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.unsecuredNetworkMessage">
+        <source>%1 is not secure. Click here to turn on VPN and secure your device.</source>
+        <target>%1 ไม่ปลอดภัย คลิกที่นี่เพื่อเปิด VPN และปกป้องอุปกรณ์ของคุณให้ปลอดภัย</target>
+        <note annotates="source" from="developer">%1 is the Wi-Fi network name</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.unsecuredNetworkTitle">
+        <source>Unsecured Wi-Fi network detected</source>
+        <target>ตรวจพบเครือข่าย Wi-Fi ที่ไม่ปลอดภัย</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideBody2">
+        <source>Help us improve Mozilla VPN by sharing crash reports, diagnostics, and product usage data. We never collect data about your online activity while using the VPN.</source>
+        <target>ช่วยเราปรับปรุง Mozilla VPN โดยการแบ่งปันรายงานข้อขัดข้อง การวินิจฉัย และข้อมูลการใช้งานผลิตภัณฑ์ เราจะไม่เก็บรวบรวมข้อมูลเกี่ยวกับกิจกรรมออนไลน์ของคุณในขณะที่ใช้ VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideHeader2">
+        <source>Data collection</source>
+        <target>การเก็บรวบรวมข้อมูล</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideLearnMoreCaption2">
+        <source>Learn more about data collection</source>
+        <target>เรียนรู้เพิ่มเติมเกี่ยวกับการเก็บรวบรวมข้อมูล</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlidePrivacyLinkLabel">
+        <source>Mozilla VPN Privacy Notice</source>
+        <target>ประกาศความเป็นส่วนตัวของ Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideToggleLabel">
+        <source>Share technical data</source>
+        <target>แบ่งปันข้อมูลทางเทคนิค</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideBody2">
+        <source>To install the VPN on another tablet or mobile device, scan the QR code.</source>
+        <target>ถ้าต้องการติดตั้ง VPN บนแท็บเล็ตหรืออุปกรณ์มือถืออื่น ให้สแกนคิวอาร์โค้ดนี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideBodyMobile">
+        <source>To install the VPN on another tablet or mobile device, scan the QR code. To install on a desktop computer, visit the Download page on the Mozilla VPN website.</source>
+        <target>ถ้าต้องการติดตั้ง VPN บนแท็บเล็ตหรืออุปกรณ์มือถืออื่น ให้สแกนคิวอาร์โค้ดนี้ ถ้าต้องการติดตั้งบนคอมพิวเตอร์ ให้ไปที่หน้าดาวน์โหลดบนเว็บไซต์ Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideDeviceTypeAndroid">
+        <source>Android</source>
+        <target>Android</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideDeviceTypeApple">
+        <source>Apple</source>
+        <target>Apple</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideDeviceTypeLabel">
+        <source>Select device type:</source>
+        <target>เลือกชนิดอุปกรณ์:</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideHeader">
+        <source>Install Mozilla VPN on up to 5 devices</source>
+        <target>ติดตั้ง Mozilla VPN บนอุปกรณ์สูงสุด 5 เครื่อง</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideQRCodeAndroid">
+        <source>QR Code that links to the Mozilla VPN product page on the Google Play Store</source>
+        <target>คิวอาร์โค้ดที่เชื่อมโยงไปยังหน้าผลิตภัณฑ์ Mozilla VPN บน Google Play Store</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideQRCodeApple">
+        <source>QR Code that links to the Mozilla VPN product page on the iOS App Store</source>
+        <target>คิวอาร์โค้ดที่เชื่อมโยงไปยังหน้าผลิตภัณฑ์ Mozilla VPN บน iOS App Store</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelFourSubtitle">
+        <source>You can set Mozilla VPN to protect you from ads, trackers, and malware. Plus, customize your protection for specific apps.</source>
+        <target>คุณสามารถกำหนดให้ Mozilla VPN ป้องกันคุณจากโฆษณา ตัวติดตาม และมัลแวร์ได้ นอกจากนี้ คุณยังสามารถปรับแต่งการป้องกันสำหรับแต่ละแอปได้อีกด้วย</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelFourTitle">
+        <source>Add even more privacy</source>
+        <target>เพิ่มความเป็นส่วนตัวให้มากยิ่งขึ้น</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelThreeSubtitle">
+        <source>Protecting yourself is simple: tap to connect to the VPN and you’re ready to browse safely. Mozilla VPN will start automatically for seamless protection.</source>
+        <target>การปกป้องตัวคุณเองนั้นทำได้ง่ายมาก เพียงแตะเพื่อเชื่อมต่อกับ VPN แล้วคุณก็พร้อมที่จะท่องอินเทอร์เน็ตอย่างปลอดภัย Mozilla VPN จะเริ่มทำงานโดยอัตโนมัติเพื่อการป้องกันที่ราบรื่น</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelThreeTitle">
+        <source>One tap to safety</source>
+        <target>เพียงแตะครั้งเดียวเพื่อความปลอดภัย</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelTwoSubtitle">
+        <source>With more than 500 servers in 60 cities around the world, Mozilla VPN protects your data, browsing activity, and your true location from network spies.</source>
+        <target>ด้วยเซิร์ฟเวอร์มากกว่า 500 แห่งใน 60 เมืองทั่วโลก Mozilla VPN ช่วยปกป้องข้อมูลของคุณ กิจกรรมการท่องเว็บ และตำแหน่งที่อยู่จริงของคุณจากผู้สอดส่องบนเครือข่าย</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelTwoTitle">
+        <source>Protect your privacy</source>
+        <target>ปกป้องความเป็นส่วนตัวของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.privacySlideBody">
+        <source>Use these features for more protection. They may cause issues on some sites, so you can turn them off anytime in settings.</source>
+        <target>ใช้คุณลักษณะเหล่านี้เพื่อการปกป้องที่มากขึ้น คุณลักษณะเหล่านี้อาจทำให้เกิดปัญหากับบางเว็บไซต์ ดังนั้นคุณสามารถปิดคุณลักษณะเหล่านี้ได้ตลอดเวลาในหน้าการตั้งค่า</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.privacySlideHeader">
+        <source>Get more privacy</source>
+        <target>รับความเป็นส่วนตัวมากขึ้น</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAccessibilityStepComplete">
+        <source>Onboarding step “%1” (%2 of %3). Select to go back to this step.</source>
+        <target>ขั้นตอนแนะนำผู้ใช้ใหม่ “%1” (%2 จาก %3) เลือกเพื่อย้อนกลับไปยังขั้นตอนนี้</target>
+        <note annotates="source" from="developer">Accessibility read out for completed steps in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAccessibilityStepCurrent">
+        <source>Onboarding step “%1” (%2 of %3). You are currently on this step.</source>
+        <target>ขั้นตอนแนะนำผู้ใช้ใหม่ “%1” (%2 จาก %3) ขณะนี้คุณอยู่ที่ขั้นตอนนี้</target>
+        <note annotates="source" from="developer">Accessibility read out for the current step in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAccessibilityStepIncomplete2">
+        <source>Onboarding step “%1” (%2 of %3)</source>
+        <target>ขั้นตอนแนะนำผู้ใช้ใหม่ “%1” (%2 จาก %3)</target>
+        <note annotates="source" from="developer">Accessibility read out for incomplete future steps in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAddDevices">
+        <source>Devices</source>
+        <target>อุปกรณ์</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users find out how to install Mozilla VPN on other devices</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarConnect">
+        <source>Connect</source>
+        <target>เชื่อมต่อ</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can grant permission to create a VPN configuration with the system</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarDataUse">
+        <source>Data</source>
+        <target>ข้อมูล</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can select to enable data collection</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarMorePrivacy">
+        <source>Privacy</source>
+        <target>ความเป็นส่วนตัว</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can select to enable various privacy settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarStartup">
+        <source>Startup</source>
+        <target>เริ่มการทำงาน</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can select to enable VPN startup on device boot</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideAllowButtonLabel">
+        <source>Allow VPN connection</source>
+        <target>อนุญาตการเชื่อมต่อ VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideBody2">
+        <source>Launch the VPN whenever you start your device. We’ll automatically reconnect you to the same server location you last used.</source>
+        <target>เปิดใช้ VPN ทุกครั้งที่คุณเริ่มอุปกรณ์ของคุณ เราจะเชื่อมต่อคุณกับเซิร์ฟเวอร์ที่ใช้ล่าสุดโดยอัตโนมัติ</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideHeader">
+        <source>Connect Mozilla VPN on startup</source>
+        <target>เชื่อมต่อ Mozilla VPN เมื่อเริ่มการทำงาน</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideMobileBody">
+        <source>Your mobile device will now ask you to allow Mozilla VPN to create a connection. Please allow this so that the VPN works correctly on your device.</source>
+        <target>ตอนนี้อุปกรณ์มือถือของคุณจะขอคุณให้อนุญาต Mozilla VPN ให้สร้างการเชื่อมต่อได้ โปรดอนุญาตเพื่อให้ VPN ทำงานได้อย่างถูกต้องบนอุปกรณ์ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideMobileHeader">
+        <source>Allow Mozilla VPN to create a VPN connection</source>
+        <target>อนุญาตให้ Mozilla VPN สร้างการเชื่อมต่อ VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.body">
+        <source>To use Mozilla VPN, please allow it to run in the background.</source>
+        <target>ถ้าต้องการใช้ Mozilla VPN โปรดอนุญาตให้ทำงานในเบื้องหลัง</target>
+        <note annotates="source" from="developer">Paragraph requesting the user to allow the VPN to run in the background.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.instructions">
+        <source>In order to do this, please click the button below to open the &lt;i&gt;Login Items&lt;/i&gt; of your &lt;i&gt;System Preferences&lt;/i&gt;, and enable &lt;i&gt;Allow in the background&lt;/i&gt; for Mozilla VPN.</source>
+        <target>ในการดำเนินการนี้ โปรดคลิกปุ่มด้านล่างเพื่อเปิด &lt;i&gt;รายการเข้าสู่ระบบ&lt;/i&gt; ของ &lt;i&gt;การตั้งค่าระบบ&lt;/i&gt; และเปิดใช้งาน &lt;i&gt;อนุญาตในเบื้องหลัง&lt;/i&gt; สำหรับ Mozilla VPN</target>
+        <note annotates="source" from="developer">Paragraph explaining how to enable the VPN to run in the background on macOS 14, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.instructionsMacOS15">
+        <source>In order to do this, please click the button below to open the &lt;i&gt;Login Items &amp; Extensions&lt;/i&gt; of your &lt;i&gt;System Preferences&lt;/i&gt;, and enable &lt;i&gt;Allow in the background&lt;/i&gt; for Mozilla VPN.</source>
+        <target>ในการดำเนินการนี้ โปรดคลิกปุ่มด้านล่างเพื่อเปิด &lt;i&gt;รายการเข้าสู่ระบบและส่วนขยาย&lt;/i&gt; ของ &lt;i&gt;การตั้งค่าระบบ&lt;/i&gt; และเปิดใช้งาน &lt;i&gt;อนุญาตในเบื้องหลัง&lt;/i&gt; สำหรับ Mozilla VPN</target>
+        <note annotates="source" from="developer">Paragraph explaining how to enable the VPN to run in the background on macOS 15 and above, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.instructionsMacOS26">
+        <source>In order to do this, please click the button below to open the &lt;i&gt;Login Items &amp; Extensions&lt;/i&gt; of your &lt;i&gt;System Preferences&lt;/i&gt;, and enable &lt;i&gt;App Background Activity&lt;/i&gt; for Mozilla VPN.</source>
+        <target>ในการดำเนินการนี้ โปรดคลิกปุ่มด้านล่างเพื่อเปิด &lt;i&gt;รายการเข้าสู่ระบบและส่วนขยาย&lt;/i&gt; ของ &lt;i&gt;การตั้งค่าระบบ&lt;/i&gt; และเปิดใช้งาน &lt;i&gt;กิจกรรมเบื้องหลังของแอป&lt;/i&gt; สำหรับ Mozilla VPN</target>
+        <note annotates="source" from="developer">Paragraph explaining how to enable the VPN to run in the background on macOS 26 and above, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.openSettingsButtonLabel">
+        <source>Open Login Items</source>
+        <target>เปิดรายการเข้าสู่ระบบ</target>
+        <note annotates="source" from="developer">Label for the button that opens the login items settings page on macOS 14</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.openSettingsButtonLabelMacOS15">
+        <source>Open Login Items &amp; Extensions</source>
+        <target>เปิดรายการเข้าสู่ระบบและส่วนขยาย</target>
+        <note annotates="source" from="developer">Label for the button that opens the login items settings page on macOS 15 and above</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.title">
+        <source>Allow VPN to run in background</source>
+        <target>อนุญาตให้ VPN ทำงานในเบื้องหลัง</target>
+        <note annotates="source" from="developer">Title of the screen directing macOS users to allow the VPN to run in background</note>
+      </trans-unit>
+      <trans-unit id="vpn.product.description">
+        <source>A fast, secure and easy to use VPN. Built by the makers of Firefox.</source>
+        <target>VPN ที่รวดเร็ว ปลอดภัย และใช้งานง่าย สร้างขึ้นโดยผู้สร้าง Firefox</target>
+      </trans-unit>
+      <trans-unit id="vpn.product.name">
+        <source>Mozilla VPN</source>
+        <target>Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.purchase.percentSaved">
+        <source>Save %1%</source>
+        <target>ประหยัด %1%</target>
+        <note annotates="source" from="developer">Appears on the in-app purchase view beside a subscription plan. "%1" is replaced by the percentage amount saved when selecting that plan</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchase.subscribeNow">
+        <source>Subscribe now</source>
+        <target>สมัครสมาชิกเลย</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchase.subscriptionOption">
+        <source>%1-month plan: %2</source>
+        <target>แผน %1 เดือน: %2</target>
+        <note annotates="source" from="developer">%1 is replaced by the subscription duration in months. %2 is replaced by the total subscription cost.</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchaseWeb.inProgress2">
+        <source>Please continue subscribing in your browser…</source>
+        <target>โปรดทำการสมัครสมาชิกต่อในเบราว์เซอร์ของคุณ…</target>
+      </trans-unit>
+      <trans-unit id="vpn.purchaseWeb.message">
+        <source>We couldn’t find a subscription for %1. Subscribe now to protect your connection.</source>
+        <target>เราไม่พบการสมัครสมาชิกสำหรับ %1 สมัครเลยตอนนี้เพื่อปกป้องการเชื่อมต่อของคุณ</target>
+        <note annotates="source" from="developer">%1 is the user’s email address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchaseWeb.title">
+        <source>Subscribe to Mozilla VPN</source>
+        <target>สมัครสมาชิก Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.body1">
+        <source>This will reset all VPN settings, including:</source>
+        <target>การกระทำนี้จะล้างการตั้งค่า VPN ทั้งหมด รวมถึง:</target>
+        <note annotates="source" from="developer">Body content of the screen where users go to reset the VPN to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.body2">
+        <source>Resetting the VPN will sign you out, but your account will not be deleted.</source>
+        <target>การล้างค่า VPN จะนำคุณออกจากระบบ แต่บัญชีของคุณจะไม่ถูกลบออก</target>
+        <note annotates="source" from="developer">Body content of the screen where users go to reset the VPN to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.confirmResetModalBody">
+        <source>Reset Mozilla VPN settings? This can’t be undone.</source>
+        <target>ล้างการตั้งค่า Mozilla VPN หรือไม่? การกระทำนี้ไม่สามารถเรียกคืนได้</target>
+        <note annotates="source" from="developer">Body of the modal where users can confirm they want to restore back to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.confirmResetModalResetButtonLabel">
+        <source>Reset and quit</source>
+        <target>ล้างค่าแล้วออก</target>
+        <note annotates="source" from="developer">Label for button that finalizes a restore to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.confirmResetModalTitle">
+        <source>Confirm reset</source>
+        <target>ยืนยันการล้างค่า</target>
+        <note annotates="source" from="developer">Title of the modal where users can confirm they want to restore back to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.listItemPreferences">
+        <source>Preferences</source>
+        <target>การกำหนดลักษณะ</target>
+        <note annotates="source" from="developer">Item in a bulleted list denoting what will be deleted if the user opts to factory reset the client</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.resetButtonLabel">
+        <source>Reset VPN</source>
+        <target>ล้างค่า VPN</target>
+        <note annotates="source" from="developer">Label for button that initiates a restore to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.resetLabel">
+        <source>Reset VPN</source>
+        <target>ล้างค่า VPN</target>
+        <note annotates="source" from="developer">Label for button that takes the user to the factory reset flow</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.title">
+        <source>Reset Mozilla VPN</source>
+        <target>ล้างค่า Mozilla VPN</target>
+        <note annotates="source" from="developer">Title of the screen where users go to reset the VPN to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchase.restorePurchaseButton">
+        <source>Already a subscriber?</source>
+        <target>เป็นสมาชิกอยู่แล้วใช่หรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchaseExpiredError.restorePurchaseExpiredErrorText2">
+        <source>Sorry, we are unable to connect your Mozilla account to a current subscription. Please try again or contact our support team for further assistance.</source>
+        <target>ขออภัย เราไม่สามารถเชื่อมต่อบัญชี Mozilla ของคุณกับการสมัครสมาชิกปัจจุบันได้ โปรดลองอีกครั้งหรือติดต่อทีมสนับสนุนของเราเพื่อขอความช่วยเหลือเพิ่มเติม</target>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchaseGenericPurchaseError.restorePurchaseGenericPurchaseErrorText">
+        <source>Sorry, we were unable to confirm your subscription. Please try again or contact our support team for help.</source>
+        <target>ขออภัย เราไม่สามารถยืนยันการสมัครสมาชิกของคุณได้ โปรดลองอีกครั้งหรือติดต่อทีมสนับสนุนของเราเพื่อขอความช่วยเหลือ</target>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchaseInUseError.restorePurchaseInUseErrorText2">
+        <source>Another Mozilla account has already subscribed using this Apple ID. Please sign out and try again or contact our support team for help.</source>
+        <target>มีบัญชี Mozilla อื่นได้สมัครสมาชิกโดยใช้ Apple ID นี้แล้ว โปรดออกจากระบบแล้วลองใหม่อีกครั้งหรือติดต่อทีมสนับสนุนของเราเพื่อขอความช่วยเหลือ</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableModal.bodyText">
+        <source>This server location is temporarily unavailable. Choose a new location.</source>
+        <target>ตำแหน่งเซิร์ฟเวอร์นี้ไม่สามารถใช้งานได้ชั่วคราว โปรดเลือกตำแหน่งใหม่</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableModal.buttonLabel">
+        <source>Choose a new location</source>
+        <target>เลือกตำแหน่งใหม่</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableModal.headerText">
+        <source>Server unavailable</source>
+        <target>เซิร์ฟเวอร์ใช้ไม่ได้</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.bodyText">
+        <source>This server location is temporarily unavailable. Please open the app to choose a new location.</source>
+        <target>ตำแหน่งเซิร์ฟเวอร์นี้ไม่สามารถใช้งานได้ชั่วคราว โปรดเปิดแอปเพื่อเลือกตำแหน่งใหม่</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.bodyTextFireWallBlocked">
+        <source>The server has been blocked. Check your firewall settings.</source>
+        <target>เซิร์ฟเวอร์ถูกปิดกั้น โปรดตรวจสอบการตั้งค่าไฟร์วอลล์ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.preferencesLabel">
+        <source>Server unavailable notification</source>
+        <target>แจ้งเตือนเมื่อเซิร์ฟเวอร์ใช้ไม่ได้</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.preferencesSubLabel">
+        <source>Get notified when connecting to a server location failed</source>
+        <target>รับการแจ้งเตือนเมื่อการเชื่อมต่อกับตำแหน่งเซิร์ฟเวอร์ล้มเหลว</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedEmptyLabel">
+        <source>To see recommended server locations, turn off the VPN.</source>
+        <target>ถ้าต้องการดูตำแหน่งเซิร์ฟเวอร์ที่แนะนำ ให้ปิด VPN</target>
+        <note annotates="source" from="developer">Label for recommended server list when the list is empty</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLabel">
+        <source>Refresh list</source>
+        <target>เรียกรายชื่อใหม่</target>
+        <note annotates="source" from="developer">Accessible label for the button that triggers a refresh of the recommended servers list.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLastUpdatedDisabledLabel">
+        <source>Last updated: %1. To update this list please disconnect from the VPN.</source>
+        <target>ปรับปรุงล่าสุด: %1 หากต้องการปรับปรุงรายชื่อนี้ โปรดตัดการเชื่อมต่อกับ VPN</target>
+        <note annotates="source" from="developer">The time (or in extremely rare circumstances, the date, day of the week, or "yesterday") which the recommended servers list was last updated and instructions to re-enable the refresh button. Argument is the time or date/day</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLastUpdatedLabel">
+        <source>Last updated: %1.</source>
+        <target>ปรับปรุงล่าสุด: %1</target>
+        <note annotates="source" from="developer">The time (or in extremely rare circumstances, the date, day of the week, or "yesterday") which the recommended servers list was last updated. Argument is the time or date/day</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLastUpdatedLabelYesterday">
+        <source>yesterday</source>
+        <target>เมื่อวานนี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshNoUpdateDisabledLabel">
+        <source>Disconnect from the VPN to update this list.</source>
+        <target>ตัดการเชื่อมต่อจาก VPN เพื่ออัปเดตรายการนี้</target>
+        <note annotates="source" from="developer">Label next to the refresh button shown when the recommended list has never been updated yet but the user is connected to the VPN, so cannot update yet.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshNoUpdateLabel">
+        <source>Tap to update</source>
+        <target>แตะเพื่ออัปเดต</target>
+        <note annotates="source" from="developer">Label next to the refresh button shown when the recommended list has never been updated yet. The whole row is clickable and tapping triggers an update.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshlLoadingLabel">
+        <source>Checking (%1%)…</source>
+        <target>กำลังตรวจสอบ (%1%)…</target>
+        <note annotates="source" from="developer">Loading string while recommended servers are being calculated. Argument is the percentage of completion as an integer (i.e. 25)</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.searchNoResultsLabel">
+        <source>No results. Try a different search</source>
+        <target>ไม่มีผลลัพธ์ โปรดลองค้นหาด้วยคำอื่น</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.searchPlaceholder">
+        <source>Search countries</source>
+        <target>ค้นหาประเทศ</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithGoodConnection">
+        <source>%1. Good connectivity</source>
+        <target>%1 คุณภาพการเชื่อมต่อดี</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is good. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithModerateConnection">
+        <source>%1. Moderate connectivity</source>
+        <target>%1 คุณภาพการเชื่อมต่อปานกลาง</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is moderate. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithNoConnection">
+        <source>%1. No connectivity</source>
+        <target>%1 ไม่สามารถเชื่อมต่อได้</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is unavailable. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithPoorConnection">
+        <source>%1. Poor connectivity</source>
+        <target>%1 คุณภาพการเชื่อมต่อแย่</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is poor. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.tabAllLabel">
+        <source>All</source>
+        <target>ทั้งหมด</target>
+        <note annotates="source" from="developer">Label for the “all” servers tab</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.tabRecommendedLabel">
+        <source>Recommended</source>
+        <target>แนะนำ</target>
+        <note annotates="source" from="developer">Label for the “recommended” servers tab</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appExclusionClearAllApps">
+        <source>Clear all</source>
+        <target>ล้างทั้งหมด</target>
+        <note annotates="source" from="developer">Button label to clear all apps from the exclusions list</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appExclusionTitle">
+        <source>Excluded apps</source>
+        <target>แอปที่ยกเว้น</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearance">
+        <source>Appearance</source>
+        <target>รูปลักษณ์</target>
+        <note annotates="source" from="developer">Appearance refers to the app theming (dark mode / light mode)</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceAutomatic">
+        <source>Automatic</source>
+        <target>อัตโนมัติ</target>
+        <note annotates="source" from="developer">Automatic switching for dark mode/light mode, based on the system’s setting</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceAutomaticDescription">
+        <source>Follow your system’s appearance</source>
+        <target>แสดงผลตามลักษณะของระบบ</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceDark">
+        <source>Dark</source>
+        <target>มืด</target>
+        <note annotates="source" from="developer">Dark as in "dark mode theme"</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceLight">
+        <source>Light</source>
+        <target>สว่าง</target>
+        <note annotates="source" from="developer">Light as in "light mode theme"</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.batteryOptimizationWarning">
+        <source>On some devices, Mozilla VPN may be disconnected in the background. If you’ve experienced this, allow it to run in the background.</source>
+        <target>Mozilla VPN อาจหลุดการเชื่อมต่อในเบื้องหลังบนอุปกรณ์บางรุ่น หากคุณพบปัญหานี้ ให้อนุญาตแอปในการทำงานในเบื้องหลัง</target>
+        <note annotates="source" from="developer">Warning shown in the settings screen on Android when battery optimization is enabled for the app.</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.batteryOptimizationWarningButton">
+        <source>Allow background permissions</source>
+        <target>อนุญาตสิทธิ์การทำงานเบื้องหลัง</target>
+        <note annotates="source" from="developer">Button label for the call to action to allow background permissions on Android.</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.crashOptInDescription">
+        <source>Allow Mozilla VPN to automatically send crash reports to help fix unexpected crashes</source>
+        <target>อนุญาตให้ Mozilla VPN ส่งรายงานข้อขัดข้องโดยอัตโนมัติเพื่อช่วยแก้ไขข้อขัดข้องที่ไม่คาดคิด</target>
+        <note annotates="source" from="developer">This is the description of a checkbox option to allow the app to send crash reports without a user prompt</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.decryptionErrorText">
+        <source>We couldn’t access your saved VPN settings. Please sign in again.</source>
+        <target>เราไม่สามารถเข้าถึงการตั้งค่า VPN ที่คุณบันทึกไว้ได้ โปรดลงชื่อเข้าอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettings">
+        <source>DNS settings</source>
+        <target>การตั้งค่า DNS</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsCustomDNSBody">
+        <source>Resolve websites using a custom DNS</source>
+        <target>แปลงที่อยู่เว็บไซต์โดยใช้ DNS กำหนดเอง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsCustomDNSError">
+        <source>Invalid DNS, please try a new one</source>
+        <target>DNS ไม่ถูกต้อง โปรดลองใช้ DNS ตัวใหม่</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsCustomDNSTitle">
+        <source>Use custom DNS</source>
+        <target>ใช้ DNS กำหนดเอง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsDisconnectWarning">
+        <source>Changing these settings will cause the VPN to disconnect and reconnect automatically.</source>
+        <target>การเปลี่ยนแปลงการตั้งค่าเหล่านี้จะทำให้ VPN ตัดการเชื่อมต่อและเชื่อมต่อใหม่โดยอัตโนมัติ</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsInputPlaceholder">
+        <source>Enter custom DNS</source>
+        <target>ใส่ DNS กำหนดเอง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsStandardDNSBody">
+        <source>Resolve websites using Mozilla VPN’s standard DNS</source>
+        <target>แปลงที่อยู่เว็บไซต์โดยใช้ DNS มาตรฐานของ Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsStandardDNSTitle">
+        <source>Use standard DNS</source>
+        <target>ใช้ DNS มาตรฐาน</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsWarning">
+        <source>These options may cause some websites to break or not display content correctly.</source>
+        <target>ตัวเลือกเหล่านี้อาจทำให้บางเว็บไซต์ใช้งานไม่ได้หรือแสดงผลเนื้อหาไม่ถูกต้อง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionFirefoxButton">
+        <source>Download Firefox</source>
+        <target>ดาวน์โหลด Firefox</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionFirstParagraphHead">
+        <source>Turn off VPN for specific websites.</source>
+        <target>ปิด VPN สำหรับแต่ละเว็บไซต์</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionFirstParagraphMain">
+        <source>No more toggling your VPN on and off when you need a site to work. Plus, your preference for the website is saved so you don’t have to adjust it each time.</source>
+        <target>ไม่ต้องเสียเวลาเปิด/ปิด VPN ทุกครั้งที่ต้องการใช้งานไซต์อีกต่อไป นอกจากนี้ การตั้งค่า VPN ที่คุณกำหนดไว้จะถูกบันทึกไว้ คุณจึงไม่ต้องปรับเปลี่ยนทุกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionInfo">
+        <source>Firefox extension</source>
+        <target>ส่วนขยาย Firefox</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionIntro">
+        <source>Get more precise control over how your VPN works when you’re browsing, with the Firefox extension.</source>
+        <target>ควบคุมการทำงานของ VPN ได้อย่างแม่นยำยิ่งขึ้นขณะท่องเว็บ ด้วยส่วนขยาย Firefox นี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionMainButton">
+        <source>Get the extension</source>
+        <target>รับส่วนขยาย</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionSecondParagraphHead">
+        <source>Choose different locations for different websites.</source>
+        <target>เลือกตำแหน่งที่แตกต่างกันสำหรับเว็บไซต์ต่าง ๆ</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionSecondParagraphMain">
+        <source>Browse one site as if you’re in New York and another as if you’re in Paris — all in the same Firefox session.</source>
+        <target>ท่องไซต์หนึ่งราวกับว่าคุณอยู่ในนิวยอร์ก และท่องอีกไซต์หนึ่งราวกับว่าคุณอยู่ในปารีส ทั้งหมดนี้ในเซสชัน Firefox เดียวกัน</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.preferencesSettings">
+        <source>Preferences</source>
+        <target>การกำหนดลักษณะ</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyAdblockBody">
+        <source>Reduces the number of ads you see when you’re using VPN</source>
+        <target>ให้คุณเห็นโฆษณาน้อยลงในระหว่างที่กำลังใช้ VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyAdblockTitle">
+        <source>Block ads</source>
+        <target>ปิดกั้นโฆษณา</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyCard">
+        <source>These options may cause some websites to break or not display content correctly.</source>
+        <target>ตัวเลือกเหล่านี้อาจทำให้บางเว็บไซต์ใช้งานไม่ได้หรือแสดงผลเนื้อหาไม่ถูกต้อง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyMalwareBody2">
+        <source>Helps protect you from ransomware, phishing, spyware, and viruses</source>
+        <target>ช่วยปกป้องคุณจากแรนซัมแวร์ ฟิชชิ่ง สปายแวร์ และไวรัส</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyMalwareTitle">
+        <source>Block malware</source>
+        <target>ปิดกั้นมัลแวร์</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacySettings">
+        <source>Privacy features</source>
+        <target>คุณลักษณะความเป็นส่วนตัว</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyTrackerBody">
+        <source>Fewer harmful domains will be able to track you</source>
+        <target>ให้โดเมนอันตรายติดตามคุณได้น้อยลง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyTrackerTitle">
+        <source>Block trackers</source>
+        <target>ปิดกั้นตัวติดตาม</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.reauthDescription">
+        <source>For your security, please sign in again to access your account information. You’ll complete this process on Mozilla’s website.</source>
+        <target>เพื่อความปลอดภัยของคุณ โปรดลงชื่อเข้าอีกครั้งเพื่อเข้าถึงข้อมูลบัญชีของคุณ โดยคุณจะต้องดำเนินการตามขั้นตอนนี้บนเว็บไซต์ของ Mozilla</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.reauthTitle">
+        <source>Sign In Again</source>
+        <target>ลงชื่อเข้าอีกครั้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.shareTechnicalDataDescription">
+        <source>Help improve Mozilla VPN by sharing crash reports, diagnostics, and product usage data.</source>
+        <target>ช่วยปรับปรุง Mozilla VPN ด้วยการแบ่งปันรายงานข้อขัดข้อง การวินิจฉัย และข้อมูลการใช้งานผลิตภัณฑ์</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.startAtBootSubtitle">
+        <source>Mozilla VPN will launch and connect when you start up your device</source>
+        <target>Mozilla VPN จะเริ่มทำงานและเชื่อมต่อเมื่อคุณเริ่มอุปกรณ์ของคุณ</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.startAtBootTitle">
+        <source>Connect VPN on startup</source>
+        <target>เชื่อมต่อ VPN เมื่อเริ่มการทำงาน</target>
+        <note annotates="source" from="developer">Startup refers to a device's startup, not the VPN client's.</note>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.restartRequired">
+        <source>VPN must be restarted to take effect</source>
+        <target>ต้องเริ่ม VPN ใหม่จึงจะมีผล</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.showOptionSubtitle">
+        <source>Show or hide the developer options menu</source>
+        <target>แสดงหรือซ่อนเมนูตัวเลือกสำหรับนักพัฒนา</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.showOptionTitle">
+        <source>Show Developer Options</source>
+        <target>แสดงตัวเลือกสำหรับนักพัฒนา</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.title">
+        <source>Developer Options</source>
+        <target>ตัวเลือกสำหรับนักพัฒนา</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.useStagingSubtitle">
+        <source>Staging services are used to test features before they go live to production</source>
+        <target>บริการสเตจจิ้งใช้เพื่อทดสอบคุณลักษณะต่างๆ ก่อนเปิดตัวให้ใช้จริง</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.useStagingTitle">
+        <source>Use Staging Servers</source>
+        <target>ใช้เซิร์ฟเวอร์สเตจจิ้ง</target>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.btnShowSystemApp">
+        <source>Show system apps</source>
+        <target>แสดงแอประบบ</target>
+        <note annotates="source" from="developer">Label for a checkbox that, if checked, will show the hidden "system/internal" apps. e.g. "Android Auto" is a system app on Android.</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.errorActivating">
+        <source>Error activating App exclusions</source>
+        <target>เกิดข้อผิดพลาดขณะเปิดใช้งานการยกเว้นแอป</target>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.infoCardDescription2">
+        <source>VPN must be off to edit Excluded apps</source>
+        <target>คุณต้องปิด VPN เพื่อแก้ไขแอปที่ยกเว้น</target>
+        <note annotates="source" from="developer">Displays inside the information card at the top of the Excluded apps screen when the VPN is on</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.infoLinkText">
+        <source>Learn more</source>
+        <target>เรียนรู้เพิ่มเติม</target>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.missingAppActionButton">
+        <source>Add apps manually</source>
+        <target>เพิ่มแอปด้วยตนเอง</target>
+        <note annotates="source" from="developer">Displayed in a notification as "call to action" when apps are missing from the split-tunnel settings.</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.missingAppAddedOne">
+        <source>Success! You added “%1” to this list.</source>
+        <target>สำเร็จ! คุณได้เพิ่ม “%1” ลงในรายชื่อนี้แล้ว</target>
+        <note annotates="source" from="developer">Displayed in notification after the user added a missing app to the split-tunnel List; %1 is the name of the added application</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.missingAppMultiple">
+        <source>%1 apps missing from list.</source>
+        <target>มี %1 แอปที่ไม่อยู่ในรายชื่อ</target>
+        <note annotates="source" from="developer">Apps listed in the split-tunnel settings. %1 is the number of missing apps If necessary, this can be translated as "Apps missing from list :%1"</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.manageAccount">
+        <source>Manage account</source>
+        <target>จัดการบัญชี</target>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.planMonthly">
+        <source>Monthly plan: %1</source>
+        <target>แผนรายเดือน: %1</target>
+        <note annotates="source" from="developer">Price for a monthly subscription. %1 represents the localized currency string</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.planMonthlyPlusTax">
+        <source>%1/month + tax</source>
+        <target>%1/เดือน + ภาษี</target>
+        <note annotates="source" from="developer">Price for a monthly subscription plus tax. %1 represents the localized currency string</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.planMonthlyWithoutTax">
+        <source>%1/month</source>
+        <target>%1/เดือน</target>
+        <note annotates="source" from="developer">Price for a monthly subscription without tax. %1 represents the localized currency string</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.sectionTitle">
+        <source>Account</source>
+        <target>บัญชี</target>
+        <note annotates="source" from="developer">Menu title for a view with details on the user's account.</note>
+      </trans-unit>
+      <trans-unit id="vpn.systray.disconnect">
+        <source>Disconnect</source>
+        <target>ตัดการเชื่อมต่อ</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.help">
+        <source>Help</source>
+        <target>ช่วยเหลือ</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.hide">
+        <source>Hide Mozilla VPN</source>
+        <target>ซ่อน Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.location2">
+        <source>%1, %2</source>
+        <target>%1 %2</target>
+        <note annotates="source" from="developer">Location in the systray. %1 is the country, %2 is the city.</note>
+      </trans-unit>
+      <trans-unit id="vpn.systray.preferences">
+        <source>Preferences…</source>
+        <target>กำหนดลักษณะ…</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.quit">
+        <source>Quit Mozilla VPN</source>
+        <target>ออกจาก Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.show">
+        <source>Show Mozilla VPN</source>
+        <target>แสดง Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusConnectTo">
+        <source>Connect to the last location:</source>
+        <target>เชื่อมต่อกับตำแหน่งล่าสุด:</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusConnectedTo">
+        <source>Connected to:</source>
+        <target>เชื่อมต่อแล้วกับ:</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusConnectingTo">
+        <source>Connecting to:</source>
+        <target>กำลังเชื่อมต่อกับ:</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusDisconnectingFrom">
+        <source>Disconnecting from:</source>
+        <target>กำลังตัดการเชื่อมต่อกับ:</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.allow">
+        <source>Allow on this device</source>
+        <target>อนุญาตบนอุปกรณ์นี้</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.description">
+        <source>We strive to provide you with choices and collect only the data we need to improve Mozilla VPN. Sharing this data with Mozilla is optional.</source>
+        <target>เราพยายามมอบทางเลือกต่างๆ ให้กับคุณและรวบรวมเฉพาะข้อมูลที่จำเป็นเพื่อปรับปรุง Mozilla VPN การแบ่งปันข้อมูลนี้กับ Mozilla เป็นเพียงตัวเลือกเท่านั้น</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.doNotAllow">
+        <source>Don’t allow</source>
+        <target>ไม่อนุญาต</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.learnMore">
+        <source>Learn more about what data Mozilla collects and how it’s used.</source>
+        <target>เรียนรู้เพิ่มเติมเกี่ยวกับข้อมูลที่ Mozilla รวบรวมและการใช้งานข้อมูลดังกล่าว</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.question">
+        <source>Allow Mozilla VPN to send technical, interaction, and campaign and referral data to Mozilla?</source>
+        <target>อนุญาตให้ Mozilla VPN ส่งข้อมูลทางเทคนิค การโต้ตอบ และแคมเปญ รวมทั้งข้อมูลการแนะนำผลิตภัณฑ์ไปยัง Mozilla หรือไม่?</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.shareTechnicalData">
+        <source>Share technical data</source>
+        <target>แบ่งปันข้อมูลทางเทคนิค</target>
+        <note annotates="source" from="developer">Headline of telemetry policy view and checkbox label</note>
+      </trans-unit>
+      <trans-unit id="vpn.toggleWidget.description">
+        <source>Turn Mozilla VPN on and off, and see the current location.</source>
+        <note annotates="source" from="developer">More information about what the Mozilla VPN widget contains.</note>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.actionNoUpdate">
+        <source>Okay</source>
+        <target>ตกลง</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.actionOnUpdate">
+        <source>Update now</source>
+        <target>อัปเดตตอนนี้</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.checkForUpdateButtonText">
+        <source>Check for Updates</source>
+        <target>ตรวจสอบการอัปเดต</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.descriptionNoUpdate2">
+        <source>You currently have the latest version of Mozilla VPN</source>
+        <target>ขณะนี้คุณกำลังใช้ Mozilla VPN รุ่นล่าสุดอยู่แล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.descriptionOnUpdate">
+        <source>Click to update to the latest version of the application</source>
+        <target>คลิกเพื่ออัปเดตแอปพลิเคชันให้เป็นรุ่นล่าสุด</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.titleNoUpdate">
+        <source>You are up to date</source>
+        <target>คุณอัปเดตเป็นรุ่นล่าสุดแล้ว</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.titleOnUpdate">
+        <source>Updates available</source>
+        <target>มีการอัปเดต</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

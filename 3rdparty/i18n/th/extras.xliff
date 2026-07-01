@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="../src/apps/vpn/ui/screens/settings/ViewLanguage.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="languages.bg" xml:space="preserve">
+        <source>Bulgarian</source>
+        <target>บัลแกเรีย</target>
+      </trans-unit>
+      <trans-unit id="languages.co" xml:space="preserve">
+        <source>Corsican</source>
+        <target>คอร์ซิกา</target>
+      </trans-unit>
+      <trans-unit id="languages.cs" xml:space="preserve">
+        <source>Czech</source>
+        <target>เช็ก</target>
+      </trans-unit>
+      <trans-unit id="languages.cy" xml:space="preserve">
+        <source>Welsh</source>
+        <target>เวลส์</target>
+      </trans-unit>
+      <trans-unit id="languages.da" xml:space="preserve">
+        <source>Danish</source>
+        <target>เดนมาร์ก</target>
+      </trans-unit>
+      <trans-unit id="languages.de" xml:space="preserve">
+        <source>German</source>
+        <target>เยอรมัน</target>
+      </trans-unit>
+      <trans-unit id="languages.dsb" xml:space="preserve">
+        <source>Lower Sorbian</source>
+        <target>ซอร์เบียตอนล่าง</target>
+      </trans-unit>
+      <trans-unit id="languages.el" xml:space="preserve">
+        <source>Greek</source>
+        <target>กรีก</target>
+      </trans-unit>
+      <trans-unit id="languages.en" xml:space="preserve">
+        <source>English</source>
+        <target>อังกฤษ</target>
+      </trans-unit>
+      <trans-unit id="languages.en_CA" xml:space="preserve">
+        <source>Canadian English</source>
+        <target>อังกฤษแบบแคนาดา</target>
+      </trans-unit>
+      <trans-unit id="languages.en_GB" xml:space="preserve">
+        <source>British English</source>
+        <target>อังกฤษแบบบริติช</target>
+      </trans-unit>
+      <trans-unit id="languages.es_AR" xml:space="preserve">
+        <source>Argentinian Spanish</source>
+        <target>สเปนแบบอาร์เจนตินา</target>
+      </trans-unit>
+      <trans-unit id="languages.es_CL" xml:space="preserve">
+        <source>Chilean Spanish</source>
+        <target>สเปนแบบชิลี</target>
+      </trans-unit>
+      <trans-unit id="languages.es_ES" xml:space="preserve">
+        <source>Spanish</source>
+        <target>สเปน</target>
+      </trans-unit>
+      <trans-unit id="languages.es_MX" xml:space="preserve">
+        <source>Mexican Spanish</source>
+        <target>สเปนแบบเม็กซิกัน</target>
+      </trans-unit>
+      <trans-unit id="languages.fa" xml:space="preserve">
+        <source>Persian</source>
+        <target>เปอร์เซีย</target>
+      </trans-unit>
+      <trans-unit id="languages.fi" xml:space="preserve">
+        <source>Finnish</source>
+        <target>ฟินแลนด์</target>
+      </trans-unit>
+      <trans-unit id="languages.fr" xml:space="preserve">
+        <source>French</source>
+        <target>ฝรั่งเศส</target>
+      </trans-unit>
+      <trans-unit id="languages.fur" xml:space="preserve">
+        <source>Friulian</source>
+        <target>เฟรียเลียน</target>
+      </trans-unit>
+      <trans-unit id="languages.fy_NL" xml:space="preserve">
+        <source>Western Frisian</source>
+        <target>ฟริเซียตะวันตก</target>
+      </trans-unit>
+      <trans-unit id="languages.hsb" xml:space="preserve">
+        <source>Upper Sorbian</source>
+        <target>ซอร์เบียตอนบน</target>
+      </trans-unit>
+      <trans-unit id="languages.hu" xml:space="preserve">
+        <source>Hungarian</source>
+        <target>ฮังการี</target>
+      </trans-unit>
+      <trans-unit id="languages.ia" xml:space="preserve">
+        <source>Interlingua</source>
+        <target>อินเทอร์ลิงกัว</target>
+      </trans-unit>
+      <trans-unit id="languages.id" xml:space="preserve">
+        <source>Indonesian</source>
+        <target>อินโดนีเซีย</target>
+      </trans-unit>
+      <trans-unit id="languages.is" xml:space="preserve">
+        <source>Icelandic</source>
+        <target>ไอซ์แลนด์</target>
+      </trans-unit>
+      <trans-unit id="languages.it" xml:space="preserve">
+        <source>Italian</source>
+        <target>อิตาลี</target>
+      </trans-unit>
+      <trans-unit id="languages.ja" xml:space="preserve">
+        <source>Japanese</source>
+        <target>ญี่ปุ่น</target>
+      </trans-unit>
+      <trans-unit id="languages.lo" xml:space="preserve">
+        <source>Lao</source>
+        <target>ลาว</target>
+      </trans-unit>
+      <trans-unit id="languages.ko" xml:space="preserve">
+        <source>Korean</source>
+        <target>เกาหลี</target>
+      </trans-unit>
+      <trans-unit id="languages.nl" xml:space="preserve">
+        <source>Dutch</source>
+        <target>ดัตช์</target>
+      </trans-unit>
+      <trans-unit id="languages.oc" xml:space="preserve">
+        <source>Occitan</source>
+        <target>อ็อกซิตัน</target>
+      </trans-unit>
+      <trans-unit id="languages.pa_IN" xml:space="preserve">
+        <source>Punjabi</source>
+        <target>ปัญจาบี</target>
+      </trans-unit>
+      <trans-unit id="languages.pl" xml:space="preserve">
+        <source>Polish</source>
+        <target>โปแลนด์</target>
+      </trans-unit>
+      <trans-unit id="languages.pt_BR" xml:space="preserve">
+        <source>Portuguese</source>
+        <target>โปรตุเกส</target>
+      </trans-unit>
+      <trans-unit id="languages.pt_PT" xml:space="preserve">
+        <source>European Portuguese</source>
+        <target>โปรตุเกสแบบยุโรป</target>
+      </trans-unit>
+      <trans-unit id="languages.ru" xml:space="preserve">
+        <source>Russian</source>
+        <target>รัสเซีย</target>
+      </trans-unit>
+      <trans-unit id="languages.scn" xml:space="preserve">
+        <source>Sicilian</source>
+        <target>ซิซิลี</target>
+      </trans-unit>
+      <trans-unit id="languages.sk" xml:space="preserve">
+        <source>Slovak</source>
+        <target>สโลวัก</target>
+      </trans-unit>
+      <trans-unit id="languages.sl" xml:space="preserve">
+        <source>Slovenian</source>
+        <target>สโลวีเนีย</target>
+      </trans-unit>
+      <trans-unit id="languages.sq" xml:space="preserve">
+        <source>Albanian</source>
+        <target>แอลเบเนีย</target>
+      </trans-unit>
+      <trans-unit id="languages.sr" xml:space="preserve">
+        <source>Serbian</source>
+        <target>เซอร์เบีย</target>
+      </trans-unit>
+      <trans-unit id="languages.sv_SE" xml:space="preserve">
+        <source>Swedish</source>
+        <target>สวีเดน</target>
+      </trans-unit>
+      <trans-unit id="languages.th" xml:space="preserve">
+        <source>Thai</source>
+        <target>ไทย</target>
+      </trans-unit>
+      <trans-unit id="languages.tr" xml:space="preserve">
+        <source>Turkish</source>
+        <target>ตุรกี</target>
+      </trans-unit>
+      <trans-unit id="languages.uk" xml:space="preserve">
+        <source>Ukrainian</source>
+        <target>ยูเครน</target>
+      </trans-unit>
+      <trans-unit id="languages.vi" xml:space="preserve">
+        <source>Vietnamese</source>
+        <target>เวียดนาม</target>
+      </trans-unit>
+      <trans-unit id="languages.zh_CN" xml:space="preserve">
+        <source>Simplified Chinese</source>
+        <target>จีนตัวย่อ</target>
+      </trans-unit>
+      <trans-unit id="languages.zh_TW" xml:space="preserve">
+        <source>Traditional Chinese</source>
+        <target>จีนตัวเต็ม</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/ViewServers.qml" datatype="plaintext" source-language="en" target-language="th">
+    <body>
+      <trans-unit id="servers.al" xml:space="preserve">
+        <source>Albania</source>
+        <target>แอลเบเนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Tirana" xml:space="preserve">
+        <source>Tirana</source>
+        <target>ติรานา</target>
+      </trans-unit>
+      <trans-unit id="servers.au" xml:space="preserve">
+        <source>Australia</source>
+        <target>ออสเตรเลีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Adelaide" xml:space="preserve">
+        <source>Adelaide</source>
+        <target>แอดิเลด</target>
+      </trans-unit>
+      <trans-unit id="servers.Brisbane" xml:space="preserve">
+        <source>Brisbane</source>
+        <target>บริสเบน</target>
+      </trans-unit>
+      <trans-unit id="servers.Melbourne" xml:space="preserve">
+        <source>Melbourne</source>
+        <target>เมลเบิร์น</target>
+      </trans-unit>
+      <trans-unit id="servers.Perth" xml:space="preserve">
+        <source>Perth</source>
+        <target>เพิร์ท</target>
+      </trans-unit>
+      <trans-unit id="servers.Sydney" xml:space="preserve">
+        <source>Sydney</source>
+        <target>ซิดนีย์</target>
+      </trans-unit>
+      <trans-unit id="servers.be" xml:space="preserve">
+        <source>Belgium</source>
+        <target>เบลเยียม</target>
+      </trans-unit>
+      <trans-unit id="servers.Brussels" xml:space="preserve">
+        <source>Brussels</source>
+        <target>บรัสเซลส์</target>
+      </trans-unit>
+      <trans-unit id="servers.bg" xml:space="preserve">
+        <source>Bulgaria</source>
+        <target>บัลแกเรีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Sofia" xml:space="preserve">
+        <source>Sofia</source>
+        <target>โซเฟีย</target>
+      </trans-unit>
+      <trans-unit id="servers.br" xml:space="preserve">
+        <source>Brazil</source>
+        <target>บราซิล</target>
+      </trans-unit>
+      <trans-unit id="servers.SaoPaulo" xml:space="preserve">
+        <source>Sao Paulo</source>
+        <target>เซาเปาโล</target>
+      </trans-unit>
+      <trans-unit id="servers.ca" xml:space="preserve">
+        <source>Canada</source>
+        <target>แคนาดา</target>
+      </trans-unit>
+      <trans-unit id="servers.Calgary" xml:space="preserve">
+        <source>Calgary</source>
+        <target>คาลการี</target>
+      </trans-unit>
+      <trans-unit id="servers.Montreal" xml:space="preserve">
+        <source>Montreal</source>
+        <target>มอนทรีออล</target>
+      </trans-unit>
+      <trans-unit id="servers.Toronto" xml:space="preserve">
+        <source>Toronto</source>
+        <target>โทรอนโต</target>
+      </trans-unit>
+      <trans-unit id="servers.Vancouver" xml:space="preserve">
+        <source>Vancouver</source>
+        <target>แวนคูเวอร์</target>
+      </trans-unit>
+      <trans-unit id="servers.ch" xml:space="preserve">
+        <source>Switzerland</source>
+        <target>สวิตเซอร์แลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.Zurich" xml:space="preserve">
+        <source>Zurich</source>
+        <target>ซูริค</target>
+      </trans-unit>
+      <trans-unit id="servers.co" xml:space="preserve">
+        <source>Colombia</source>
+        <target>โคลอมเบีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Bogota" xml:space="preserve">
+        <source>Bogota</source>
+        <target>โบโกตา</target>
+      </trans-unit>
+      <trans-unit id="servers.cz" xml:space="preserve">
+        <source>Czech Republic</source>
+        <target>สาธารณรัฐเช็ก</target>
+      </trans-unit>
+      <trans-unit id="servers.Prague" xml:space="preserve">
+        <source>Prague</source>
+        <target>ปราก</target>
+      </trans-unit>
+      <trans-unit id="servers.de" xml:space="preserve">
+        <source>Germany</source>
+        <target>เยอรมนี</target>
+      </trans-unit>
+      <trans-unit id="servers.Berlin" xml:space="preserve">
+        <source>Berlin</source>
+        <target>เบอร์ลิน</target>
+      </trans-unit>
+      <trans-unit id="servers.Dusseldorf" xml:space="preserve">
+        <source>Dusseldorf</source>
+        <target>ดึสเซลดอร์ฟ</target>
+      </trans-unit>
+      <trans-unit id="servers.Frankfurt" xml:space="preserve">
+        <source>Frankfurt</source>
+        <target>แฟรงก์เฟิร์ต</target>
+      </trans-unit>
+      <trans-unit id="servers.dk" xml:space="preserve">
+        <source>Denmark</source>
+        <target>เดนมาร์ก</target>
+      </trans-unit>
+      <trans-unit id="servers.Copenhagen" xml:space="preserve">
+        <source>Copenhagen</source>
+        <target>โคเปนเฮเกน</target>
+      </trans-unit>
+      <trans-unit id="servers.ee" xml:space="preserve">
+        <source>Estonia</source>
+        <target>เอสโตเนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Tallinn" xml:space="preserve">
+        <source>Tallinn</source>
+        <target>ทาลลินน์</target>
+      </trans-unit>
+      <trans-unit id="servers.es" xml:space="preserve">
+        <source>Spain</source>
+        <target>สเปน</target>
+      </trans-unit>
+      <trans-unit id="servers.Madrid" xml:space="preserve">
+        <source>Madrid</source>
+        <target>มาดริด</target>
+      </trans-unit>
+      <trans-unit id="servers.fi" xml:space="preserve">
+        <source>Finland</source>
+        <target>ฟินแลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.Helsinki" xml:space="preserve">
+        <source>Helsinki</source>
+        <target>เฮลซิงกิ</target>
+      </trans-unit>
+      <trans-unit id="servers.fr" xml:space="preserve">
+        <source>France</source>
+        <target>ฝรั่งเศส</target>
+      </trans-unit>
+      <trans-unit id="servers.Marseille" xml:space="preserve">
+        <source>Marseille</source>
+        <target>มาร์แซย์</target>
+      </trans-unit>
+      <trans-unit id="servers.Paris" xml:space="preserve">
+        <source>Paris</source>
+        <target>ปารีส</target>
+      </trans-unit>
+      <trans-unit id="servers.gb" xml:space="preserve">
+        <source>United Kingdom</source>
+        <target>สหราชอาณาจักร</target>
+      </trans-unit>
+      <trans-unit id="servers.Glasgow" xml:space="preserve">
+        <source>Glasgow</source>
+        <target>กลาสโกว์</target>
+      </trans-unit>
+      <trans-unit id="servers.London" xml:space="preserve">
+        <source>London</source>
+        <target>ลอนดอน</target>
+      </trans-unit>
+      <trans-unit id="servers.Manchester" xml:space="preserve">
+        <source>Manchester</source>
+        <target>แมนเชสเตอร์</target>
+      </trans-unit>
+      <trans-unit id="servers.gr" xml:space="preserve">
+        <source>Greece</source>
+        <target>กรีซ</target>
+      </trans-unit>
+      <trans-unit id="servers.Athens" xml:space="preserve">
+        <source>Athens</source>
+        <target>เอเธนส์</target>
+      </trans-unit>
+      <trans-unit id="servers.hk" xml:space="preserve">
+        <source>Hong Kong</source>
+        <target>ฮ่องกง</target>
+      </trans-unit>
+      <trans-unit id="servers.HongKong" xml:space="preserve">
+        <source>Hong Kong</source>
+        <target>ฮ่องกง</target>
+      </trans-unit>
+      <trans-unit id="servers.hr" xml:space="preserve">
+        <source>Croatia</source>
+        <target>โครเอเชีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Zagreb" xml:space="preserve">
+        <source>Zagreb</source>
+        <target>ซาเกร็บ</target>
+      </trans-unit>
+      <trans-unit id="servers.hu" xml:space="preserve">
+        <source>Hungary</source>
+        <target>ฮังการี</target>
+      </trans-unit>
+      <trans-unit id="servers.Budapest" xml:space="preserve">
+        <source>Budapest</source>
+        <target>บูดาเปสต์</target>
+      </trans-unit>
+      <trans-unit id="servers.ie" xml:space="preserve">
+        <source>Republic of Ireland</source>
+        <target>ไอร์แลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.Dublin" xml:space="preserve">
+        <source>Dublin</source>
+        <target>ดับลิน</target>
+      </trans-unit>
+      <trans-unit id="servers.il" xml:space="preserve">
+        <source>Israel</source>
+        <target>อิสราเอล</target>
+      </trans-unit>
+      <trans-unit id="servers.TelAviv" xml:space="preserve">
+        <source>Tel Aviv</source>
+        <target>เทลอาวีฟ</target>
+      </trans-unit>
+      <trans-unit id="servers.it" xml:space="preserve">
+        <source>Italy</source>
+        <target>อิตาลี</target>
+      </trans-unit>
+      <trans-unit id="servers.Milan" xml:space="preserve">
+        <source>Milan</source>
+        <target>มิลาน</target>
+      </trans-unit>
+      <trans-unit id="servers.jp" xml:space="preserve">
+        <source>Japan</source>
+        <target>ญี่ปุ่น</target>
+      </trans-unit>
+      <trans-unit id="servers.Osaka" xml:space="preserve">
+        <source>Osaka</source>
+        <target>โอซากา</target>
+      </trans-unit>
+      <trans-unit id="servers.Tokyo" xml:space="preserve">
+        <source>Tokyo</source>
+        <target>โตเกียว</target>
+      </trans-unit>
+      <trans-unit id="servers.lv" xml:space="preserve">
+        <source>Latvia</source>
+        <target>ลัตเวีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Riga" xml:space="preserve">
+        <source>Riga</source>
+        <target>ริกา</target>
+      </trans-unit>
+      <trans-unit id="servers.mx" xml:space="preserve">
+        <source>Mexico</source>
+        <target>เม็กซิโก</target>
+      </trans-unit>
+      <trans-unit id="servers.Queretaro" xml:space="preserve">
+        <source>Queretaro</source>
+        <target>เกเรตาโร</target>
+      </trans-unit>
+      <trans-unit id="servers.nl" xml:space="preserve">
+        <source>Netherlands</source>
+        <target>เนเธอร์แลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.Amsterdam" xml:space="preserve">
+        <source>Amsterdam</source>
+        <target>อัมสเตอร์ดัม</target>
+      </trans-unit>
+      <trans-unit id="servers.no" xml:space="preserve">
+        <source>Norway</source>
+        <target>นอร์เวย์</target>
+      </trans-unit>
+      <trans-unit id="servers.Oslo" xml:space="preserve">
+        <source>Oslo</source>
+        <target>ออสโล</target>
+      </trans-unit>
+      <trans-unit id="servers.Stavanger" xml:space="preserve">
+        <source>Stavanger</source>
+        <target>สตาวังเกอร์</target>
+      </trans-unit>
+      <trans-unit id="servers.nz" xml:space="preserve">
+        <source>New Zealand</source>
+        <target>นิวซีแลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.Auckland" xml:space="preserve">
+        <source>Auckland</source>
+        <target>ออกแลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.pl" xml:space="preserve">
+        <source>Poland</source>
+        <target>โปแลนด์</target>
+      </trans-unit>
+      <trans-unit id="servers.Warsaw" xml:space="preserve">
+        <source>Warsaw</source>
+        <target>วอร์ซอ</target>
+      </trans-unit>
+      <trans-unit id="servers.pt" xml:space="preserve">
+        <source>Portugal</source>
+        <target>โปรตุเกส</target>
+      </trans-unit>
+      <trans-unit id="servers.Lisbon" xml:space="preserve">
+        <source>Lisbon</source>
+        <target>ลิสบอน</target>
+      </trans-unit>
+      <trans-unit id="servers.ro" xml:space="preserve">
+        <source>Romania</source>
+        <target>โรมาเนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Bucharest" xml:space="preserve">
+        <source>Bucharest</source>
+        <target>บูคาเรสต์</target>
+      </trans-unit>
+      <trans-unit id="servers.rs" xml:space="preserve">
+        <source>Serbia</source>
+        <target>เซอร์เบีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Belgrade" xml:space="preserve">
+        <source>Belgrade</source>
+        <target>เบลเกรด</target>
+      </trans-unit>
+      <trans-unit id="servers.se" xml:space="preserve">
+        <source>Sweden</source>
+        <target>สวีเดน</target>
+      </trans-unit>
+      <trans-unit id="servers.Gothenburg" xml:space="preserve">
+        <source>Gothenburg</source>
+        <target>โกเธนเบิร์ก</target>
+      </trans-unit>
+      <trans-unit id="servers.Stockholm" xml:space="preserve">
+        <source>Stockholm</source>
+        <target>สตอกโฮล์ม</target>
+      </trans-unit>
+      <trans-unit id="servers.sg" xml:space="preserve">
+        <source>Singapore</source>
+        <target>สิงคโปร์</target>
+      </trans-unit>
+      <trans-unit id="servers.Singapore" xml:space="preserve">
+        <source>Singapore</source>
+        <target>สิงคโปร์</target>
+      </trans-unit>
+      <trans-unit id="servers.si" xml:space="preserve">
+        <source>Slovenia</source>
+        <target>สโลวีเนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Ljubljana" xml:space="preserve">
+        <source>Ljubljana</source>
+        <target>ลูบลิยานา</target>
+      </trans-unit>
+      <trans-unit id="servers.sk" xml:space="preserve">
+        <source>Slovakia</source>
+        <target>สโลวะเกีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Bratislava" xml:space="preserve">
+        <source>Bratislava</source>
+        <target>บราติสลาวา</target>
+      </trans-unit>
+      <trans-unit id="servers.ua" xml:space="preserve">
+        <source>Ukraine</source>
+        <target>ยูเครน</target>
+      </trans-unit>
+      <trans-unit id="servers.Kyiv" xml:space="preserve">
+        <source>Kyiv</source>
+        <target>เคียฟ</target>
+      </trans-unit>
+      <trans-unit id="servers.us" xml:space="preserve">
+        <source>United States of America</source>
+        <target>สหรัฐอเมริกา</target>
+      </trans-unit>
+      <trans-unit id="servers.Ashburn" xml:space="preserve">
+        <source>Ashburn, VA</source>
+        <target>แอชเบิร์น รัฐเวอร์จิเนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Atlanta" xml:space="preserve">
+        <source>Atlanta, GA</source>
+        <target>แอตแลนตา รัฐจอร์เจีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Boston" xml:space="preserve">
+        <source>Boston, MA</source>
+        <target>บอสตัน รัฐแมสซาชูเซตส์</target>
+      </trans-unit>
+      <trans-unit id="servers.Chicago" xml:space="preserve">
+        <source>Chicago, IL</source>
+        <target>ชิคาโก รัฐอิลลินอยส์</target>
+      </trans-unit>
+      <trans-unit id="servers.Dallas" xml:space="preserve">
+        <source>Dallas, TX</source>
+        <target>ดัลลาส รัฐเท็กซัส</target>
+      </trans-unit>
+      <trans-unit id="servers.Denver" xml:space="preserve">
+        <source>Denver, CO</source>
+        <target>เดนเวอร์ รัฐโคโลราโด</target>
+      </trans-unit>
+      <trans-unit id="servers.Detroit" xml:space="preserve">
+        <source>Detroit, MI</source>
+        <target>ดีทรอยต์ รัฐมิชิแกน</target>
+      </trans-unit>
+      <trans-unit id="servers.Houston" xml:space="preserve">
+        <source>Houston, TX</source>
+        <target>ฮูสตัน รัฐเท็กซัส</target>
+      </trans-unit>
+      <trans-unit id="servers.LosAngeles" xml:space="preserve">
+        <source>Los Angeles, CA</source>
+        <target>ลอสแองเจลิส รัฐแคลิฟอร์เนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Miami" xml:space="preserve">
+        <source>Miami, FL</source>
+        <target>ไมอามี รัฐฟลอริดา</target>
+      </trans-unit>
+      <trans-unit id="servers.NewYork" xml:space="preserve">
+        <source>New York, NY</source>
+        <target>นิวยอร์ก รัฐนิวยอร์ก</target>
+      </trans-unit>
+      <trans-unit id="servers.Phoenix" xml:space="preserve">
+        <source>Phoenix, AZ</source>
+        <target>ฟีนิกซ์ รัฐแอริโซนา</target>
+      </trans-unit>
+      <trans-unit id="servers.Raleigh" xml:space="preserve">
+        <source>Raleigh, NC</source>
+        <target>ราลี รัฐนอร์ทแคโรไลนา</target>
+      </trans-unit>
+      <trans-unit id="servers.SaltLakeCity" xml:space="preserve">
+        <source>Salt Lake City, UT</source>
+        <target>ซอลต์เลกซิตี รัฐยูทาห์</target>
+      </trans-unit>
+      <trans-unit id="servers.SanJose" xml:space="preserve">
+        <source>San Jose, CA</source>
+        <target>ซานโฮเซ รัฐแคลิฟอร์เนีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Seattle" xml:space="preserve">
+        <source>Seattle, WA</source>
+        <target>ซีแอตเทิล รัฐวอชิงตัน</target>
+      </trans-unit>
+      <trans-unit id="servers.Secaucus" xml:space="preserve">
+        <source>Secaucus, NJ</source>
+        <target>ซีคอคัส รัฐนิวเจอร์ซีย์</target>
+      </trans-unit>
+      <trans-unit id="servers.za" xml:space="preserve">
+        <source>South Africa</source>
+        <target>แอฟริกาใต้</target>
+      </trans-unit>
+      <trans-unit id="servers.Johannesburg" xml:space="preserve">
+        <source>Johannesburg</source>
+        <target>โจฮันเนสเบิร์ก</target>
+      </trans-unit>
+      <trans-unit id="servers.th" xml:space="preserve">
+        <source>Thailand</source>
+        <target>ไทย</target>
+      </trans-unit>
+      <trans-unit id="servers.id" xml:space="preserve">
+        <source>Indonesia</source>
+        <target>อินโดนีเซีย</target>
+      </trans-unit>
+      <trans-unit id="servers.cl" xml:space="preserve">
+        <source>Chile</source>
+        <target>ชิลี</target>
+      </trans-unit>
+      <trans-unit id="servers.at" xml:space="preserve">
+        <source>Austria</source>
+        <target>ออสเตรีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Bangkok" xml:space="preserve">
+        <source>Bangkok</source>
+        <target>กรุงเทพฯ</target>
+      </trans-unit>
+      <trans-unit id="servers.Barcelona" xml:space="preserve">
+        <source>Barcelona</source>
+        <target>บาร์เซโลนา</target>
+      </trans-unit>
+      <trans-unit id="servers.Bordeaux" xml:space="preserve">
+        <source>Bordeaux</source>
+        <target>บอร์โด</target>
+      </trans-unit>
+      <trans-unit id="servers.Jakarta" xml:space="preserve">
+        <source>Jakarta</source>
+        <target>จาการ์ตา</target>
+      </trans-unit>
+      <trans-unit id="servers.Mcallen" xml:space="preserve">
+        <source>McAllen, TX</source>
+        <target>แมคอัลเลน รัฐเท็กซัส</target>
+      </trans-unit>
+      <trans-unit id="servers.Santiago" xml:space="preserve">
+        <source>Santiago</source>
+        <target>ซานติอาโก</target>
+      </trans-unit>
+      <trans-unit id="servers.Valencia" xml:space="preserve">
+        <source>Valencia</source>
+        <target>บาเลนเซีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Vienna" xml:space="preserve">
+        <source>Vienna</source>
+        <target>เวียนนา</target>
+      </trans-unit>
+      <trans-unit id="servers.Palermo" xml:space="preserve">
+        <source>Palermo</source>
+        <target>ปาแลร์โม</target>
+      </trans-unit>
+      <trans-unit id="servers.tr" xml:space="preserve">
+        <source>Turkey</source>
+        <target>ตุรกี</target>
+      </trans-unit>
+      <trans-unit id="servers.Istanbul" xml:space="preserve">
+        <source>Istanbul</source>
+        <target>อิสตันบูล</target>
+      </trans-unit>
+      <trans-unit id="servers.pe" xml:space="preserve">
+        <source>Peru</source>
+        <target>เปรู</target>
+      </trans-unit>
+      <trans-unit id="servers.Lima" xml:space="preserve">
+        <source>Lima</source>
+        <target>ลิมา</target>
+      </trans-unit>
+      <trans-unit id="servers.cy" xml:space="preserve">
+        <source>Cyprus</source>
+        <target>ไซปรัส</target>
+      </trans-unit>
+      <trans-unit id="servers.Nicosia" xml:space="preserve">
+        <source>Nicosia</source>
+        <target>นิโคเซีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Malm" xml:space="preserve">
+        <source>Malmö</source>
+        <target>มัลเมอ</target>
+      </trans-unit>
+      <trans-unit id="servers.ng" xml:space="preserve">
+        <source>Nigeria</source>
+        <target>ไนจีเรีย</target>
+      </trans-unit>
+      <trans-unit id="servers.Lagos" xml:space="preserve">
+        <source>Lagos</source>
+        <target>ลากอส</target>
+      </trans-unit>
+      <trans-unit id="servers.ph" xml:space="preserve">
+        <source>Philippines</source>
+        <target>ฟิลิปปินส์</target>
+      </trans-unit>
+      <trans-unit id="servers.Manila" xml:space="preserve">
+        <source>Manila</source>
+        <target>มะนิลา</target>
+      </trans-unit>
+      <trans-unit id="servers.my" xml:space="preserve">
+        <source>Malaysia</source>
+        <target>มาเลเซีย</target>
+      </trans-unit>
+      <trans-unit id="servers.KualaLumpur" xml:space="preserve">
+        <source>Kuala Lumpur</source>
+        <target>กัวลาลัมเปอร์</target>
+      </trans-unit>
+      <trans-unit id="servers.WashingtonDc" xml:space="preserve">
+        <source>Washington DC</source>
+        <target>วอชิงตันดีซี</target>
+      </trans-unit>
+      <trans-unit id="servers.Fortaleza" xml:space="preserve">
+        <source>Fortaleza</source>
+        <target>ฟอร์ตาเลซา</target>
+      </trans-unit>
+      <trans-unit id="servers.KansasCity" xml:space="preserve">
+        <source>Kansas City, MO</source>
+        <target>แคนซัสซิตี้ รัฐมิสซูรี</target>
+      </trans-unit>
+      <trans-unit id="servers.ar" xml:space="preserve">
+        <source>Argentina</source>
+        <target>อาร์เจนตินา</target>
+      </trans-unit>
+      <trans-unit id="servers.BuenosAires" xml:space="preserve">
+        <source>Buenos Aires</source>
+        <target>บัวโนสไอเรส</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

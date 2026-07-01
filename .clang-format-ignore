@@ -1,0 +1,8 @@
+./3rdparty/*
+./android/tunnel/*
+./android/src/com/wireguard/*
+./src/utils/hacl-star/*
+./extension/app/json.hpp
+./translations/generated/*
+./build/*
+./build-*/*

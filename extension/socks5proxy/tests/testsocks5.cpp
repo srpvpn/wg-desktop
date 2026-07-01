@@ -1,0 +1,139 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include "testsocks5.h"
+
+#include <QBuffer>
+#include <QEventLoop>
+#include <QFileInfo>
+#include <QFuture>
+#include <QNetworkProxy>
+#include <QObject>
+#include <QPromise>
+#include <QRandomGenerator>
+#include <QTcpServer>
+#include <QTest>
+#include <QTimer>
+
+#include "socks5.h"
+#include "socks5connection.h"
+
+constexpr auto testData = "Hello Moto";
+#pragma region Helpers
+
+/**
+ * @brief Creates a Server on a given port
+ * it will write ${data} onto the next TCP connection
+ * then close  the connection and server.
+ *
+ * @param port
+ * @param data
+ * @return QFuture<bool> - A connection was established
+ */
+QFuture<bool> makeServer(uint port) {
+  auto prom = std::make_unique<QPromise<bool>>();
+  auto out = prom->future();
+  auto server = new QTcpServer(qApp);
+  prom->start();
+  QObject::connect(server, &QTcpServer::newConnection,
+                   [prom = std::move(prom), server]() {
+                     qDebug() << "New pending connection!";
+                     auto connection = server->nextPendingConnection();
+                     connection->write(testData);
+                     connection->flush();
+                     // Dispatch onto the eventloop.
+                     QTimer::singleShot(200, qApp, [connection, server]() {
+                       connection->close();
+                       connection->deleteLater();
+                       server->close();
+                       server->deleteLater();
+                     });
+                     prom->addResult(true);
+                     prom->finish();
+                   });
+  qDebug() << "Server ready!!";
+  server->listen(QHostAddress::LocalHost, port);
+  return out;
+};
+
+uint16_t rollPort() {
+  return static_cast<uint16_t>(
+      QRandomGenerator::global()->bounded(49152, 65535));
+};
+
+QFuture<QByteArray> connectTo(uint serverPort, quint16 proxyPort,
+                              QNetworkProxy::ProxyType proxtType) {
+  auto prom = std::make_unique<QPromise<QByteArray>>();
+  auto out = prom->future();
+  auto socket = new QTcpSocket();
+  socket->setProxy(QNetworkProxy{proxtType, "localhost", proxyPort});
+  prom->start();
+  QObject::connect(socket, &QTcpSocket::readyRead,
+                   [prom = std::move(prom), socket]() {
+                     qDebug() << "Got something from server!";
+                     prom->addResult(socket->readAll());
+                     socket->close();
+                     socket->deleteLater();
+                     prom->finish();
+                   });
+  socket->connectToHost(QHostAddress::LocalHost, serverPort);
+  return out;
+};
+#pragma endregion
+
+void TestSocks5::proxyTCP_data() {
+  QTest::addColumn<QNetworkProxy::ProxyType>("proxyType");
+
+  QTest::addRow("SOCKS5") << QNetworkProxy::ProxyType::Socks5Proxy;
+  QTest::addRow("HTTP CONNECT") << QNetworkProxy::ProxyType::HttpProxy;
+}
+
+/**
+ * Create a TCP Server -  Sending "Hello Moto"
+ * to the first incoming connection.
+ *
+ * Create a SocksProxy, and a TCP connection.
+ * Setup the TCP Connection to connect to the proxy
+ * Then dials the server and revices a string.
+ *
+ */
+void TestSocks5::proxyTCP() {
+  QFETCH(QNetworkProxy::ProxyType, proxyType);
+
+  auto const proxyPort = rollPort();
+  auto const serverPort = rollPort();
+  auto const serverHadConnection = makeServer(serverPort);
+
+  // Create a TCP Server and connect the proxy to it.
+  QTcpServer proxyServer;
+  Socks5 proxy(&proxyServer);
+  proxyServer.listen(QHostAddress::LocalHost, proxyPort);
+
+  QFuture<std::tuple<qint64, qint64>> proxyHadData;
+  auto const connectionToServer = connectTo(serverPort, proxyPort, proxyType);
+
+  QString proxyClientName;
+  QObject::connect(
+      &proxy, &Socks5::incomingConnection, [&](ProxyConnection* conn) {
+        proxyClientName = conn->clientName();
+        proxyHadData =
+            QtFuture::connect(conn, &ProxyConnection::dataSentReceived);
+      });
+
+  while (!connectionToServer.isFinished()) {
+    QTest::qWait(250);
+  };
+  // The TCP Server should have gotten a connection
+  QCOMPARE(serverHadConnection.result(), true);
+  // Data Recieved should be 0
+  QCOMPARE(std::get<0>(proxyHadData.result()), qsizetype(0));
+  // Data Sent should be 10.
+  QCOMPARE(std::get<1>(proxyHadData.result()), qsizetype(10));
+  // The Proxy server should have gotten a connection
+  QCOMPARE(proxyClientName, "127.0.0.1");
+  // We should have gotten the correct string
+  QCOMPARE(connectionToServer.result(), QByteArray{testData});
+}
+
+QTEST_MAIN(TestSocks5)

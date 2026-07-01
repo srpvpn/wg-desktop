@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "signature",
+]
+resolver = "2"
+

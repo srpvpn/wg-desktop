@@ -1,0 +1,104 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include "taskauthenticate.h"
+
+#include <QJSValue>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QUrl>
+#include <QUrlQuery>
+
+#include "authenticationlistener.h"
+#include "constants.h"
+#include "errorhandler.h"
+#include "leakdetector.h"
+#include "logger.h"
+#include "networkrequest.h"
+#include "settingsholder.h"
+
+namespace {
+Logger logger("TaskAuthenticate");
+}  // anonymous namespace
+
+TaskAuthenticate::TaskAuthenticate(
+    AuthenticationListener::AuthenticationType authenticationType)
+    : Task("TaskAuthenticate"), m_authenticationType(authenticationType) {
+  MZ_COUNT_CTOR(TaskAuthenticate);
+}
+
+TaskAuthenticate::~TaskAuthenticate() { MZ_COUNT_DTOR(TaskAuthenticate); }
+
+void TaskAuthenticate::run() {
+  logger.debug() << "Authentication flow disabled in standalone mode";
+  emit authenticationAborted();
+  emit completed();
+}
+
+void TaskAuthenticate::authenticatePkceSuccess(const QString& code) {
+  Q_UNUSED(code);
+  logger.debug() << "Authentication completion disabled in standalone mode";
+  emit authenticationAborted();
+  emit completed();
+}
+
+void TaskAuthenticate::authenticationCompletedInternal(const QByteArray& data) {
+  logger.debug() << "Authentication completed";
+
+  QJsonDocument json = QJsonDocument::fromJson(data);
+  if (json.isNull()) {
+    REPORTERROR(ErrorHandler::RemoteServiceError, name());
+    return;
+  }
+
+  QJsonObject obj = json.object();
+  QJsonValue userObj = obj.value("user");
+  if (!userObj.isObject()) {
+    REPORTERROR(ErrorHandler::RemoteServiceError, name());
+    return;
+  }
+
+  logger.debug() << "User data:"
+                 << logger.sensitive(QJsonDocument(userObj.toObject())
+                                         .toJson(QJsonDocument::Compact));
+
+  QJsonValue tokenValue = obj.value("token");
+  if (!tokenValue.isString()) {
+    REPORTERROR(ErrorHandler::RemoteServiceError, name());
+    return;
+  }
+
+  QJsonDocument userDoc;
+  userDoc.setObject(userObj.toObject());
+
+  emit authenticationCompleted(userDoc.toJson(QJsonDocument::Compact),
+                               tokenValue.toString());
+
+  m_authenticationListener->aboutToFinish();
+}
+
+void TaskAuthenticate::handleDeepLink(const QUrl& url) {
+  if ((url.scheme() != Constants::DEEP_LINK_SCHEME) ||
+      (url.authority() != "login")) {
+    return;
+  }
+
+  if (url.path() != "/success") {
+    logger.warning() << "Received unexpected auth endpoint:" << url.path();
+    return;
+  }
+
+  QUrlQuery query(url.query());
+  if (!query.hasQueryItem("code")) {
+    logger.warning() << "Received OAuth success, but no code was found";
+    return;
+  }
+
+  // On Android, onResume fires after onNewIntent, which would trigger the
+  // Custom Tab "closed" callback and falsely abort a successful authentication.
+  disconnect(m_authenticationListener, &AuthenticationListener::abortedByUser,
+             this, nullptr);
+
+  authenticatePkceSuccess(query.queryItemValue("code"));
+}

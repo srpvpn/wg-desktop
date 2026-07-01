@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mozilla VPN Inspector</title>
+        <style>
+            @import url("app.css");
+        </style>        
+    </head>
+    <script type="importmap">
+        {
+          "imports": {
+            "lit": "https://cdn.jsdelivr.net/gh/lit/dist@3.1.1/all/lit-all.min.js"
+          }
+        }
+    </script>
+
+    <body>
+        <connection-killswitch></connection-killswitch>
+        <tab-navigation target="main">
+            <inspector-tab  class="active" tag="view-shell">🐚 Shell</inspector-tab>
+            <inspector-tab  tag="view-logs">📑 Logs</inspector-tab>
+            <inspector-tab  tag="view-network" command="fetch_network">📡 Network Inspector</inspector-tab>
+            <inspector-tab  tag="view-ui" command="view_tree">✨ QML Inspector</inspector-tab>
+        </tab-navigation>
+        <main></main>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="elements/tab-navigation.js"></script>
+    <script type="module" src="elements/connection-killswitch.js"></script>
+    </body>
+</html>

@@ -1,0 +1,241 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include "linuxcontroller.h"
+
+#include <QDBusPendingCallWatcher>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
+#include <QProcess>
+#include <QString>
+
+#include "dbusclient.h"
+#include "errorhandler.h"
+#include "ipaddress.h"
+#include "leakdetector.h"
+#include "linuxutils.h"
+#include "logger.h"
+#include "models/device.h"
+#include "models/keys.h"
+#include "models/server.h"
+
+namespace {
+Logger logger("LinuxController");
+}
+
+LinuxController::LinuxController() {
+  MZ_COUNT_CTOR(LinuxController);
+
+  m_dbus = new DBusClient(this);
+  connect(m_dbus, &DBusClient::connected, this,
+          [this](auto key) { emit connected(key); });
+  connect(m_dbus, &DBusClient::disconnected, this,
+          &LinuxController::disconnected);
+
+  // Watch for restarts of the D-Bus service.
+  m_serviceWatcher = new QDBusServiceWatcher(this);
+  m_serviceWatcher->setConnection(QDBusConnection::systemBus());
+  m_serviceWatcher->addWatchedService("org.mozilla.vpn.dbus");
+  connect(m_serviceWatcher, &QDBusServiceWatcher::serviceOwnerChanged, this,
+          &LinuxController::dbusNameOwnerChanged);
+}
+
+LinuxController::~LinuxController() { MZ_COUNT_DTOR(LinuxController); }
+
+void LinuxController::initialize(const Device* device, const Keys* keys) {
+  Q_UNUSED(device);
+  Q_UNUSED(keys);
+
+  QDBusPendingCallWatcher* watcher = m_dbus->status();
+  connect(watcher, &QDBusPendingCallWatcher::finished, this,
+          &LinuxController::initializeCompleted);
+}
+
+void LinuxController::initializeCompleted(QDBusPendingCallWatcher* call) {
+  QDBusPendingReply<QString> reply = *call;
+  if (reply.isError()) {
+    logger.error() << "Error received from the DBus service";
+    emit initialized(false, false, QDateTime());
+    return;
+  }
+
+  QString status = reply.argumentAt<0>();
+  logger.debug() << "Status:" << status;
+
+  QJsonDocument json = QJsonDocument::fromJson(status.toLocal8Bit());
+  Q_ASSERT(json.isObject());
+
+  QJsonObject obj = json.object();
+  Q_ASSERT(obj.contains("connected"));
+  QJsonValue statusValue = obj.value("connected");
+  Q_ASSERT(statusValue.isBool());
+
+  emit initialized(true, statusValue.toBool(), QDateTime::currentDateTime());
+}
+
+void LinuxController::dbusNameOwnerChanged(const QString& name,
+                                           const QString& prevOwner,
+                                           const QString& newOwner) {
+  if (name != m_dbus->serviceName()) {
+    return;
+  }
+
+  if (prevOwner.isEmpty()) {
+    // The daemon has started.
+    logger.info() << "DBus name" << name << "has owner:" << newOwner;
+    return;
+  } else {
+    // Otherwise, the daemon has stopped or re-started somehow.
+    logger.info() << "DBus name" << name << "has changed owner:" << newOwner;
+    REPORTERROR(ErrorHandler::ControllerError, "controller");
+    emit disconnected();
+  }
+}
+
+void LinuxController::activate(const InterfaceConfig& config,
+                               Controller::Reason reason) {
+  Q_UNUSED(reason);
+
+  connect(m_dbus->activate(config), &QDBusPendingCallWatcher::finished, this,
+          &LinuxController::operationCompleted);
+
+  logger.debug() << "LinuxController activated";
+}
+
+void LinuxController::deactivate() {
+  logger.debug() << "LinuxController deactivated";
+
+  connect(m_dbus->deactivate(), &QDBusPendingCallWatcher::finished, this,
+          &LinuxController::operationCompleted);
+}
+
+bool LinuxController::splitTunnelSupported() const {
+  static int splitTunnelSupported = -1;
+  if (splitTunnelSupported >= 0) {
+    return splitTunnelSupported;
+  }
+
+  // Assume not supported unless all the following requirements are met.
+  splitTunnelSupported = 0;
+
+  // Control groups v2 must be mounted for traffic classification
+  if (LinuxUtils::findCgroup2Path().isNull()) {
+    return false;
+  }
+
+  // The desktop environment must support scoping applications by cgroup upon
+  // launch for application detection to work as expected.
+  QProcessEnvironment pe = QProcessEnvironment::systemEnvironment();
+  if (!pe.contains("XDG_CURRENT_DESKTOP")) {
+    return false;
+  }
+  QStringList desktop = pe.value("XDG_CURRENT_DESKTOP").split(":");
+  if (desktop.contains("GNOME")) {
+    QVersionNumber shellVersion = LinuxUtils::gnomeShellVersion();
+    if (shellVersion.isNull()) {
+      return false;
+    }
+    if (shellVersion < QVersionNumber(3, 34)) {
+      return false;
+    }
+  } else if (desktop.contains("KDE")) {
+    // This has been tested as far back as KDE Plasma v5.24.
+    QVersionNumber kdeVersion = LinuxUtils::kdePlasmaVersion();
+    if (kdeVersion.isNull()) {
+      return false;
+    }
+    if (kdeVersion < QVersionNumber(5, 24)) {
+      return false;
+    }
+  }
+  // For all other desktop environments, assume split tunneling unsupported.
+  else {
+    return false;
+  }
+
+  splitTunnelSupported = 1;
+  return true;
+}
+
+void LinuxController::operationCompleted(QDBusPendingCallWatcher* call) {
+  QDBusPendingReply<bool> reply = *call;
+  if (reply.isError()) {
+    logger.error() << "Error received from the DBus service";
+    REPORTERROR(ErrorHandler::ControllerError, "controller");
+    emit disconnected();
+    return;
+  }
+
+  bool status = reply.argumentAt<0>();
+  if (status) {
+    logger.debug() << "DBus service says: all good.";
+    // we will receive the connected/disconnected() signal;
+    return;
+  }
+
+  logger.error() << "DBus service says: error.";
+  REPORTERROR(ErrorHandler::ControllerError, "controller");
+  emit disconnected();
+}
+
+void LinuxController::checkStatus() {
+  logger.debug() << "Check status";
+
+  QDBusPendingCallWatcher* watcher = m_dbus->status();
+  connect(watcher, &QDBusPendingCallWatcher::finished, this,
+          &LinuxController::checkStatusCompleted);
+}
+
+void LinuxController::checkStatusCompleted(QDBusPendingCallWatcher* call) {
+  QDBusPendingReply<QString> reply = *call;
+  if (reply.isError()) {
+    logger.error() << "Error received from the DBus service";
+    return;
+  }
+
+  QString status = reply.argumentAt<0>();
+  logger.debug() << "Status:" << status;
+
+  QJsonDocument json = QJsonDocument::fromJson(status.toLocal8Bit());
+  Q_ASSERT(json.isObject());
+
+  QJsonObject obj = json.object();
+  Q_ASSERT(obj.contains("connected"));
+  QJsonValue statusValue = obj.value("connected");
+  Q_ASSERT(statusValue.isBool());
+
+  if (!statusValue.toBool()) {
+    logger.error() << "Unable to retrieve the status from the interface.";
+    return;
+  }
+
+  emit statusUpdated(ControllerStatus(obj));
+}
+
+void LinuxController::getBackendLogs(QIODevice* device) {
+  QDBusPendingCallWatcher* watcher = m_dbus->getLogs();
+  connect(watcher, &QDBusPendingCallWatcher::finished, device,
+          [device](QDBusPendingCallWatcher* watcher) {
+            QDBusPendingReply<QString> reply = *watcher;
+            QString status;
+            if (!reply.isError()) {
+              status = reply.argumentAt<0>();
+            } else {
+              status = reply.error().message();
+              logger.error() << "Error received from DBus:" << status;
+
+              // Otherwise, try our best to scrape the logs directly off disk.
+              QFile logfile("/var/log/mozillavpn.log");
+              if (logfile.open(QIODeviceBase::ReadOnly | QIODeviceBase::Text)) {
+                status = logfile.readAll();
+              }
+            }
+
+            device->write(status.toUtf8());
+            device->close();
+          });
+}
+
+void LinuxController::cleanupBackendLogs() { m_dbus->cleanupLogs(); }

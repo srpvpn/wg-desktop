@@ -1,0 +1,95 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#ifndef LOCALSOCKETCONTROLLER_H
+#define LOCALSOCKETCONTROLLER_H
+
+#include <QLocalSocket>
+#include <QTimer>
+#include <functional>
+
+#include "controllerimpl.h"
+
+class QJsonObject;
+
+class LocalSocketController : public ControllerImpl {
+  Q_DISABLE_COPY_MOVE(LocalSocketController)
+
+ public:
+  LocalSocketController(const QString& path);
+  ~LocalSocketController();
+
+  void initialize(const Device* device, const Keys* keys) override;
+
+  void activate(const InterfaceConfig& config,
+                Controller::Reason Reason) override;
+
+  void deactivate() override;
+
+  void checkStatus() override;
+
+  void getBackendLogs(QIODevice* device) override;
+
+  void cleanupBackendLogs() override;
+
+  bool multihopSupported() override { return true; }
+
+  bool splitTunnelSupported() const override { return m_splitTunnelSupported; }
+
+ private:
+  // For messages that are expected to generate a synchronous response, this
+  // defines the default time that we will wait before assuming an error in
+  // the daemon has occured.
+  static constexpr int CONNECTION_RESPONSE_TIMEOUT_MSEC = 500;
+
+  void initializeInternal();
+  void disconnectInternal();
+
+  void daemonConnected();
+  void errorOccurred(QLocalSocket::LocalSocketError socketError);
+  void readData();
+  void parseCommand(const QByteArray& command);
+  void clearTimeout(const QString& responseType);
+  void clearAllTimeouts();
+
+  /**
+   * @brief Write a JSON message to the socket, sending it to the daemon.
+   *
+   * @param message - A JSON object describing the message to be sent.
+   * @param expectedResponseType - An optional message type that we expect as
+   *                               a response.
+   * @param timeout - The timeout, in milliseconds, to wait for the response.
+   * @return * void
+   */
+  void write(const QJsonObject& message,
+             const QString& expectedResponseType = QString(),
+             int timeout = CONNECTION_RESPONSE_TIMEOUT_MSEC);
+
+ protected:
+  enum {
+    eUnknown,
+    eInitializing,
+    eReady,
+    eDisconnected,
+  } m_daemonState = eUnknown;
+
+ private:
+  const QString m_path;
+  QLocalSocket* m_socket = nullptr;
+
+  QByteArray m_buffer;
+
+  QIODevice* m_logReceiver = nullptr;
+
+  QTimer m_initializingTimer;
+  uint32_t m_initializingInterval = 0;
+
+  bool m_splitTunnelSupported = false;
+
+  // When a message to the daemon expects an immediate response, these
+  // are used to trigger a timeout error if the response never arrives.
+  QList<QTimer*> m_responseTimeouts;
+};
+
+#endif  // LOCALSOCKETCONTROLLER_H

@@ -1,0 +1,193 @@
+#!/bin/bash
+
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+. $(dirname $0)/../utils/commons.sh
+
+if [ -f .env ]; then
+  . .env
+fi
+
+JOBS=24
+RELEASE=1
+export SPLITAPK=0
+export ARCH="arm64-v8a"
+FLAVOR="all"
+WORKSPACE_ROOT="$( cd "$(dirname "$0")/../.." ; pwd -P )"
+
+help_function() {
+  print G "Usage:"
+  print N "\t$0 <path to QT> [-d|--debug] [-j|--jobs <jobs>] [-A | --arch <architectures to build>] [-f | --flavor <flavor>] [--sentrydsn <dsn>] [--sentryendpoint <endpoint>]"
+  print N ""
+  print N "By default, the android build is compiled in release mode. Use -d or --debug for a debug build."
+  print N ""
+  print N "Valid architecture values: x86 x86_64 armeabi-v7a arm64-v8a, by default it will use all"
+  print N ""
+  print N "Valid flavor values: playstore, foss, all. By default it will build all flavors."
+  print N ""
+  exit 0
+}
+print N "This script compiles MozillaVPN for Android"
+
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+  -A | --arch)
+    ARCH="$2"
+    shift
+    shift
+    ;;
+  -j | --jobs)
+    JOBS="$2"
+    shift
+    shift
+    ;;
+  -d | --debug)
+    RELEASE=
+    shift
+    ;;
+  -f | --flavor)
+    FLAVOR="$2"
+    shift
+    shift
+    ;;
+  -h | --help)
+    help_function
+    ;;
+  *)
+    if [[ "$$1" ]]; then
+      QTPATH="$1"
+    fi
+    shift
+    ;;
+  esac
+done
+
+echo $QTPATH
+
+if ! [[ "$QTPATH" ]]; then
+  help_function
+fi
+
+printn Y "Mode: "
+if [[ "$RELEASE" ]]; then
+  print G "release"
+else
+  print G "debug"
+fi
+
+print Y "Flavor: $FLAVOR"
+if [[ "$FLAVOR" != "playstore" && "$FLAVOR" != "foss" && "$FLAVOR" != "all" ]]; then
+  die "Invalid flavor '$FLAVOR'. Valid values are: playstore, foss, all"
+fi
+
+if ! [ -d "$QTPATH/bin" ]; then
+  die "QTAndroid SDK was not found in the provided QT path"
+fi
+
+print Y "Checking Enviroment"
+if ! [ -d "src" ] || ! [ -d "linux" ]; then
+  die "This script must be executed at the root of the repository."
+fi
+if [ -z "${ANDROID_NDK_ROOT}" ]; then
+  die "Could not find 'ANDROID_NDK_ROOT' in env"
+fi
+if [ -z "${ANDROID_SDK_ROOT}" ]; then
+  die "Could not find 'ANDROID_SDK_ROOT' in env"
+fi
+
+
+printn Y "Cleaning the folder... "
+print G "done."
+
+rm -rf .tmp/src/android-build || die "Failed to remove the temporary directory"
+mkdir -p .tmp || die "Failed to create the temporary directory"
+
+# If not provided - use the current time.
+if [ -z "$BUILD_TIMESTAMP" ]; then
+  BUILD_TIMESTAMP=$(date +%s)
+fi
+
+printn Y "Computing the version... "
+export SHORTVERSION=$(cat version.txt) # Export so gradle can pick it up
+export VERSIONCODE=$(echo "$BUILD_TIMESTAMP" | sed 's/.\{2\}$//' ) #Remove the last 2 digits of the timestamp, should give us a new version every 100 seconds.
+FULLVERSION=$SHORTVERSION.$(date +"%Y%m%d%H%M")
+print G "$SHORTVERSION - $FULLVERSION - $VERSIONCODE"
+
+build_flavor() {
+  local FLAVOR_NAME="$1"
+  local BUILD_DIR=".tmp/${FLAVOR_NAME}"
+
+  print Y "Configuring the android build for flavor: $FLAVOR_NAME"
+
+  local EXTRA_CMAKE_ARGS=""
+  if [[ "$FLAVOR_NAME" == "foss" ]]; then
+    EXTRA_CMAKE_ARGS="-DMZ_ANDROID_FOSS_BUILD=ON"
+  fi
+
+  if [[ "$RELEASE" ]]; then
+    printn Y "Use release config for $FLAVOR_NAME"
+    $QTPATH/bin/qt-cmake \
+      -DQT_HOST_PATH=$QT_HOST_PATH \
+      -DQT_ANDROID_BUILD_ALL_ABIS=TRUE \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+      -DANDROID_NDK_ROOT=$ANDROID_NDK_ROOT \
+      -DANDROID_SDK_ROOT=$ANDROID_SDK_ROOT \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DBUILD_TESTS=OFF \
+      $EXTRA_CMAKE_ARGS \
+      -GNinja \
+      -S . -B "$BUILD_DIR"
+  else
+    printn Y "Use debug config for $FLAVOR_NAME\n"
+    $QTPATH/bin/qt-cmake \
+      -DQT_HOST_PATH=$QT_HOST_PATH \
+      -DQT_ANDROID_BUILD_ALL_ABIS=FALSE \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+      -DANDROID_NDK_ROOT=$ANDROID_NDK_ROOT \
+      -DANDROID_SDK_ROOT=$ANDROID_SDK_ROOT \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DBUILD_TESTS=OFF \
+      $EXTRA_CMAKE_ARGS \
+      -GNinja \
+      -S . -B "$BUILD_DIR"
+  fi
+
+  print Y "Compiling apk_install_target in $BUILD_DIR/"
+  # This compiles the client and generates a mozillavpn.so
+  cmake --build "$BUILD_DIR" -j$JOBS
+
+  # Generate a valid gradle project and pre-compile it.
+  print Y "Generate Android Project for $FLAVOR_NAME"
+
+  pushd "$BUILD_DIR/src/android-build/" > /dev/null || die
+  # This will combine the qt-libs + qt-resources and the client
+  # Into a single gradle project
+  if [[ "$RELEASE" ]]; then
+    print Y "Generating Release APK for $FLAVOR_NAME..."
+    ./gradlew compileReleaseSources || die
+    ./gradlew "assembleRelease" || die
+
+    print G "Done 🎉"
+    print G "Your $FLAVOR_NAME Release APK is under: $BUILD_DIR/src/android-build/build/outputs/apk/release"
+  else
+    print Y "Generating Debug APK for $FLAVOR_NAME..."
+    ./gradlew compileDebugSources || die
+    ./gradlew "assembleDebug" || die
+
+    print G "Done 🎉"
+    print G "Your $FLAVOR_NAME Debug APK is under: $BUILD_DIR/src/android-build/build/outputs/apk/debug"
+  fi
+  popd > /dev/null
+}
+
+# Build the requested flavors
+if [[ "$FLAVOR" == "all" ]]; then
+  build_flavor "playstore"
+  build_flavor "foss"
+else
+  build_flavor "$FLAVOR"
+fi

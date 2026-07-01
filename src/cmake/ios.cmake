@@ -1,0 +1,177 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+include(${CMAKE_SOURCE_DIR}/scripts/cmake/osxtools.cmake)
+
+# Based on this answer: https://stackoverflow.com/a/59314670
+#
+# Get the Release build to have the debug symbols like the ReleaseWithDebInfo build
+# Reasoning: XCode Cloud does not let us choose between Release of RelWithDebInfo,
+# and we want RelWithDebInfo to upload debug symbols to Sentry.
+set(CMAKE_CXX_FLAGS_RELEASE "-O2 -g -DNDEBUG")
+set(CMAKE_C_FLAGS_RELEASE "-O2 -g -DNDEBUG")
+
+# This workaround will not be required anymore once Qt is updated
+# See https://bugreports.qt.io/browse/QTBUG-93268
+set_property(GLOBAL PROPERTY XCODE_EMIT_EFFECTIVE_PLATFORM_NAME ON)
+
+target_link_options(mozillavpn PRIVATE "-ObjC")
+
+## Install the Network Extension into the bundle.
+add_dependencies(mozillavpn networkextension widgetextension)
+
+# Configure the application bundle Info.plist
+set_target_properties(mozillavpn PROPERTIES
+    OUTPUT_NAME "Mozilla VPN"
+    MACOSX_BUNDLE ON
+    MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/ios/app/Info.plist.in
+    MACOSX_BUNDLE_BUNDLE_NAME "Mozilla VPN"
+    MACOSX_BUNDLE_BUNDLE_VERSION "${BUILD_ID}"
+    MACOSX_BUNDLE_COPYRIGHT "MPL-2.0"
+    MACOSX_BUNDLE_GUI_IDENTIFIER "${BUILD_IOS_APP_IDENTIFIER}"
+    MACOSX_BUNDLE_INFO_STRING "Mozilla VPN"
+    MACOSX_BUNDLE_LONG_VERSION_STRING "${CMAKE_PROJECT_VERSION}-${BUILD_ID}"
+    MACOSX_BUNDLE_SHORT_VERSION_STRING "${CMAKE_PROJECT_VERSION}"
+    MACOSX_BUNDLE_ICON_FILE "AppIcon"
+    XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${BUILD_IOS_APP_IDENTIFIER}"
+    XCODE_ATTRIBUTE_CODE_SIGN_ENTITLEMENTS "${CMAKE_SOURCE_DIR}/ios/app/main.entitlements"
+    XCODE_ATTRIBUTE_MARKETING_VERSION "${CMAKE_PROJECT_VERSION}"
+    XCODE_ATTRIBUTE_PRODUCT_NAME "${PROJECT_NAME}"
+    XCODE_GENERATE_SCHEME TRUE
+    XCODE_ATTRIBUTE_ASSETCATALOG_COMPILER_APPICON_NAME "AppIcon"
+    # Required for this target to be added to the archive?
+    XCODE_ATTRIBUTE_INSTALL_PATH "$(LOCAL_APPS_DIR)"
+    XCODE_ATTRIBUTE_SKIP_INSTALL "NO"
+    # Set device target family to iPhone and iPad
+    XCODE_ATTRIBUTE_TARGETED_DEVICE_FAMILY "1,2"
+    # Make sure the network extension is added as a plugin to the final bundle
+    XCODE_EMBED_APP_EXTENSIONS_REMOVE_HEADERS_ON_COPY "YES"
+    XCODE_EMBED_APP_EXTENSIONS_CODE_SIGN_ON_COPY "YES"
+    XCODE_EMBED_FRAMEWORKS_REMOVE_HEADERS_ON_COPY "YES"
+    XCODE_EMBED_FRAMEWORKS_CODE_SIGN_ON_COPY "YES"
+    XCODE_ATTRIBUTE_LD_RUNPATH_SEARCH_PATHS "@executable_path/Frameworks"
+    # Do not strip debug symbols on copy
+    XCODE_ATTRIBUTE_COPY_PHASE_STRIP "NO"
+    XCODE_ATTRIBUTE_STRIP_INSTALLED_PRODUCT "NO"
+    # Do not build with debug dylibs - it breaks the Qt/ios entrypoint.
+    # This can be fixed by rolling out own entrypoint and invoking
+    # UIApplicationMain() ourselves.
+    XCODE_ATTRIBUTE_ENABLE_DEBUG_DYLIB "NO"
+)
+target_include_directories(mozillavpn PRIVATE ${CMAKE_SOURCE_DIR})
+
+set_property(TARGET mozillavpn APPEND PROPERTY XCODE_EMBED_APP_EXTENSIONS networkextension)
+set_property(TARGET mozillavpn APPEND PROPERTY XCODE_EMBED_APP_EXTENSIONS widgetextension)
+
+find_library(FW_UI_KIT UIKit)
+find_library(FW_FOUNDATION Foundation)
+find_library(FW_STORE_KIT StoreKit)
+find_library(FW_APPINTENTS AppIntents)
+find_library(FW_USER_NOTIFICATIONS UserNotifications)
+find_library(FW_NETWORK Network)
+find_library(FW_AUTHENTICATION_SERVICES AuthenticationServices)
+
+# This next section fixes a compile bug on iOS: https://qt-project.atlassian.net/browse/QTBUG-135978, found
+# via https://forum.qt.io/topic/162177/ios-objc-link-option-leads-to-duplicate-symbol-for-qtcore.framework/2
+# When the fix hits a version of Qt 6.10 we're using, we should be able to remove this section.
+# This flag requires cmake 3.29+.
+cmake_minimum_required(VERSION 3.29)
+if (POLICY CMP0156)
+    message(STATUS "Setting CMP0156 policy to NEW...")
+    set(QT_FORCE_CMP0156_TO_NEW ON CACHE BOOL "Force CMake policy CMP0156 to NEW behavior for Qt6")
+    if (Qt6_VERSION VERSION_GREATER_EQUAL "6.11.0")
+      message(FATAL_ERROR "See if this can be removed. If not, increase the Qt version here.")
+    endif ()
+else()
+    message(FATAL_ERROR "CMP0156 policy not found. The iOS client should be built on a newer version of cmake and/or Qt.")
+endif ()
+
+target_link_libraries(mozillavpn PRIVATE ${FW_UI_KIT})
+target_link_libraries(mozillavpn PRIVATE ${FW_FOUNDATION})
+target_link_libraries(mozillavpn PRIVATE ${FW_STORE_KIT})
+target_link_libraries(mozillavpn PRIVATE ${FW_APPINTENTS})
+target_link_libraries(mozillavpn PRIVATE ${FW_USER_NOTIFICATIONS})
+target_link_libraries(mozillavpn PRIVATE ${FW_NETWORK})
+target_link_libraries(mozillavpn PRIVATE ${FW_AUTHENTICATION_SERVICES})
+
+## Hack: IOSUtils needs QtGui internals...
+target_include_directories(mozillavpn PRIVATE ${Qt6Gui_PRIVATE_INCLUDE_DIRS})
+
+# iOS platform source files
+target_sources(mozillavpn PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/macos/macospingsender.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/macos/macospingsender.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/tasks/purchase/taskpurchase.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/tasks/purchase/taskpurchase.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosauthenticationlistener.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosauthenticationlistener.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosiaphandler.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosiaphandler.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosiaphandler.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/ioscontroller.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/ioscontroller.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosglue.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosnetworkwatcher.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosnetworkwatcher.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosnotificationhandler.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosnotificationhandler.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosutils.mm
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosutils.h
+)
+
+target_sources(mozillavpn PRIVATE
+    ${CMAKE_SOURCE_DIR}/ios/app/launch.png
+    ${CMAKE_SOURCE_DIR}/ios/app/MozillaVPNLaunchScreen.storyboard
+    ${CMAKE_SOURCE_DIR}/ios/app/Images.xcassets
+    ${CMAKE_SOURCE_DIR}/ios/NETunnelProviderManager+Extension.swift
+)
+
+set_property(TARGET mozillavpn APPEND PROPERTY RESOURCE
+    ${CMAKE_SOURCE_DIR}/ios/app/launch.png
+    ${CMAKE_SOURCE_DIR}/ios/app/MozillaVPNLaunchScreen.storyboard
+    ${CMAKE_SOURCE_DIR}/ios/app/Images.xcassets
+)
+
+set_target_properties(mozillavpn PROPERTIES
+    XCODE_ATTRIBUTE_SWIFT_VERSION "5.0"
+    XCODE_ATTRIBUTE_CLANG_ENABLE_MODULES "YES"
+    XCODE_ATTRIBUTE_SWIFT_OBJC_BRIDGING_HEADER "${CMAKE_SOURCE_DIR}/ios/app/WireGuard-Bridging-Header.h"
+    XCODE_ATTRIBUTE_SWIFT_PRECOMPILE_BRIDGING_HEADER "NO"
+    XCODE_ATTRIBUTE_SWIFT_OPTIMIZATION_LEVEL "-Onone"
+    XCODE_ATTRIBUTE_SWIFT_OBJC_INTERFACE_HEADER_NAME "Mozilla-Swift.h"
+)
+target_compile_options(mozillavpn PRIVATE
+    -DGROUP_ID=\"${BUILD_IOS_GROUP_IDENTIFIER}\"
+    -DVPN_NE_BUNDLEID=\"${BUILD_IOS_APP_IDENTIFIER}.network-extension\"
+)
+target_sources(mozillavpn PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/ioscontroller.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iosconstants.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/ioslogger.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iostunnelmessage.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/iostunnelmanager.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/TurnOffIntent.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/TurnOnIntent.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/VPNStatusIntent.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/ios/AppShortcuts.swift
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/macos/macoscryptosettings.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/platforms/macos/macoscryptosettings.mm
+)
+
+target_sources(mozillavpn PRIVATE
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/Shared/Keychain.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/IPAddressRange.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/InterfaceConfiguration.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/Shared/Model/NETunnelProviderProtocol+Extension.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/TunnelConfiguration.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/Shared/Model/TunnelConfiguration+WgQuickConfig.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/Endpoint.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/Shared/Model/String+ArrayConversion.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/PeerConfiguration.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/DNSServer.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardApp/LocalizationHelper.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/Shared/FileManager+Extension.swift
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKitC/x25519.c
+    ${CMAKE_SOURCE_DIR}/3rdparty/wireguard-apple/Sources/WireGuardKit/PrivateKey.swift
+)

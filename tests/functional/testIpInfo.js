@@ -1,0 +1,37 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+const vpn = require('./helper.js');
+const assert = require('assert');
+const queries = require('./queries.js');
+
+describe('IP info', function() {
+  this.ctx.authenticationNeeded = true;
+
+  it('Opens and closes IP info', async () => {
+    await vpn.waitForQuery(queries.screenHome.CONTROLLER_TITLE.visible());
+    await vpn.activate(true);
+
+    // Open IP info panel
+    await vpn.waitForQueryAndClick(queries.screenHome.IP_INFO_TOGGLE.ready());
+    await vpn.waitForQuery(queries.screenHome.IP_INFO_PANEL.opened());
+
+    // Close IP info panel
+    await vpn.waitForQueryAndClick(queries.screenHome.IP_INFO_TOGGLE.visible());
+    await vpn.waitForQuery(queries.screenHome.IP_INFO_PANEL.closed());
+  });
+
+  it('Closes when VPN is deactivated', async () => {
+    await vpn.waitForQuery(queries.screenHome.CONTROLLER_TITLE.visible());
+    await vpn.activate(true);
+
+    // Open IP info panel
+    await vpn.waitForQueryAndClick(queries.screenHome.IP_INFO_TOGGLE.ready());
+    await vpn.waitForQuery(queries.screenHome.IP_INFO_PANEL.opened());
+
+    // Deactivate VPN
+    await vpn.deactivate();
+    await vpn.waitForQuery(queries.screenHome.IP_INFO_PANEL.closed());
+  });
+});

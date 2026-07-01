@@ -1,0 +1,29 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.mozilla.vpn.dbus">
+    <method name="version">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="activate">
+      <arg type="b" direction="out"/>
+      <arg name="jsonConfig" type="s" direction="in"/>
+    </method>
+    <method name="deactivate">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="status">
+      <arg name="jsonStatus" type="s" direction="out"/>
+    </method>
+    <method name="getLogs">
+      <arg name="logs" type="s" direction="out"/>
+    </method>
+    <method name="cleanupLogs">
+    </method>
+    <signal name="connected">
+      <arg name="pubkey" type="s" direction="out"/>
+    </signal>
+    <signal name="disconnected">
+    </signal>
+  </interface>
+</node>
+

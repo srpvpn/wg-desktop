@@ -1,0 +1,24 @@
+[submodule "3rdparty/wireguard-tools"]
+	path = 3rdparty/wireguard-tools
+	url = https://github.com/WireGuard/wireguard-tools
+	shallow = true
+[submodule "3rdparty/wireguard-apple"]
+	path = 3rdparty/wireguard-apple
+	url = https://github.com/mozilla/wireguard-apple.git
+	shallow = true
+[submodule "3rdparty/wireguard-go"]
+	path = 3rdparty/wireguard-go
+	url = https://github.com/WireGuard/wireguard-go
+	shallow = true
+[submodule "3rdparty/sentry"]
+	path = 3rdparty/sentry
+	url = https://github.com/getsentry/sentry-native/
+	shallow = true
+[submodule "3rdparty/i18n"]
+	path = 3rdparty/i18n
+	url = https://github.com/mozilla-l10n/mozilla-vpn-client-l10n.git
+	branch = main
+	shallow = true
+[submodule "3rdparty/c-ares"]
+	path = 3rdparty/c-ares
+	url = https://github.com/c-ares/c-ares

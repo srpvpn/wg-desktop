@@ -1,0 +1,211 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import com.android.build.OutputFile
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://maven.mozilla.org/maven2"
+        }
+    }
+    dependencies {
+        classpath SharedDependencies.com_android_tools_build_gradle
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.21"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:2.2.21"
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+allprojects {
+    repositories {
+        maven {
+            url "https://maven.mozilla.org/maven2"
+        }
+        mavenCentral()
+        google()
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlinx-serialization'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation project(path: ':daemon')
+    implementation project(path: ':vpnClient')
+
+    coreLibraryDesugaring SharedDependencies.com_android_tools_desugar_jdk_libs
+}
+
+android {
+    ndkVersion Config.ndkVersion
+    compileSdkVersion Config.compileSdkVersion
+
+    namespace 'org.mozilla.firefox.vpn'
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src', 'java']
+            aidl.srcDirs = ['src', 'aidl']
+
+            manifest.srcFile 'AndroidManifest.xml'
+            renderscript.srcDirs = ['src']
+            assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs','build/ssl']
+        }
+        debug{
+            try {
+                res.srcDirs =  [
+                        qtAndroidDir + '/res',
+                        'resources/all',
+                        'resources/debug',
+                        'res'
+                ]
+            }catch(Exception ignored){
+                res.srcDirs = [
+                        'resources/all',
+                        'resources/debug',
+                        'res'
+                ]
+            }
+        }
+        release{
+            try {
+                res.srcDirs =  [
+                        qtAndroidDir + '/res',
+                        'resources/all',
+                        'resources/release',
+                        'res'
+                ]
+            }catch(Exception ignored){
+                res.srcDirs = [
+                        'resources/all',
+                        'resources/release',
+                        'res'
+                ]
+            }
+        }
+    }
+
+    signingConfigs {
+        debug {
+            // In case generate a new key anytime:
+            // $: keytool -genkey -v -keystore debug.keystore -storepass android \
+            //            -alias androiddebugkey -keypass android -keyalg RSA \
+            //            -keysize 2048 -validity 10000
+            storeFile rootProject.file('./debug.keystore')
+            storePassword('android')
+            keyAlias 'androiddebugkey'
+            keyPassword('android')
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    // Do not compress Qt binary resources file
+    aaptOptions {
+        noCompress 'rcc'
+    }
+
+    buildTypes {
+        release {
+            // That would enable treeshaking and remove java code that is just called from qt
+            minifyEnabled false
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            packagingOptions {
+                // specify the path to your object binaries, or generally:
+                doNotStrip '**.so'
+            }
+        }
+    }
+
+    defaultConfig {
+        resConfig "en"
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        versionCode  System.getenv("VERSIONCODE")? System.getenv("VERSIONCODE")?.toInteger() : 99999
+        versionName  System.getenv("SHORTVERSION") ? System.getenv("SHORTVERSION"): ""
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled = true
+    }
+    splits {
+        abi {
+            enable true
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86", "armeabi-v7a", "arm64-v8a", "x86_64"
+            // Also generate one universal apk that contains all abi's (need this for qmake to pass)
+            universalApk true
+        }
+    }
+}
+
+// Map for the version code that gives each ABI a value.
+ext.abiCodes = ['armeabi-v7a':1,"arm64-v8a":2, x86:3, x86_64:4]
+android.applicationVariants.all { variant ->
+  // Assigns a different version code for each output APK
+  // other than the universal APK.
+  variant.outputs.each { output ->
+    def baseAbiVersionCode = project.ext.abiCodes.get(output.getFilter(OutputFile.ABI))
+    if (baseAbiVersionCode != null) {
+      output.versionCodeOverride =
+              baseAbiVersionCode + variant.versionCode
+    }
+  }
+}
+
+
+// Enable Ktlint out of the box via gradle Task
+configurations {
+    ktlint
+}
+
+dependencies {
+    ktlint("com.pinterest:ktlint:0.48.2") {
+        attributes {
+            attribute(Bundling.BUNDLING_ATTRIBUTE, getObjects().named(Bundling, Bundling.EXTERNAL))
+        }
+    }
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "src/**/*.kt", "!**/build/**/*.kt", "buildSrc/**/*.kt",  "daemon/**/*.kt",  "**/*.kts"
+}
+
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.pinterest.ktlint.Main"
+    args "-F", "src/**/*.kt", "!**/build/**/*.kt", "buildSrc/**/*.kt",  "daemon/**/*.kt", "**/*.kts", "**/*.kt"
+}

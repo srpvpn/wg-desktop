@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-License-Identifier: MIT
+
+  Copyright (C) 2019 WireGuard LLC. All Rights Reserved.
+  Copyright (C) 2019 Edge Security LLC. All Rights Reserved.
+-->
+
+<?define UpgradeCode = "abd1aa2b-11d7-4c4d-85ee-cc987d82a443"?>
+<?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
+  <Package
+    Name="Mozilla VPN"
+    Version="!(bind.FileVersion.MozillaVPNExecutable)"
+    Manufacturer="Mozilla Corporation"
+    Language="1033"
+    Scope="perMachine"
+    InstallerVersion="500"
+    UpgradeCode="$(var.UpgradeCode)"
+    Compressed="yes">
+
+    <SummaryInformation Description="Mozilla VPN" />
+
+    <Launch Condition="Installed OR (VersionNT &gt;= 603)" Message="This application is only supported on Windows 10 or higher." />
+
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion OnlyDetect='no' Property='PREVIOUSFOUND'
+        Minimum='0.0.0.0' IncludeMinimum='yes'
+        Maximum='1.0.0.0' IncludeMaximum='no' />
+      <!-- Prompt system restart when upgrading from 2.32 to properly reload split tunnel driver -->
+      <UpgradeVersion OnlyDetect='yes' Property='NEEDSREBOOT'
+        Minimum='0.0.0.0' IncludeMinimum='yes'
+        Maximum='2.32.99.99' IncludeMaximum='yes' />
+    </Upgrade>
+
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <Icon Id="MozillaVPNMainIcon" SourceFile="logo.ico" />
+
+    <Property Id="ARPPRODUCTICON" Value="MozillaVPNMainIcon" />
+    <Property Id="ARPURLINFOABOUT" Value="https://vpn.mozilla.org" />
+    <Property Id="ARPNOMODIFY" Value="yes" />
+    <Property Id="DISABLEADVTSHORTCUTS" Value="yes" />
+    <Property Id="DISABLEROLLBACK" Value="yes" />
+    <Property Id="MSIDISABLERMRESTART" Value="1" />
+    <Property Id="MSIRMSHUTDOWN" Value="1" />
+
+    <!--
+      Upgrading
+    -->
+    <MajorUpgrade
+      AllowDowngrades="no"
+      AllowSameVersionUpgrades="yes"
+      DowngradeErrorMessage="A newer version of [ProductName] is already installed."
+      Schedule="afterInstallValidate" />
+
+    <!--
+      Folders
+    -->
+    <StandardDirectory Id="$(var.PlatformProgramFilesFolder)">
+      <Directory Id="MozillaFolder" Name="Mozilla">
+        <Directory Id="MozillaVPNFolder" Name="Mozilla VPN" />
+      </Directory>
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder" />
+
+    <!--
+      Components
+    -->
+    <ComponentGroup Id="MozillaVPNComponents">
+      <Component Directory="MozillaVPNFolder" Id="MozillaVPNExecutable" Guid="EF353A73-A10B-4A2D-87AC-4389BBD9313B">
+        <File Id="MozillaVPNExecutable" Source="Mozilla VPN.exe" KeyPath="yes">
+          <Shortcut Id="MozillaVPNShortcut" Directory="ProgramMenuFolder" Name="Mozilla VPN" Description="A fast, secure and easy to use VPN. Built by the makers of Firefox." WorkingDirectory="MozillaVPNFolder" Advertise="yes" />
+        </File>
+        <File Source="wireguard.dll" />
+        <File Source="mullvad-split-tunnel.cat" />
+        <File Source="mullvad-split-tunnel.inf" />
+        <File Source="mullvad-split-tunnel.sys" />
+        <File Source="mozillavpn.json" />
+
+        <!-- Broker Service -->
+        <ServiceInstall
+          Type="ownProcess"
+          Name="MozillaVPNBroker"
+          DisplayName="Mozilla VPN (broker)"
+          Description="Provides connectivity between the Mozilla VPN client and any applicable tunnel interfaces."
+          Start="auto"
+          Arguments="windowsdaemon"
+          ErrorControl="normal"
+          Vital="yes">
+
+          <util:ServiceConfig
+            ServiceName="MozillaVPNBroker"
+            FirstFailureActionType="restart"
+            SecondFailureActionType="restart"
+            ThirdFailureActionType="none"
+            ResetPeriodInDays="1"
+            RestartServiceDelayInSeconds="5" />
+        </ServiceInstall>
+
+        <ServiceControl Id="StartService" Start="install" Stop="both" Remove="both" Name="MozillaVPNBroker" Wait="yes" />
+
+        <!-- Remove Tunnel Service, if running -->
+        <ServiceControl Id="MozillaVPNService" Remove="both" Name="WireGuardTunnel$MozillaVPN" Stop="both" Wait="yes" />
+      </Component>
+
+      <!-- Proxy Service -->
+      <Component Directory="MozillaVPNFolder" Id="MozillaVPNProxy" Guid="CCD12CD3-A91F-452A-B51B-187B70F1A941">
+        <File Source="socksproxy.exe" />
+
+        <ServiceInstall
+          Type="ownProcess"
+          Name="MozillaVPNProxy"
+          DisplayName="Mozilla VPN (proxy)"
+          Description="Provides host network connectivity as a SOCKS proxy."
+          Start="auto"
+          Arguments="-p 8123 -s"
+          ErrorControl="normal"
+          Vital="yes">
+
+          <util:ServiceConfig
+            ServiceName="MozillaVPNProxy"
+            FirstFailureActionType="restart"
+            SecondFailureActionType="restart"
+            ThirdFailureActionType="none"
+            ResetPeriodInDays="1"
+            RestartServiceDelayInSeconds="5" />
+        </ServiceInstall>
+
+        <ServiceControl Id="StartProxy" Start="install" Stop="both" Remove="both" Name="MozillaVPNProxy" Wait="yes" />
+      </Component>
+    </ComponentGroup>
+
+    <!--
+      Merge modules
+    -->
+    <DirectoryRef Id="MozillaVPNFolder">
+      <Merge Id="VCRedistModule" SourceFile="Microsoft_CRT_repack.msm" DiskId="1" Language="0"/>
+    </DirectoryRef>
+    <Feature Id="VCRedistFeature" Title="Visual C++ Runtime" AllowAdvertise="no" Display="hidden" Level="1">
+      <MergeRef Id="VCRedistModule" />
+    </Feature>
+
+    <DirectoryRef Id="MozillaVPNFolder">
+      <Component Id="RegistryEntries" Guid="71d1c1ef-2133-4cbf-954d-7f1e0e24dace">
+        <RegistryKey Root="HKLM" Key="Software\Mozilla\NativeMessagingHosts\mozillavpn">
+          <RegistryValue Type="string" Value="[MozillaVPNFolder]\mozillavpn.json"/>
+        </RegistryKey>
+        <RegistryKey Root="HKLM" Key="Software\Google\Chrome\NativeMessagingHosts\mozillavpn">
+          <RegistryValue Type="string" Value="[MozillaVPNFolder]\mozillavpn.json"/>
+        </RegistryKey>
+        <RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\Windows Error Reporting\LocalDumps\MozillaVPN.exe">
+          <RegistryValue Type="string" Name="DumpFolder" Value="[LocalAppDataFolder]MozillaVPN\dumps" />
+          <RegistryValue Type="integer" Name="DumpCount" Value="3" />
+          <RegistryValue Type="integer" Name="DumpType" Value="1" />
+        </RegistryKey>
+        <RegistryKey Root="HKCR" Key="mozilla-vpn">
+          <RegistryValue Type="string" Name="URL Protocol" Value=""/>
+          <RegistryValue Type="string" Value="URL:Mozilla VPN"/>
+          <RegistryKey Key="DefaultIcon">
+            <RegistryValue Type="string" Value="[MozillaVPNFolder]\Mozilla VPN.exe"/>
+          </RegistryKey>
+          <RegistryKey Key="shell\open\command">
+            <RegistryValue Type="string" Value="&quot;[MozillaVPNFolder]\Mozilla VPN.exe&quot; ui &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+
+    <!--
+      Features
+    -->
+    <Feature Id="MozillaVPNFeature" Title="Mozilla VPN" Level="1">
+      <ComponentGroupRef Id="MozillaVPNComponents" />
+    </Feature>
+    <Feature Id="MozillaVPNRegistryEntries" Title="Native Messaging Registry Entries" Level="1">
+      <ComponentRef Id="RegistryEntries" />
+    </Feature>
+
+    <!--
+      Launch after setup complete
+    -->
+    <CustomAction Id="LaunchVPNFirstExecution" Impersonate="yes" FileRef="MozillaVPNExecutable" ExeCommand="" Return="asyncNoWait" />
+    <CustomAction Id="LaunchVPNAfterUpdate" Impersonate="yes" FileRef="MozillaVPNExecutable" ExeCommand="ui --updated" Return="asyncNoWait" />
+    <InstallExecuteSequence>
+       <Custom Action="LaunchVPNFirstExecution" After="InstallFinalize" Condition="NOT WIX_UPGRADE_DETECTED AND NOT NEEDSREBOOT" />
+       <Custom Action="LaunchVPNAfterUpdate" After="InstallFinalize" Condition="WIX_UPGRADE_DETECTED AND NOT NEEDSREBOOT" />
+       <ScheduleReboot Before="InstallFinalize" Condition="NEEDSREBOOT" />
+    </InstallExecuteSequence>
+
+    <!--
+      Force application closed
+    -->
+    <Property Id="WixQuietExecCmdLine" Value='"[#SystemFolder]taskkill.exe" /F /IM "Mozilla VPN.exe" /IM "MozillaVPN.exe"'/>
+    <CustomAction Id="CloseApplication" BinaryRef="Wix4UtilCA_$(sys.BUILDARCHSHORT)" DllEntry="WixQuietExec" Execute="immediate" Return="ignore"/>
+    <InstallExecuteSequence>
+      <Custom Action="CloseApplication" After="StopServices" />
+    </InstallExecuteSequence>
+
+    <!--
+      Force reinstall of components when running in maintenence mode.
+    -->
+    <CustomAction Id="ForceReinstall" Property="REINSTALL" Value="MozillaVPNFeature"/>
+    <InstallExecuteSequence>
+      <Custom Action="ForceReinstall" Before="CostInitialize" Condition="Installed AND NOT (REMOVE=&quot;ALL&quot;) and NOT REINSTALL" />
+    </InstallExecuteSequence>
+  </Package>
+</Wix>

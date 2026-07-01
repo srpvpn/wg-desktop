@@ -1,0 +1,2502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="../../nebula/ui/components/MZSystemAlert.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.alert.authenticationError">
+        <source>Authentication error</source>
+        <target>Autentikaasjeflater</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.backendServiceError">
+        <source>Background service error</source>
+        <target>Flater eftergrûntsjinst</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.deviceDisconnectedAndLogout">
+        <source>Signed out and device disconnected</source>
+        <target>Ofmeld en apparaat ferbrutsen</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.getIPRestrictionError">
+        <source>Operation not allowed from current location</source>
+        <target>Bewurking fan aktuele lokaasje ôf net tastien</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.remoteServiceError">
+        <source>Remote service error</source>
+        <target>Flater eksterne tsjinst</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.subscriptionFailureError">
+        <source>Subscription failed</source>
+        <target>Ynskriuwen mislearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.tryAgain">
+        <source>Try again</source>
+        <target>Opnij probearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.alert.unableToConnect">
+        <source>Unable to connect</source>
+        <target>Kin gjin ferbining meitsje</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/extrastrings.h" datatype="c" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="macosinstaller.conclusion.message1_v2">
+        <source>The Mozilla VPN is successfully installed. You’re ready to start taking control of your online privacy.</source>
+        <target>De Mozilla VPN is mei sukses ynstallearre. Jo binne ree om kontrôle te krijen oer jo online privacy.</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.conclusion.message2">
+        <source>Trouble with this installation?</source>
+        <target>Problemen mei dizze ynstallaasje?</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.conclusion.message31">
+        <source>Help</source>
+        <target>Help</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.conclusion.title">
+        <source>Success!</source>
+        <target>Slagge!</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.previous_build.message">
+        <source>A previous installation of Mozilla VPN exists at /Applications/Mozilla VPN.app. This installer will remove the previous installation prior to installing. Please back up any data before proceeding.</source>
+        <target>In eardere ynstallaasje fan Mozilla VPN bestiet op /Applications/Mozilla VPN.app. Dizze ynstallaasje sil de foarige ynstallaasje foarôfgeand oan it ynstallearjen fuortsmite. Meitsje in reservekopy eardat jo trochgean.</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.previous_build.title">
+        <source>Previous Installation Detected</source>
+        <target>Foarige ynstallaasje detektearre</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.title">
+        <source>Mozilla VPN for macOS</source>
+        <target>Mozilla VPN foar macOS</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.unsupported_version.message">
+        <source>Mozilla VPN requires Mac OS X 10.6 or later.</source>
+        <target>Mozilla VPN fereasket Mac OS X 10.6 of heger.</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.unsupported_version.title">
+        <source>Unable to install</source>
+        <target>Ynstallaasje net mooglik</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.welcome.message1">
+        <source>You will now be guided through the installation steps for the Mozilla VPN. Thank you for choosing your VPN from the trusted pioneer of internet privacy.</source>
+        <target>Jo wurde no troch de ynstallaasjestappen foar de Mozilla VPN laat. Tank foar it kiezen fan jo VPN fan de fertroude pionier fan ynternetprivacy.</target>
+      </trans-unit>
+      <trans-unit id="macosinstaller.welcome.message2">
+        <source>Click “Continue” to continue the setup.</source>
+        <target>Klik op ‘Trochgean’ om troch te gean mei de ynstallaasje.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ipaddresslookup.cpp" datatype="cpp" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.connectionInfo.loading">
+        <source>Loading</source>
+        <target>Lade</target>
+        <note annotates="source" from="developer">This refers to the current IP address, i.e. "IP: Loading".</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/platforms/macos/macosmenubar.cpp" datatype="cpp" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="menubar.file.close">
+        <source>Close</source>
+        <target>Slute</target>
+      </trans-unit>
+      <trans-unit id="menubar.file.title">
+        <source>File</source>
+        <target>Bestân</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/ScreenBackendFailure.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.errors.somethingWentWrong">
+        <source>Something went wrong…</source>
+        <target>Der is wat misgien…</target>
+      </trans-unit>
+      <trans-unit id="vpn.errors.tryAgain">
+        <source>Try Again</source>
+        <target>Opnij probearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.errors.unableToEstablishConnection">
+        <source>Unable to establish a connection at this time. We’re working hard to resolve the issue. Please try again shortly.</source>
+        <target>Kin op dit stuit gjin ferbining meitsje. Wy wurkje der hurd oan om it probleem op te lossen. Probearje it ynkoarten opnij.</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/ScreenCrashReporting.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.crashreporter.description">
+        <source>The Mozilla VPN app quit unexpectedly. Would you like to send a crash report to help fix the issue?</source>
+        <target>De Mozilla VPN-app is ûnferwachts stoppe. Wolle jo in ûngelokrapport ferstjoeren om it probleem op te lossen?</target>
+        <note annotates="source" from="developer">Main text telling the user that we are asking for permission to send a crash report.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.dontSendButton">
+        <source>No thanks</source>
+        <target>Nee, tankewol</target>
+        <note annotates="source" from="developer">User does not agree to send a crash report.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.mainHeading">
+        <source>Crash reporting</source>
+        <target>Ungelokken rapportearje</target>
+        <note annotates="source" from="developer">Label over description text section.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.sendButtonLabel">
+        <source>Send report</source>
+        <target>Rapport ferstjoere</target>
+        <note annotates="source" from="developer">User agrees to send a crash report.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/devices/VPNDeviceListItem.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.devices.deviceAccessibleName">
+        <source>%1 %2</source>
+        <target>%1 %2</target>
+        <note annotates="source" from="developer">Example: "deviceName deviceDescription"</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/ViewHome.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="MozillaVPN">
+        <source>Mozilla VPN</source>
+        <target>Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.servers.currentLocation">
+        <source>current location - %1</source>
+        <target>aktuele lokaasje – %1</target>
+        <note annotates="source" from="developer">Accessibility description for current location of the VPN server</note>
+      </trans-unit>
+      <trans-unit id="vpn.servers.selectLocation">
+        <source>Select location</source>
+        <target>Lokaasje selektearje</target>
+        <note annotates="source" from="developer">Select the Location of the VPN server</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/controller/ConnectionStability.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.connectionStability.checkConnection">
+        <source>Check Connection</source>
+        <target>Kontrolearje jo ferbining</target>
+        <note annotates="source" from="developer">Message displayed to the user when the connection is unstable or missing, asking them to check their connection.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionStability.noSignal">
+        <source>No Signal</source>
+        <target>Gjin sinjaal</target>
+      </trans-unit>
+      <trans-unit id="vpn.connectionStability.unstable">
+        <source>Unstable</source>
+        <target>Ynstabyl</target>
+        <note annotates="source" from="developer">This refers to the user’s internet connection.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/controller/ControllerView.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.controller.activated">
+        <source>VPN is on</source>
+        <target>VPN is ynskeakele</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.activating">
+        <source>Masking connection and location</source>
+        <target>Ferbining en lokaasje maskearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.activationSloagan">
+        <source>Turn on to protect your privacy</source>
+        <target>Ynskeakelje om jo privacy te beskermjen</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.active">
+        <source>Secure and private</source>
+        <target>Feilich en privee</target>
+        <note annotates="source" from="developer">This refers to the user’s internet connection.</note>
+      </trans-unit>
+      <trans-unit id="vpn.controller.attemptingToConfirm">
+        <source>Attempting to confirm connection</source>
+        <target>Probearje ferbinding te befêstigjen</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.connectingState">
+        <source>Connecting…</source>
+        <target>Ferbine…</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.deactivated">
+        <source>VPN is off</source>
+        <target>VPN is útskeakele</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.deactivating">
+        <source>Unmasking connection and location</source>
+        <target>Maskearjen ferbining en lokaasje opheffe</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.disconnecting">
+        <source>Disconnecting…</source>
+        <target>Ferbining ferbrekke…</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.switching">
+        <source>Switching…</source>
+        <target>Wikselje…</target>
+      </trans-unit>
+      <trans-unit id="vpn.controller.switchingDetail">
+        <source>From %1 to %2</source>
+        <target>Fan %1 nei %2</target>
+        <note annotates="source" from="developer">Switches from location 1 to location 2</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/controller/VPNToggle.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.toggle.off">
+        <source>Turn VPN off</source>
+        <target>VPN útskeakelje</target>
+      </trans-unit>
+      <trans-unit id="vpn.toggle.on">
+        <source>Turn VPN on</source>
+        <target>VPN ynskeakelje</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/home/servers/ServerCountry.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="cities">
+        <source>Cities</source>
+        <target>Stêden</target>
+        <note annotates="source" from="developer">The title for the list of cities.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/settings/ViewLanguage.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.settings.language">
+        <source>Language</source>
+        <target>Taal</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.languageAccessibleName">
+        <source>%1 %2</source>
+        <target>%1 %2</target>
+        <note annotates="source" from="developer">This string is read by accessibility tools. %1 is the language name, %2 is the localized language name.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/settings/ViewNotifications.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.settings.guestWifiAlert">
+        <source>Guest Wi-Fi portal alert</source>
+        <target>Warskôging foar wifi-gasteportaal</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.guestWifiAlert.description">
+        <source>Get notified if a guest Wi-Fi portal is blocked due to VPN connection</source>
+        <target>Untfang in melding as in wifi-gasteportaal blokkearre is fanwegen in VPN-ferbining</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.connectionChange.description">
+        <source>Get notified when the connection status changes</source>
+        <target>Untfang in melding wannear’t de ferbiningssteat wiziget</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.connectionChange2">
+        <source>Connection change notification</source>
+        <target>Melding ferbiningswiziging</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.serverSwitch.description">
+        <source>Get notified when you successfully switched servers</source>
+        <target>Untfang in melding wannear’t jo mei sukses fan server wiksele binne</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notification.serverSwitch2">
+        <source>Server switching notification</source>
+        <target>Melding serverwikseling</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.notifications">
+        <source>Notifications</source>
+        <target>Notifikaasjes</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.unsecuredNetworkAlert">
+        <source>Unsecured network alert</source>
+        <target>Warskôging ûnbefeilige netwurk</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.unsecuredNetworkAlert.description">
+        <source>Get notified if you connect to an unsecured Wi-Fi network</source>
+        <target>Untfang in melding as jo ferbining meitsje mei in ûnbefeilige wifi-netwurk</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/screens/settings/appPermissions/ViewAppPermissions.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.protectSelectedApps.addApplication">
+        <source>Add application</source>
+        <target>Tapassing tafoegje</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.protectSelectedApps.searchApps">
+        <source>Search apps</source>
+        <target>Apps sykje</target>
+        <note annotates="source" from="developer">Search bar placeholder text</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/sharedViews/ViewErrorFullScreen.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.errors.checkOutageUpdates">
+        <source>Check outage updates</source>
+        <target>Utfalfernijingen besjen</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="../src/apps/vpn/ui/sharedViews/ViewUpdate.qml" datatype="plaintext" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.updates.notNow">
+        <source>Not now</source>
+        <target>No net</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateConnectionInsecureWarning">
+        <source>Your connection will not be secure while you update.</source>
+        <target>Jo ferbining is net feilich as jo bywurkje.</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateNow">
+        <source>Update now</source>
+        <target>No bywurkje</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRecomended">
+        <source>Update recommended</source>
+        <target>Bywurkjen oanrekommandearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRecomended.description">
+        <source>Please update the app before you continue to use the VPN</source>
+        <target>Wurkje de app by eardat jo de VPN brûke bliuwe</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRequire.reason">
+        <source>We detected and fixed a serious bug. You must update your app.</source>
+        <target>Wy hawwe in serieuze bug ûntdutsen en dizze oplost. Jo moatte jo app bywurkje.</target>
+      </trans-unit>
+      <trans-unit id="vpn.updates.updateRequired">
+        <source>Update required</source>
+        <target>Bywurkjen fereaske</target>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="generated/l18nstrings_p.cpp" datatype="cpp" source-language="en" target-language="fy-NL">
+    <body>
+      <trans-unit id="vpn.AndroidNotifications.GeneralNotifications">
+        <source>General Notifications</source>
+        <target>Algemiene notifikaasjes</target>
+        <note annotates="source" from="developer">A notification channel; so the user can subscribe to "General Notifications"</note>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.copyVersionNumber">
+        <source>Copy %1</source>
+        <target>%1 kopiearje</target>
+        <note annotates="source" from="developer">Accessible name for a button. %1 is the version number of the VPN client.</note>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.licenses">
+        <source>Licenses</source>
+        <target>Lisinsjes</target>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.privacyNotice">
+        <source>Privacy notice</source>
+        <target>Privacyferklearring</target>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.releaseVersion">
+        <source>Release version</source>
+        <target>Ferzje</target>
+        <note annotates="source" from="developer">Refers to the installed version. For example: 'Release Version: 1.23'</note>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.termsOfService">
+        <source>Terms of service</source>
+        <target>Tsjinstbetingsten</target>
+      </trans-unit>
+      <trans-unit id="vpn.aboutUs.title">
+        <source>About us</source>
+        <target>Oer ús</target>
+      </trans-unit>
+      <trans-unit id="vpn.accessibility.currentIndexFocusedOfTotalItemsInGroup">
+        <source>%1 of %2</source>
+        <target>%1 fan %2</target>
+        <note annotates="source" from="developer">Used by screen readers to explain to users which item they are currently focused on, and how many items there are total in a group. For example, given a list with 15 items. If a user selects the 3rd item, we want the screen reader to read out "3 of 15". The %1 represents the index of the currently focused item by the screen reader. The %2 represents the total number of items in the group.</note>
+      </trans-unit>
+      <trans-unit id="vpn.accessibility.selected">
+        <source>Selected</source>
+        <target>Selektearre</target>
+        <note annotates="source" from="developer">Used by screen reader to indicate that a user action selected an item.</note>
+      </trans-unit>
+      <trans-unit id="vpn.accessibility.selectedAndItemName">
+        <source>Selected item: %1</source>
+        <target>Selektearre item: %1</target>
+        <note annotates="source" from="developer">Used by screen readers to denote that a particular item is currently selected. For example, given a segmented control with 2 items, where the first item is currently selected. We want the screen reader to read out "Selected, &lt;item name&gt;". The %1 represents the name of the selected item.</note>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.labelTitle">
+        <source>Bypass VPN for select traffic</source>
+        <target>VPN foar selektearre ferkear omsile</target>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.learnMoreSentence">
+        <source>Learn more.</source>
+        <target>Mear ynfo.</target>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.subLabel">
+        <source>Allow RCS/MMS messaging, Apple features like CarPlay and AirDrop, and connections to local devices. May reduce network security.</source>
+        <target>RCS/MMS-berjochten, Apple-funksjes lykas CarPlay en AirDrop en ferbiningen mei lokale apparaten tastean. Kin de netwurkbefeiliging ferminderje.</target>
+        <note annotates="source" from="developer">Make sure it's clear that this will allow major features (like messaging apps) to function, but potentially at the expense of some security.</note>
+      </trans-unit>
+      <trans-unit id="vpn.bypassVPN.vpnMustBeOff">
+        <source>VPN must be off to change this setting</source>
+        <target>VPN moat útskeakele wêze om dizze ynstelling te wizigjen</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.actionPostActivation">
+        <source>You must turn off your VPN in order to see the portal, and turn it back on once you have logged in.</source>
+        <target>Jo moatte jo VPN útskeakelje om it portaal sjen te kinnen, en it wer ynskeakelje sa gau as jo oanmeld binne.</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.actionPreActivation">
+        <source>You can turn on your VPN once you have gained internet access by logging in to the portal.</source>
+        <target>Jo kinne jo VPN ynskeakelje sa gau as jo ynternettagong krigen hawwe troch jo oan te melden by it portaal.</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.buttonTextPostActivation">
+        <source>Turn off VPN</source>
+        <target>VPN útskeakelje</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.buttonTextPreActivation">
+        <source>Okay</source>
+        <target>OK</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.header">
+        <source>A captive portal is when the guest Wi-Fi you are using requires you to log in to get internet access.</source>
+        <target>In hotspot-oanmeldingsside wurdt toand, as it wifi-gastnetwurk dat jo brûke, fereasket dat jo jo oanmelde om ynternettagong te krijen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.captivePortalAlert.title">
+        <source>Captive portal detected!</source>
+        <target>Hotspot-oanmeldingsside detektearre!</target>
+      </trans-unit>
+      <trans-unit id="vpn.cityAccessoryWidget.description">
+        <source>See current Mozilla VPN status, along with the current server.</source>
+        <target>De aktuele Mozilla VPN-status besjen, tegearre mei de aktuele server.</target>
+        <note annotates="source" from="developer">More information about what the city widget contains - which is current VPN status and the current city server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.connectionInformation">
+        <source>Connection information</source>
+        <target>Ferbiningsynformaasje</target>
+        <note annotates="source" from="developer">Accessible label for the button that shows the IP info panel when clicked.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.errorMessage">
+        <source>Looks like there was an unexpected error while trying to connect. Please try again or check your connection.</source>
+        <target>It liket derop dat der in ûnferwachte flater bard is wylst it ferbinen. Probearje it opnij of kontrolearje jo ferbinding.</target>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.exitServerLabelIp">
+        <source>Exit Server IP:</source>
+        <target>IP-adres útgongsserver:</target>
+        <note annotates="source" from="developer">Exit server IP label for IPV4. IP is the abbreviation for Internet Procol. This is followed by the user’s IPv4 address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.exitServerLabelIpv6">
+        <source>Exit Server IPv6:</source>
+        <target>IPv6-adres útgongsserver:</target>
+        <note annotates="source" from="developer">Exit server IP label for IPv6. IPv6 is the abbreviation for Internet Procol version 6. This is followed by the user’s IPv6 address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.highBulletOne">
+        <source>Streaming in 4K</source>
+        <target>Streame yn 4K</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for high speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.highBulletThree">
+        <source>Online gaming</source>
+        <target>Online game</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for high speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.highBulletTwo">
+        <source>High-speed downloads</source>
+        <target>Rappe downloads</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for high speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelBitps">
+        <source>bit/s</source>
+        <target>bit/s</target>
+        <note annotates="source" from="developer">Bits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelGbitps">
+        <source>Gbit/s</source>
+        <target>Gbit/s</target>
+        <note annotates="source" from="developer">Gigabits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelKbitps">
+        <source>kbit/s</source>
+        <target>kbit/s</target>
+        <note annotates="source" from="developer">Kilobits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelMbitps">
+        <source>Mbit/s</source>
+        <target>Mbit/s</target>
+        <note annotates="source" from="developer">Megabits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelPing">
+        <source>Ping</source>
+        <target>Ping</target>
+        <note annotates="source" from="developer">Latency of the connection</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelTbitps">
+        <source>Tbit/s</source>
+        <target>Tbit/s</target>
+        <note annotates="source" from="developer">Terabits per second</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.labelUpload">
+        <source>Upload</source>
+        <target>Oplade</target>
+        <note annotates="source" from="developer">Label for the upload benchmark shown in the speed test view.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.listHeaderDefault">
+        <source>At your current speed, here’s what your device is optimized for:</source>
+        <target>Mei jo aktuele snelheid is jo apparaat hjirfoar optimalisearre:</target>
+        <note annotates="source" from="developer">Headline for a list of things that the current connection is capable of.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.listHeaderSlow">
+        <source>It looks like the connection to this server location is a bit slow, you can try:</source>
+        <target>It liket derop dat de ferbining mei dizze serverlokaasje wat stadich is, jo kinne it folgjende probearje:</target>
+        <note annotates="source" from="developer">Headline for a list of suggestions for troubleshooting the current connection.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.loadingIndicatorLabel">
+        <source>Testing speed…</source>
+        <target>Snelheid teste…</target>
+        <note annotates="source" from="developer">Shown to the user while waiting for the connection speed test results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.mediumBulletOne">
+        <source>Browsing the internet</source>
+        <target>Sneupe op it ynternet</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for medium speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.mediumBulletThree">
+        <source>Video conferencing</source>
+        <target>Fideogearkomst</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for medium speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.mediumBulletTwo">
+        <source>Streaming video</source>
+        <target>Fideo streame</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection section for medium speedtest results</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.metricsTitle">
+        <source>Connection information</source>
+        <target>Ferbiningsynformaasje</target>
+        <note annotates="source" from="developer">Title for the connection metrics view.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.restartSpeedTest">
+        <source>Restart speed test</source>
+        <target>Snelheidstest opnij starte</target>
+        <note annotates="source" from="developer">Accessible label for the button to restart the speed test upon its completion.</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.rotateIPAddress">
+        <source>Attempt to change IP address</source>
+        <target>Besykjen ta wizigjen fan IP-adres</target>
+        <note annotates="source" from="developer">Accessible label for the button to try to get a new server in the same location</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.startSpeedTest">
+        <source>Start speed test</source>
+        <target>Snelheidstest starte</target>
+        <note annotates="source" from="developer">Accessible label for the button that opens the speed test view and initiates a speed test</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.troubleshootingBulletOne">
+        <source>Switching server locations</source>
+        <target>Fan serverlokaasje wikselje</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection troubleshooting section</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.troubleshootingBulletThree">
+        <source>Switching back to a single-hop connection</source>
+        <target>Weromskeakelje nei in single-hop-ferbining</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection troubleshooting section for multi-hop connections</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.troubleshootingBulletTwo">
+        <source>Checking your internet connection</source>
+        <target>Jo ynternetferbining kontrolearje</target>
+        <note annotates="source" from="developer">This is a bullet item in the connection troubleshooting section</note>
+      </trans-unit>
+      <trans-unit id="vpn.connectionInfo.unitPing">
+        <source>ms</source>
+        <target>ms</target>
+        <note annotates="source" from="developer">milliseconds</note>
+      </trans-unit>
+      <trans-unit id="vpn.controller.regeneratingKey">
+        <source>Preparing your connection</source>
+        <target>Jo ferbining tariede</target>
+        <note annotates="source" from="developer">Connection subtitle label for the main screen when the app is regenerating WireGuard keys</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.crashOptInDialogDescription">
+        <source>Don’t show this again. Autosend crash reports to Mozilla.</source>
+        <target>Dit net mear toane. Ungelokrapporten automatysk nei Mozilla ferstjoere.</target>
+        <note annotates="source" from="developer">This is a description for a checkbox on the crash reporter dialog.</note>
+      </trans-unit>
+      <trans-unit id="vpn.crashreporter.mainTitle">
+        <source>Mozilla Crash Report</source>
+        <target>Mozilla-ûngelokrapport</target>
+        <note annotates="source" from="developer">Main window title</note>
+      </trans-unit>
+      <trans-unit id="vpn.deleteAccount.authButtonLabel">
+        <source>Continue</source>
+        <target>Trochgean</target>
+      </trans-unit>
+      <trans-unit id="vpn.deleteAccount.buttonLabel">
+        <source>Delete account</source>
+        <target>Account fuortsmite</target>
+      </trans-unit>
+      <trans-unit id="vpn.devices.countLabel">
+        <source>%1 out of %2 devices added</source>
+        <target>%1 fan %2 apparaten tafoege</target>
+        <note annotates="source" from="developer">Label at the top of the "Devices" setting screen indicating the number of devices registered to the users account (1st arg) vs the max limit of devices available for their account (2nd arg)</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.limitDescription2">
+        <source>You’re using VPN on 5 devices. To add another device, please remove one.</source>
+        <target>Jo brûke VPN op 5 apparaten. As jo noch in apparaat tafoegje wolle, ferwiderje dan ien.</target>
+        <note annotates="source" from="developer">Description of the "device limit" view describing why the device has not yet been added to the list of active devices (because we are at the device limit)</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.limitTitle">
+        <source>Device not added</source>
+        <target>Apparaat net tafoege</target>
+        <note annotates="source" from="developer">Title of the "device limit" view stating that the device has not yet been added to the list of active devices (because we are at the device limit)</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionAddedDaysAgo">
+        <source>Added %1 days ago</source>
+        <target>%1 dagen lyn tafoege</target>
+        <note annotates="source" from="developer">Device list item description for a device added days ago. %1 is the number of days.</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionAddedFewHoursAgo">
+        <source>Added a few hours ago (%1)</source>
+        <target>In pear oeren lyn tafoege (%1)</target>
+        <note annotates="source" from="developer">Device list item description for a device added a few hours ago. %1 is the number of hours.</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionAddedOneHourAgo">
+        <source>Added less than an hour ago</source>
+        <target>Minder as in oere lyn tafoege</target>
+        <note annotates="source" from="developer">Device list item description for a device added less than 1 hour ago</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemDescriptionCurrent">
+        <source>Current Device</source>
+        <target>Aktuele apparaat</target>
+        <note annotates="source" from="developer">Device list item description for the current device</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.listItemRemoveDeviceAccessibility">
+        <source>Remove %1</source>
+        <target>%1 ferwiderje</target>
+        <note annotates="source" from="developer">Label used for accessibility on the button to remove a device. %1 is the name of the device.</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removePopupDescription">
+        <source>Please confirm you would like to remove %1.</source>
+        <target>Befêstigje dat jo %1 ferwiderje wolle.</target>
+        <note annotates="source" from="developer">Description for the Remove Device popup. %1 is the name of the device being removed. The name is displayed on purpose on a new line."</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removePopupPrimaryButtonLabel">
+        <source>Remove</source>
+        <target>Ferwiderje</target>
+        <note annotates="source" from="developer">Label for the primary button for the Remove Device poup</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removePopupTitle">
+        <source>Remove device?</source>
+        <target>Apparaat ferwiderje?</target>
+        <note annotates="source" from="developer">Title for the Remove Device popup</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.removingTitle">
+        <source>Removing device…</source>
+        <target>Apparaat ferwiderje…</target>
+        <note annotates="source" from="developer">Title for "Removing device" screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.devices.sectionTitle">
+        <source>Devices</source>
+        <target>Apparaten</target>
+        <note annotates="source" from="developer">Title for the menu bar when viewing the devices or device limit pages</note>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.bodyDNS">
+        <source>Using these privacy features will override your custom DNS.</source>
+        <target>As jo dizze privacyfunksjes brûke, wurdt jo oanpaste DNS oerskreaun.</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.bodyPrivacy">
+        <source>Using a custom DNS will override your preferences in the privacy features page.</source>
+        <target>As jo in oanpaste DNS brûke, wurde jo foarkarren op de side mei privacyfunksjes oerskreaun.</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.primaryButton">
+        <source>Confirm</source>
+        <target>Befêstigje</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.secondaryButton">
+        <source>Maybe later</source>
+        <target>Miskien letter</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.titleDNS">
+        <source>Override DNS settings?</source>
+        <target>DNS-ynstellingen oerskriuwe?</target>
+      </trans-unit>
+      <trans-unit id="vpn.dnsOverwriteDialog.titlePrivacy">
+        <source>Override privacy features?</source>
+        <target>Privacyfunksjes oerskriuwe?</target>
+      </trans-unit>
+      <trans-unit id="vpn.freeTrials.freeTrialLabel">
+        <source>7-day free trial</source>
+        <target>Fergeze proefperioade fan 7 dagen</target>
+      </trans-unit>
+      <trans-unit id="vpn.freeTrials.startYourFreeTrial">
+        <source>Sign up to start your 7-day free trial.</source>
+        <target>Meld jo oan om jo fergeze proefperioade fan 7 dagen te starten.</target>
+        <note annotates="source" from="developer">This string appears above the 'Sign up' button on mobile onboarding views</note>
+      </trans-unit>
+      <trans-unit id="vpn.genericError.unexpected">
+        <source>Unexpected error</source>
+        <target>Unferwachte flater</target>
+      </trans-unit>
+      <trans-unit id="vpn.genericPurchaseError.genericPurchaseErrorButton">
+        <source>Try Again</source>
+        <target>Opnij probearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.genericPurchaseError.genericPurchaseErrorHeader">
+        <source>Problem confirming subscription</source>
+        <target>Probleem by befêstigjen abonnemint</target>
+      </trans-unit>
+      <trans-unit id="vpn.genericPurchaseError.genericPurchaseErrorText">
+        <source>An unexpected error has occurred, please try again. Visit our help center below to learn how to troubleshoot this issue or contact support.</source>
+        <target>Der is in ûnferwachte flater bard, probearje it opnij. Besykje ús helpsintrum hjirûnder foar ynfo oer it oplossen fan dit probleem of nim kontakt op mei de stipetsjinst.</target>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.developerOptions">
+        <source>Developer options</source>
+        <target>Untwikkelersopsjes</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.helpCenter">
+        <source>Help Center</source>
+        <target>Helpsintrum</target>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.linkText">
+        <source>Help</source>
+        <target>Help</target>
+      </trans-unit>
+      <trans-unit id="vpn.getHelp.viewLogs">
+        <source>View Logs</source>
+        <target>Lochbestannen werjaan</target>
+        <note annotates="source" from="developer">Label for a clickable item in the Get-Help view</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.clear">
+        <source>Clear</source>
+        <target>Wiskje</target>
+        <note annotates="source" from="developer">Accessible label for clear button</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.close">
+        <source>Close</source>
+        <target>Slute</target>
+        <note annotates="source" from="developer">Accessible label for close button</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.collapse">
+        <source>Collapse</source>
+        <target>Ynklappe</target>
+        <note annotates="source" from="developer">Action used in the context of an expandable/collapsible card component</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.continue">
+        <source>Continue</source>
+        <target>Trochgean</target>
+        <note annotates="source" from="developer">Label for button used to proceed with an action</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.copied">
+        <source>Copied!</source>
+        <target>Kopiearre!</target>
+        <note annotates="source" from="developer">Confirmation banner displayed after clicking a button to copy something.</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.copy">
+        <source>Copy</source>
+        <target>Kopiearje</target>
+        <note annotates="source" from="developer">Accessible button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.discoverNow">
+        <source>Discover now</source>
+        <target>No ûntdekke</target>
+        <note annotates="source" from="developer">Label for button used in intro modals to discover new features.</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.expand">
+        <source>Expand</source>
+        <target>Utklappe</target>
+        <note annotates="source" from="developer">Action used in the context of an expandable/collapsible card component</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.getStarted">
+        <source>Get started</source>
+        <target>Begjinne</target>
+        <note annotates="source" from="developer">Label for a button used to begin something / proceed</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.goBack">
+        <source>Go back</source>
+        <target>Tebek</target>
+        <note annotates="source" from="developer">Label for button used in intro modals to return to the app.</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.help">
+        <source>Help</source>
+        <target>Help</target>
+        <note annotates="source" from="developer">Action taken that will help the user</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.learnMore">
+        <source>Learn more</source>
+        <target>Mear ynfo</target>
+        <note annotates="source" from="developer">Label for link to allow the user to learn more about a topic</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.next">
+        <source>Next</source>
+        <target>Folgjende</target>
+        <note annotates="source" from="developer">Label for button used to proceed</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.noInternetConnection">
+        <source>No internet connection</source>
+        <target>Gjin ynternetferbining</target>
+        <note annotates="source" from="developer">Status alert text</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.noThanks">
+        <source>No thanks</source>
+        <target>Nee tankewol</target>
+        <note annotates="source" from="developer">Label for button used to not proceed with an action</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.paste">
+        <source>Paste</source>
+        <target>Plakke</target>
+        <note annotates="source" from="developer">Label for button to paste value from clipboard into input</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.signOut">
+        <source>Sign out</source>
+        <target>Ofmelde</target>
+        <note annotates="source" from="developer">Link title</note>
+      </trans-unit>
+      <trans-unit id="vpn.global.vpnUser">
+        <source>VPN User</source>
+        <target>VPN-brûker</target>
+        <note annotates="source" from="developer">Fallback string for users who have not specified a Display Name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesBody1">
+        <source>Adding a new device to your subscription is easy: just download and log in to Mozilla VPN on that device.</source>
+        <target>In nij apparaat oan jo abonnemint tafoegje is ienfâldich: download en meld jo gewoan oan by Mozilla VPN op dat apparaat.</target>
+        <note annotates="source" from="developer">Body label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesBody2">
+        <source>To remove one of your added devices, select “Edit” on this screen and use the trash icon to remove the device you no longer want to use Mozilla VPN on.</source>
+        <target>Selektearje om ien fan jo tafoege apparaten fuort te smiten ‘Bewurkje’ yn dit skerm en brûk it jiskefetpiktogram om it apparaat fuort te smiten wêrop jo Mozilla VPN net mear brûke wolle.</target>
+        <note annotates="source" from="developer">Body label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesHeader">
+        <source>Adding and removing devices</source>
+        <target>Apparaten tafoegje en fuortsmite</target>
+        <note annotates="source" from="developer">Header label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.devicesTitle">
+        <source>Device management</source>
+        <target>Apparaatbehear</target>
+        <note annotates="source" from="developer">Title label for the devices help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsBody1">
+        <source>Whenever you connect to a website, a DNS (domain name system) first turns the domain name (e.g. www.mozilla.org) into an IP address that allows your internet traffic to reach that destination.</source>
+        <target>Elke kear as jo ferbine mei in website, feroaret in DNS (domain name system) earst de domeinnamme (bygl. www.mozilla.org) earst yn in IP-adres wêrmei’t jo ynternetferkear dy bestimming berikke kin.</target>
+        <note annotates="source" from="developer">Body text for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsBody2">
+        <source>Mozilla VPN allows you to choose a custom DNS server if you prefer. If you use one, you won’t be able to use other privacy features in the VPN like tracker blocking.</source>
+        <target>Mei Mozilla VPN kinne jo a s jo wolle in oanpaste DNS-server kieze. As jo der ien brûke, kinne jo gjin oare privacyfunksjes yn de VPN brûke, lykas blokkearjen fan trackers.</target>
+        <note annotates="source" from="developer">Body text for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsHeader">
+        <source>What is a custom DNS?</source>
+        <target>Wat is in oanpaste DNS?</target>
+        <note annotates="source" from="developer">Header label for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.dnsTitle">
+        <source>Custom DNS settings</source>
+        <target>Oanpaste DNS-ynstellingen</target>
+        <note annotates="source" from="developer">Title label for the custom dns help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsBody1">
+        <source>Excluded apps let you turn off VPN protection for specific apps, without turning off VPN protection for your entire device.</source>
+        <target>Mei útsluten apps kinne jo VPN-beskerming foar spesifike apps útskeakelje, sûnder VPN-beskerming foar jo hiele apparaat út te skeakeljen.</target>
+        <note annotates="source" from="developer">Body label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsBody2">
+        <source>When you exclude an app, it will have access to your IP address and approximate location.</source>
+        <target>As jo in app útslute, hat dizze tagong ta jo IP-adres en skatte lokaasje.</target>
+        <note annotates="source" from="developer">Body label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsBody3">
+        <source>You can use the settings under Settings &gt; Privacy features to block ads, block trackers, and block malware, even on excluded apps.</source>
+        <target>Jo kinne de ynstellingen ûnder Ynstellingen &gt; Privacyfunksjes brûke om advertinsjes te blokkearjen en trackers te blokkearjen en malware te blokkearjen, sels op útsletten apps.</target>
+        <note annotates="source" from="developer">Body label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsCTA">
+        <source>Open “Privacy features”</source>
+        <target>‘Privacyfunksjes’ iepenje</target>
+        <note annotates="source" from="developer">Label for button that opens the "Privacy features" view from the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsHeader">
+        <source>What are excluded apps?</source>
+        <target>Wat binne útsletten apps?</target>
+        <note annotates="source" from="developer">Header label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.excludedAppsTitle">
+        <source>Excluded apps</source>
+        <target>Utsletten apps</target>
+        <note annotates="source" from="developer">Title label for the excluded apps help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationBody1">
+        <source>If you want maximum speed and reliability, choose one of the recommended locations in the “Single-hop” toggle. We’ve sorted them based on expected performance.</source>
+        <target>As jo maksimale snelheid en betrouberheid wolle, kies dan ien fan de oanrekommandearre lokaasjes yn de skeakeler ‘Single-hop’. Wy hawwe se sortearre op basis fan ferwachte prestaasjes.</target>
+        <note annotates="source" from="developer">Body label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationBody2">
+        <source>If you want to add more privacy, switch to “Multi-hop” and add an additional server location. Multi-hop VPN routes your traffic through two server locations instead of one for extra security and privacy. This may also slow down your connection a bit.</source>
+        <target>As jo mear privacy tafoegje wolle, skeakelje dan oer nei ‘Multi-hop’ en foegje in ekstra serverlokaasje ta. Multi-hop-VPN laadt jo ferkear troch twa serverlokaasjes yn stee fan ien foar ekstra befeiliging en privacy. Dit kin jo ferbining ek in bytsje fertrage.</target>
+        <note annotates="source" from="developer">Body label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationHeader">
+        <source>Single-hop vs multi-hop</source>
+        <target>Single-hop versus multi-hop</target>
+        <note annotates="source" from="developer">Header label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.locationTitle">
+        <source>Location selection</source>
+        <target>Lokaasjeseleksje</target>
+        <note annotates="source" from="developer">Title label for the location selection help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyBody1">
+        <source>Privacy features give you greater control over the types of content you see, helping you stay safe online.</source>
+        <target>Privacyfunksjes jouwe jo mear kontrôle oer de soarten ynhâld dy’t jo sjogge, en helpe jo online feilich te bliuwen.</target>
+        <note annotates="source" from="developer">Body label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyBody2">
+        <source>If you activate these features, they’ll overwrite any custom DNS you’re using. These protections are not a substitute for taking other security precautions — for example, while blocking malware you should still avoid downloading attachments in strange emails.</source>
+        <target>As jo dizze funksjes aktivearje, sille se elke oanpaste DNS oerskriuwe dy’t jo brûke. Dizze befeiligingen binne gjin ferfanging foar it nimmen fan oare befeiligingsmaatregels – bygelyks, wylst jo malware blokkearje, moatte jo noch altyd foarkomme dat jo bylagen yn frjemde e-mailberjochten downloade.</target>
+        <note annotates="source" from="developer">Body label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyHeader">
+        <source>What can privacy features do for me?</source>
+        <target>Wat kinne privacyfunksjes foar my dwaan?</target>
+        <note annotates="source" from="developer">Header label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.helpSheets.privacyTitle">
+        <source>Privacy features</source>
+        <target>Privacyfunksjes</target>
+        <note annotates="source" from="developer">Title label for the privacy features help sheet</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.changeEmailLink">
+        <source>Change email</source>
+        <target>E-mailadres wizigje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.continueToSignIn">
+        <source>Continue to sign in</source>
+        <target>Trochgean mei oanmelden</target>
+        <note annotates="source" from="developer">Button a user clicks after updating their Mozilla account settings so that they can re-attempt sign-in</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.createAccountButton">
+        <source>Create account</source>
+        <target>Account oanmeitsje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.createPasswordLabel">
+        <source>Create password</source>
+        <target>Wachtwurd oanmeitsje</target>
+        <note annotates="source" from="developer">This is a label displayed on the password creation screen.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.emailInputPlaceholder">
+        <source>Enter email</source>
+        <target>Fier e-mailadres yn</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.emailTokenResentAlert">
+        <source>We’ve resent your code to your email.</source>
+        <target>Wy hawwe jo koade opnij nei jo e-mail ferstjoerd.</target>
+        <note annotates="source" from="developer">User has requested to send a new email containing the 6-digit pin to confirm their email address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.emailVerificationDescription">
+        <source>Open your email and enter the verification code that was sent.</source>
+        <target>Iepenje jo e-mailbericht en fier de ûntfongen ferifikaasjekoade yn.</target>
+        <note annotates="source" from="developer">User has been sent a verification email containing a code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.enterEmailAddressDescription">
+        <source>Enter your email address to continue using Mozilla VPN</source>
+        <target>Fier jo e-mailadres yn om Mozilla VPN brûke te bliuwen</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.finishAccountCreationDescription2">
+        <source>Finish creating your Mozilla account to continue to Mozilla VPN</source>
+        <target>Foltôgje it oanmeitsjen fan jo Mozilla-account om troch te gean nei Mozilla VPN</target>
+        <note annotates="source" from="developer">User message prompting user to finish creating their account to use Mozilla VPN.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.forgotPasswordLink">
+        <source>Forgot your password?</source>
+        <target>Jo wachtwurd ferjitten?</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.hidePassword">
+        <source>Hide password</source>
+        <target>Wachtwurd ferstopje</target>
+        <note annotates="source" from="developer">Tooltip label for the eye icon in password input</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.informationUsageDisclaimer">
+        <source>We only use your email to create your account or sign in. We will never sell it to a third party.</source>
+        <target>Wy brûke jo e-mailadres allinnich om jo account oan te meitsjen of jo oan te melden. Wy sille it nea oan in tredde partij ferkeapje.</target>
+        <note annotates="source" from="developer">Non-op text that informs user about how Mozilla will not sell it to a third party.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidCodeErrorMessage">
+        <source>Invalid code. Please try again</source>
+        <target>Unjildige koade. Probearje it opnij</target>
+        <note annotates="source" from="developer">User provided did not provide a correct security code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidEmailErrorMessage">
+        <source>Invalid email. Please try again</source>
+        <target>Unjildich e-mailadres. Probearje it opnij</target>
+        <note annotates="source" from="developer">Generic message for when user submits incorrect email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidEmailFormatErrorMessage">
+        <source>Email format not supported. Please try again with a different email</source>
+        <target>Opmaak e-mailadres net stipe. Probearje it opnij mei in oar e-mailadres</target>
+        <note annotates="source" from="developer">User is providing us an email that is not formatted correctly. Ex. jsmith&amp;gmail.com</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.invalidPasswordErrorMessage">
+        <source>Invalid password. Please try again</source>
+        <target>Unjildich wachtwurd. Probearje it opnij</target>
+        <note annotates="source" from="developer">User has submitted an invalid password.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordHintCharacterLength">
+        <source>Must be at least 8 characters</source>
+        <target>Moat op syn minst 8 tekens befetsje</target>
+        <note annotates="source" from="developer">This is a hint for the user - they must provide a password with at least 8 characters</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordHintCommonPassword">
+        <source>Must not be a common password</source>
+        <target>Moat gjin algemien wachtwurd wêze</target>
+        <note annotates="source" from="developer">This is a hint for the user - password they provide must not be a common password. Ex. password.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordHintEmailAddressAsPassword">
+        <source>Must not be your email address</source>
+        <target>Mei net jo e-mailadres wêze</target>
+        <note annotates="source" from="developer">This is a hint for the user - they must provide a password that does not match their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordInputLabel">
+        <source>Password</source>
+        <target>Wachtwurd</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.passwordInputPlaceholder">
+        <source>Enter password</source>
+        <target>Fier wachtwurd yn</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.pleaseWait">
+        <source>Please wait…</source>
+        <target>Ien momint…</target>
+        <note annotates="source" from="developer">Headline on loading screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.problemEmailTypeNotSupported">
+        <source>Primary account email required for sign-in</source>
+        <target>Primêr e-mailadres fan account fereaske foar oanmelding</target>
+        <note annotates="source" from="developer">App screen that informs the user there was an error signing them in - this is the message.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.problemSendingEmailErrorMessage">
+        <source>Sorry, we were unable to send you a verification code.</source>
+        <target>Sorry, wy kinne jo gjin ferifikaasjekoade stjoere.</target>
+        <note annotates="source" from="developer">App screen that informs the user there was an error sending them their verification code email - this is the message.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.problemSendingEmailTitle">
+        <source>Problem sending email…</source>
+        <target>Probleem by it ferstjoeren fan e-mailberjocht…</target>
+        <note annotates="source" from="developer">App screen that informs the user there was an error sending them their verification code email - this is the title.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.productUpdateOptInDescription">
+        <source>I’d like to receive product update emails from Firefox.</source>
+        <target>Ik wol graach e-mailberjochten oer produktupdates fan Firefox ûntfange.</target>
+        <note annotates="source" from="developer">Checkbox label for users to opt in, when creating an account, to receive product update emails from Firefox.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.reauthSignInSubtitle2">
+        <source>To continue, please confirm with your Mozilla account password.</source>
+        <target>Befêstigje mei it wachtwurd fan jo Mozilla-account om troch te gean.</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.resendCodeLink">
+        <source>Resend code</source>
+        <target>Koade nochris ferstjoere</target>
+        <note annotates="source" from="developer">This link allows the user to request for another 6-digit verification code to be sent to their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeInputPlaceholder">
+        <source>Enter 6-digit code</source>
+        <target>Fier 6-siferige koade yn</target>
+        <note annotates="source" from="developer">Placeholder text for input element asking user for TOTP 6-digit verification code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeLabel">
+        <source>Security code</source>
+        <target>Befeiligingskoade</target>
+        <note annotates="source" from="developer">Label for input asking user for their security code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeSubtitle">
+        <source>Open your authentication app and enter the security code it provides.</source>
+        <target>Iepenje jo app foar autentikaasje en fier de oanbeane befeiligingskoade yn.</target>
+        <note annotates="source" from="developer">User is asked for a security code from their authentication app for verification.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.securityCodeTitle">
+        <source>Enter security code</source>
+        <target>Fier befeiligingskoade yn</target>
+        <note annotates="source" from="developer">Title for app screen asking user for their security code.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.sessionEmailCodeInputPlaceholder">
+        <source>Enter 6-digit code</source>
+        <target>Fier 6-siferige koade yn</target>
+        <note annotates="source" from="developer">Placeholder text for input element asking user for 6-digit verification code from their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.showPassword">
+        <source>Show password</source>
+        <target>Wachtwurd toane</target>
+        <note annotates="source" from="developer">Tooltip label for the eye icon in password input</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInBlockedForOneMinute">
+        <source>You’ve made too many attempts to sign in. You won’t be able to try again with this account for 1 minute.</source>
+        <target>Jo hawwe te folle oanmeldingsbesykjen dien. Jo kinne mei dizze account de kommende minút gjin nije besykjen dwaan.</target>
+        <note annotates="source" from="developer">User has been unable to sign in correctly, they have a cool down period of 1 minute until they can try again.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInButton">
+        <source>Sign in</source>
+        <target>Oanmelde</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInFailedPopupDescription">
+        <source>You’ve made too many attempts to sign in. You won’t be able to try again with this account for 15 minutes.</source>
+        <target>Jo hawwe te folle oanmeldingsbesykjen dien. Jo kinne mei dizze account de kommende 15 minuten gjin nije besykjen dwaan.</target>
+        <note annotates="source" from="developer">User has been unable to sign in correctly, they have a cool down period of 15 minutes until they can try again.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInFailedPopupTitle">
+        <source>Sign-in failed</source>
+        <target>Oanmelding mislearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.signInSubtitle2">
+        <source>Continue to Mozilla VPN by signing in with your Mozilla account</source>
+        <target>Gean troch nei Mozilla VPN troch jo oan te melden mei jo Mozilla-account</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionHeader">
+        <source>Create a password</source>
+        <target>In wachtwurd oanmeitsje</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding. This is the header on the error screen.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine1">
+        <source>To finish setting up your Mozilla account, create a password in your account settings:</source>
+        <target>Meitsje in wachtwurd oan yn jo accountynstellingen om it ynstellen fan jo Mozilla-account te foltôgjen:</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine2a">
+        <source>1. Go to &lt;a href="open-account"&gt;Create password&lt;/a&gt; in your Mozilla account settings.</source>
+        <target>1. Gean nei &lt;a href="open-account"&gt;Wachtwurd oanmeitsje&lt;/a&gt; yn jo Mozilla-accountynstellingen.</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding. Do not remove or translate the markup '&lt;a href="open-account"&gt;'.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine3">
+        <source>2. Create a password.</source>
+        <target>2. Meitsje in wachtwurd oan.</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.ssoInstructionLine4">
+        <source>When your password is created, return to this screen and continue to sign in to Mozilla VPN.</source>
+        <target>Wannear’t jo wachtwurd oanmakke is, gean dan werom nei dit skerm en gean troch mei oanmelden by Mozilla VPN.</target>
+        <note annotates="source" from="developer">User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.stubAccountVerificationHeader">
+        <source>Check your email</source>
+        <target>Kontrolearje jo e-mail</target>
+        <note annotates="source" from="developer">User has tried to log into a Mozilla account before setting their password, which happens after email verification. This is the header on the error screen.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.stubAccountVerificationInstruction">
+        <source>We’ve sent an email to %1 with the verification link. Please follow the directions to set up your password and finish setting up your account.</source>
+        <target>Wy hawwe in e-mailnberjocht mei de ferifikaasjekeppeling nei %1 stjoerd. Folgje de ynstruksjes om jo wachtwurd yn te stellen en it ynstellen fan jo account te foltôgjen.</target>
+        <note annotates="source" from="developer">User has tried to log into a Mozilla account before setting their password, which happens after email verification. %1 is the email address associated with the account.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.termsOfServiceAndPrivacyDisclaimer">
+        <source>By continuing, you agree to the &lt;a href="terms-of-service"&gt;Terms of Service&lt;/a&gt; and the &lt;a href="privacy-notice"&gt;Privacy Notice&lt;/a&gt;.</source>
+        <target>Troch fierder te gean, geane jo akkoard mei de &lt;a href="terms-of-service"&gt;Servicebetingsten&lt;/a&gt; en &lt;a href="privacy-notice"&gt;Privacyferklearring&lt;/a&gt;.</target>
+        <note annotates="source" from="developer">Do not remove or translate the markup '&lt;a href="terms-of-service"&gt;', '&lt;a href="privacy-notice"&gt;', '&lt;/a&gt;'.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.unblockCodeInputPlaceholder">
+        <source>Enter 8-digit code</source>
+        <target>Fier 8-siferige koade yn</target>
+        <note annotates="source" from="developer">Placeholder text for input element asking user for 8-digit verification code from their email.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.verificationCodeTitle">
+        <source>Enter verification code</source>
+        <target>Fier ferifikaasjekoade yn</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.verifySecurityCodeButton">
+        <source>Verify</source>
+        <target>Ferifiearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppAuth.waitingForSignIn">
+        <source>Waiting for sign in and subscription confirmation…</source>
+        <target>Wachtsje op oanmelden en fan abonnemintsbefêstiging…</target>
+        <note annotates="source" from="developer">Headline on loading screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.criticalBadge">
+        <source>Critical</source>
+        <target>Krityk</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this is an important message</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.dateTimeYesterday">
+        <source>Yesterday</source>
+        <target>Juster</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.deleteMessage">
+        <source>Delete message</source>
+        <target>Berjocht fuortsmite</target>
+        <note annotates="source" from="developer">An action to delete a message from the users inbox</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.editButton">
+        <source>Edit</source>
+        <target>Bewurkje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.emptyStateDescription">
+        <source>You’re up to date!</source>
+        <target>Jo binne by de tiid!</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.emptyStateTitle">
+        <source>No messages</source>
+        <target>Gjin berjochten</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.extensionBadge">
+        <source>Extension</source>
+        <target>Utwreiding</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains information about a Firefox browser extension</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.menuTitle">
+        <source>Messages</source>
+        <target>Berjochten</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.newUpdateBadge">
+        <source>New update</source>
+        <target>Nije fernijing</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying an update to the app is available</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.searchBarPlaceholderText">
+        <source>Search messages</source>
+        <target>Berjochten sykje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.subscriptionBadge">
+        <source>Subscription</source>
+        <target>Abonnemint</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains information about the user's subscription</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.surveyBadge">
+        <source>Survey</source>
+        <target>Enkête</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains a survey</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.warningBadge">
+        <source>Warning</source>
+        <target>Warskôging</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this is a warning message</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppMessaging.whatsNewBadge">
+        <source>What’s new</source>
+        <target>Wat is der nij</target>
+        <note annotates="source" from="developer">A badge shown in a message signifying that this message contains information about what is new in the product</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.accountDropdownListItem">
+        <source>Account issues</source>
+        <target>Accountproblemen</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to account issues.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.disclaimerText">
+        <source>When you submit, Mozilla VPN will collect technical and interaction data with your email to help our support team understand your issue.</source>
+        <target>Wannear’t jo yntsjinje, sammelet Mozilla VPN technyske en ynteraksjegegevens mei jo e-mailadres, om ús stipeteam te helpen jo probleem te begripen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.dropdownLabel">
+        <source>Choose a category</source>
+        <target>Kies in kategory</target>
+        <note annotates="source" from="developer">A user trying to submit feedback will use this dropdown to select the general topic related to the feedback.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.featureRequestDropdownListItem">
+        <source>Request features</source>
+        <target>Funksjes oanfreegje</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to requesting new features.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.issueFieldPlaceholder">
+        <source>Describe issue</source>
+        <target>Beskriuw it probleem</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.otherDropdownListItem">
+        <source>Other</source>
+        <target>Oar</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to issues not covered under the other categories.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.paymentDropdownListItem">
+        <source>Payment and billing</source>
+        <target>Betelling en fakturaasje</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to payment and billing.</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.privacyNoticeLinkText">
+        <source>Mozilla VPN Privacy Notice</source>
+        <target>Mozilla VPN-privacyferklearring</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.shareLogsCheckBoxSubtitle">
+        <source>Support will use this data to better diagnose your issue.</source>
+        <target>De stipetsjinst brûkt dizze gegevens om jo probleem better analysearje te kinnen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.shareLogsCheckBoxTitle">
+        <source>Share logs with support</source>
+        <target>Lochboeken diele mei stipe</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.subjectFieldPlaceholder">
+        <source>Subject (optional)</source>
+        <target>Underwerp (opsjoneel)</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportConfirmEmailPlaceholder">
+        <source>Confirm email address</source>
+        <target>E-mailadres befêstigje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportEmailFieldLabel">
+        <source>Enter your email</source>
+        <target>Fier jo e-mailadres yn</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportEmailFieldPlaceholder">
+        <source>Email address</source>
+        <target>E-mailadres</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorBrowserButton">
+        <source>Try opening in browser</source>
+        <target>Probearje yn browser te iepenjen</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorButton">
+        <source>Try Again</source>
+        <target>Opnij probearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorHeader">
+        <source>Error submitting your support request</source>
+        <target>Flater by it yntsjinjen fan jo stipefersyk</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportErrorText">
+        <source>An unexpected error has occurred, please try again.</source>
+        <target>Der is in ûnferwachte flater bard, probearje it nochris.</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportFieldHeader">
+        <source>How can we help you with Mozilla VPN?</source>
+        <target>Hoe kinne wy jo helpe mei Mozilla VPN?</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportNavLinkText">
+        <source>Contact support</source>
+        <target>Kontakt opnimme</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportPrimaryButtonText">
+        <source>Submit</source>
+        <target>Yntsjinje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportResponseBody">
+        <source>Our support team will contact you at %1 once we’ve been able to look at your issue.</source>
+        <target>Us stipeteam sil kontakt mei jo opnimme op %1 sa gau as wy jo probleem besjoen hawwe.</target>
+        <note annotates="source" from="developer">The %1 represents the email used to complete the form</note>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportResponseButton">
+        <source>Done</source>
+        <target>Dien</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportResponseHeader">
+        <source>Thank you!</source>
+        <target>Tige tank!</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.supportSecondaryActionText">
+        <source>Cancel</source>
+        <target>Annulearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.inAppSupportWorkflow.technicaDropdownListItem">
+        <source>Technical issues</source>
+        <target>Technyske problemen</target>
+        <note annotates="source" from="developer">A user selecting this will be submitting in-app feedback related to technical issues.</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsActivate.phrases">
+        <source>Activate %@
+Turn on %@
+Turn %@ on
+Switch on %@
+Switch %@ on
+Connect %@
+Connect to %@
+</source>
+        <target>Aktivearje %@
+%@ deaktivearje
+Skeakelje %@ yn
+Set %@ oan
+%@ ynskeakelje
+%@ oansette
+Ferbine mei %@
+Mei %@ ferbine
+Ferbyn mei %@
+%@ ferbine
+</target>
+        <note annotates="source" from="developer">Siri phrase variants for activating the VPN via App Intents. Each line is a separate phrase Siri will recognize. Rules:
+ - Write natural, conversational phrases a user might say to Siri.
+ - Do NOT translate literally — write phrases natural in your language.
+ - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+ - Add or remove lines freely; your language may need fewer or more variants.
+ - No line should be a duplicate of another.
+</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsDeactivate.phrases">
+        <source>Deactivate %@
+Turn off %@
+Turn %@ off
+Switch off %@
+Switch %@ off
+Disconnect %@
+Disconnect from %@
+</source>
+        <target>Deaktivearje %@
+%@ deaktivearje
+Set %@ út
+Skeakelje %@ út
+%@ útskeakelje
+%@ útsette 
+Ferbrek ferbining mei %@
+Ferbining mei %@ ferbrekke
+</target>
+        <note annotates="source" from="developer">Siri phrase variants for deactivating the VPN via App Intents. Each line is a separate phrase Siri will recognize. Rules:
+ - Write natural, conversational phrases a user might say to Siri.
+ - Do NOT translate literally — write phrases natural in your language.
+ - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+ - Add or remove lines freely; your language may need fewer or more variants.
+ - No line should be a duplicate of another.
+</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryDescription">
+        <source>Queries current Mozilla VPN connection status</source>
+        <target>Freget aktuele Mozilla VPN-ferbiningsstatus op</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryResponseConnected">
+        <source>Mozilla VPN is currently connected</source>
+        <target>Mozilla VPN is op dit stuit ferbûn</target>
+        <note annotates="source" from="developer">Response given when the VPN is connected</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryResponseDisconnected">
+        <source>Mozilla VPN is currently disconnected</source>
+        <target>De ferbining fan Mozilla VPN is op dit stuit ferbrutsen</target>
+        <note annotates="source" from="developer">Response given when the VPN is disconnected</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.statusQueryTitle">
+        <source>Is the VPN currently connected?</source>
+        <target>Is de VPN op dit stuit ferbûn?</target>
+        <note annotates="source" from="developer">Title used by system to offer to query VPN status</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.toggleDescription">
+        <source>Changes Mozilla VPN status</source>
+        <target>Wiziget de Mozilla VPN-status</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.toggleError">
+        <source>Error changing VPN status</source>
+        <target>Flater by it wizigjen fan de VPN-status</target>
+        <note annotates="source" from="developer">Generic error message used when toggling VPN fails early</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.toggleTitle">
+        <source>Toggle Mozilla VPN</source>
+        <target>Mozilla VPN yn-/útskeakelje</target>
+        <note annotates="source" from="developer">Title used by system to offer to toggle VPN status</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffAction">
+        <source>Turn Off Mozilla VPN</source>
+        <target>Mozilla VPN útskeakelje</target>
+        <note annotates="source" from="developer">Title used by system to offer turning off VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffConfirmation">
+        <source>Mozilla VPN disconnected</source>
+        <target>Ferbining Mozilla VPN ferbrutsen</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning off VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffDescription">
+        <source>Deactivate the Mozilla VPN connection</source>
+        <target>De Mozilla VPN-ferbining deaktivearje</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOffError">
+        <source>No active VPN connection</source>
+        <target>Gjin aktive VPN-ferbining</target>
+        <note annotates="source" from="developer">Error given by Siri when unable to turn off VPN due to a lack of existing connection</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnAction">
+        <source>Turn On Mozilla VPN</source>
+        <target>Mozilla VPN ynskeakelje</target>
+        <note annotates="source" from="developer">Title used by system to offer turning on VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnAlreadyConnectedError">
+        <source>VPN is already connected</source>
+        <target>VPN is al ferbûn</target>
+        <note annotates="source" from="developer">Error given by Siri when VPN already has an active connection</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnConfirmation">
+        <source>Mozilla VPN connected</source>
+        <target>Mozilla VPN ferbûn</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning on VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnConfirmationMultiHop">
+        <source>Mozilla VPN connected through %1$@ via %2$@</source>
+        <target>Mozilla VPN ferbûn fia %1$@ fia %2$@</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning on VPN. `%1$@` will be replaced with the exit city, and `%2$@` will be replaced with the entry city.</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnConfirmationSingleHop">
+        <source>Mozilla VPN connected through %@</source>
+        <target>Mozilla VPN ferbûn fia %@</target>
+        <note annotates="source" from="developer">Confirmation string used by Siri after turning on VPN. `%@` must be included, and it will be replaced with the name of the exit city.</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnDescription">
+        <source>Activate the Mozilla VPN connection</source>
+        <target>De Mozilla VPN-ferbining aktivearje</target>
+        <note annotates="source" from="developer">Description used to provide more context in Shortcuts and other places</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsMain.turnOnError">
+        <source>Error turning on Mozilla VPN</source>
+        <target>Flater by ynskeakeljen Mozilla VPN</target>
+        <note annotates="source" from="developer">Error given by Siri when unable to turn on VPN</note>
+      </trans-unit>
+      <trans-unit id="vpn.iosAppIntentsQueryStatus.phrases">
+        <source>Is %@ currently active?
+Is %@ currently activated?
+Is %@ currently turned on?
+Is %@ currently switched on?
+Is %@ currently connected?
+Is %@ active?
+Is %@ activated?
+Is %@ turned on?
+Is %@ switched on?
+Is %@ connected?
+</source>
+        <target>Is %@ op dit stuit aktyf?
+Is %@ op dit stuit aktivearre?
+Is %@ op dit stuit oanset?
+Is %@ op dit stuit ynskeakele?
+Is %@ op dit stuit ferbûn?
+Is %@ aktyf?
+Is %@ aktivearre?
+Is %@ oanset?
+Is %@ ynskeakele?
+Is %@ ferbûn?
+</target>
+        <note annotates="source" from="developer">Siri phrase variants for querying whether the VPN is active via App Intents. Each line is a separate phrase Siri will recognize. Rules:
+ - Write natural, conversational phrases a user might say to Siri.
+ - Do NOT translate literally — write phrases natural in your language.
+ - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+ - Add or remove lines freely; your language may need fewer or more variants.
+ - No line should be a duplicate of another.
+</note>
+      </trans-unit>
+      <trans-unit id="vpn.languageView.searchPlaceholder">
+        <source>Search languages</source>
+        <target>Talen sykje</target>
+        <note annotates="source" from="developer">Placeholder text for a search field that can be used to search through a list of languages</note>
+      </trans-unit>
+      <trans-unit id="vpn.languageView.systemLanguageButtonDescription">
+        <source>Mozilla VPN will use the default system language.</source>
+        <target>Mozilla VPN brûkt de standert systeemtaal.</target>
+        <note annotates="source" from="developer">the description for the system lagnague radio button</note>
+      </trans-unit>
+      <trans-unit id="vpn.languageView.systemLanguageButtonTitle">
+        <source>System language</source>
+        <target>Systeemtaal</target>
+        <note annotates="source" from="developer">the title for the system language radio button</note>
+      </trans-unit>
+      <trans-unit id="vpn.logoAccessoryWidget.description">
+        <source>See current Mozilla VPN status.</source>
+        <target>Aktuele Mozilla VPN-status besjen.</target>
+        <note annotates="source" from="developer">More information about what the logo widget contains - which is simply current VPN status.</note>
+      </trans-unit>
+      <trans-unit id="vpn.logoAccessoryWidget.vpnOff">
+        <source>Mozilla VPN off</source>
+        <target>Mozilla VPN út</target>
+        <note annotates="source" from="developer">Shown as part of inline widget when VPN is inactive. If translation will be more than 16 characters, instead translate `VPN on` to keep this within available space.</note>
+      </trans-unit>
+      <trans-unit id="vpn.logoAccessoryWidget.vpnOn">
+        <source>Mozilla VPN on</source>
+        <target>Mozilla VPN oan</target>
+        <note annotates="source" from="developer">Shown as part of inline widget when VPN is active. If translation will be more than 16 characters, instead translate `VPN on` to keep this within available space.</note>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.alreadyASubscriber">
+        <source>Already a subscriber?</source>
+        <target>Binne jo al abonnee?</target>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.panelOneSubtitle">
+        <source>A safe, reliable and fast VPN. Built by the makers of Firefox.</source>
+        <target>In feilige, betroubere en flugge VPN. Boud troch de makkers fan Firefox.</target>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.panelOneTitle">
+        <source>Mozilla VPN</source>
+        <target>Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.mobileOnboarding.signUpBtn">
+        <source>Sign up</source>
+        <target>Registrearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiFxaAccountError.fxaAccountErrorHeader">
+        <source>Problem confirming subscription</source>
+        <target>Flater by befêstigjen abonnemint</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiFxaAccountError.mozAccountErrorText">
+        <source>Your subscription is linked to another Mozilla account. You may need to sign in with a different email address.</source>
+        <target>Jo abonnemint is keppele oan in oar Mozilla-account. Mooglik moatte jo jo oanmelde mei in oar e-mailadres.</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiFxaAccountError.visitOurHelpCenter">
+        <source>Visit our help center to learn more about managing your subscriptions.</source>
+        <target>Besykje ús helpsintrum foar mear ynformaasje oer it behearen fan jo abonneminten.</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.accessibleNameRecentConnection">
+        <source>%1 to %2</source>
+        <target>%1 oant %2</target>
+        <note annotates="source" from="developer">Accessible label that is used for recent multi-hop server connections. “%1” represents the entry server and “%2” the exit server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopArrowAltText">
+        <source>To</source>
+        <target>Oan</target>
+        <note annotates="source" from="developer">This is alt text for an arrow showing the multi-hop route between servers. e.g. Atlanta TO Copenhagen</note>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopConnectionsHeader">
+        <source>Recent connections</source>
+        <target>Resinte ferbiningen</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopEntryLocationHeader">
+        <source>Select entry location</source>
+        <target>Yngongslokaasje selektearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopExitLocationHeader">
+        <source>Select exit location</source>
+        <target>Utgongslokaasje selektearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopInfoText">
+        <source>Exit location represents your main VPN server.</source>
+        <target>De útgongslokaasje fertsjinwurdiget jo haad-VPN-server.</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.multiHopToggleCTA">
+        <source>Multi-hop</source>
+        <target>Multi-hop</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.serverSearchResultsError">
+        <source>No results. Try a different search</source>
+        <target>Gjin resultaten. Probearje in oare sykopdracht</target>
+      </trans-unit>
+      <trans-unit id="vpn.multiHopFeature.singleHopToggleCTA">
+        <source>Single-hop</source>
+        <target>Single-hop</target>
+      </trans-unit>
+      <trans-unit id="vpn.navBar.homeTab">
+        <source>Home</source>
+        <target>Startside</target>
+        <note annotates="source" from="developer">Label for the tab on the navigation bar that takes the user to the home screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.navBar.messagesTab">
+        <source>Messages</source>
+        <target>Berjochten</target>
+        <note annotates="source" from="developer">Label for the tab on the navigation bar that takes the user to the messages inbox screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.navBar.settingsTab">
+        <source>Settings</source>
+        <target>Ynstellingen</target>
+        <note annotates="source" from="developer">Label for the tab on the navigation bar that takes the user to the settings screen</note>
+      </trans-unit>
+      <trans-unit id="vpn.networkSettings.multihopTitle">
+        <source>Multi-hop tunnel</source>
+        <target>Multi-hop-tunnel</target>
+      </trans-unit>
+      <trans-unit id="vpn.notSignedInGoogle.googleModalBodyText">
+        <source>To continue subscribing, please sign in to your Google Account</source>
+        <target>Meld jo oan by jo Google-account om fierder te gean mei jo registraasje</target>
+      </trans-unit>
+      <trans-unit id="vpn.notSignedInGoogle.googleModalHeader">
+        <source>Sign in to Google Account</source>
+        <target>Oanmelde by jo Google-account</target>
+      </trans-unit>
+      <trans-unit id="vpn.notSignedInGoogle.googleModalLinkText">
+        <source>Go to Play Store</source>
+        <target>Nei de Play Store</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNConnectedMessages">
+        <source>Connected through %1</source>
+        <target>Ferbûn fia %1</target>
+        <note annotates="source" from="developer">%1 is the name of the city the VPN is connected to.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNConnectedTitle">
+        <source>VPN Connected</source>
+        <target>VPN ferbûn</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNDisconnectedMessage">
+        <source>Disconnected from %1</source>
+        <target>Ferbining mei %1 ferbrutsen</target>
+        <note annotates="source" from="developer">%1 is the name of the city the VPN disconnected from.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNDisconnectedTitle">
+        <source>VPN Disconnected</source>
+        <target>Ferbining VPN ferbrutsen</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNMultihopConnectedMessages">
+        <source>Connected through %1 via %2</source>
+        <target>Ferbûn fia %1 fia %2</target>
+        <note annotates="source" from="developer">%1 is the name of the exit server, %2 is the name of the entry server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNMultihopDisconnectedMessage">
+        <source>Disconnected from %1 and %2</source>
+        <target>Ferbining mei %1 en %2 ferbrutsen</target>
+        <note annotates="source" from="developer">%1 is the name of the exit server, %2 is the name of the entry server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNSwitchedServersMessage">
+        <source>Switched from %1 to %2</source>
+        <target>Omskeakele fan %1 nei %2</target>
+        <note annotates="source" from="developer">%1 is the name of the initial server, %2 is the name of the destination server.</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.VPNSwitchedServersTitle">
+        <source>VPN Switched Servers</source>
+        <target>VPN is fan server omskeakele</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalBlockMessage2">
+        <source>The guest Wi-Fi network you’re connected to requires action. Click to turn off VPN to see the portal.</source>
+        <target>It wifi-gastnetwurk wêrmei't jo ferbûn binne fereasket aksje. Klik om VPN út te skeakeljen en it portaal te besjen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalBlockTitle">
+        <source>Guest Wi-Fi portal blocked</source>
+        <target>Wifi-gasteportaal blokkearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalUnblockMessage2">
+        <source>The guest Wi-Fi network you’re connected to may not be secure. Click to turn on VPN to secure your device.</source>
+        <target>It wifi-gastnetwurk wêrmei't jo ferbûn binne is mooglik net befeilige. Klik om VPN yn te skeakeljen en jo apparaat te befeiligjen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.captivePortalUnblockTitle">
+        <source>Guest Wi-Fi portal detected</source>
+        <target>Wifi-gasteportaal detektearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.connectionFailedMessage">
+        <source>Sorry, something went wrong with your VPN connection.</source>
+        <target>Sorry, der is wat misgien mei jo VPN-ferbining.</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.connectionFailedTitle">
+        <source>Connection failed</source>
+        <target>Ferbining mislearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.subscriptionNotFound">
+        <source>Your Mozilla VPN subscription cannot be found. Please open the app to resolve this subscription issue.</source>
+        <target>Wy kinne jo abonnemint op Mozilla VPN net fine. Iepenje de app om dit abonnemintsprobleem op te lossen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.unsecuredNetworkGeneric">
+        <source>Wi-Fi network is not secure. Click here to turn on VPN and secure your device.</source>
+        <target>Wifi-netwurk is net befeilige. Klik hjir om VPN yn te skeakeljen en jo apparaat te befeiligjen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.unsecuredNetworkMessage">
+        <source>%1 is not secure. Click here to turn on VPN and secure your device.</source>
+        <target>%1 is net befeilige. Klik hjir om VPN yn te skeakeljen en jo apparaat te befeiligjen.</target>
+        <note annotates="source" from="developer">%1 is the Wi-Fi network name</note>
+      </trans-unit>
+      <trans-unit id="vpn.notifications.unsecuredNetworkTitle">
+        <source>Unsecured Wi-Fi network detected</source>
+        <target>Unbefeilige wifi-netwurk detektearre</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideBody2">
+        <source>Help us improve Mozilla VPN by sharing crash reports, diagnostics, and product usage data. We never collect data about your online activity while using the VPN.</source>
+        <target>Help ús Mozilla VPN te ferbetterjen troch ûngelokrapporten, diagnostyske gegevens en produktgebrûksgegevens te dielen. Wy sammelje nea gegevens oer jo online aktiviteit wylst it gebrûk fan de VPN.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideHeader2">
+        <source>Data collection</source>
+        <target>Gegevenssamling</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideLearnMoreCaption2">
+        <source>Learn more about data collection</source>
+        <target>Mear ynfo oer gegevenssammeling</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlidePrivacyLinkLabel">
+        <source>Mozilla VPN Privacy Notice</source>
+        <target>Mozilla VPN-privacyferklearring</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.dataSlideToggleLabel">
+        <source>Share technical data</source>
+        <target>Technyske gegevens diele</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideBody2">
+        <source>To install the VPN on another tablet or mobile device, scan the QR code.</source>
+        <target>Scan de QR-koade om de VPN op in oare tablet of mobyl apparaat te ynstallearjen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideBodyMobile">
+        <source>To install the VPN on another tablet or mobile device, scan the QR code. To install on a desktop computer, visit the Download page on the Mozilla VPN website.</source>
+        <target>Scan de QR-koade om de VPN op in oare tablet of mobyl apparaat te ynstallearjen. Besykje de downloadside op de Mozilla VPN-website om op in desktopkompjûter te ynstallearjen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideDeviceTypeAndroid">
+        <source>Android</source>
+        <target>Android</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideDeviceTypeApple">
+        <source>Apple</source>
+        <target>Apple</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideDeviceTypeLabel">
+        <source>Select device type:</source>
+        <target>Selektearje apparaattype:</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideHeader">
+        <source>Install Mozilla VPN on up to 5 devices</source>
+        <target>Ynstallearje Mozilla VPN op maksimaal 5 apparaten</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideQRCodeAndroid">
+        <source>QR Code that links to the Mozilla VPN product page on the Google Play Store</source>
+        <target>QR-koade dy’t ferwiist nei de Mozilla VPN-produktside yn de Google Play Store</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.devicesSlideQRCodeApple">
+        <source>QR Code that links to the Mozilla VPN product page on the iOS App Store</source>
+        <target>QR-koade dy’t ferwiist nei de Mozilla VPN-produktside yn de iOS App Store</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelFourSubtitle">
+        <source>You can set Mozilla VPN to protect you from ads, trackers, and malware. Plus, customize your protection for specific apps.</source>
+        <target>Jo kinne Mozilla VPN ynstelle om jo te beskermjen tsjin advertinsjes, trackers en malware. Jo kinne boppedat jo beskerming oanpasse foar spesifike apps.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelFourTitle">
+        <source>Add even more privacy</source>
+        <target>Noch mear privacy tafoegje</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelThreeSubtitle">
+        <source>Protecting yourself is simple: tap to connect to the VPN and you’re ready to browse safely. Mozilla VPN will start automatically for seamless protection.</source>
+        <target>Josels beskermje is ienfâldich: tik om ferbining te meitsjen mei de VPN en jo binne ree om feilich te sneupen. Mozilla VPN start automatysk foar naadleaze beskerming.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelThreeTitle">
+        <source>One tap to safety</source>
+        <target>Ien tik nei feilichheid</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelTwoSubtitle">
+        <source>With more than 500 servers in 60 cities around the world, Mozilla VPN protects your data, browsing activity, and your true location from network spies.</source>
+        <target>Mei mear as 500 servers yn 60 stêden oer de hiele wrâld beskermet Mozilla VPN jo gegevens, sneupaktiviteit en jo wiere lokaasje tsjin netwurkspionnen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.panelTwoTitle">
+        <source>Protect your privacy</source>
+        <target>Beskermje jo privacy</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.privacySlideBody">
+        <source>Use these features for more protection. They may cause issues on some sites, so you can turn them off anytime in settings.</source>
+        <target>Brûk dizze funksjes foar mear beskerming. Se kinne op guon siden problemen feroarsaakje, dus jo kinne se op elk winske momint útskeakelje fia de ynstellingen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.privacySlideHeader">
+        <source>Get more privacy</source>
+        <target>Untfang mear privacy</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAccessibilityStepComplete">
+        <source>Onboarding step “%1” (%2 of %3). Select to go back to this step.</source>
+        <target>Kennismakingsstap ‘%1’ (%2 fan %3). Selektearje om tebek te gean nei dizze stap.</target>
+        <note annotates="source" from="developer">Accessibility read out for completed steps in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAccessibilityStepCurrent">
+        <source>Onboarding step “%1” (%2 of %3). You are currently on this step.</source>
+        <target>Kennismakingsstap ‘%1’ (%2 fan %3). Jo binne op dit stuit yn dizze stap.</target>
+        <note annotates="source" from="developer">Accessibility read out for the current step in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAccessibilityStepIncomplete2">
+        <source>Onboarding step “%1” (%2 of %3)</source>
+        <target>Yntroduksjestap ‘%1’ (%2 fan %3)</target>
+        <note annotates="source" from="developer">Accessibility read out for incomplete future steps in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarAddDevices">
+        <source>Devices</source>
+        <target>Apparaten</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users find out how to install Mozilla VPN on other devices</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarConnect">
+        <source>Connect</source>
+        <target>Ferbine</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can grant permission to create a VPN configuration with the system</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarDataUse">
+        <source>Data</source>
+        <target>Gegevens</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can select to enable data collection</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarMorePrivacy">
+        <source>Privacy</source>
+        <target>Privacy</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can select to enable various privacy settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.progressBarStartup">
+        <source>Startup</source>
+        <target>Opstarte</target>
+        <note annotates="source" from="developer">Label for onboarding progress bar step where users can select to enable VPN startup on device boot</note>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideAllowButtonLabel">
+        <source>Allow VPN connection</source>
+        <target>VPN-ferbining tastean</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideBody2">
+        <source>Launch the VPN whenever you start your device. We’ll automatically reconnect you to the same server location you last used.</source>
+        <target>Start de VPN wannear’t jo jo apparaat starte. Wy sille jo automatysk opnij ferbine mei deselde serverlokaasje dy’t jo it lêst brûkt hawwe.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideHeader">
+        <source>Connect Mozilla VPN on startup</source>
+        <target>Mozilla VPN ferbine by opstarten</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideMobileBody">
+        <source>Your mobile device will now ask you to allow Mozilla VPN to create a connection. Please allow this so that the VPN works correctly on your device.</source>
+        <target>Jo mobile apparaat freget jo no oft Mozilla VPN in ferbining meitsje mei. Stean dit ta, sadat de VPN goed op jo apparaat wurket.</target>
+      </trans-unit>
+      <trans-unit id="vpn.onboarding.startSlideMobileHeader">
+        <source>Allow Mozilla VPN to create a VPN connection</source>
+        <target>Mozilla VPN tastean in VPN-ferbining ta stân te bringen</target>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.body">
+        <source>To use Mozilla VPN, please allow it to run in the background.</source>
+        <target>Stean, om Mozilla VPN te brûken, ta om it op de eftergrûn útfiere te litten.</target>
+        <note annotates="source" from="developer">Paragraph requesting the user to allow the VPN to run in the background.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.instructions">
+        <source>In order to do this, please click the button below to open the &lt;i&gt;Login Items&lt;/i&gt; of your &lt;i&gt;System Preferences&lt;/i&gt;, and enable &lt;i&gt;Allow in the background&lt;/i&gt; for Mozilla VPN.</source>
+        <target>Klik hjirfoar op de ûndersteande knop om de &lt;i&gt;Inlogonderdelen&lt;/i&gt; fan jo &lt;i&gt;Systeeminstellingen&lt;/i&gt; te iepenjen en skeakelje &lt;i&gt;Sta toe op de achtergrond&lt;/i&gt; yn foar Mozilla VPN.</target>
+        <note annotates="source" from="developer">Paragraph explaining how to enable the VPN to run in the background on macOS 14, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.instructionsMacOS15">
+        <source>In order to do this, please click the button below to open the &lt;i&gt;Login Items &amp; Extensions&lt;/i&gt; of your &lt;i&gt;System Preferences&lt;/i&gt;, and enable &lt;i&gt;Allow in the background&lt;/i&gt; for Mozilla VPN.</source>
+        <target>Klik hjirfoar op de ûndersteande knop om de &lt;i&gt;Aanmeldingsitems en extensies&lt;/i&gt; fan jo &lt;i&gt;Systeeminstellingen&lt;/i&gt; te iepenjen en skeakelje &lt;i&gt;Sta toe op de achtergrond&lt;/i&gt; yn foar Mozilla VPN.</target>
+        <note annotates="source" from="developer">Paragraph explaining how to enable the VPN to run in the background on macOS 15 and above, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.instructionsMacOS26">
+        <source>In order to do this, please click the button below to open the &lt;i&gt;Login Items &amp; Extensions&lt;/i&gt; of your &lt;i&gt;System Preferences&lt;/i&gt;, and enable &lt;i&gt;App Background Activity&lt;/i&gt; for Mozilla VPN.</source>
+        <target>Klik hjirfoar op de ûndersteande knop om de &lt;i&gt;Aanmeldingsitems en extensies&lt;/i&gt; yn jo &lt;i&gt;Systeemvoorkeuren&lt;/i&gt; te iepenjen en skeakelje &lt;i&gt;App-achtergrondactiviteit&lt;/i&gt; yn foar Mozilla VPN.</target>
+        <note annotates="source" from="developer">Paragraph explaining how to enable the VPN to run in the background on macOS 26 and above, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.openSettingsButtonLabel">
+        <source>Open Login Items</source>
+        <target>Oanmeldingsitems iepenje</target>
+        <note annotates="source" from="developer">Label for the button that opens the login items settings page on macOS 14</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.openSettingsButtonLabelMacOS15">
+        <source>Open Login Items &amp; Extensions</source>
+        <target>Aanmeldingsitems en extensies iepenje</target>
+        <note annotates="source" from="developer">Label for the button that opens the login items settings page on macOS 15 and above</note>
+      </trans-unit>
+      <trans-unit id="vpn.permissionMacos.title">
+        <source>Allow VPN to run in background</source>
+        <target>VPN tastean om op de eftergrûn út te fieren</target>
+        <note annotates="source" from="developer">Title of the screen directing macOS users to allow the VPN to run in background</note>
+      </trans-unit>
+      <trans-unit id="vpn.product.description">
+        <source>A fast, secure and easy to use VPN. Built by the makers of Firefox.</source>
+        <target>In rappe, feilige en maklik te brûken VPN. Boud troch de makkers fan Firefox.</target>
+      </trans-unit>
+      <trans-unit id="vpn.product.name">
+        <source>Mozilla VPN</source>
+        <target>Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.purchase.percentSaved">
+        <source>Save %1%</source>
+        <target>Besparje %1%</target>
+        <note annotates="source" from="developer">Appears on the in-app purchase view beside a subscription plan. "%1" is replaced by the percentage amount saved when selecting that plan</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchase.subscribeNow">
+        <source>Subscribe now</source>
+        <target>No abonnearje</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchase.subscriptionOption">
+        <source>%1-month plan: %2</source>
+        <target>Abonnemint foar meardere moannen (%1): %2</target>
+        <note annotates="source" from="developer">%1 is replaced by the subscription duration in months. %2 is replaced by the total subscription cost.</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchaseWeb.inProgress2">
+        <source>Please continue subscribing in your browser…</source>
+        <target>Gean yn jo browser fierder mei it foltôgjen fan jo abonnemint…</target>
+      </trans-unit>
+      <trans-unit id="vpn.purchaseWeb.message">
+        <source>We couldn’t find a subscription for %1. Subscribe now to protect your connection.</source>
+        <target>Wy kinne gjin abonnemint op %1 fine. Nim no in abonnemint om jo ferbining te beskermjen.</target>
+        <note annotates="source" from="developer">%1 is the user’s email address.</note>
+      </trans-unit>
+      <trans-unit id="vpn.purchaseWeb.title">
+        <source>Subscribe to Mozilla VPN</source>
+        <target>Abonnearje op Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.body1">
+        <source>This will reset all VPN settings, including:</source>
+        <target>Dit sil alle VPN-ynstellingen weromsette, wêrûnder:</target>
+        <note annotates="source" from="developer">Body content of the screen where users go to reset the VPN to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.body2">
+        <source>Resetting the VPN will sign you out, but your account will not be deleted.</source>
+        <target>De VPN weromsette, wurde jo ôfmeld, mar jo account sil net fuortsmiten wurde.</target>
+        <note annotates="source" from="developer">Body content of the screen where users go to reset the VPN to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.confirmResetModalBody">
+        <source>Reset Mozilla VPN settings? This can’t be undone.</source>
+        <target>Mozilla VPN-ynstellingen weromsette? Dit kin net ûngedien makke wurde.</target>
+        <note annotates="source" from="developer">Body of the modal where users can confirm they want to restore back to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.confirmResetModalResetButtonLabel">
+        <source>Reset and quit</source>
+        <target>Weromsette en ôfslute</target>
+        <note annotates="source" from="developer">Label for button that finalizes a restore to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.confirmResetModalTitle">
+        <source>Confirm reset</source>
+        <target>Weromsette befêstigje</target>
+        <note annotates="source" from="developer">Title of the modal where users can confirm they want to restore back to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.listItemPreferences">
+        <source>Preferences</source>
+        <target>Foarkarren</target>
+        <note annotates="source" from="developer">Item in a bulleted list denoting what will be deleted if the user opts to factory reset the client</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.resetButtonLabel">
+        <source>Reset VPN</source>
+        <target>VPN weromsette</target>
+        <note annotates="source" from="developer">Label for button that initiates a restore to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.resetLabel">
+        <source>Reset VPN</source>
+        <target>VPN weromsette</target>
+        <note annotates="source" from="developer">Label for button that takes the user to the factory reset flow</note>
+      </trans-unit>
+      <trans-unit id="vpn.resetSettings.title">
+        <source>Reset Mozilla VPN</source>
+        <target>Mozilla VPN weromsette</target>
+        <note annotates="source" from="developer">Title of the screen where users go to reset the VPN to factory settings</note>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchase.restorePurchaseButton">
+        <source>Already a subscriber?</source>
+        <target>Binne jo al abonnee?</target>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchaseExpiredError.restorePurchaseExpiredErrorText2">
+        <source>Sorry, we are unable to connect your Mozilla account to a current subscription. Please try again or contact our support team for further assistance.</source>
+        <target>Sorry, wy kinne jo Mozilla-account net keppelje oan in besteand abonnemint. Probearje it opnij of nim kontakt op mei ús stipeteam foar fierdere help.</target>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchaseGenericPurchaseError.restorePurchaseGenericPurchaseErrorText">
+        <source>Sorry, we were unable to confirm your subscription. Please try again or contact our support team for help.</source>
+        <target>Sorry, wy kinne jo abonnemint net befêstigje. Probearje it opnij of nim kontakt op mei ús stipeteam foar help.</target>
+      </trans-unit>
+      <trans-unit id="vpn.restorePurchaseInUseError.restorePurchaseInUseErrorText2">
+        <source>Another Mozilla account has already subscribed using this Apple ID. Please sign out and try again or contact our support team for help.</source>
+        <target>In oar Mozilla-account hat har al abonnearre mei dizze Apple ID. Meld jo ôf en probearje it opnij of nim kontakt op mei ús stipeteam foar help.</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableModal.bodyText">
+        <source>This server location is temporarily unavailable. Choose a new location.</source>
+        <target>Dizze serverlokaasje is tydlik net beskikber. Kies in nije lokaasje.</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableModal.buttonLabel">
+        <source>Choose a new location</source>
+        <target>In nije lokaasje kieze</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableModal.headerText">
+        <source>Server unavailable</source>
+        <target>Server net beskikber</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.bodyText">
+        <source>This server location is temporarily unavailable. Please open the app to choose a new location.</source>
+        <target>Dizze serverlokaasje is tydlik net beskikber. Iepenje de app om in nije lokaasje kiezen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.bodyTextFireWallBlocked">
+        <source>The server has been blocked. Check your firewall settings.</source>
+        <target>De server is blokkearre. Kontrolearje jo firewallynstellingen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.preferencesLabel">
+        <source>Server unavailable notification</source>
+        <target>Melding server net beskikber</target>
+      </trans-unit>
+      <trans-unit id="vpn.serverUnavailableNotification.preferencesSubLabel">
+        <source>Get notified when connecting to a server location failed</source>
+        <target>Untfang in melding wannear’t ferbining meitsjen mei in serverlokaasje mislearre is</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedEmptyLabel">
+        <source>To see recommended server locations, turn off the VPN.</source>
+        <target>Skeakelje de VPN út om oanrekommandearre serverlokaasjes te sjen.</target>
+        <note annotates="source" from="developer">Label for recommended server list when the list is empty</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLabel">
+        <source>Refresh list</source>
+        <target>List ferfarskje</target>
+        <note annotates="source" from="developer">Accessible label for the button that triggers a refresh of the recommended servers list.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLastUpdatedDisabledLabel">
+        <source>Last updated: %1. To update this list please disconnect from the VPN.</source>
+        <target>Lêst bywurke: %1. Untkeppelje fan de VPN om dizze list by te wurkjen.</target>
+        <note annotates="source" from="developer">The time (or in extremely rare circumstances, the date, day of the week, or "yesterday") which the recommended servers list was last updated and instructions to re-enable the refresh button. Argument is the time or date/day</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLastUpdatedLabel">
+        <source>Last updated: %1.</source>
+        <target>Lêst bywurke: %1.</target>
+        <note annotates="source" from="developer">The time (or in extremely rare circumstances, the date, day of the week, or "yesterday") which the recommended servers list was last updated. Argument is the time or date/day</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshLastUpdatedLabelYesterday">
+        <source>yesterday</source>
+        <target>juster</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshNoUpdateDisabledLabel">
+        <source>Disconnect from the VPN to update this list.</source>
+        <target>Ferbrek de ferbining mei de VPN om dizze list by te wurkjen.</target>
+        <note annotates="source" from="developer">Label next to the refresh button shown when the recommended list has never been updated yet but the user is connected to the VPN, so cannot update yet.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshNoUpdateLabel">
+        <source>Tap to update</source>
+        <target>Tik om by te wurkjen</target>
+        <note annotates="source" from="developer">Label next to the refresh button shown when the recommended list has never been updated yet. The whole row is clickable and tapping triggers an update.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.recommendedRefreshlLoadingLabel">
+        <source>Checking (%1%)…</source>
+        <target>Kontrolearje (%1%)…</target>
+        <note annotates="source" from="developer">Loading string while recommended servers are being calculated. Argument is the percentage of completion as an integer (i.e. 25)</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.searchNoResultsLabel">
+        <source>No results. Try a different search</source>
+        <target>Gjin resultaten. Probearje in oare sykopdracht</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.searchPlaceholder">
+        <source>Search countries</source>
+        <target>Lannen sykje</target>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithGoodConnection">
+        <source>%1. Good connectivity</source>
+        <target>%1. Goede konnektiviteit</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is good. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithModerateConnection">
+        <source>%1. Moderate connectivity</source>
+        <target>%1. Matige konnektiviteit</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is moderate. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithNoConnection">
+        <source>%1. No connectivity</source>
+        <target>%1. Gjin konnektiviteit</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is unavailable. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.serverCityWithPoorConnection">
+        <source>%1. Poor connectivity</source>
+        <target>%1. Minne konnektiviteit</target>
+        <note annotates="source" from="developer">Button label that reads out a city name whose connection is poor. Argument is the city name.</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.tabAllLabel">
+        <source>All</source>
+        <target>Alle</target>
+        <note annotates="source" from="developer">Label for the “all” servers tab</note>
+      </trans-unit>
+      <trans-unit id="vpn.serversView.tabRecommendedLabel">
+        <source>Recommended</source>
+        <target>Oanrekommandearre</target>
+        <note annotates="source" from="developer">Label for the “recommended” servers tab</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appExclusionClearAllApps">
+        <source>Clear all</source>
+        <target>Alles wiskje</target>
+        <note annotates="source" from="developer">Button label to clear all apps from the exclusions list</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appExclusionTitle">
+        <source>Excluded apps</source>
+        <target>Utsletten apps</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearance">
+        <source>Appearance</source>
+        <target>Uterlik</target>
+        <note annotates="source" from="developer">Appearance refers to the app theming (dark mode / light mode)</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceAutomatic">
+        <source>Automatic</source>
+        <target>Automatysk</target>
+        <note annotates="source" from="developer">Automatic switching for dark mode/light mode, based on the system’s setting</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceAutomaticDescription">
+        <source>Follow your system’s appearance</source>
+        <target>Foarmjouwing fan jo systeem folgje</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceDark">
+        <source>Dark</source>
+        <target>Tsjuster</target>
+        <note annotates="source" from="developer">Dark as in "dark mode theme"</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.appearanceLight">
+        <source>Light</source>
+        <target>Ljocht</target>
+        <note annotates="source" from="developer">Light as in "light mode theme"</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.batteryOptimizationWarning">
+        <source>On some devices, Mozilla VPN may be disconnected in the background. If you’ve experienced this, allow it to run in the background.</source>
+        <target>Op guon apparaten kin de ferbining fan Mozilla VPN op de eftergrûn ferbrutsen wurde. As jo dit ûnderfûn hawwe, stean it dan to om op de eftergrûn rinne te litten.</target>
+        <note annotates="source" from="developer">Warning shown in the settings screen on Android when battery optimization is enabled for the app.</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.batteryOptimizationWarningButton">
+        <source>Allow background permissions</source>
+        <target>Tastimmingen op de eftergrûn tastean</target>
+        <note annotates="source" from="developer">Button label for the call to action to allow background permissions on Android.</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.crashOptInDescription">
+        <source>Allow Mozilla VPN to automatically send crash reports to help fix unexpected crashes</source>
+        <target>Mozilla VPN tastean om automatysk ûngelokrapporten te ferstjoeren om ûnferwachte ûngelokken helpe op te lossen</target>
+        <note annotates="source" from="developer">This is the description of a checkbox option to allow the app to send crash reports without a user prompt</note>
+      </trans-unit>
+      <trans-unit id="vpn.settings.decryptionErrorText">
+        <source>We couldn’t access your saved VPN settings. Please sign in again.</source>
+        <target>Wy kinne gjin tagong krije ta jo bewarre VPN-ynstellingen. Meld jo opnij oan.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettings">
+        <source>DNS settings</source>
+        <target>DNS-ynstellingen</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsCustomDNSBody">
+        <source>Resolve websites using a custom DNS</source>
+        <target>Websites mei in oanpaste DNS omsette</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsCustomDNSError">
+        <source>Invalid DNS, please try a new one</source>
+        <target>Unjildige DNS, probearje in nije</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsCustomDNSTitle">
+        <source>Use custom DNS</source>
+        <target>Oanpaste DNS brûke</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsDisconnectWarning">
+        <source>Changing these settings will cause the VPN to disconnect and reconnect automatically.</source>
+        <target>As jo dizze ynstellingen wizigje, sil de VPN automatysk de ferbining ferbrekke en opnij ferbine.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsInputPlaceholder">
+        <source>Enter custom DNS</source>
+        <target>Oanpaste DNS ynfiere</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsStandardDNSBody">
+        <source>Resolve websites using Mozilla VPN’s standard DNS</source>
+        <target>Websites mei in standert-DNS fan Mozilla VPN omsette</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsStandardDNSTitle">
+        <source>Use standard DNS</source>
+        <target>Standert-DNS brûke</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.dnsSettingsWarning">
+        <source>These options may cause some websites to break or not display content correctly.</source>
+        <target>Dizze opsjes kinne feroarsaakje dat guon websiden net goed wurkje of ynhâld net goed werjaan.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionFirefoxButton">
+        <source>Download Firefox</source>
+        <target>Firefox downloade</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionFirstParagraphHead">
+        <source>Turn off VPN for specific websites.</source>
+        <target>VPN útskeakelje foar spesifike websites.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionFirstParagraphMain">
+        <source>No more toggling your VPN on and off when you need a site to work. Plus, your preference for the website is saved so you don’t have to adjust it each time.</source>
+        <target>Jo hoege jo VPN net mear yn en út te skeakeljen wannear’t jo in website nedich hawwe om te wurkjen. Boppedat wurdt jo foarkar foar de website bewarre, sadat jo dizze net hieltyd hoege oan te passen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionInfo">
+        <source>Firefox extension</source>
+        <target>Firefox-útwreiding</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionIntro">
+        <source>Get more precise control over how your VPN works when you’re browsing, with the Firefox extension.</source>
+        <target>Krij mei de Firefox-útwreiding sekuerdere kontrôle oer hoe’t jo VPN wurket wylst it sneupjen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionMainButton">
+        <source>Get the extension</source>
+        <target>De útwreiding downloade</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionSecondParagraphHead">
+        <source>Choose different locations for different websites.</source>
+        <target>Kies ferskate lokaasjes foar ferskate websites.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.firefoxExtensionSecondParagraphMain">
+        <source>Browse one site as if you’re in New York and another as if you’re in Paris — all in the same Firefox session.</source>
+        <target>Sneup op de iene website as oft jo yn New York binne en op in oare as oft jo yn Parys binne – allegearre yn deselde Firefox-sesje.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.preferencesSettings">
+        <source>Preferences</source>
+        <target>Foarkarren</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyAdblockBody">
+        <source>Reduces the number of ads you see when you’re using VPN</source>
+        <target>Ferleget it oantal advertinsjes dat jo sjogge as jo VPN brûke</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyAdblockTitle">
+        <source>Block ads</source>
+        <target>Advertinsjes blokkearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyCard">
+        <source>These options may cause some websites to break or not display content correctly.</source>
+        <target>Dizze opsjes kinne feroarsaakje dat guon websiden net goed wurkje of ynhâld net goed werjaan.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyMalwareBody2">
+        <source>Helps protect you from ransomware, phishing, spyware, and viruses</source>
+        <target>Helpt jo te beskermjen tsjin ransomware, phishing, spyware en firussen</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyMalwareTitle">
+        <source>Block malware</source>
+        <target>Malware blokkearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacySettings">
+        <source>Privacy features</source>
+        <target>Privacyfunksjes</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyTrackerBody">
+        <source>Fewer harmful domains will be able to track you</source>
+        <target>Minder skealike domeinen sille jo folgje kinne</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.privacyTrackerTitle">
+        <source>Block trackers</source>
+        <target>Trackers blokkearje</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.reauthDescription">
+        <source>For your security, please sign in again to access your account information. You’ll complete this process on Mozilla’s website.</source>
+        <target>Meld jo foar jo feilichheid opnij oan om tagong te krijen ta jo accountgegevens. Jo foltôgje dit proses op de website fan Mozilla.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.reauthTitle">
+        <source>Sign In Again</source>
+        <target>Opnij oanmelde</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.shareTechnicalDataDescription">
+        <source>Help improve Mozilla VPN by sharing crash reports, diagnostics, and product usage data.</source>
+        <target>Help Mozilla VPN te ferbetterjen troch ûngelokrapporten, diagnostyske gegevens en produktgebrûksgegevens te dielen.</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.startAtBootSubtitle">
+        <source>Mozilla VPN will launch and connect when you start up your device</source>
+        <target>Mozilla VPN wurdt start en makket ferbining wannear’t jo jo apparaat opstarte</target>
+      </trans-unit>
+      <trans-unit id="vpn.settings.startAtBootTitle">
+        <source>Connect VPN on startup</source>
+        <target>VPN ferbine by opstarten</target>
+        <note annotates="source" from="developer">Startup refers to a device's startup, not the VPN client's.</note>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.restartRequired">
+        <source>VPN must be restarted to take effect</source>
+        <target>VPN moat opnij starten wurde om wizigingen troch te fieren</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.showOptionSubtitle">
+        <source>Show or hide the developer options menu</source>
+        <target>It menu Untwikkelersopsjes toane of ferstopje</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.showOptionTitle">
+        <source>Show Developer Options</source>
+        <target>Untwikkelersopsjes toane</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.title">
+        <source>Developer Options</source>
+        <target>Untwikkelersopsjes</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.useStagingSubtitle">
+        <source>Staging services are used to test features before they go live to production</source>
+        <target>Testservices wurde brûkt om funksjes te testen eardat se live nei produksje gean</target>
+      </trans-unit>
+      <trans-unit id="vpn.settingsDev.useStagingTitle">
+        <source>Use Staging Servers</source>
+        <target>Testservers brûke</target>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.btnShowSystemApp">
+        <source>Show system apps</source>
+        <target>Systeemapps toane</target>
+        <note annotates="source" from="developer">Label for a checkbox that, if checked, will show the hidden "system/internal" apps. e.g. "Android Auto" is a system app on Android.</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.errorActivating">
+        <source>Error activating App exclusions</source>
+        <target>Flater by aktivearjen fan app-útsûnderingen</target>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.infoCardDescription2">
+        <source>VPN must be off to edit Excluded apps</source>
+        <target>VPN moat útskeakele wêze om útsletten apps te bewurkjen</target>
+        <note annotates="source" from="developer">Displays inside the information card at the top of the Excluded apps screen when the VPN is on</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.infoLinkText">
+        <source>Learn more</source>
+        <target>Mear ynfo</target>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.missingAppActionButton">
+        <source>Add apps manually</source>
+        <target>Apps hânmjittich tafoegje</target>
+        <note annotates="source" from="developer">Displayed in a notification as "call to action" when apps are missing from the split-tunnel settings.</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.missingAppAddedOne">
+        <source>Success! You added “%1” to this list.</source>
+        <target>Slagge! Jo hawwe ‘%1’ oan dizze list tafoege.</target>
+        <note annotates="source" from="developer">Displayed in notification after the user added a missing app to the split-tunnel List; %1 is the name of the added application</note>
+      </trans-unit>
+      <trans-unit id="vpn.splittunnel.missingAppMultiple">
+        <source>%1 apps missing from list.</source>
+        <target>Der ûntbrekke %1 apps yn de list.</target>
+        <note annotates="source" from="developer">Apps listed in the split-tunnel settings. %1 is the number of missing apps If necessary, this can be translated as "Apps missing from list :%1"</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.manageAccount">
+        <source>Manage account</source>
+        <target>Account beheare</target>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.planMonthly">
+        <source>Monthly plan: %1</source>
+        <target>Moanne-abonnemint: %1</target>
+        <note annotates="source" from="developer">Price for a monthly subscription. %1 represents the localized currency string</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.planMonthlyPlusTax">
+        <source>%1/month + tax</source>
+        <target>%1/moanne + btw</target>
+        <note annotates="source" from="developer">Price for a monthly subscription plus tax. %1 represents the localized currency string</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.planMonthlyWithoutTax">
+        <source>%1/month</source>
+        <target>%1/moanne</target>
+        <note annotates="source" from="developer">Price for a monthly subscription without tax. %1 represents the localized currency string</note>
+      </trans-unit>
+      <trans-unit id="vpn.subscriptionManagement.sectionTitle">
+        <source>Account</source>
+        <target>Account</target>
+        <note annotates="source" from="developer">Menu title for a view with details on the user's account.</note>
+      </trans-unit>
+      <trans-unit id="vpn.systray.disconnect">
+        <source>Disconnect</source>
+        <target>Ferbining ferbrekke</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.help">
+        <source>Help</source>
+        <target>Help</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.hide">
+        <source>Hide Mozilla VPN</source>
+        <target>Mozilla VPN ferstopje</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.location2">
+        <source>%1, %2</source>
+        <target>%1, %2</target>
+        <note annotates="source" from="developer">Location in the systray. %1 is the country, %2 is the city.</note>
+      </trans-unit>
+      <trans-unit id="vpn.systray.preferences">
+        <source>Preferences…</source>
+        <target>Foarkarren…</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.quit">
+        <source>Quit Mozilla VPN</source>
+        <target>Mozilla VPN ôfslute</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.show">
+        <source>Show Mozilla VPN</source>
+        <target>Mozilla VPN toane</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusConnectTo">
+        <source>Connect to the last location:</source>
+        <target>Ferbine mei de lêste lokaasje:</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusConnectedTo">
+        <source>Connected to:</source>
+        <target>Ferbûn mei:</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusConnectingTo">
+        <source>Connecting to:</source>
+        <target>Ferbine mei:</target>
+      </trans-unit>
+      <trans-unit id="vpn.systray.statusDisconnectingFrom">
+        <source>Disconnecting from:</source>
+        <target>Ferbining ferbrekke mei:</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.allow">
+        <source>Allow on this device</source>
+        <target>Tastean op dit apparaat</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.description">
+        <source>We strive to provide you with choices and collect only the data we need to improve Mozilla VPN. Sharing this data with Mozilla is optional.</source>
+        <target>Wy stribje dernei om jo karren te leverjen en sammelje allinnich de gegevens dy’t wy nedich hawwe om Mozilla VPN te ferbetterjen. It dielen fan dizze gegevens mei Mozilla is opsjoneel.</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.doNotAllow">
+        <source>Don’t allow</source>
+        <target>Net tastean</target>
+        <note annotates="source" from="developer">Button label</note>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.learnMore">
+        <source>Learn more about what data Mozilla collects and how it’s used.</source>
+        <target>Mear ynfo oer hokker gegevens Mozilla sammelet en hoe’t se brûkt wurde.</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.question">
+        <source>Allow Mozilla VPN to send technical, interaction, and campaign and referral data to Mozilla?</source>
+        <target>Mozilla VPN tastean om technyske, ynteraksje-, kampanje- en ferwizingsgegevens nei Mozilla te ferstjoeren?</target>
+      </trans-unit>
+      <trans-unit id="vpn.telemetryPolicyView.shareTechnicalData">
+        <source>Share technical data</source>
+        <target>Technyske gegevens diele</target>
+        <note annotates="source" from="developer">Headline of telemetry policy view and checkbox label</note>
+      </trans-unit>
+      <trans-unit id="vpn.toggleWidget.description">
+        <source>Turn Mozilla VPN on and off, and see the current location.</source>
+        <target>Mozilla VPN yn- en útskeakelje en de aktuele lokaasje besjen.</target>
+        <note annotates="source" from="developer">More information about what the Mozilla VPN widget contains.</note>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.actionNoUpdate">
+        <source>Okay</source>
+        <target>OK</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.actionOnUpdate">
+        <source>Update now</source>
+        <target>No bywurkje</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.checkForUpdateButtonText">
+        <source>Check for Updates</source>
+        <target>Kontrolearje op fernijingen</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.descriptionNoUpdate2">
+        <source>You currently have the latest version of Mozilla VPN</source>
+        <target>Jo hawwe op dit stuit de nijste ferzje fan Mozilla VPN</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.descriptionOnUpdate">
+        <source>Click to update to the latest version of the application</source>
+        <target>Klik om by te wurkjen nei de nijste ferzje fan de tapassing</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.titleNoUpdate">
+        <source>You are up to date</source>
+        <target>Jo binne by de tiid</target>
+      </trans-unit>
+      <trans-unit id="vpn.updateButton.titleOnUpdate">
+        <source>Updates available</source>
+        <target>Fernijingen beskikber</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

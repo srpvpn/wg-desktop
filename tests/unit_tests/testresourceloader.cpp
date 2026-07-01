@@ -1,0 +1,154 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include "testresourceloader.h"
+
+#include <QQmlAbstractUrlInterceptor>
+#include <QQmlApplicationEngine>
+#include <QUrl>
+
+#include "addons/addonreplacer.h"
+#include "feature/features.h"
+#include "helper.h"
+#include "models/licensemodel.h"
+#include "qmlengineholder.h"
+#include "resourceloader.h"
+#include "settingsholder.h"
+
+class Interceptor final : public QQmlAbstractUrlInterceptor {
+ public:
+  Interceptor(const QUrl& a, const QUrl& b) : m_a(a), m_b(b) {}
+
+  QUrl intercept(const QUrl& url, QQmlAbstractUrlInterceptor::DataType type) {
+    if (url == m_a) {
+      return m_b;
+    }
+    return url;
+  }
+
+ private:
+  const QUrl m_a;
+  const QUrl m_b;
+};
+
+void TestResourceLoader::cleanup() { SettingsHolder::testCleanup(); }
+
+void TestResourceLoader::loadFile() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  ResourceLoader* rl = ResourceLoader::instance();
+  QVERIFY(!!rl);
+
+  QCOMPARE(rl->loadFile(":aa"), ":aa");
+
+  Interceptor i(QUrl("qrc:aa"), QUrl("qrc:bb"));
+
+  rl->addUrlInterceptor(&i);
+  QCOMPARE(rl->loadFile(":aa"), ":bb");
+
+  rl->removeUrlInterceptor(&i);
+  QCOMPARE(rl->loadFile(":aa"), ":aa");
+}
+
+void TestResourceLoader::loadDir() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  ResourceLoader* rl = ResourceLoader::instance();
+  QVERIFY(!!rl);
+
+  QCOMPARE(rl->loadDir(":aa"), ":aa");
+
+  Interceptor i(QUrl("qrc:aa/"), QUrl("qrc:bb/"));
+
+  rl->addUrlInterceptor(&i);
+  QCOMPARE(rl->loadDir(":aa"), ":bb/");
+
+  rl->removeUrlInterceptor(&i);
+  QCOMPARE(rl->loadDir(":aa"), ":aa");
+}
+
+void TestResourceLoader::licenseModel() {
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  LicenseModel* lm = LicenseModel::instance();
+
+  lm->initialize();
+  QVERIFY(lm->contentLicense().length() > 0);
+  QVERIFY(lm->rowCount(QModelIndex()) > 0);
+
+  QString title = lm->data(lm->index(0, 0), LicenseModel::TitleRole).toString();
+
+  Interceptor i(QUrl("qrc:/license/LICENSE.md"),
+                QUrl("qrc:/replace/LICENSE.md"));
+
+  ResourceLoader* rl = ResourceLoader::instance();
+
+  rl->addUrlInterceptor(&i);
+  QVERIFY(lm->data(lm->index(0, 0), LicenseModel::TitleRole).toString() !=
+          title);
+
+  rl->removeUrlInterceptor(&i);
+  QCOMPARE(lm->data(lm->index(0, 0), LicenseModel::TitleRole).toString(),
+           title);
+}
+
+void TestResourceLoader::addon() {
+  Feature::toggle(Feature::replacerAddon, true);
+
+  QQmlApplicationEngine engine;
+  QmlEngineHolder qml(&engine);
+
+  QJsonArray urls;
+
+  {
+    QJsonObject urlObj;
+    urlObj["request"] = "qrc:/foo/file.txt";
+    urlObj["response"] = "replace/LICENSE.md";
+    urls.append(urlObj);
+  }
+
+  {
+    QJsonObject urlObj;
+    urlObj["request"] = "qrc:/dir";
+    urlObj["response"] = "replace";
+    urlObj["type"] = "directory";
+    urls.append(urlObj);
+  }
+
+  {
+    QJsonObject urlObj;
+    urlObj["request"] = "qrc:/dir2/";
+    urlObj["response"] = "replace";
+    urlObj["type"] = "directory";
+    urls.append(urlObj);
+  }
+
+  QJsonObject content;
+  content["urls"] = urls;
+
+  QJsonObject obj;
+  obj["replacer"] = content;
+
+  QObject parent;
+  Addon* replacer =
+      AddonReplacer::create(&parent, ":/manifest.json", "bar", "name", obj);
+  QVERIFY(!!replacer);
+
+  replacer->enable();
+  QVERIFY(replacer->enabled());
+
+  ResourceLoader* rl = ResourceLoader::instance();
+  QCOMPARE(rl->loadFile(":aa"), ":aa");
+  QCOMPARE(rl->loadFile(":/foo/file.txt"), ":/replace/LICENSE.md");
+  QCOMPARE(rl->loadFile(":/dir/file.txt"), ":/replace/file.txt");
+  QCOMPARE(rl->loadDir(":/dir"), ":/replace/");
+  QCOMPARE(rl->loadDir(":/dir/"), ":/replace/");
+
+  Feature::toggle(Feature::replacerAddon, false);
+}
+
+static TestResourceLoader s_testResourceLoader;

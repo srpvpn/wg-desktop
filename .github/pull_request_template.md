@@ -1,0 +1,16 @@
+## Description
+
+    Describe your changes
+
+## Reference
+
+    i.e Jira or Github issue URL
+
+## Checklist
+    
+- [ ] My code follows the style guidelines for this project
+- [ ] If bug/feature is at all notable, I've added a draft release note as a comment in `addons/strings.yaml`.
+- [ ] I have not added any packages that contain high risk or unknown licenses (GPL,  LGPL, MPL, etc. consult with DevOps if in question)
+- [ ] I have performed a self review of my own code
+- [ ] I have commented my code PARTICULARLY in hard to understand areas
+- [ ] I have added thorough tests where needed

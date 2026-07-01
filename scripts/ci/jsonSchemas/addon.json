@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The id of this addon"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of this addon"
+    },
+    "api_version": {
+      "type": "string",
+      "description": "The addon version framework"
+    },
+    "translatable": {
+      "type": "boolean",
+      "description": "Set it to false to make the addon not translatable. Default: true"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of the addon: message, etc..."
+    },
+    "conditions": {
+      "$ref": "conditions.json"
+    },
+    "state": {
+      "type": "object",
+      "description": "State properties related to the addon",
+      "properties": {
+        "session": {
+          "type": "object",
+          "description": "Session state is not synced across user devices and is not persisted throughout device sessions",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "boolean",
+                  "string",
+                  "number"
+                ]
+              },
+              "default": {
+                "type": [
+                  "integer",
+                  "string",
+                  "boolean"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "default"
+            ]
+          }
+        }
+      }
+    },
+    "guide": {
+      "$ref": "guide.json#"
+    },
+    "message": {
+      "$ref": "message.json#"
+    },
+    "replacer": {
+      "$ref": "replacer.json#"
+    },
+    "javascript": {
+      "$ref": "javascript.json#"
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "api_version",
+    "type"
+  ]
+}

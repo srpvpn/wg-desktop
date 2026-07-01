@@ -1,0 +1,160 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+---
+task-defaults:
+    worker:
+        max-run-time: 14400
+    run: 
+        use-caches: []
+
+qt-macos-6.10:
+    description: "Mac QT compile Task"
+    fetches:
+        fetch:
+            - qt-source-tarball
+            - miniconda-osx
+    run:
+        script: compile_qt_6_mac.sh
+        resources:
+            - scripts/utils/qt6_compile.sh
+            - taskcluster/scripts/toolchain/patches/*.patch
+        toolchain-alias: qt-macos-6.10
+        toolchain-artifact: public/build/qt6_macos.tar.xz
+    treeherder:
+        symbol: TL(qt-mac-6.10)
+    worker-type: b-macos
+
+qt-windows-x86_64-6.10:
+    description: "Windows QT compile Task (x86_64)"
+    fetches:
+        fetch:
+            - artifact: qt-source-tarball
+              extract: false
+        vs2022:
+            - artifact: visual-studio-2022.zip
+    dependencies:
+        vs2022: toolchain-vs-2022-x86_64
+    run:
+        script: compile_qt_6.ps1
+        resources:
+            - taskcluster/scripts/toolchain/configure_qt.ps1
+            - taskcluster/scripts/toolchain/patches/*.patch
+        toolchain-alias: qt-windows-x86_64-6.10
+        toolchain-artifact: public/build/qt6_win.tar.xz
+    treeherder:
+        symbol: TL(qt-win-6.10)
+        platform: windows/x86_64
+    worker-type: b-win2022
+
+qt-windows-aarch64-6.10:
+    description: "Windows QT compile Task (aarch64)"
+    fetches:
+        fetch:
+            - artifact: qt-source-tarball
+              extract: false
+        vs2022:
+            - artifact: visual-studio-2022.zip
+    dependencies:
+        vs2022: toolchain-vs-2022-aarch64
+    run:
+        script: compile_qt_6.ps1
+        resources:
+            - taskcluster/scripts/toolchain/configure_qt.ps1
+            - taskcluster/scripts/toolchain/patches/*.patch
+        toolchain-alias: qt-windows-aarch64-6.10
+        toolchain-artifact: public/build/qt6_win.tar.xz
+    treeherder:
+        symbol: TL(qt-win-6.10)
+        platform: windows/aarch64
+    worker-type: b-win11-arm64
+
+qt-ios:
+    description: "QT ios bundle Task"
+    run:
+        script: bundle_qt_ios.sh
+        arguments:
+            - 6.10.3
+        resources:
+            - taskcluster/scripts/toolchain/bundle_qt_ios.sh
+        toolchain-alias: qt-ios
+        toolchain-artifact: public/build/qt6_ios.zip
+    treeherder:
+        symbol: TL(qt-ios)
+    worker-type: b-linux
+    worker:
+        docker-image: {in-tree: base}
+
+qt-linux:
+    description: "Linux QT compile Task"
+    fetches:
+        fetch:
+            - qt-source-tarball
+    run:
+        script: compile_qt_6_linux.sh
+        resources:
+            - scripts/utils/qt6_compile.sh
+            - taskcluster/scripts/toolchain/patches/*.patch
+        toolchain-alias: qt-linux
+        toolchain-artifact: public/build/qt6_linux.tar.xz
+    treeherder:
+        symbol: TL(qt-linux)
+    worker-type: b-linux-large
+    worker:
+        docker-image: {in-tree: linux-rpm-build}
+
+qt-tools-6.10:
+    description: "Linux Qt host tools"
+    run:
+        script: bundle_qt_tools.sh
+        arguments:
+            - 6.10.3
+        resources:
+            - requirements.txt
+        toolchain-alias: qt-tools
+        toolchain-artifact: public/build/qt-host-tools.tar.xz
+    treeherder:
+        symbol: TL(qt-tools)
+    worker-type: b-linux
+    worker:
+        docker-image: {in-tree: conda-base}
+        max-run-time: 900
+
+qt-linux-aarch64:
+    description: "Linux aarch64 Qt compile Task (cross-compiled from x86_64)"
+    fetches:
+        fetch:
+            - qt-source-tarball
+        toolchain:
+            - qt-tools-6.10
+    run:
+        script: compile_qt_6_linux.sh
+        arguments: ['--cross-arch', 'aarch64']
+        resources:
+            - scripts/linux/aarch64-toolchain.cmake
+            - taskcluster/scripts/toolchain/patches/*.patch
+            - scripts/utils/qt6_compile.sh
+        toolchain-alias: qt-linux-aarch64
+        toolchain-artifact: public/build/qt6_linux_aarch64.tar.xz
+    treeherder:
+        symbol: TL(qt-linux-aarch64)
+        platform: linux/aarch64
+    worker-type: b-linux-large
+    worker:
+        docker-image: {in-tree: linux-aarch64-deb-build}
+
+qt-wasm-6.10:
+    description: "QT wasm bundle task"
+    treeherder:
+        symbol: TL(qt-wasm)
+    worker-type: b-linux
+    worker:
+        docker-image: {in-tree: base}
+    run:
+        script: bundle_qt_wasm.sh
+        arguments:
+            - 6.10.3
+        resources:
+            - requirements.txt
+        toolchain-alias: qt-wasm
+        toolchain-artifact: public/build/qt-wasm.tar.xz

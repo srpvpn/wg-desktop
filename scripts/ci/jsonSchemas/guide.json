@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "The ID of the guide",
+      "pattern": "^[A-Za-z0-9_]+"
+    },
+    "advanced": {
+      "type": "boolean",
+      "description": "Is this an advanced guide? Defaults to `false`."
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of the guide"
+    },
+    "title_comment": {
+      "type": "string",
+      "description": "A comment to describe how to translate the title"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "The subtitle of the guide"
+    },
+    "subtitle_comment": {
+      "type": "string",
+      "description": "A comment to describe how to translate the subtitle"
+    },
+    "image": {
+      "type": "string",
+      "description": "The image of the guide"
+    },
+    "blocks": {
+      "type": "array",
+      "description": "The list of text blocks",
+      "items": {
+        "$ref": "composer_block.json"
+      }
+    }
+  },
+  "required": [ "id", "title", "image", "blocks" ]
+}

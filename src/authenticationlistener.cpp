@@ -1,0 +1,118 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#include "authenticationlistener.h"
+
+#include "constants.h"
+#include "leakdetector.h"
+#include "logger.h"
+#include "networkmanager.h"
+
+#if defined(MZ_IOS)
+#  include "platforms/ios/iosauthenticationlistener.h"
+#elif defined(MZ_ANDROID)
+#  include "platforms/android/androidauthenticationlistener.h"
+#elif defined(MZ_WASM)
+#  include "platforms/wasm/wasmauthenticationlistener.h"
+#else
+#  include "tasks/authenticate/desktopauthenticationlistener.h"
+#endif
+
+#include <QCryptographicHash>
+#include <QRandomGenerator>
+#include <QUrlQuery>
+
+namespace {
+Logger logger("AuthenticationListener");
+}  // anonymous namespace
+
+// static
+AuthenticationListener* AuthenticationListener::create(
+    QObject* parent, AuthenticationType authenticationType) {
+  switch (authenticationType) {
+    case AuthenticationInBrowser:
+#if defined(MZ_ANDROID)
+      return new AndroidAuthenticationListener(parent);
+#elif defined(MZ_IOS)
+      return new IOSAuthenticationListener(parent);
+#elif defined(MZ_WASM)
+      return new WasmAuthenticationListener(parent);
+#else
+      return new DesktopAuthenticationListener(parent);
+#endif
+    case AuthenticationInBrowserHeadless:
+#if defined(MZ_WINDOWS) || defined(MZ_LINUX) || defined(MZ_MACOS)
+      return new DesktopAuthenticationListener(parent, true);
+#else
+      logger.error()
+          << "Headless authentication is not supported on this platform";
+      Q_ASSERT(false);
+#endif
+
+    default:
+      Q_ASSERT(false);
+      return nullptr;
+  }
+}
+
+AuthenticationListener::AuthenticationListener(QObject* parent)
+    : QObject(parent) {
+  MZ_COUNT_CTOR(AuthenticationListener);
+}
+
+AuthenticationListener::~AuthenticationListener() {
+  MZ_COUNT_DTOR(AuthenticationListener);
+}
+
+// static
+QUrl AuthenticationListener::createAuthenticationUrl(
+    const QString& codeChallenge, const QString& codeChallengeMethod,
+    const QString& emailAddress) {
+  QString path = QString("/api/v2/%1/login/").arg(Constants::AUTH_PROD_NAME);
+
+  path.append(Constants::PLATFORM_NAME);
+
+  QUrl url(Constants::apiBaseUrl());
+  url.setPath(path);
+
+  QUrlQuery query;
+  query.addQueryItem("code_challenge", codeChallenge);
+  query.addQueryItem("code_challenge_method", codeChallengeMethod);
+  query.addQueryItem("user_agent", NetworkManager::userAgent());
+
+  if (!emailAddress.isEmpty()) {
+    query.addQueryItem("email", emailAddress);
+  }
+
+  url.setQuery(query);
+  return url;
+}
+
+QUrl AuthenticationListener::createLoginVerifyUrl() {
+  QUrl url(Constants::apiBaseUrl());
+  url.setPath(
+      QString("/api/v2/%1/login/verify").arg(Constants::AUTH_PROD_NAME));
+  return url;
+}
+
+void AuthenticationListener::aboutToFinish() { emit readyToFinish(); }
+
+// static
+void AuthenticationListener::generatePkceCodes(QByteArray& pkceCodeVerifier,
+                                               QByteArray& pkceCodeChallenge) {
+  QRandomGenerator* generator = QRandomGenerator::system();
+  Q_ASSERT(generator);
+
+  pkceCodeVerifier.clear();
+  static QByteArray range(
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~");
+  for (uint16_t i = 0; i < 128; ++i) {
+    pkceCodeVerifier.append(range.at(generator->generate() % range.length()));
+  }
+
+  pkceCodeChallenge =
+      QCryptographicHash::hash(pkceCodeVerifier, QCryptographicHash::Sha256)
+          .toBase64(QByteArray::Base64UrlEncoding);
+  Q_ASSERT(pkceCodeChallenge.length() == 44);
+}

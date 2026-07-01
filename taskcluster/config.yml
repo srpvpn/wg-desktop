@@ -1,0 +1,154 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+---
+trust-domain: mozillavpn
+treeherder:
+    group-names:
+        'B': 'Build Tasks'
+        'I': 'Docker images'
+        'lint': 'Linting tasks'
+        'Fetch': 'Fetching Tasks'
+        'TL': 'Toolchain Tasks'
+        'rpk': 'Re-Package Tasks'
+        'BM': 'Beetmover Tasks'
+        'T': 'Test Tasks'
+        'SYM': 'Debug Symbol Tasks'
+
+task-priority:
+    by-project:
+        "mozilla-vpn-client": highest
+        default: low
+
+taskgraph:
+    register: mozillavpn_taskgraph:register
+    repositories:
+        mozillavpn:
+            name: "MozillaVPN"
+    cached-task-prefix: mozillavpn.v2.mozillavpn
+    decision-parameters: 'mozillavpn_taskgraph.parameters:get_decision_parameters'
+
+index:
+    products:
+        - "openssl"
+        - "qt"
+# Currently unused:
+#        - "mozillavpn"
+
+workers:
+    aliases:
+        b-linux:
+            provisioner: 'mozillavpn-{level}'
+            implementation: docker-worker
+            os: linux
+            worker-type: b-linux
+        b-linux-large:
+            provisioner: 'mozillavpn-{level}'
+            implementation: docker-worker
+            os: linux
+            worker-type: b-linux-large
+        b-win2022:
+            provisioner: 'mozillavpn-{level}'
+            implementation: generic-worker
+            os: windows
+            worker-type: b-win2022
+        b-win11-arm64:
+            provisioner: 'mozillavpn-{level}'
+            implementation: generic-worker
+            os: windows
+            worker-type: win11-a64-25h2-builder
+        b-macos:
+            provisioner: 'releng-hardware'
+            implementation: generic-worker
+            os: macosx
+            worker-type:
+                by-level:
+                    "3": 'mozillavpn-b-3-osx'
+                    default: 'mozillavpn-b-1-osx'
+        images:
+            provisioner: 'mozillavpn-{level}'
+            implementation: docker-worker
+            os: linux
+            worker-type: 'images'
+        dep-signing:
+            provisioner: scriptworker-k8s
+            implementation: scriptworker-signing
+            os: scriptworker
+            worker-type: mozillavpn-t-signing
+        signing:
+            provisioner: scriptworker-k8s
+            implementation: scriptworker-signing
+            os: scriptworker
+            worker-type:
+                by-level:
+                    "3": mozillavpn-3-signing
+                    default: mozillavpn-t-signing
+        macos-dep-signing:
+            provisioner: scriptworker-prov-v1
+            implementation: scriptworker-iscript
+            os: macosx
+            worker-type: dep-mozillavpn-signing-mac14m2
+        macos-signing:
+            provisioner: scriptworker-prov-v1
+            implementation: scriptworker-iscript
+            os: macosx
+            worker-type:
+                by-level:
+                    "3": mozillavpn-signing-mac14m2
+                    default: dep-mozillavpn-signing-mac14m2
+        push-apk:
+            provisioner: scriptworker-k8s
+            implementation: scriptworker-pushapk
+            os: scriptworker
+            worker-type: 'mozillavpn-{level}-pushapk'
+        beetmover:
+            provisioner: scriptworker-k8s
+            implementation: scriptworker-beetmover
+            os: scriptworker
+            worker-type: 'mozillavpn-{level}-beetmover'
+        beetmover-apt:
+            provisioner: scriptworker-k8s
+            implementation: beetmover-import-from-gcs-to-artifact-registry
+            os: scriptworker
+            worker-type: 'mozillavpn-{level}-beetmover'
+        # For now the `beetmover-apt-promote` task is importing to the staging
+        # apt repository. To do this it needs to run on a level 1 worker,
+        # despite running in an L3 release graph. See bug 1927890.
+        beetmover-apt-stage:
+            provisioner: scriptworker-k8s
+            implementation: beetmover-import-from-gcs-to-artifact-registry
+            os: scriptworker
+            worker-type: 'mozillavpn-1-beetmover'
+        shipit:
+            provisioner: scriptworker-k8s
+            implementation: scriptworker-shipit
+            os: scriptworker
+            worker-type: 'mozillavpn-{level}-shipit'
+        succeed:
+            provisioner: built-in
+            implementation: succeed
+            os: none
+            worker-type: succeed
+
+release-promotion:
+    flavors:
+        promote-addons:
+            target-tasks-method: addons-target-tasks
+        ship-addons:
+            target-tasks-method: addons-target-tasks
+        promote-client:
+            target-tasks-method: client-target-tasks
+        ship-client:
+            target-tasks-method: client-target-tasks
+    rebuild-kinds:
+        - docker-image
+        - fetch
+        - toolchain
+
+scriptworker:
+    scope-prefix: project:mozillavpn:releng
+
+shipit:
+    # TODO: Remove this when using mozilla-taskgraph 2.1 or higher. It'll use
+    # the 'scriptworker' config above then.
+    scope-prefix: project:mozillavpn:releng:ship-it
