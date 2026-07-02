@@ -144,41 +144,41 @@ void MacOSController::registerService(void) {
   // no-op if the service is already registered.
   NSError* error = nil;
   if ([service registerAndReturnError: &error]) {
-    logger.debug() << "Mozilla VPN daemon registered successfully.";
+    logger.debug() << "WG Desktop daemon registered successfully.";
   } else if (error.code == kSMErrorInvalidSignature) {
     // If the build is unsigned, continue anyways and hope for the best.
     // This is to mitigate developer pain by allowing the VPN to make use
     // of a pre-existing daemon from a signed installation.
-    logger.error() << "Unable to register Mozilla VPN daemon:"
+    logger.error() << "Unable to register WG Desktop daemon:"
                     << "code signature invalid";
     connectService();
     return;
   } else {
     // Otherwise, we encountered some other error. Most likely the user
     // needs to approve the daemon to run. Which will be handled below.
-    logger.error() << "Unable to register Mozilla VPN daemon:"
+    logger.error() << "Unable to register WG Desktop daemon:"
                     << error.localizedDescription;
   }
 
   // Check the service status for how to proceed.
   switch ([service status]) {
     case SMAppServiceStatusNotRegistered:
-      logger.debug() << "Mozilla VPN daemon not registered.";
+      logger.debug() << "WG Desktop daemon not registered.";
       m_registerTimer.start(SERVICE_INIT_POLL_INTERVAL_MSEC);
       break;
 
     case SMAppServiceStatusNotFound:
-      logger.debug() << "Mozilla VPN daemon not found.";
+      logger.debug() << "WG Desktop daemon not found.";
       break;
 
     case SMAppServiceStatusEnabled:
-      logger.debug() << "Mozilla VPN daemon enabled.";
+      logger.debug() << "WG Desktop daemon enabled.";
       m_permissionRequired = false;
       connectService();
       break;
 
     case SMAppServiceStatusRequiresApproval:
-      logger.debug() << "Mozilla VPN daemon requires approval.";
+      logger.debug() << "WG Desktop daemon requires approval.";
       if (!m_permissionRequired) {
         m_permissionRequired = true;
         emit permissionRequired();

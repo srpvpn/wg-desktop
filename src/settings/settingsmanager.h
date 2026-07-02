@@ -154,7 +154,7 @@ class SettingsManager final : public QObject, public LogSerializer {
   static QSettings::Format getFormat();
 
  private:
-  // A map of _all_ Setting objects created during a run of the Mozilla VPN
+  // A map of _all_ Setting objects created during a run of WG Desktop.
   // application. The manager needs to have access to all settings that were
   // created in order to expose functions that apply to all of these settings
   // e.g. exposing a log serializer that is comprehensive of all settings.

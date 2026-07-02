@@ -5,8 +5,8 @@
 <policyconfig>
 
   <action id="org.mozilla.vpn.activate">
-    <description>Activate the Mozilla VPN</description>
-    <message>Activate the Mozilla VPN</message>
+    <description>Activate WG Desktop</description>
+    <message>Activate WG Desktop</message>
     <defaults>
       <allow_inactive>no</allow_inactive>
       <allow_active>auth_admin_keep</allow_active>
@@ -14,8 +14,8 @@
   </action>
 
   <action id="org.mozilla.vpn.deactivate">
-    <description>Deactivate the Mozilla VPN</description>
-    <message>Deactivate the Mozilla VPN</message>
+    <description>Deactivate WG Desktop</description>
+    <message>Deactivate WG Desktop</message>
     <defaults>
       <allow_inactive>no</allow_inactive>
       <allow_active>auth_admin_keep</allow_active>

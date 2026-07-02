@@ -6,9 +6,9 @@ import AppIntents
 
 @available(iOS 16.0, *)
 struct TurnOffIntent: AppIntent {
-  static let title = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffAction", defaultValue: "Turn Off Mozilla VPN")
+  static let title = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffAction", defaultValue: "Turn Off WG Desktop")
 
-  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.turnOffDescription", defaultValue: "Deactivate the Mozilla VPN connection"))
+  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.turnOffDescription", defaultValue: "Deactivate the WG Desktop connection"))
 
   static var authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 
@@ -21,7 +21,7 @@ struct TurnOffIntent: AppIntent {
     let responseText: LocalizedStringResource
     let responseImage: String
     if wasSuccessfullyDeactivated {
-      responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffConfirmation", defaultValue: "Mozilla VPN disconnected")
+      responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffConfirmation", defaultValue: "WG Desktop disconnected")
       responseImage = TurnOffIntent.systemImageName
     } else {
       responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffError", defaultValue: "No active VPN connection")

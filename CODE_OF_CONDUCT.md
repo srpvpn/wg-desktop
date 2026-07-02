@@ -1,16 +1,17 @@
-# Community Participation Guidelines
+# Code of Conduct
 
-This repository is governed by Mozilla's code of conduct and etiquette guidelines.
-For more details, please read the
-[Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/).
+Contributors are expected to communicate respectfully, act in good faith, and
+keep technical discussions focused on evidence and project goals.
 
-## How to Report
+## Expected Behavior
 
-For more information on how to report violations of the Community Participation Guidelines, please read our '[How to Report](https://www.mozilla.org/about/governance/policies/participation/reporting/)' page.
+- Be direct, professional, and constructive.
+- Respect user privacy and do not share secrets, credentials, or private keys.
+- Prefer clear technical reasoning over personal criticism.
+- Preserve security-sensitive behavior unless a change is explicitly justified
+  and verified.
 
-<!--
-## Project Specific Etiquette
+## Reporting
 
-In some cases, there will be additional project etiquette i.e.: (https://bugzilla.mozilla.org/page.cgi?id=etiquette.html).
-Please update for your project.
--->
+Report conduct concerns to the current project maintainer. Include relevant
+context and links when possible.

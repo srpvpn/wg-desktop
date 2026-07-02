@@ -55,38 +55,76 @@ Item {
 
                 delegate: Rectangle {
                     Layout.fillWidth: true
-                    implicitHeight: row.implicitHeight + MZTheme.theme.windowMargin
+                    implicitHeight: profileLayout.implicitHeight + MZTheme.theme.windowMargin
                     color: active ? MZTheme.colors.dividerColor : "transparent"
                     radius: 8
 
-                    RowLayout {
-                        id: row
+                    ColumnLayout {
+                        id: profileLayout
                         anchors {
                             fill: parent
                             margins: MZTheme.theme.windowMargin / 2
                         }
                         spacing: MZTheme.theme.windowMargin / 2
 
-                        MZTextField {
-                            id: renameInput
+                        RowLayout {
                             Layout.fillWidth: true
-                            text: name
+                            spacing: MZTheme.theme.windowMargin / 2
+
+                            MZTextField {
+                                id: renameInput
+                                Layout.fillWidth: true
+                                Layout.minimumWidth: 0
+                                text: name
+                            }
+
+                            Rectangle {
+                                Layout.preferredHeight: MZTheme.theme.rowHeight
+                                Layout.preferredWidth: activeStatus.implicitWidth + MZTheme.theme.windowMargin
+                                color: MZTheme.colors.vpnToggleConnected.defaultColor
+                                radius: 6
+                                visible: active
+
+                                MZSubtitle {
+                                    id: activeStatus
+                                    anchors.centerIn: parent
+                                    color: MZTheme.colors.normalButton.fontColor
+                                    font.family: MZTheme.theme.fontBoldFamily
+                                    text: "Active"
+                                }
+                            }
+
                         }
 
-                        MZButton {
-                            text: active ? "Active" : "Select"
-                            enabled: !active
-                            onClicked: VPNWireGuardProfileModel.selectProfile(profileId)
-                        }
+                        RowLayout {
+                            Layout.fillWidth: true
+                            spacing: MZTheme.theme.windowMargin / 2
 
-                        MZButton {
-                            text: "Rename"
-                            onClicked: VPNWireGuardProfileModel.renameProfile(profileId, renameInput.text)
-                        }
+                            MZButton {
+                                Layout.fillWidth: true
+                                Layout.minimumWidth: 0
+                                Layout.preferredWidth: 1
+                                text: "Select"
+                                enabled: !active
+                                onClicked: VPNWireGuardProfileModel.selectProfile(profileId)
+                            }
 
-                        MZButton {
-                            text: "Remove"
-                            onClicked: VPNWireGuardProfileModel.removeProfile(profileId)
+                            MZButton {
+                                Layout.fillWidth: true
+                                Layout.minimumWidth: 0
+                                Layout.preferredWidth: 1
+                                text: "Rename"
+                                onClicked: VPNWireGuardProfileModel.renameProfile(profileId, renameInput.text)
+                            }
+
+                            MZButton {
+                                Layout.fillWidth: true
+                                Layout.minimumWidth: 0
+                                Layout.preferredWidth: 1
+                                buttonType: MZButton.ButtonType.destructive
+                                text: "Remove"
+                                onClicked: VPNWireGuardProfileModel.removeProfile(profileId)
+                            }
                         }
                     }
                 }

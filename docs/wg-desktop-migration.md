@@ -2,7 +2,7 @@
 
 ## Architecture Summary
 
-WG Desktop keeps the Mozilla VPN Linux networking stack and replaces the Mozilla service-facing app layer with local WireGuard profiles.
+WG Desktop keeps the original Linux networking stack and replaces the hosted service-facing app layer with local WireGuard profiles.
 
 The preserved path is:
 
@@ -23,16 +23,16 @@ Internal Linux identifiers are intentionally unchanged in this phase:
 
 This minimizes risk to the existing Linux privilege, daemon, and Flatpak integration.
 
-## Removed Or Bypassed Mozilla Dependencies
+## Removed Or Bypassed Hosted-Service Dependencies
 
 Current migration code bypasses these mandatory backend paths:
 
 - startup token gate in `MozillaVPN::initialize()`
-- Mozilla account/user/device/server model requirement in `modelsInitialized()`
+- account/user/device/server model requirement in `modelsInitialized()`
 - periodic account/server/subscription/heartbeat/add-on refresh scheduling
-- pre-activation Mozilla account check in the local-profile activation path
+- pre-activation account check in the local-profile activation path
 - first-run login/authentication UI
-- Mozilla server selection UI
+- server selection UI
 - direct authentication invocations (`authenticate()` / `authenticateWithType()`)
 - support ticket creation
 - subscription start/restore handlers

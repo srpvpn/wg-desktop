@@ -85,7 +85,7 @@ QString WireguardUtilsMacos::wireguardGoPath() {
   }
 
   // For earlier versions of macOS - this must be a fixed path
-  return "/Applications/Mozilla VPN.app/Contents/Resources/utils/wireguard-go";
+  return "/Applications/WG Desktop.app/Contents/Resources/utils/wireguard-go";
 }
 
 // static

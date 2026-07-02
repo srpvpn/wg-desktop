@@ -38,10 +38,10 @@ void WebExtHandler::start(const QByteArray& msg) {
 
   // Find the application to launch.
   NSWorkspace* ws = [NSWorkspace sharedWorkspace];
-  NSString* bundleId = @"org.mozilla.macos.FirefoxVPN";
+  NSString* bundleId = @"org.wgdesktop.macos";
   NSURL* url = [ws URLForApplicationWithBundleIdentifier:bundleId];
   if (url == nil) {
-    qWarning() << "Mozilla VPN application not found";
+    qWarning() << "WG Desktop application not found";
     writeJsonStdout(QJsonObject({{"error", "start_failed"}}));
     return;
   }
@@ -53,7 +53,7 @@ void WebExtHandler::start(const QByteArray& msg) {
            QJsonObject obj;
            if (error) {
              QString desc = QString::fromNSString(error.localizedDescription);
-             qWarning() << "Mozilla VPN launch failed:" << desc;
+             qWarning() << "WG Desktop launch failed:" << desc;
              obj["error"] = "start_failed";
            } else {
              obj["status"] = "requested_start";

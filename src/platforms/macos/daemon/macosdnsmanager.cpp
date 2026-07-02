@@ -36,7 +36,7 @@ int MacOSDnsManager::run(QStringList& tokens) {
 
   QCoreApplication app(CommandLineParser::argc(), CommandLineParser::argv());
 
-  QCoreApplication::setApplicationName("Mozilla VPN DNS Manager");
+  QCoreApplication::setApplicationName("WG Desktop DNS Manager");
   QTextStream stream(stderr);
 
   if (tokens.length() <= 1) {

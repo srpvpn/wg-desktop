@@ -6,7 +6,7 @@ import Foundation
 import NetworkExtension
 import WidgetKit
 
-let VPN_NAME = "Mozilla VPN"
+let VPN_NAME = "WG Desktop"
 
 @objc class VPNIPAddressRange: NSObject {
     public var address: NSString = ""

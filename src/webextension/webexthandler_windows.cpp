@@ -63,7 +63,7 @@ void WebExtHandler::start(const QByteArray& msg) {
   Q_UNUSED(msg);
 
   QProcess proc;
-  QFileInfo exe("C:/Program Files/Mozilla/Mozilla VPN/Mozilla VPN.exe");
+  QFileInfo exe("C:/Program Files/WG Desktop/WG Desktop.exe");
   proc.setProgram(exe.filePath());
   proc.setArguments(QStringList() << exe.fileName() << "ui");
   proc.setWorkingDirectory(exe.dir().path());

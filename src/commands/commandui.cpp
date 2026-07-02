@@ -127,7 +127,7 @@ int CommandUI::run(QStringList& tokens) {
   // Change the application organization for testing mode.
   // This should ensure we wind up with a different settings file.
   if (testingOption.m_set) {
-    QCoreApplication::setOrganizationName("Mozilla Testing");
+    QCoreApplication::setOrganizationName("WG Desktop Testing");
 
     LogHandler::instance()->setStderr(true);
   }

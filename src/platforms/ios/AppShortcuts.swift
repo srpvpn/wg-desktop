@@ -20,7 +20,7 @@ struct MozillaVPNAppShortcuts: AppShortcutsProvider {
         "Turn on \(.applicationName)",
         "Turn \(.applicationName) on"
       ],
-      shortTitle: LocalizedStringResource("vpn.iosAppIntentsMain.turnOnAction", defaultValue: "Turn On Mozilla VPN"),
+      shortTitle: LocalizedStringResource("vpn.iosAppIntentsMain.turnOnAction", defaultValue: "Turn On WG Desktop"),
       systemImageName: "shield.lefthalf.filled"
     )
     AppShortcut(
@@ -30,7 +30,7 @@ struct MozillaVPNAppShortcuts: AppShortcutsProvider {
         "Turn off \(.applicationName)",
         "Turn \(.applicationName) off"
       ],
-      shortTitle: LocalizedStringResource("vpn.iosAppIntentsMain.turnOffAction", defaultValue: "Turn Off Mozilla VPN"),
+      shortTitle: LocalizedStringResource("vpn.iosAppIntentsMain.turnOffAction", defaultValue: "Turn Off WG Desktop"),
       systemImageName: "shield.lefthalf.filled.slash"
     )
     AppShortcut(

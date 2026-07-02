@@ -144,7 +144,7 @@ MZViewBase {
                             leftMargin: 0
 
                             labelText: "Block ads"
-                            subLabelText: "Reduces the amount of ads you see when you’re using Mozilla VPN"
+                            subLabelText: "Reduces the amount of ads you see when you’re using WG Desktop"
                             showDivider: false
                         }
 
@@ -272,4 +272,3 @@ MZViewBase {
         }
     }
 }
-

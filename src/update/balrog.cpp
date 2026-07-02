@@ -496,7 +496,7 @@ void Balrog::propagateError(NetworkRequest* request,
 
 // static
 QString Balrog::balrogUrl() {
-  const QString product = "FirefoxVPN";
+  const QString product = "WGDesktop";
   QString hostname = Constants::BALROG_PROD_HOSTNAME;
   QString channel = "release";
 

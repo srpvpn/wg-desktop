@@ -71,8 +71,8 @@ cat << EOF
 
 EOF
 
-# Do not emit Mozilla VPN localized names. The existing translation catalog is
-# still largely vendor-specific, so the standalone build keeps packaging
+# Do not emit legacy localized names. The existing translation catalog is
+# still largely service-specific, so the standalone build keeps packaging
 # metadata intentionally unlocalized until WG Desktop strings are translated.
 
 cat << EOF

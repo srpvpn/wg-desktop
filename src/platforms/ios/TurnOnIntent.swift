@@ -6,9 +6,9 @@ import AppIntents
 
 @available(iOS 16.0, *)
 struct TurnOnIntent: AppIntent {
-  static let title = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnAction", defaultValue: "Turn On Mozilla VPN")
+  static let title = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnAction", defaultValue: "Turn On WG Desktop")
 
-  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.turnOnDescription", defaultValue: "Activate the Mozilla VPN connection"))
+  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.turnOnDescription", defaultValue: "Activate the WG Desktop connection"))
 
   static var authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 
@@ -30,7 +30,7 @@ struct TurnOnIntent: AppIntent {
         responseText = turnOnConfirmation
         responseImage = TurnOnIntent.systemImageName
       case .errorNoSession:
-        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnError", defaultValue: "Error turning on Mozilla VPN")
+        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnError", defaultValue: "Error turning on WG Desktop")
         responseImage = "exclamationmark.triangle"
       case .errorAlreadyActive:
         responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnAlreadyConnectedError", defaultValue: "VPN is already connected")

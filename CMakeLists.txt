@@ -52,8 +52,8 @@ if(WIN32)
 
     ## CMake also has trouble finding OpenSSL libraries on Windows, and may
     ## need some help.
-    if(EXISTS "C:/MozillaVPNBuild/SSL" AND NOT DEFINED OPENSSL_ROOT_DIR)
-        set(OPENSSL_ROOT_DIR "C:/MozillaVPNBuild/SSL")
+    if(EXISTS "C:/WGDesktopBuild/SSL" AND NOT DEFINED OPENSSL_ROOT_DIR)
+        set(OPENSSL_ROOT_DIR "C:/WGDesktopBuild/SSL")
         find_package(OpenSSL REQUIRED)
     endif()
 
@@ -71,16 +71,16 @@ if(APPLE)
 
     ## Setup some defaults for code signing.
     if(NOT BUILD_OSX_APP_IDENTIFIER)
-        set(BUILD_OSX_APP_IDENTIFIER org.mozilla.macos.FirefoxVPN CACHE STRING "OSX Application identifier")
+        set(BUILD_OSX_APP_IDENTIFIER org.wgdesktop.macos CACHE STRING "OSX Application identifier")
     endif()
     if(NOT BUILD_IOS_APP_IDENTIFIER)
-        set(BUILD_IOS_APP_IDENTIFIER org.mozilla.ios.FirefoxVPN CACHE STRING "iOS Application identifier")
+        set(BUILD_IOS_APP_IDENTIFIER org.wgdesktop.ios CACHE STRING "iOS Application identifier")
     endif()
     if(NOT BUILD_IOS_GROUP_IDENTIFIER)
-        set(BUILD_IOS_GROUP_IDENTIFIER group.org.mozilla.ios.Guardian CACHE STRING "iOS Group identifier")
+        set(BUILD_IOS_GROUP_IDENTIFIER group.org.wgdesktop.ios CACHE STRING "iOS Group identifier")
     endif()
     if(NOT BUILD_VPN_DEVELOPMENT_TEAM)
-        set(BUILD_VPN_DEVELOPMENT_TEAM 43AQ936H96 CACHE STRING "Mozilla VPN Development Team")
+        set(BUILD_VPN_DEVELOPMENT_TEAM "" CACHE STRING "WG Desktop development team")
     endif()
     set(CMAKE_XCODE_GENERATE_SCHEME FALSE)
     set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM ${BUILD_VPN_DEVELOPMENT_TEAM})

@@ -64,7 +64,7 @@ QString buildNumber();
 QString envOrDefault(const QString& name, const QString& defaultValue);
 
 // The prefix for the user-agent requests
-constexpr const char* NETWORK_USERAGENT_PREFIX = "MozillaVPN";
+constexpr const char* NETWORK_USERAGENT_PREFIX = "WGDesktop";
 
 // The file name for the logging
 constexpr const char* LOG_FILE_NAME = "mozillavpn.log";
@@ -164,13 +164,11 @@ TIMEREXPR(statusIconAnimation, 200ms, 200ms, 0ms)
 #undef TIMEREXPR
 }  // namespace Timers
 
-constexpr const char* API_PRODUCTION_URL = "https://vpn.mozilla.org";
-constexpr const char* API_STAGING_URL =
-    "https://stage.guardian.nonprod.cloudops.mozgcp.net";
+constexpr const char* API_PRODUCTION_URL = "https://wgdesktop.invalid";
+constexpr const char* API_STAGING_URL = "https://wgdesktop.invalid";
 
-constexpr auto CRASH_PRODUCTION_URL =
-    "https://crash-reports.mozilla.com/submit";
-constexpr auto CRASH_STAGING_URL = "https://crash-reports.allizom.org/submit";
+constexpr auto CRASH_PRODUCTION_URL = "https://wgdesktop.invalid/crash";
+constexpr auto CRASH_STAGING_URL = "https://wgdesktop.invalid/crash";
 
 constexpr const char* LOGO_URL = ":/ui/resources/logo-dock.png";
 
@@ -183,61 +181,50 @@ constexpr const char* GOOGLE_SUBSCRIPTIONS_URL =
 #define PRODBETAEXPR(type, functionName, prod, beta) \
   inline type functionName() { return Constants::inProduction() ? prod : beta; }
 
-constexpr const char* MOZILLA_VPN_SUMO_URL =
-    "https://support.mozilla.org/products/firefox-private-network-vpn";
+constexpr const char* MOZILLA_VPN_SUMO_URL = "https://www.wireguard.com";
 
-constexpr const char* SUMO_DNS =
-    "https://support.mozilla.org/kb/how-do-i-change-my-dns-settings";
+constexpr const char* SUMO_DNS = "https://www.wireguard.com";
 
-constexpr const char* SUMO_PRIVACY =
-    "https://support.mozilla.org/kb/how-do-i-change-my-privacy-features";
+constexpr const char* SUMO_PRIVACY = "https://www.wireguard.com";
 
-constexpr const char* SUMO_EXCLUDED_APPS =
-    "https://support.mozilla.org/kb/split-tunneling-app-permissions";
+constexpr const char* SUMO_EXCLUDED_APPS = "https://www.wireguard.com";
 
-constexpr const char* SUMO_DEVICES =
-    "https://support.mozilla.org/kb/"
-    "how-add-devices-your-mozilla-vpn-subscription";
+constexpr const char* SUMO_DEVICES = "https://www.wireguard.com";
 
-constexpr const char* SUMO_MULTIHOP =
-    "https://support.mozilla.org/kb/"
-    "multi-hop-encrypt-your-data-twice-enhanced-security";
+constexpr const char* SUMO_MULTIHOP = "https://www.wireguard.com";
 
-constexpr const char* SUMO_ALWAYS_ON_ANDROID =
-    "https://support.mozilla.org/kb/how-enable-always-vpn-android";
+constexpr const char* SUMO_ALWAYS_ON_ANDROID = "https://www.wireguard.com";
 
 constexpr const char* SUMO_ALLOW_BACKGROUND_MACOS =
-    "https://support.mozilla.org/kb/allow-vpn-run-background-macos";
+    "https://www.wireguard.com";
 
-PRODBETAEXPR(QString, contactSupportUrl, "https://accounts.firefox.com/support",
-             "https://accounts.stage.mozaws.net/support")
+PRODBETAEXPR(QString, contactSupportUrl, "https://wgdesktop.invalid/support",
+             "https://wgdesktop.invalid/support")
 
 PRODBETAEXPR(QString, deleteAccountUrl,
-             "https://accounts.firefox.com/settings/delete_account",
-             "https://accounts.stage.mozaws.net/settings/delete_account")
+             "https://wgdesktop.invalid/delete_account",
+             "https://wgdesktop.invalid/delete_account")
 
 PRODBETAEXPR(QString, addonBaseUrl,
-             "https://archive.mozilla.org/pub/vpn/addons/releases/latest/",
+             "https://wgdesktop.invalid/addons/",
              Constants::envOrDefault(
-                 "MZ_ADDON_URL",
-                 "https://mozilla-mobile.github.io/mozilla-vpn-client/addons/"))
+                 "MZ_ADDON_URL", "https://wgdesktop.invalid/addons/"))
 
 PRODBETAEXPR(QString, captivePortalUrl, "http://%1/success.txt",
              Constants::envOrDefault("MZ_CAPTIVE_PORTAL_URL",
                                      "http://%1/success.txt"));
 
-constexpr const char* BALROG_PROD_HOSTNAME = "aus5.mozilla.org";
+constexpr const char* BALROG_PROD_HOSTNAME = "updates.wgdesktop.invalid";
 constexpr const char* AUTOGRAPH_PROD_FINGERPRINTS[] = {
     // root-ca-production-amo 2015-03-17
     "97e8ba9cf12fb3de53cc42a4e6577ed64df493c247b414fea036818d3823560e",
     // root-ca-production-amo 2024-02-01
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=1882147
+    // Legacy production certificate fingerprint retained for compatibility.
     "c8a80e9afaef4e219b6fb5d7a71d0f101223bac5001ac28f9b0d43dc59a106db",
     nullptr  // list termination
 };
 
-constexpr const char* BALROG_STAGE_HOSTNAME =
-    "stage.balrog.nonprod.cloudops.mozgcp.net";
+constexpr const char* BALROG_STAGE_HOSTNAME = "updates.wgdesktop.invalid";
 constexpr const char* AUTOGRAPH_STAGE_FINGERPRINTS[] = {
     // cas-new-2024-03-12
     "c0f05d59b1fde25780854c32fae8faba8481c233b4c1d390cca5f2cea81930ee",
@@ -251,27 +238,25 @@ constexpr const char* AUTOGRAPH_STAGE_FINGERPRINTS[] = {
 PRODBETAEXPR(qint64, keyRegenerationTimeSec, 1209600, 86400);
 
 PRODBETAEXPR(QString, upgradeToAnnualUrl,
-             "https://www.mozilla.org/products/vpn/"
-             "?utm_medium=mozillavpn&utm_source=account#pricing",
-             "https://www-dev.allizom.org/products/vpn/"
-             "?utm_medium=mozillavpn&utm_source=account#pricing")
+             "https://wgdesktop.invalid/pricing",
+             "https://wgdesktop.invalid/pricing")
 
 #undef PRODBETAEXPR
 
 #if defined(__APPLE__)
 // This is the name of the service to encrypt the settings file
-constexpr const char* CRYPTO_SETTINGS_SERVICE = "Mozilla VPN";
+constexpr const char* CRYPTO_SETTINGS_SERVICE = "WG Desktop";
 
 // Fallback. When an unsigned/un-notarized app is executed in
 // command-line mode, it could fail the fetching of its own bundle id.
-constexpr const char* MACOS_FALLBACK_APP_ID = "org.mozilla.macos.FirefoxVPN";
-constexpr const char* IOS_FALLBACK_APP_ID = "org.mozilla.ios.FirefoxVPN";
+constexpr const char* MACOS_FALLBACK_APP_ID = "org.wgdesktop.macos";
+constexpr const char* IOS_FALLBACK_APP_ID = "org.wgdesktop.ios";
 #endif
 
 #if defined(_WIN32)  // Avoid using MZ_WINDOWS here as it conflicts with
                      // MZ_DUMMY on Windows
 // Credential key for windows
-constexpr const wchar_t* WINDOWS_CRED_KEY = L"Mozilla VPN";
+constexpr const wchar_t* WINDOWS_CRED_KEY = L"WG Desktop";
 #endif
 
 #ifdef MZ_ANDROID

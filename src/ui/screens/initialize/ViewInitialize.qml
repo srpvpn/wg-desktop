@@ -48,7 +48,7 @@ MZFlickable {
 
         MZSubtitle {
             Layout.fillWidth: true
-            text: "WG Desktop stores WireGuard profiles locally. No Mozilla account, registration, or service connection is required."
+            text: "WG Desktop stores WireGuard profiles locally. No account, registration, or service connection is required."
         }
 
         MZTextField {

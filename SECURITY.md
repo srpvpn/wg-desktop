@@ -1,15 +1,21 @@
 # Security Policy
 
-Mozilla participates in the [HackerOne](https://hackerone.com/bug-bounty-programs) bug bounty program. The program is designed to encourage security research into Mozilla's websites and services and to reward those who find unique and original security bugs in Mozilla's products and web services.
+WG Desktop is a local WireGuard profile client. It does not require an account,
+subscription service, or hosted configuration API.
 
-Read Mozilla's bug bounty policy, including submission guidelines and program rules [on HackerOne's site](https://hackerone.com/mozilla).
+## Reporting Issues
 
-<br />
+Report security issues privately to the current project maintainer. Do not open
+public issues for vulnerabilities that could expose private keys, profile data,
+or tunnel traffic.
 
-## Reporting a security bug
+## Sensitive Data
 
-**Bug bounty hunters:**
-Please submit security bug reports via the [HackerOne](https://hackerone.com/mozilla?type=team) platform.
+Do not commit WireGuard private keys, real user profiles, generated tunnel
+configs, logs containing private keys, or server access credentials.
 
-**Everyone else:** 
-Please email <a href="mailto:security@mozilla.com">security@mozilla.com</a> with the details.
+## Runtime Assumptions
+
+The supported Linux build uses Flatpak, NetworkManager, system D-Bus, and the
+existing privileged networking path. Security fixes should preserve that model
+unless there is a verified reason to change it.

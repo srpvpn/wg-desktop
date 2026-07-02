@@ -33,8 +33,8 @@ Q_DECL_EXPORT int main(int argc, char* argv[]) {
 #endif
   LogHandler::setLogfile("/var/log/mozillavpn/mozillavpn.log");
 
-  QCoreApplication::setApplicationName("Mozilla VPN Daemon");
-  QCoreApplication::setOrganizationName("Mozilla");
+  QCoreApplication::setApplicationName("WG Desktop Daemon");
+  QCoreApplication::setOrganizationName("WG Desktop");
   QCoreApplication::setApplicationVersion(getBundleVersion());
 
   CommandLineParser clp;

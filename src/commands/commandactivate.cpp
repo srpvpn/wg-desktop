@@ -55,7 +55,7 @@ int CommandActivate::run(QStringList& tokens) {
   }
 
   if (testingOption.m_set) {
-    QCoreApplication::setOrganizationName("Mozilla Testing");
+    QCoreApplication::setOrganizationName("WG Desktop Testing");
     LogHandler::instance()->setStderr(true);
   }
 

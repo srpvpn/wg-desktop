@@ -198,7 +198,7 @@ bool WindowsFirewall::enableInterface(int vpnAdapterIndex) {
   if (!allowHyperVTraffic(MED_WEIGHT, "Allow Hyper-V Traffic")) {
     return false;
   }
-  msg = "Allow all for Mozilla VPN.exe";
+  msg = "Allow all for WG Desktop.exe";
   if (!allowTrafficForAppOnAll(getCurrentPath(), MAX_WEIGHT, msg)) {
     return false;
   }

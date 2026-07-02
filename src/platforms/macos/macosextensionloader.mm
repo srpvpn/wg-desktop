@@ -79,7 +79,7 @@ didFinishWithResult:(OSSystemExtensionRequestResult) result {
     // Otherwise - create a new manager.
     if (self.manager == nil) {
       self.manager = [NETransparentProxyManager new];
-      self.manager.localizedDescription = @"Mozilla VPN Split Tunnel";
+      self.manager.localizedDescription = @"WG Desktop Split Tunnel";
       logger.info() << "proxy manager created for:" << self.identifier;
     }
 

@@ -2,17 +2,17 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-set_target_properties(mozillavpn PROPERTIES OUTPUT_NAME "Mozilla VPN")
+set_target_properties(mozillavpn PROPERTIES OUTPUT_NAME "WG Desktop")
 
 # Configure the application bundle Info.plist
 set_target_properties(mozillavpn PROPERTIES
     MACOSX_BUNDLE ON
     MACOSX_BUNDLE_INFO_PLIST ${CMAKE_SOURCE_DIR}/macos/app/Info.plist.in
-    MACOSX_BUNDLE_BUNDLE_NAME "Mozilla VPN"
+    MACOSX_BUNDLE_BUNDLE_NAME "WG Desktop"
     MACOSX_BUNDLE_BUNDLE_VERSION "${BUILD_ID}"
     MACOSX_BUNDLE_COPYRIGHT "MPL-2.0"
     MACOSX_BUNDLE_GUI_IDENTIFIER "${BUILD_OSX_APP_IDENTIFIER}"
-    MACOSX_BUNDLE_INFO_STRING "Mozilla VPN"
+    MACOSX_BUNDLE_INFO_STRING "WG Desktop"
     MACOSX_BUNDLE_LONG_VERSION_STRING "${CMAKE_PROJECT_VERSION}-${BUILD_ID}"
     MACOSX_BUNDLE_SHORT_VERSION_STRING "${CMAKE_PROJECT_VERSION}"
     MACOSX_BUNDLE_ICON_FILE "AppIcon"

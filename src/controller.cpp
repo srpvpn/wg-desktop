@@ -1159,7 +1159,7 @@ bool Controller::activate(const InterfaceConfig& config,
 bool Controller::deactivate(ActivationPrincipal user) {
   logger.debug() << "Deactivation" << m_state;
   if (m_initiator > user) {
-    // i.e the Firefox Extension cannot deativate the
+    // i.e. the browser extension cannot deactivate the
     // vpn if we are in full device protection.
     logger.warning()
         << "ActivationPrincipal does not have permission allowed to deactivate";

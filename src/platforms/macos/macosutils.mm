@@ -27,7 +27,7 @@ QString MacOSUtils::appId(const QString& suffix) {
   if (!appId) {
     // Fallback. When an unsigned/un-notarized app is executed in
     // command-line mode, it could fail the fetching of its own bundle id.
-    appId = @"org.mozilla.macos.FirefoxVPN";
+    appId = @"org.wgdesktop.macos";
   }
 
   return QString::fromNSString(appId) + suffix;
@@ -58,14 +58,14 @@ void MacOSUtils::enableLoginItem(bool startAtBoot) {
   // Use register() or unregister() based on the startAtBoot flag
   if (startAtBoot) {
     if (![[SMAppService mainAppService] registerAndReturnError: & error]) {
-      logger.error() << "Failed to register Mozilla VPN LoginItem: " << error;
+      logger.error() << "Failed to register WG Desktop LoginItem: " << error;
     } else {
-      logger.debug() << "Mozilla VPN LoginItem registered successfully.";
+      logger.debug() << "WG Desktop LoginItem registered successfully.";
     }
   } else {
     [[SMAppService mainAppService] unregisterWithCompletionHandler:^(NSError* error){
       if (error != nil) {
-        logger.warning() << "Failed to unregister Mozilla VPN LoginItem:" << error;
+        logger.warning() << "Failed to unregister WG Desktop LoginItem:" << error;
       } else {
         logger.debug() << "LoginItem unregistered successfully.";
       }

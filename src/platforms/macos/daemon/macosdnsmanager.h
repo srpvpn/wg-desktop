@@ -11,7 +11,7 @@
 
 #include "command.h"
 
-// This class adds a command to the Mozilla VPN that overwrites the system
+// This class adds a command to WG Desktop that overwrites the system
 // DNS configuration, and restores it upon program exit. When run in a separate
 // process, this provides a watchdog mechanism to ensure that no matter how the
 // daemon terminates (or crashes!) we always do our best to clean up.

@@ -26,7 +26,7 @@
 #  subTitle:
 #    value:
 #      - A fast, secure and easy to use VPN. Built
-#      - by the makers of Firefox
+#      - for WireGuard profiles
 #    comment:
 #      - Also comments can be written using
 #      - multiple lines!
@@ -124,7 +124,7 @@ languageView:
     value: System language
     comment: the title for the system language radio button
   systemLanguageButtonDescription:
-    value: Mozilla VPN will use the default system language.
+    value: WG Desktop will use the default system language.
     comment: the description for the system lagnague radio button
 
 settingsDev:
@@ -179,7 +179,7 @@ inAppSupportWorkflow:
   supportNavLinkText: Contact support
   supportEmailFieldLabel: Enter your email
   supportEmailFieldPlaceholder: Email address
-  supportFieldHeader: How can we help you with Mozilla VPN?
+  supportFieldHeader: How can we help you with WG Desktop?
   dropdownLabel:
     value: Choose a category
     comment: A user trying to submit feedback will use this dropdown to select the general topic related to the feedback.
@@ -200,7 +200,7 @@ inAppSupportWorkflow:
     comment: A user selecting this will be submitting in-app feedback related to issues not covered under the other categories.
   subjectFieldPlaceholder: Subject (optional)
   issueFieldPlaceholder: Describe issue
-  privacyNoticeLinkText: Mozilla VPN Privacy Notice
+  privacyNoticeLinkText: WG Desktop Privacy Notice
   shareLogsCheckBoxTitle: Share logs with support
   shareLogsCheckBoxSubtitle: Support will use this data to better diagnose your issue.
   supportPrimaryButtonText: Submit
@@ -224,7 +224,7 @@ notSignedInGoogle:
 # IAP Android edge case 2
 multiFxaAccountError:
   fxaAccountErrorHeader: Problem confirming subscription
-  mozAccountErrorText: Your subscription is linked to another Mozilla account. You may need to sign in with a different email address.
+  mozAccountErrorText: Your subscription is linked to another account. You may need to sign in with a different email address.
   visitOurHelpCenter: Visit our help center to learn more about managing your subscriptions.
 
 # IAP Android edge case 3
@@ -243,14 +243,14 @@ restorePurchaseGenericPurchaseError:
 
 # IAP iOS restore expired error
 restorePurchaseExpiredError:
-  restorePurchaseExpiredErrorText2: Sorry, we are unable to connect your Mozilla account to a current subscription. Please try again or contact our support team for further assistance.
+  restorePurchaseExpiredErrorText2: Sorry, we are unable to connect your account to a current subscription. Please try again or contact our support team for further assistance.
 
 # IAP iOS restore in use error
 restorePurchaseInUseError:
-  restorePurchaseInUseErrorText2: Another Mozilla account has already subscribed using this Apple ID. Please sign out and try again or contact our support team for help.
+  restorePurchaseInUseErrorText2: Another account has already subscribed using this Apple ID. Please sign out and try again or contact our support team for help.
 
 purchaseWeb:
-  title: Subscribe to Mozilla VPN
+  title: Subscribe to WG Desktop
   message:
     value: We couldn’t find a subscription for %1. Subscribe now to protect your connection.
     comment: "%1 is the user’s email address."
@@ -285,7 +285,7 @@ notifications:
   captivePortalUnblockMessage2: The guest Wi-Fi network you’re connected to may not be secure. Click to turn on VPN to secure your device.
   connectionFailedTitle: Connection failed
   connectionFailedMessage: Sorry, something went wrong with your VPN connection.
-  subscriptionNotFound: Your Mozilla VPN subscription cannot be found. Please open the app to resolve this subscription issue.
+  subscriptionNotFound: Your WG Desktop subscription cannot be found. Please open the app to resolve this subscription issue.
   unsecuredNetworkTitle: Unsecured Wi-Fi network detected
   unsecuredNetworkGeneric: "Wi-Fi network is not secure. Click here to turn on VPN and secure your device."
   unsecuredNetworkMessage:
@@ -311,8 +311,8 @@ notifications:
     comment: "%1 is the name of the initial server, %2 is the name of the destination server."
 
 systray:
-  hide: Hide Mozilla VPN
-  show: Show Mozilla VPN
+  hide: Hide WG Desktop
+  show: Show WG Desktop
   statusConnectedTo: "Connected to:"
   statusConnectTo: "Connect to the last location:"
   statusConnectingTo: "Connecting to:"
@@ -324,7 +324,7 @@ systray:
   disconnect: Disconnect
   help: Help
   preferences: Preferences…
-  quit: Quit Mozilla VPN
+  quit: Quit WG Desktop
 
 settings:
   privacySettings: Privacy features
@@ -333,22 +333,22 @@ settings:
     value: Appearance
     comment: Appearance refers to the app theming (dark mode / light mode)
   dnsSettings: DNS settings
-  firefoxExtensionInfo: Firefox extension
-  firefoxExtensionIntro: Get more precise control over how your VPN works when you’re browsing, with the Firefox extension.
+  firefoxExtensionInfo: browser extension
+  firefoxExtensionIntro: Get more precise control over how your VPN works when you’re browsing, with the browser extension.
   firefoxExtensionFirstParagraphHead: Turn off VPN for specific websites.
   firefoxExtensionFirstParagraphMain: No more toggling your VPN on and off when you need a site to work. Plus, your preference for the website is saved so you don’t have to adjust it each time.
   firefoxExtensionSecondParagraphHead: Choose different locations for different websites.
-  firefoxExtensionSecondParagraphMain: Browse one site as if you’re in New York and another as if you’re in Paris — all in the same Firefox session.
+  firefoxExtensionSecondParagraphMain: Browse one site as if you’re in New York and another as if you’re in Paris — all in the same browser session.
   firefoxExtensionMainButton: Get the extension
-  firefoxExtensionFirefoxButton: Download Firefox
+  firefoxExtensionFirefoxButton: Download browser
   preferencesSettings: Preferences
-  shareTechnicalDataDescription: Help improve Mozilla VPN by sharing crash reports, diagnostics, and product usage data.
+  shareTechnicalDataDescription: Help improve WG Desktop by sharing crash reports, diagnostics, and product usage data.
   startAtBootTitle:
     value: Connect VPN on startup
     comment: Startup refers to a device's startup, not the VPN client's.
-  startAtBootSubtitle: Mozilla VPN will launch and connect when you start up your device
+  startAtBootSubtitle: WG Desktop will launch and connect when you start up your device
   crashOptInDescription:
-    value: Allow Mozilla VPN to automatically send crash reports to help fix unexpected crashes
+    value: Allow WG Desktop to automatically send crash reports to help fix unexpected crashes
     comment: This is the description of a checkbox option to allow the app to send crash reports without a user prompt
   privacyCard: These options may cause some websites to break or not display content correctly.
   privacyAdblockTitle: Block ads
@@ -358,7 +358,7 @@ settings:
   privacyMalwareTitle: Block malware
   privacyMalwareBody2: Helps protect you from ransomware, phishing, spyware, and viruses
   dnsSettingsStandardDNSTitle: Use standard DNS
-  dnsSettingsStandardDNSBody: Resolve websites using Mozilla VPN’s standard DNS
+  dnsSettingsStandardDNSBody: Resolve websites using WG Desktop’s standard DNS
   dnsSettingsCustomDNSTitle: Use custom DNS
   dnsSettingsCustomDNSBody: Resolve websites using a custom DNS
   dnsSettingsCustomDNSError: Invalid DNS, please try a new one
@@ -366,7 +366,7 @@ settings:
   dnsSettingsInputPlaceholder: Enter custom DNS
   dnsSettingsDisconnectWarning: Changing these settings will cause the VPN to disconnect and reconnect automatically.
   batteryOptimizationWarning:
-    value: On some devices, Mozilla VPN may be disconnected in the background. If you’ve experienced this, allow it to run in the background.
+    value: On some devices, WG Desktop may be disconnected in the background. If you’ve experienced this, allow it to run in the background.
     comment: Warning shown in the settings screen on Android when battery optimization is enabled for the app.
   batteryOptimizationWarningButton:
     value: Allow background permissions
@@ -375,7 +375,7 @@ settings:
     value: Clear all
     comment: Button label to clear all apps from the exclusions list
   reauthTitle: Sign In Again
-  reauthDescription: For your security, please sign in again to access your account information. You’ll complete this process on Mozilla’s website.
+  reauthDescription: For your security, please sign in again to access your account information. You’ll complete this process on the project website.
   appearanceAutomatic:
     value: Automatic
     comment: Automatic switching for dark mode/light mode, based on the system’s setting
@@ -424,15 +424,15 @@ AndroidNotifications:
 updateButton:
   checkForUpdateButtonText: Check for Updates
   titleNoUpdate: You are up to date
-  descriptionNoUpdate2: You currently have the latest version of Mozilla VPN
+  descriptionNoUpdate2: You currently have the latest version of WG Desktop
   actionNoUpdate: Okay
   titleOnUpdate: Updates available
   descriptionOnUpdate: Click to update to the latest version of the application
   actionOnUpdate: Update now
 
 telemetryPolicyView:
-  description: We strive to provide you with choices and collect only the data we need to improve Mozilla VPN. Sharing this data with Mozilla is optional.
-  question: Allow Mozilla VPN to send technical, interaction, and campaign and referral data to Mozilla?
+  description: We strive to provide you with choices and collect only the data we need to improve WG Desktop. Sharing this data is optional.
+  question: Allow WG Desktop to send technical, interaction, and campaign and referral data?
   shareTechnicalData:
     value: Share technical data
     comment: Headline of telemetry policy view and checkbox label
@@ -551,7 +551,7 @@ crashreporter:
     value: Crash reporting
     comment: Label over description text section.
   description:
-    value: The Mozilla VPN app quit unexpectedly. Would you like to send a crash report to help fix the issue?
+    value: The WG Desktop app quit unexpectedly. Would you like to send a crash report to help fix the issue?
     comment: Main text telling the user that we are asking for permission to send a crash report.
   sendButtonLabel:
     value: Send report
@@ -560,7 +560,7 @@ crashreporter:
     value: No thanks
     comment: User does not agree to send a crash report.
   crashOptInDialogDescription:
-    value: Don’t show this again. Autosend crash reports to Mozilla.
+    value: Don’t show this again. Autosend crash reports.
     comment: This is a description for a checkbox on the crash reporter dialog.
 
 serverUnavailableModal:
@@ -575,18 +575,18 @@ serverUnavailableNotification:
   preferencesSubLabel: Get notified when connecting to a server location failed
 
 mobileOnboarding:
-  panelOneTitle: Mozilla VPN
-  panelOneSubtitle: A safe, reliable and fast VPN. Built by the makers of Firefox.
+  panelOneTitle: WG Desktop
+  panelOneSubtitle: A safe, reliable and fast VPN. Built for WireGuard profiles.
   signUpBtn: Sign up
   alreadyASubscriber: Already a subscriber?
 
 onboarding:
   panelTwoTitle: Protect your privacy
-  panelTwoSubtitle: With more than 500 servers in 60 cities around the world, Mozilla VPN protects your data, browsing activity, and your true location from network spies.
+  panelTwoSubtitle: With more than 500 servers in 60 cities around the world, WG Desktop protects your data, browsing activity, and your true location from network spies.
   panelThreeTitle: One tap to safety
-  panelThreeSubtitle: "Protecting yourself is simple: tap to connect to the VPN and you’re ready to browse safely. Mozilla VPN will start automatically for seamless protection."
+  panelThreeSubtitle: "Protecting yourself is simple: tap to connect to the VPN and you’re ready to browse safely. WG Desktop will start automatically for seamless protection."
   panelFourTitle: Add even more privacy
-  panelFourSubtitle: You can set Mozilla VPN to protect you from ads, trackers, and malware. Plus, customize your protection for specific apps.
+  panelFourSubtitle: You can set WG Desktop to protect you from ads, trackers, and malware. Plus, customize your protection for specific apps.
   progressBarDataUse:
     value: Data
     comment: Label for onboarding progress bar step where users can select to enable data collection
@@ -595,7 +595,7 @@ onboarding:
     comment: Label for onboarding progress bar step where users can select to enable various privacy settings
   progressBarAddDevices:
     value: Devices
-    comment: Label for onboarding progress bar step where users find out how to install Mozilla VPN on other devices
+    comment: Label for onboarding progress bar step where users find out how to install WG Desktop on other devices
   progressBarStartup:
     value: Startup
     comment: Label for onboarding progress bar step where users can select to enable VPN startup on device boot
@@ -612,32 +612,32 @@ onboarding:
     value: "Onboarding step “%1” (%2 of %3)"
     comment: Accessibility read out for incomplete future steps in the step progress bar. %1 is the name of the step. %2 is the index of the current step. %3 is the total number of steps.
   dataSlideHeader2: Data collection
-  dataSlideBody2: Help us improve Mozilla VPN by sharing crash reports, diagnostics, and product usage data. We never collect data about your online activity while using the VPN.
+  dataSlideBody2: Help us improve WG Desktop by sharing crash reports, diagnostics, and product usage data. We never collect data about your online activity while using the VPN.
   dataSlideToggleLabel: Share technical data
   dataSlideLearnMoreCaption2: Learn more about data collection
-  dataSlidePrivacyLinkLabel: Mozilla VPN Privacy Notice
+  dataSlidePrivacyLinkLabel: WG Desktop Privacy Notice
   privacySlideHeader: Get more privacy
   privacySlideBody: Use these features for more protection. They may cause issues on some sites, so you can turn them off anytime in settings.
-  devicesSlideHeader: Install Mozilla VPN on up to 5 devices
+  devicesSlideHeader: Install WG Desktop on up to 5 devices
   devicesSlideBody2: To install the VPN on another tablet or mobile device, scan the QR code.
-  devicesSlideBodyMobile: To install the VPN on another tablet or mobile device, scan the QR code. To install on a desktop computer, visit the Download page on the Mozilla VPN website.
+  devicesSlideBodyMobile: To install the VPN on another tablet or mobile device, scan the QR code. To install on a desktop computer, visit the Download page on the WG Desktop website.
   devicesSlideDeviceTypeLabel: "Select device type:"
   devicesSlideDeviceTypeAndroid: Android
   devicesSlideDeviceTypeApple: Apple
-  devicesSlideQRCodeAndroid: QR Code that links to the Mozilla VPN product page on the Google Play Store
-  devicesSlideQRCodeApple: QR Code that links to the Mozilla VPN product page on the iOS App Store
-  startSlideHeader: Connect Mozilla VPN on startup
+  devicesSlideQRCodeAndroid: QR Code that links to the WG Desktop product page on the Google Play Store
+  devicesSlideQRCodeApple: QR Code that links to the WG Desktop product page on the iOS App Store
+  startSlideHeader: Connect WG Desktop on startup
   startSlideBody2: Launch the VPN whenever you start your device. We’ll automatically reconnect you to the same server location you last used.
-  startSlideMobileHeader: Allow Mozilla VPN to create a VPN connection
-  startSlideMobileBody: Your mobile device will now ask you to allow Mozilla VPN to create a connection. Please allow this so that the VPN works correctly on your device.
+  startSlideMobileHeader: Allow WG Desktop to create a VPN connection
+  startSlideMobileBody: Your mobile device will now ask you to allow WG Desktop to create a connection. Please allow this so that the VPN works correctly on your device.
   startSlideAllowButtonLabel: Allow VPN connection
 
 inAppAuth:
   emailInputPlaceholder: Enter email
   changeEmailLink: Change email
   signInButton: Sign in
-  signInSubtitle2: Continue to Mozilla VPN by signing in with your Mozilla account
-  reauthSignInSubtitle2: To continue, please confirm with your Mozilla account password.
+  signInSubtitle2: Continue to WG Desktop by signing in with your account
+  reauthSignInSubtitle2: To continue, please confirm with your account password.
   createPasswordLabel:
     value: Create password
     comment: This is a label displayed on the password creation screen.
@@ -660,12 +660,12 @@ inAppAuth:
     value: Hide password
     comment: Tooltip label for the eye icon in password input
   productUpdateOptInDescription:
-    value: I’d like to receive product update emails from Firefox.
-    comment: Checkbox label for users to opt in, when creating an account, to receive product update emails from Firefox.
+    value: I’d like to receive product update emails.
+    comment: Checkbox label for users to opt in, when creating an account, to receive product update emails.
   createAccountButton: Create account
   finishAccountCreationDescription2:
-    value: Finish creating your Mozilla account to continue to Mozilla VPN
-    comment: User message prompting user to finish creating their account to use Mozilla VPN.
+    value: Finish creating your account to continue to WG Desktop
+    comment: User message prompting user to finish creating their account to use WG Desktop.
   emailVerificationDescription:
     value: Open your email and enter the verification code that was sent.
     comment: User has been sent a verification email containing a code.
@@ -725,7 +725,7 @@ inAppAuth:
   problemSendingEmailErrorMessage:
     value: Sorry, we were unable to send you a verification code.
     comment: App screen that informs the user there was an error sending them their verification code email - this is the message.
-  enterEmailAddressDescription: Enter your email address to continue using Mozilla VPN
+  enterEmailAddressDescription: Enter your email address to continue using WG Desktop
   termsOfServiceAndPrivacyDisclaimer:
     value: By continuing, you agree to the <a href="terms-of-service">Terms of Service</a> and the <a href="privacy-notice">Privacy Notice</a>.
     comment: Do not remove or translate the markup '<a href="terms-of-service">', '<a href="privacy-notice">', '</a>'.
@@ -740,28 +740,28 @@ inAppAuth:
     comment: Headline on loading screen
   ssoInstructionHeader:
     value: Create a password
-    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding. This is the header on the error screen.
+    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their account to set a password before proceeding. This is the header on the error screen.
   ssoInstructionLine1:
-    value: "To finish setting up your Mozilla account, create a password in your account settings:"
-    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.
+    value: "To finish setting up your account, create a password in your account settings:"
+    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their account to set a password before proceeding.
   ssoInstructionLine2a:
-    value: 1. Go to <a href="open-account">Create password</a> in your Mozilla account settings.
-    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding. Do not remove or translate the markup '<a href="open-account">'.
+    value: 1. Go to <a href="open-account">Create password</a> in your account settings.
+    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their account to set a password before proceeding. Do not remove or translate the markup '<a href="open-account">'.
   ssoInstructionLine3:
     value: 2. Create a password.
-    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.
+    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their account to set a password before proceeding.
   ssoInstructionLine4:
-    value: When your password is created, return to this screen and continue to sign in to Mozilla VPN.
-    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their Mozilla Account to set a password before proceeding.
+    value: When your password is created, return to this screen and continue to sign in to WG Desktop.
+    comment: User has tried to log in using an SSO-linked account that does not have a password. The user needs to log in to their account to set a password before proceeding.
   stubAccountVerificationHeader:
     value: Check your email
-    comment: User has tried to log into a Mozilla account before setting their password, which happens after email verification. This is the header on the error screen.
+    comment: User has tried to log into a account before setting their password, which happens after email verification. This is the header on the error screen.
   stubAccountVerificationInstruction:
     value: We’ve sent an email to %1 with the verification link. Please follow the directions to set up your password and finish setting up your account.
-    comment: User has tried to log into a Mozilla account before setting their password, which happens after email verification. %1 is the email address associated with the account.
+    comment: User has tried to log into a account before setting their password, which happens after email verification. %1 is the email address associated with the account.
   continueToSignIn:
     value: Continue to sign in
-    comment: Button a user clicks after updating their Mozilla account settings so that they can re-attempt sign-in
+    comment: Button a user clicks after updating their account settings so that they can re-attempt sign-in
 
 deleteAccount:
   authButtonLabel: Continue
@@ -838,7 +838,7 @@ inAppMessaging:
     comment: A badge shown in a message signifying that this message contains information about the user's subscription
   extensionBadge:
     value: Extension
-    comment: A badge shown in a message signifying that this message contains information about a Firefox browser extension
+    comment: A badge shown in a message signifying that this message contains information about a browser extension
 
 devices:
   countLabel:
@@ -889,10 +889,10 @@ helpSheets:
     value: What is a custom DNS?
     comment: Header label for the custom dns help sheet
   dnsBody1:
-    value: Whenever you connect to a website, a DNS (domain name system) first turns the domain name (e.g. www.mozilla.org) into an IP address that allows your internet traffic to reach that destination.
+    value: Whenever you connect to a website, a DNS (domain name system) first turns the domain name (e.g. example.com) into an IP address that allows your internet traffic to reach that destination.
     comment: Body text for the custom dns help sheet
   dnsBody2:
-    value: Mozilla VPN allows you to choose a custom DNS server if you prefer. If you use one, you won’t be able to use other privacy features in the VPN like tracker blocking.
+    value: WG Desktop allows you to choose a custom DNS server if you prefer. If you use one, you won’t be able to use other privacy features in the VPN like tracker blocking.
     comment: Body text for the custom dns help sheet
   privacyTitle:
     value: Privacy features
@@ -931,10 +931,10 @@ helpSheets:
     value: Adding and removing devices
     comment: Header label for the devices help sheet
   devicesBody1:
-    value: "Adding a new device to your subscription is easy: just download and log in to Mozilla VPN on that device."
+    value: "Adding a new device to your subscription is easy: just download and log in to WG Desktop on that device."
     comment: Body label for the devices help sheet
   devicesBody2:
-    value: To remove one of your added devices, select “Edit” on this screen and use the trash icon to remove the device you no longer want to use Mozilla VPN on.
+    value: To remove one of your added devices, select “Edit” on this screen and use the trash icon to remove the device you no longer want to use WG Desktop on.
     comment: Body label for the devices help sheet
   locationTitle:
     value: Location selection
@@ -954,7 +954,7 @@ resetSettings:
     value: Reset VPN
     comment: Label for button that takes the user to the factory reset flow
   title:
-    value: Reset Mozilla VPN
+    value: Reset WG Desktop
     comment: Title of the screen where users go to reset the VPN to factory settings
   body1:
     value: "This will reset all VPN settings, including:"
@@ -972,7 +972,7 @@ resetSettings:
     value: Confirm reset
     comment: Title of the modal where users can confirm they want to restore back to factory settings
   confirmResetModalBody:
-    value: Reset Mozilla VPN settings? This can’t be undone.
+    value: Reset WG Desktop settings? This can’t be undone.
     comment: Body of the modal where users can confirm they want to restore back to factory settings
   confirmResetModalResetButtonLabel:
     value: Reset and quit
@@ -983,16 +983,16 @@ permissionMacos:
     value: Allow VPN to run in background
     comment: Title of the screen directing macOS users to allow the VPN to run in background
   body:
-    value: To use Mozilla VPN, please allow it to run in the background.
+    value: To use WG Desktop, please allow it to run in the background.
     comment: Paragraph requesting the user to allow the VPN to run in the background.
   instructions:
-    value: In order to do this, please click the button below to open the <i>Login Items</i> of your <i>System Preferences</i>, and enable <i>Allow in the background</i> for Mozilla VPN.
+    value: In order to do this, please click the button below to open the <i>Login Items</i> of your <i>System Preferences</i>, and enable <i>Allow in the background</i> for WG Desktop.
     comment: Paragraph explaining how to enable the VPN to run in the background on macOS 14, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.
   instructionsMacOS15:
-    value: In order to do this, please click the button below to open the <i>Login Items & Extensions</i> of your <i>System Preferences</i>, and enable <i>Allow in the background</i> for Mozilla VPN.
+    value: In order to do this, please click the button below to open the <i>Login Items & Extensions</i> of your <i>System Preferences</i>, and enable <i>Allow in the background</i> for WG Desktop.
     comment: Paragraph explaining how to enable the VPN to run in the background on macOS 15 and above, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.
   instructionsMacOS26:
-    value: In order to do this, please click the button below to open the <i>Login Items & Extensions</i> of your <i>System Preferences</i>, and enable <i>App Background Activity</i> for Mozilla VPN.
+    value: In order to do this, please click the button below to open the <i>Login Items & Extensions</i> of your <i>System Preferences</i>, and enable <i>App Background Activity</i> for WG Desktop.
     comment: Paragraph explaining how to enable the VPN to run in the background on macOS 26 and above, see https://support.apple.com/guide/mac-help/mtusr003/mac for reference translations of these features on different versions of macOS.
   openSettingsButtonLabel:
     value: Open Login Items
@@ -1068,8 +1068,8 @@ getHelp:
     comment: Button label
 
 product:
-  name: Mozilla VPN
-  description: A fast, secure and easy to use VPN. Built by the makers of Firefox.
+  name: WG Desktop
+  description: A fast, secure and easy to use VPN. Built for WireGuard profiles.
 
 navBar:
   homeTab:
@@ -1089,31 +1089,31 @@ controller:
 
 iosAppIntentsMain:
   turnOnAction:
-    value: Turn On Mozilla VPN
+    value: Turn On WG Desktop
     comment: Title used by system to offer turning on VPN
   turnOffAction:
-    value: Turn Off Mozilla VPN
+    value: Turn Off WG Desktop
     comment: Title used by system to offer turning off VPN
   turnOnDescription:
-    value: Activate the Mozilla VPN connection
+    value: Activate the WG Desktop connection
     comment: Description used to provide more context in Shortcuts and other places
   turnOffDescription:
-    value: Deactivate the Mozilla VPN connection
+    value: Deactivate the WG Desktop connection
     comment: Description used to provide more context in Shortcuts and other places
   turnOnConfirmation:
-    value: Mozilla VPN connected
+    value: WG Desktop connected
     comment: Confirmation string used by Siri after turning on VPN
   turnOnConfirmationSingleHop:
-    value: Mozilla VPN connected through %@
+    value: WG Desktop connected through %@
     comment: Confirmation string used by Siri after turning on VPN. `%@` must be included, and it will be replaced with the name of the exit city.
   turnOnConfirmationMultiHop:
-    value: Mozilla VPN connected through %1$@ via %2$@
+    value: WG Desktop connected through %1$@ via %2$@
     comment: Confirmation string used by Siri after turning on VPN. `%1$@` will be replaced with the exit city, and `%2$@` will be replaced with the entry city.
   turnOffConfirmation:
-    value: Mozilla VPN disconnected
+    value: WG Desktop disconnected
     comment: Confirmation string used by Siri after turning off VPN
   turnOnError:
-    value: Error turning on Mozilla VPN
+    value: Error turning on WG Desktop
     comment: Error given by Siri when unable to turn on VPN
   turnOnAlreadyConnectedError:
     value: VPN is already connected
@@ -1125,19 +1125,19 @@ iosAppIntentsMain:
     value: Is the VPN currently connected?
     comment: Title used by system to offer to query VPN status
   statusQueryDescription:
-    value: Queries current Mozilla VPN connection status
+    value: Queries current WG Desktop connection status
     comment: Description used to provide more context in Shortcuts and other places
   statusQueryResponseConnected:
-    value: Mozilla VPN is currently connected
+    value: WG Desktop is currently connected
     comment: Response given when the VPN is connected
   statusQueryResponseDisconnected:
-    value: Mozilla VPN is currently disconnected
+    value: WG Desktop is currently disconnected
     comment: Response given when the VPN is disconnected
   toggleTitle:
-    value: Toggle Mozilla VPN
+    value: Toggle WG Desktop
     comment: Title used by system to offer to toggle VPN status
   toggleDescription:
-    value: Changes Mozilla VPN status
+    value: Changes WG Desktop status
     comment: Description used to provide more context in Shortcuts and other places
   toggleError:
     value: Error changing VPN status
@@ -1145,23 +1145,23 @@ iosAppIntentsMain:
 
 toggleWidget:
   description:
-    value: Turn Mozilla VPN on and off, and see the current location.
-    comment: More information about what the Mozilla VPN widget contains.
+    value: Turn WG Desktop on and off, and see the current location.
+    comment: More information about what the WG Desktop widget contains.
 
 logoAccessoryWidget:
   description:
-    value: See current Mozilla VPN status.
+    value: See current WG Desktop status.
     comment: More information about what the logo widget contains - which is simply current VPN status.
   vpnOn:
-    value: Mozilla VPN on
+    value: WG Desktop on
     comment: Shown as part of inline widget when VPN is active. If translation will be more than 16 characters, instead translate `VPN on` to keep this within available space.
   vpnOff:
-    value: Mozilla VPN off
+    value: WG Desktop off
     comment: Shown as part of inline widget when VPN is inactive.  If translation will be more than 16 characters, instead translate `VPN on` to keep this within available space.
 
 cityAccessoryWidget:
   description:
-    value: See current Mozilla VPN status, along with the current server.
+    value: See current WG Desktop status, along with the current server.
     comment: More information about what the city widget contains - which is current VPN status and the current city server.
 
 iosAppIntentsActivate:
@@ -1181,7 +1181,7 @@ iosAppIntentsActivate:
         Rules:
           - Write natural, conversational phrases a user might say to Siri.
           - Do NOT translate literally — write phrases natural in your language.
-          - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+          - Every line MUST contain %@, which will have "WG Desktop" substituted in.
           - Add or remove lines freely; your language may need fewer or more variants.
           - No line should be a duplicate of another.
 
@@ -1202,7 +1202,7 @@ iosAppIntentsDeactivate:
         Rules:
           - Write natural, conversational phrases a user might say to Siri.
           - Do NOT translate literally — write phrases natural in your language.
-          - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+          - Every line MUST contain %@, which will have "WG Desktop" substituted in.
           - Add or remove lines freely; your language may need fewer or more variants.
           - No line should be a duplicate of another.
 
@@ -1226,6 +1226,6 @@ iosAppIntentsQueryStatus:
         Rules:
           - Write natural, conversational phrases a user might say to Siri.
           - Do NOT translate literally — write phrases natural in your language.
-          - Every line MUST contain %@, which will have "Mozilla VPN" substituted in.
+          - Every line MUST contain %@, which will have "WG Desktop" substituted in.
           - Add or remove lines freely; your language may need fewer or more variants.
           - No line should be a duplicate of another.

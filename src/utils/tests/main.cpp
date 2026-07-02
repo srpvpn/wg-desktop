@@ -15,8 +15,8 @@ int main(int argc, char* argv[]) {
   LeakDetector leakDetector;
   Q_UNUSED(leakDetector);
 #endif
-  QCoreApplication::setApplicationName("Mozilla VPN Unit Tests");
-  QCoreApplication::setOrganizationName("Mozilla Testing");
+  QCoreApplication::setApplicationName("WG Desktop Unit Tests");
+  QCoreApplication::setOrganizationName("WG Desktop Testing");
   LogHandler::instance()->setStderr(true);
   QCoreApplication app(argc, argv);
 

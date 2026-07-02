@@ -8,7 +8,7 @@ import AppIntents
 struct VPNStatusIntent: AppIntent {
   static let title = LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryTitle", defaultValue: "Is the VPN currently connected?")
 
-  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryDescription", defaultValue: "Queries current Mozilla VPN connection status"))
+  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryDescription", defaultValue: "Queries current WG Desktop connection status"))
 
   static var authenticationPolicy: IntentAuthenticationPolicy = .requiresAuthentication
 
@@ -23,10 +23,10 @@ struct VPNStatusIntent: AppIntent {
     let isCurrentlyConnected = TunnelManager.session?.status == .connected || TunnelManager.session?.status == .connecting
 
     if isCurrentlyConnected {
-        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryResponseConnected", defaultValue: "Mozilla VPN is currently connected")
+        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryResponseConnected", defaultValue: "WG Desktop is currently connected")
         responseImage = "shield.lefthalf.filled"
     } else {
-        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryResponseDisconnected", defaultValue: "Mozilla VPN is currently disconnected")
+        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.statusQueryResponseDisconnected", defaultValue: "WG Desktop is currently disconnected")
         responseImage = "shield.lefthalf.filled.slash"
     }
 

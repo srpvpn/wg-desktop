@@ -41,7 +41,7 @@ int WebExtCommand::run(QStringList& tokens) {
 
   // Prepare to parse the command line arguments.
   QCommandLineParser parser;
-  const QString desc = "Web extension bridge to the Mozilla VPN client";
+  const QString desc = "Web extension bridge to the WG Desktop client";
   parser.setApplicationDescription(desc);
   parser.addPositionalArgument("manifest", "Path to the extension manifest");
   parser.addPositionalArgument("ext-id", "The extension idedentifier");
@@ -50,7 +50,7 @@ int WebExtCommand::run(QStringList& tokens) {
   QCommandLineOption optHelp = parser.addHelpOption();
 #ifdef MZ_DEBUG
   QCommandLineOption optName(QStringList({"n", "name"}),
-                             "Local socket of the Mozilla VPN client", "NAME");
+                             "Local socket of the WG Desktop client", "NAME");
   optName.setDefaultValue(WebExtension::Server::localSocketName());
   parser.addOption(optName);
 #endif

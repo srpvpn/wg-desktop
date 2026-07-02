@@ -22,7 +22,7 @@ NSString* IOSUtils::appId() {
   if (!appId) {
     // Fallback. When an unsigned/un-notarized app is executed in
     // command-line mode, it could fail the fetching of its own bundle id.
-    appId = @"org.mozilla.ios.FirefoxVPN";
+    appId = @"org.wgdesktop.ios";
   }
 
   return appId;
