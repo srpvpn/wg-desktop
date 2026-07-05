@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.18)
 
 project(mozillavpn-macpkg VERSION 1.0.0
-        DESCRIPTION "MacOS Package for the Mozilla VPN"
+        DESCRIPTION "MacOS Package for the WG Desktop"
 )
 
 # Determine the root of the project checkout - we need scripts and localization.
@@ -39,7 +39,7 @@ if(NOT BUILD_VPN_DEVELOPMENT_TEAM)
     if(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM)
         set(BUILD_VPN_DEVELOPMENT_TEAM ${CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM})
     else()
-        set(BUILD_VPN_DEVELOPMENT_TEAM 43AQ936H96 CACHE STRING "Mozilla VPN Development Team")
+        set(BUILD_VPN_DEVELOPMENT_TEAM 43AQ936H96 CACHE STRING "WG Desktop Development Team")
     endif()
 endif()
 

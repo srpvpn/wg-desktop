@@ -13,8 +13,8 @@
   "message": {
     "date": 1675040400,
     "id": "message_whats_new_v2.16",
-    "title": "You’ve updated Mozilla VPN",
-    "subtitle": "You’re using the latest version of Mozilla VPN. We’ve made bug fixes, UI adjustments and other performance improvements to make your experience using VPN even better.",
+    "title": "You’ve updated WG Desktop",
+    "subtitle": "You’re using the latest version of WG Desktop. We’ve made bug fixes, UI adjustments and other performance improvements to make your experience using VPN even better.",
     "badge": "whats_new",
     "blocks": [
       {

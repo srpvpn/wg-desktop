@@ -43,7 +43,7 @@ struct LogoInlineAccessoryWidget: View {
       HStack(spacing: 4) {
         Image(systemName: entry.sysImageName)
           .font(.system(size: 26))
-        Text(entry.isConnected ? LocalizedStringResource("vpn.logoAccessoryWidget.vpnOn", defaultValue: "Mozilla VPN on") : LocalizedStringResource("vpn.logoAccessoryWidget.vpnOff", defaultValue: "Mozilla VPN off"))
+        Text(entry.isConnected ? LocalizedStringResource("vpn.logoAccessoryWidget.vpnOn", defaultValue: "WG Desktop on") : LocalizedStringResource("vpn.logoAccessoryWidget.vpnOff", defaultValue: "WG Desktop off"))
       }
     }
   }
@@ -73,8 +73,8 @@ struct LogoAccessoryWidget: Widget {
       return StaticConfiguration(kind: Self.kind, provider: VPNStatusProvider()) { entry in
             LogoAccessoryWidgetView(entry: entry)
           }
-          .configurationDisplayName(LocalizedStringResource("vpn.mobileOnboarding.panelOneTitle", defaultValue: "Mozilla VPN"))
-          .description(LocalizedStringResource("vpn.logoAccessoryWidget.description", defaultValue: "See current Mozilla VPN status."))
+          .configurationDisplayName(LocalizedStringResource("vpn.mobileOnboarding.panelOneTitle", defaultValue: "WG Desktop"))
+          .description(LocalizedStringResource("vpn.logoAccessoryWidget.description", defaultValue: "See current WG Desktop status."))
           .supportedFamilies([.accessoryCircular, .accessoryInline])
   }
 }

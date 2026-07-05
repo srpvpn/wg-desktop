@@ -5,8 +5,8 @@
   "type": "guide",
   "guide": {
     "id": "how_to_vpn",
-    "title": "The top uses and benefits of using Mozilla VPN",
-    "subtitle": "Mozilla VPN secures the connection between your device and the web. Here’s some of the most useful features your VPN offers:",
+    "title": "The top uses and benefits of using WG Desktop",
+    "subtitle": "WG Desktop secures the connection between your device and the web. Here’s some of the most useful features your VPN offers:",
     "image": "qrc:/addons/guide_01_how_to_vpn/image.svg",
     "blocks": [
       { "id": "c_1",

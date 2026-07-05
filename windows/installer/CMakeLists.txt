@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.18)
 project(msi
     VERSION 1.0.0
     LANGUAGES NONE
-    DESCRIPTION "Mozilla VPN installer"
+    DESCRIPTION "WG Desktop installer"
 )
 
 # Determine the root of the project checkout - we need scripts and localization.
@@ -80,7 +80,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     file(TOUCH ${CMAKE_CURRENT_BINARY_DIR}/install-stamp.txt)
 
     # Select the MSI installer architecture from the executable being installed.
-    __read_pe_arch("${WIX_STAGING_DIR}/Mozilla VPN.exe" WIX_PLATFORM)
+    __read_pe_arch("${WIX_STAGING_DIR}/WG Desktop.exe" WIX_PLATFORM)
 else()
     # If this is embedded with another project, install into the staging dir.
     set(WIX_STAGING_DIR ${CMAKE_CURRENT_BINARY_DIR}/staging)

@@ -15,7 +15,7 @@ lottie JSON file as the first argument:
 
 See the LottieAnimation.qml file for a good description of properties and
 methods. Currently, we support the minimum set of features required for the
-Mozilla VPN project.
+WG Desktop project.
 
 ### Tests
 

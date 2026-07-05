@@ -12,7 +12,7 @@
     "id": "message_fpn_trial_subscription_expiring",
     "date": 1699473600,
     "title": "Don’t lose your protection – get 20% off an annual plan",
-    "subtitle": "We hope you’ve been enjoying your 6-month free trial of Mozilla VPN. Your free trial is coming to an end on November 15, 2023.",
+    "subtitle": "We hope you’ve been enjoying your 6-month free trial of WG Desktop. Your free trial is coming to an end on November 15, 2023.",
     "badge": "new_update",
     "blocks": [
       {
@@ -23,7 +23,7 @@
       {
         "id": "c_2",
         "type": "text",
-        "content": "Thanks for using Mozilla VPN!"
+        "content": "Thanks for using WG Desktop!"
       },
       {
         "id": "c_3",

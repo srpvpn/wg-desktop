@@ -1,5 +1,5 @@
 
-# Inspector for Mozilla VPN
+# Inspector for WG Desktop
 
 # Building
 

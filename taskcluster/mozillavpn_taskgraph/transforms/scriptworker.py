@@ -47,5 +47,5 @@ def add_authenticode_comment(config, tasks):
         for artifact_dict in artifacts:
             authenticode_comment = artifact_dict.get("authenticode_comment")
             if not authenticode_comment and any(path.endswith(".msi") for path in artifact_dict["paths"]):
-                artifact_dict["authenticode_comment"]="Mozilla VPN Client installer"
+                artifact_dict["authenticode_comment"]="WG Desktop Client installer"
         yield task 

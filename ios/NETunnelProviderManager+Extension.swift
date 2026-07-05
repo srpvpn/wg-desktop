@@ -51,13 +51,13 @@ extension NETunnelProviderManager {
           let exitCity = config["exitCity"] as? String, !exitCity.isEmpty else {
       let logger = IOSLoggerImpl(tag: "NETunnelProviderManager")
       logger.error(message: "Did not find a city")
-      return LocalizedStringResource("vpn.iosAppIntentsMain.turnOnConfirmation", defaultValue: "Mozilla VPN connected")
+      return LocalizedStringResource("vpn.iosAppIntentsMain.turnOnConfirmation", defaultValue: "WG Desktop connected")
     }
 
     if let entryCity = config["entryCity"] as? String, !entryCity.isEmpty {
-      return LocalizedStringResource("vpn.iosAppIntentsMain.turnOnConfirmationMultiHop", defaultValue: "Mozilla VPN connected through \(exitCity) via \(entryCity)")
+      return LocalizedStringResource("vpn.iosAppIntentsMain.turnOnConfirmationMultiHop", defaultValue: "WG Desktop connected through \(exitCity) via \(entryCity)")
     } else {
-      return LocalizedStringResource("vpn.iosAppIntentsMain.turnOnConfirmationSingleHop", defaultValue: "Mozilla VPN connected through \(exitCity)")
+      return LocalizedStringResource("vpn.iosAppIntentsMain.turnOnConfirmationSingleHop", defaultValue: "WG Desktop connected through \(exitCity)")
     }
   }
 }

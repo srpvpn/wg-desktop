@@ -76,5 +76,5 @@ module.exports = {
 
 if (typeof require !== 'undefined' && require.main === module) {
   module.exports.start();
-  console.log(`Starting Mozilla VPN on ${module.exports.url}.`)
+  console.log(`Starting WG Desktop on ${module.exports.url}.`)
 }

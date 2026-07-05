@@ -1,7 +1,7 @@
 # VPN Authentication in-app
 
 This page describes how the implementation for the authentication in-app works
-in the Mozilla VPN client.
+in the WG Desktop client.
 
 To know more about the FxA authentication flow, see the official [FxA API
 documentation](https://github.com/mozilla/fxa/blob/main/packages/fxa-auth-server/docs/api.md)
@@ -121,7 +121,7 @@ password through the email verification link.
 ### State: SSO account
 
 The account is linked to a third-party authentication provider (Google or
-Apple) but does not have a password associated with it. Mozilla VPN requires
+Apple) but does not have a password associated with it. WG Desktop requires
 all accounts to have a password before they can be used with the VPN client.
 
 The user needs to set a password for their account through Mozilla Accounts

@@ -1,7 +1,7 @@
 # Script folder
 
 This folder contains several scripts useful for the compilation, the tests, the
-execution of the Mozilla VPN client.
+execution of the WG Desktop client.
 
 # Test scripts
 

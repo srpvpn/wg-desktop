@@ -11,8 +11,8 @@
   },
   "message": {
     "id": "message_survey",
-    "title": "Help us improve Mozilla VPN",
-    "subtitle": "Help us meet your privacy and security needs by providing feedback on your experience with Mozilla VPN.",
+    "title": "Help us improve WG Desktop",
+    "subtitle": "Help us meet your privacy and security needs by providing feedback on your experience with WG Desktop.",
     "badge": "survey",
     "blocks": [
       { "id": "c_1",

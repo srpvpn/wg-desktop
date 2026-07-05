@@ -140,7 +140,7 @@ int main(int argc, char** argv) {
 
 #if defined(PROXY_OS_WIN)
   if (config.service) {
-    WinSvcThread* svc = new WinSvcThread("Mozilla VPN Proxy");
+    WinSvcThread* svc = new WinSvcThread("WG Desktop Proxy");
     svc->start();
   }
 #endif

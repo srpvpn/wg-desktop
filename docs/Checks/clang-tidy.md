@@ -2,7 +2,7 @@
 
 ## Clang-Tidy Setup
 
-The Mozilla VPN Client project utilizes Clang-Tidy to enforce code quality standards. Clang-Tidy is provided with our [conda-environment](../Building/index.md).
+The WG Desktop Client project utilizes Clang-Tidy to enforce code quality standards. Clang-Tidy is provided with our [conda-environment](../Building/index.md).
 
 ## Prerequisites
 In general, the default conda-env should be working out of the box, in case its not: 

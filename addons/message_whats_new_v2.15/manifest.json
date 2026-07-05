@@ -13,8 +13,8 @@
   "message": {
     "date": 1675040400,
     "id": "message_whats_new_v2.15",
-    "title": "Welcome to Mozilla VPN 2.15",
-    "subtitle": "You’re using the latest version of Mozilla VPN. Take a look at the newest features and updates:",
+    "title": "Welcome to WG Desktop 2.15",
+    "subtitle": "You’re using the latest version of WG Desktop. Take a look at the newest features and updates:",
     "badge": "whats_new",
     "blocks": [
       {
@@ -31,14 +31,14 @@
           },
           {
             "id": "l_3",
-            "content": "We’ve also made bug fixes, UI adjustments and other performance improvements to make Mozilla VPN even better."
+            "content": "We’ve also made bug fixes, UI adjustments and other performance improvements to make WG Desktop even better."
           }
         ]
       },
       {
         "id": "c_2",
         "type": "text",
-        "content": "Thank you for installing the latest version of Mozilla VPN!"
+        "content": "Thank you for installing the latest version of WG Desktop!"
       }
     ]
   }

@@ -1,7 +1,7 @@
 
-## Mozilla VPN Crash Reporting - What is in a Crash Report?
+## WG Desktop Crash Reporting - What is in a Crash Report?
 
-In the event that Mozilla VPN exits unexpectedly or crashes, you may be prompted to upload a "Crash Report."  What does that mean, and what does it mean for your privacy?
+In the event that WG Desktop exits unexpectedly or crashes, you may be prompted to upload a "Crash Report."  What does that mean, and what does it mean for your privacy?
 
 A crash report contains detailed information about the state of a process at the time it unexpectedly quits.  This includes primarily stack traces, the contents of the heap memory and the content of registers.  What are those?
 
@@ -15,7 +15,7 @@ A crash report contains detailed information about the state of a process at the
 
 The VPN crash report could contain information about the topology of your network.  This would be things like the addresses of routers, DNS servers, or the VPN endpoint you are connected to.  It could also contain your Mozilla username and email address.  Your password is not stored in memory.  The rest of the memory contents could be anything the application has stored at the time of the crash.
 
-Because of how Mozilla VPN is written, no internet traffic or browsing history will be in the report.
+Because of how WG Desktop is written, no internet traffic or browsing history will be in the report.
 
 ### Where does this crash report go?  Who can see it?
 

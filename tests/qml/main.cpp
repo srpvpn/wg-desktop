@@ -8,7 +8,7 @@
 #include "helper.h"
 
 int main(int argc, char* argv[]) {
-  QCoreApplication::setApplicationName("Mozilla VPN QML Tests");
+  QCoreApplication::setApplicationName("WG Desktop QML Tests");
   QCoreApplication::setOrganizationName("Mozilla Testing");
   QCoreApplication::setApplicationVersion("1.2.3");
 

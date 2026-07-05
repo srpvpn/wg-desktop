@@ -23,7 +23,7 @@
       {
         "id": "c_2",
         "type": "text",
-        "content": "Mozilla VPN allows you to choose a custom DNS server if you prefer. To use a custom DNS, first go to “App preferences”, followed by “DNS settings.” There, you’ll be able to select “Use custom DNS” and enter the one you’d like to use."
+        "content": "WG Desktop allows you to choose a custom DNS server if you prefer. To use a custom DNS, first go to “App preferences”, followed by “DNS settings.” There, you’ll be able to select “Use custom DNS” and enter the one you’d like to use."
       },
       {
         "id": "c_3",

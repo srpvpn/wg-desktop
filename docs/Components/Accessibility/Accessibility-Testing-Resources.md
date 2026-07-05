@@ -3,13 +3,13 @@
 ## Summary
 
 This document provides information about testing procedures and tools
-that are used to validate accessibility features of the Mozilla VPN
+that are used to validate accessibility features of the WG Desktop
 Client.
 
 ## Motivation
 
 Accessibility is an important feature that ensures that all users,
-including those with disabilities, can use the Mozilla VPN Client
+including those with disabilities, can use the WG Desktop Client
 effectively. By implementing robust accessibility testing approaches, we
 can enhance the user experience, reach a broader audience, and comply
 with accessibility standards on all supported platforms.
@@ -29,9 +29,9 @@ with accessibility standards on all supported platforms.
     - Accessible features benefit everyone. By implementing accessible
     features, the VPN Client will improve the user experience for all users.
 
-## Overview of Accessibility Technologies to Support in Mozilla VPN
+## Overview of Accessibility Technologies to Support in WG Desktop
 
-Accessibility Technologies supported in Mozilla VPN Client can be
+Accessibility Technologies supported in WG Desktop Client can be
 classified into the following areas for users with disabilities: Vision,
 Hearing, Mobility, and Neurodivergence/Learning.
 

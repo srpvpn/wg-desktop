@@ -15,7 +15,7 @@ function installCheck() {
         my.result.type = 'Fatal';
         return false;
     }
-    if(system.files.fileExistsAtPath('/Applications/Mozilla VPN.app')) {
+    if(system.files.fileExistsAtPath('/Applications/WG Desktop.app')) {
         my.result.title = system.localizedString('previous_build_title');
         my.result.message = system.localizedString('previous_build_message');
         my.result.type = 'Warning';

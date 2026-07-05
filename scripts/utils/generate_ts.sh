@@ -6,7 +6,7 @@
 
 . $(dirname $0)/commons.sh
 
-print N "This script generates 'ts' files for the Mozilla VPN app."
+print N "This script generates 'ts' files for the WG Desktop app."
 print N ""
 
 # When the `-a`/`--all` flag is present, .ts files are created

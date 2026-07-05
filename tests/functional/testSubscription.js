@@ -114,7 +114,7 @@ describe('Subscription manager', function() {
          // This test verifies the case where a user is logged in
          // but the VPN is off when their subscription expires.
          // When they try to turn the VPN on, they get the
-         // "Subscribe to Mozilla VPN" screen.
+         // "Subscribe to WG Desktop" screen.
 
          await vpn.authenticate();
 
@@ -126,7 +126,7 @@ describe('Subscription manager', function() {
          await vpn.waitForQuery(queries.screenHome.CONTROLLER_TITLE.visible());
          await vpn.clickOnQuery(queries.screenHome.CONTROLLER_TOGGLE.visible());
 
-         // Step 2: Verify that user gets the "Subscribe to Mozilla VPN" screen.
+         // Step 2: Verify that user gets the "Subscribe to WG Desktop" screen.
          await vpn.waitForQuery(queries.screenSubscriptionNeeded
                                     .SUBSCRIPTION_NEEDED_VIEW.visible());
 
@@ -156,7 +156,7 @@ describe('Subscription manager', function() {
            await vpn.clickOnQuery(
                queries.screenHome.CONTROLLER_TOGGLE.visible());
 
-           // Verify that user gets the "Subscribe to Mozilla VPN" screen.
+           // Verify that user gets the "Subscribe to WG Desktop" screen.
            await vpn.waitForQuery(queries.screenSubscriptionNeeded
                                       .SUBSCRIPTION_NEEDED_VIEW.visible());
 
@@ -221,12 +221,12 @@ describe('Subscription manager', function() {
              200;
        });
 
-    it('Go to "Subscribe to Mozilla VPN" screen once user toggles off VPN after subscription expires and they enter No Signal',
+    it('Go to "Subscribe to WG Desktop" screen once user toggles off VPN after subscription expires and they enter No Signal',
        async () => {
          // This test verifies the case where a user is logged in
          // and the VPN is on when their subscription expires.
          // They enter No Signal, and once they toggle the VPN off
-         // they get the "Subscribe to Mozilla VPN" screen.
+         // they get the "Subscribe to WG Desktop" screen.
 
          await vpn.authenticate();
 
@@ -250,7 +250,7 @@ describe('Subscription manager', function() {
          await vpn.forceConnectionStabilityStatus('nosignal');
 
          // Once the VPN is toggled off, we are redirected to the "Subscribe to
-         // Mozilla VPN" screen.
+         // WG Desktop" screen.
          await vpn.clickOnQuery(queries.screenHome.CONTROLLER_TOGGLE.visible());
          await vpn.waitForQuery(queries.screenSubscriptionNeeded
                                     .SUBSCRIPTION_NEEDED_VIEW.visible());

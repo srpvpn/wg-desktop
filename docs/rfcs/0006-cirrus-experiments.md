@@ -4,7 +4,7 @@
 - RFC PR: [#8297](https://github.com/mozilla-mobile/mozilla-vpn-client/pull/8297)
 - Implementation GitHub issue: TODO
 
-Mozilla VPN and Nimbus Integration
+WG Desktop and Nimbus Integration
 ==================================
 
 TIMELINE
@@ -23,9 +23,9 @@ TIMELINE
 SUMMARY
 -------
 
-This document details the integration of Nimbus on the Mozilla VPN.
+This document details the integration of Nimbus on the WG Desktop.
 
-As described on[  "Nimbus for Mozilla VPN"](https://docs.google.com/document/d/12oRkct-l-n9Sq8fzRH1YiiA8CtbEqDxASSpVqC2AKI4/edit#heading=h.lo57q9b2r8iy) Nimbus integration on the Mozilla VPN will be done through a server side integration with[  Cirrus](https://github.com/mozilla/experimenter/tree/main/cirrus).
+As described on[  "Nimbus for WG Desktop"](https://docs.google.com/document/d/12oRkct-l-n9Sq8fzRH1YiiA8CtbEqDxASSpVqC2AKI4/edit#heading=h.lo57q9b2r8iy) Nimbus integration on the WG Desktop will be done through a server side integration with[  Cirrus](https://github.com/mozilla/experimenter/tree/main/cirrus).
 
 Nimbus
 ------
@@ -50,7 +50,7 @@ See more about the Cirrus architecture at[  Nimbus on the Web Architecture Decis
 Implementation plan
 -------------------
 
-There are two parts to the implementation of the Nimbus integration on the Mozilla VPN.
+There are two parts to the implementation of the Nimbus integration on the WG Desktop.
 
 Experiments will be run on the client side. Therefore, the features need to be accessible from there. But the server is the one that has access to Cirrus, so it is the one responsible for providing the APIs that allow the client to get the list of active features.
 
@@ -68,7 +68,7 @@ Documentation of metrics and pings sent by the Cirrus service can be found at ht
 
 #### 2\. Deploy Cirrus as a sidecar to Guardian
 
-The Cirrus sidecar service will be deployed alongside the Mozilla VPN Guardian server. Deploying this service is as straightforward as adding a few extra configurations to the Guardian server configuration on the mozilla-services/cloudops-infra repository.
+The Cirrus sidecar service will be deployed alongside the WG Desktop Guardian server. Deploying this service is as straightforward as adding a few extra configurations to the Guardian server configuration on the mozilla-services/cloudops-infra repository.
 
 The work done for Firefox Monitor on this can be used as a template.
 
@@ -148,11 +148,11 @@ Client side will be responsible for querying the server for active features and 
 
 In order for Nimbus to run its targeting logic, it requires an experimenter id to be attached to each request.
 
-The experimenter id must be generated per user. It's important that this is user based to ensure users are assigned to the same features in all of their logged in devices. The Mozilla VPN client already has access to an identifier that fits the requirements of the experimenter id: the FxA id. Therefore that id will be used for this purpose.
+The experimenter id must be generated per user. It's important that this is user based to ensure users are assigned to the same features in all of their logged in devices. The WG Desktop client already has access to an identifier that fits the requirements of the experimenter id: the FxA id. Therefore that id will be used for this purpose.
 
 That poses an issue for non-logged in users. In these cases, a random UUID will be generated for the experimenter id and the id will be switched to the FxA once the user successfully logs in. (See also question 2. on the "Open questions" section of this document).
 
-Nimbus relies on Glean data for experiment analysis. Therefore the generated experimenter id needs to be included in all Glean pings. The Glean team is working on a new API that will facilitate setting this id, see [Bug 1848201](https://bugzilla.mozilla.org/show_bug.cgi?id=1848201). The Mozilla VPN application will rely on this API to provide the experiment id to Glean.
+Nimbus relies on Glean data for experiment analysis. Therefore the generated experimenter id needs to be included in all Glean pings. The Glean team is working on a new API that will facilitate setting this id, see [Bug 1848201](https://bugzilla.mozilla.org/show_bug.cgi?id=1848201). The WG Desktop application will rely on this API to provide the experiment id to Glean.
 
 Timing: The experimenter id must be set as soon as possible on the application life cycle, since it is required for all Cirrus requests and should be included in all Glean pings.
 
@@ -164,7 +164,7 @@ The /featurelist endpoint is already queried by the application  on initializat
 
 #### 3\. Apply features
 
-Feature flags will be used to apply features dynamically. This binds experiments to the Mozilla VPN release cycle, new feature flags cannot be dynamically set on the client  -- even if the experiment treatment is implemented through addons. Experiments may be designed and implemented in Nimbus/Experimenter before a given feature has been released, however users will only actively see treatments being applied once they are on a version of the application that contains the treatment.
+Feature flags will be used to apply features dynamically. This binds experiments to the WG Desktop release cycle, new feature flags cannot be dynamically set on the client  -- even if the experiment treatment is implemented through addons. Experiments may be designed and implemented in Nimbus/Experimenter before a given feature has been released, however users will only actively see treatments being applied once they are on a version of the application that contains the treatment.
 
 Once the feature list is received from Cirrus, it will be parsed and known features will be turned on while unknown features will be discarded.
 
@@ -197,7 +197,7 @@ EXPERIMENTAL_FEATURE(
 
 The EXPERIMENTAL_FEATURE macro, intentionally doesn't contain the field for declaring if the feature can be flipped on or off. Experimental features must always be "toggleable".
 
-> **Note** Mozilla VPN features may or may not be "toggleable", meaning they may not be allowed to be turned on or off. Experimental features must always be toggleable, otherwise they cannot be applied dynamically. This has consequences for the implementation of the treatment itself. This needs to be considered on a case by case basis.
+> **Note** WG Desktop features may or may not be "toggleable", meaning they may not be allowed to be turned on or off. Experimental features must always be toggleable, otherwise they cannot be applied dynamically. This has consequences for the implementation of the treatment itself. This needs to be considered on a case by case basis.
 
 It also doesn't contain the feature callback field. Experimental features always default to false unless they have been turned on through Cirrus. 
 
@@ -245,7 +245,7 @@ Following is a list of metrics that might be used for validation:
 Open questions
 --------------
 
-1.  As described in[  EXP-3092](https://mozilla-hub.atlassian.net/browse/EXP-3092) the Nimbus team is working alongside the first adopter of Nimbus + Cirrus -- Firefox Monitor -- and once that integration is complete the team will work on documenting the process, so that other applications can also be integrated. When would Mozilla VPN be cleared to start integrating? Would we need to wait for Monitor integration to be complete and validated?
+1.  As described in[  EXP-3092](https://mozilla-hub.atlassian.net/browse/EXP-3092) the Nimbus team is working alongside the first adopter of Nimbus + Cirrus -- Firefox Monitor -- and once that integration is complete the team will work on documenting the process, so that other applications can also be integrated. When would WG Desktop be cleared to start integrating? Would we need to wait for Monitor integration to be complete and validated?
 
     1.  [Jared Lockhart](https://github.com/jaredlockhart)  The monitor A/A has now launched! 🎉 We expect to wrap it at the end of October, and barring any significant unforeseen complications, we would expect to then move on to focusing on the VPN integration.  Until then the VPN team can get a head start by beginning Glean integration.  We'll only need a single test event from each app to do a similar A/A validation for VPN so it's not necessary to rigorously instrument all of the VPN applications with Glean to test.
 

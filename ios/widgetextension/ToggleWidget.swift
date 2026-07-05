@@ -219,8 +219,8 @@ struct ToggleWidget: Widget {
       let config = StaticConfiguration(kind: Self.kind, provider: VPNStatusProvider()) { entry in
             ToggleWidgetView(entry: entry)
           }
-          .configurationDisplayName(LocalizedStringResource("vpn.mobileOnboarding.panelOneTitle", defaultValue: "Mozilla VPN"))
-          .description(LocalizedStringResource("vpn.toggleWidget.description", defaultValue: "Turn Mozilla VPN on and off, and see the current location."))
+          .configurationDisplayName(LocalizedStringResource("vpn.mobileOnboarding.panelOneTitle", defaultValue: "WG Desktop"))
+          .description(LocalizedStringResource("vpn.toggleWidget.description", defaultValue: "Turn WG Desktop on and off, and see the current location."))
           .supportedFamilies([.systemSmall, .systemMedium])
     if #available(iOS 26.0, *) {
       return config.disfavoredLocations([.carPlay, .iPhoneWidgetsOnMac, .standBy], for: [.systemSmall, .systemMedium])

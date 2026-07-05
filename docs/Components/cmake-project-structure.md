@@ -1,13 +1,13 @@
 # CMake Project Structure
 
-CMake is the main tool used to generate build configurations for the Mozilla VPN.
+CMake is the main tool used to generate build configurations for the WG Desktop.
 
 > **Note**: The following document, apart from the above sentence, is about where we would like to be, not about where we are right now.
 > The modularization of the codebase is currently _ongoing_.
 
 # Modules
 
-The Mozilla VPN codebase is separated into modules and the main application.
+The WG Desktop codebase is separated into modules and the main application.
 
 Each module is as a CMake target representing a static library. The main application,
 on the other hand, is also a CMake target but it represents an executable.

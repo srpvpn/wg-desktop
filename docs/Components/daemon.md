@@ -1,4 +1,4 @@
-# Mozilla VPN Daemon
+# WG Desktop Daemon
 
 On most platforms, the VPN software requires privileged access to the operating system in order to create and manage
 network interfaces. This level of privilege is unsuitable for a GUI program, so the duties of the VPN software are
@@ -88,7 +88,7 @@ DNS  configuration upon shutdown of the VPN tunnel.
 
 ### Windows Service
 
-The MSI Installer package creates a Windows service, named the `Mozilla VPN (broker)`, to gain administrator privileges
+The MSI Installer package creates a Windows service, named the `WG Desktop (broker)`, to gain administrator privileges
 for creating and managing the network interfaces and configuration. This service is set to launch automatically on boot,
 and can be inspected via the Windows Service Manager.
 
@@ -119,7 +119,7 @@ The VPN tunnel is run within the process by creating a raw TUN device via the
 
 ### iOS Network Extension
 
-In order to provide custom VPN protocols on iOS, it is required to implement an iOS Network Extension. The Mozilla VPN
+In order to provide custom VPN protocols on iOS, it is required to implement an iOS Network Extension. The WG Desktop
 makes use of the [wireguard-apple](https://github.com/WireGuard/wireguard-apple) project to provide a network extension
 implementing the [NEPacketTunnelProvider](https://developer.apple.com/documentation/networkextension/nepackettunnelprovider)
 class.

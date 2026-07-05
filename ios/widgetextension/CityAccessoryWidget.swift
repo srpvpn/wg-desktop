@@ -128,8 +128,8 @@ struct CityAccessoryWidget: Widget {
       return StaticConfiguration(kind: Self.kind, provider: VPNStatusProvider()) { entry in
             CityAccessoryWidgetView(entry: entry)
           }
-          .configurationDisplayName(LocalizedStringResource("vpn.mobileOnboarding.panelOneTitle", defaultValue: "Mozilla VPN"))
-          .description(LocalizedStringResource("vpn.cityAccessoryWidget.description", defaultValue: "See current Mozilla VPN status, along with the current server."))
+          .configurationDisplayName(LocalizedStringResource("vpn.mobileOnboarding.panelOneTitle", defaultValue: "WG Desktop"))
+          .description(LocalizedStringResource("vpn.cityAccessoryWidget.description", defaultValue: "See current WG Desktop status, along with the current server."))
           .supportedFamilies([.accessoryCircular, .accessoryInline, .accessoryRectangular])
   }
 }

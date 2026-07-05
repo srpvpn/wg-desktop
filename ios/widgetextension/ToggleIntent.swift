@@ -9,8 +9,8 @@ import WidgetKit
 
 @available(iOS 16.0, *)
 struct ToggleIntent: SetValueIntent {
-  static let title = LocalizedStringResource("vpn.iosAppIntentsMain.toggleTitle", defaultValue: "Toggle Mozilla VPN")
-  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.toggleDescription", defaultValue: "Changes Mozilla VPN status"))
+  static let title = LocalizedStringResource("vpn.iosAppIntentsMain.toggleTitle", defaultValue: "Toggle WG Desktop")
+  static let description = IntentDescription(LocalizedStringResource("vpn.iosAppIntentsMain.toggleDescription", defaultValue: "Changes WG Desktop status"))
 
   static var isDiscoverable = false
 
@@ -84,7 +84,7 @@ struct ToggleIntent: SetValueIntent {
         }
 
         connection.stopTunnel()
-        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffConfirmation", defaultValue: "Mozilla VPN disconnected")
+        responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOffConfirmation", defaultValue: "WG Desktop disconnected")
         responseImage = "shield.lefthalf.filled.slash"
         value = true
       } else {
@@ -114,7 +114,7 @@ struct ToggleIntent: SetValueIntent {
           value = false
         } catch let error {
           logger.error(message: "Error: \(error.localizedDescription)")
-          responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnError", defaultValue: "Error turning on Mozilla VPN")
+          responseText = LocalizedStringResource("vpn.iosAppIntentsMain.turnOnError", defaultValue: "Error turning on WG Desktop")
           responseImage = ToggleIntent.errorSystemImageName
         }
       }

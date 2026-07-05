@@ -1,6 +1,6 @@
 # Add-ons
 
-The add-on system is the basic component for dynamic contents for the Mozilla VPN client.
+The add-on system is the basic component for dynamic contents for the WG Desktop client.
 Guides and messages are add-ons and they are dynamically loaded from a trusted source (archive.mozilla.org).
 
 ## Add-on index and the signature verification

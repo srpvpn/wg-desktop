@@ -11,7 +11,7 @@
 
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
   <Package
-    Name="Mozilla VPN"
+    Name="WG Desktop"
     Version="!(bind.FileVersion.MozillaVPNExecutable)"
     Manufacturer="Mozilla Corporation"
     Language="1033"
@@ -20,7 +20,7 @@
     UpgradeCode="$(var.UpgradeCode)"
     Compressed="yes">
 
-    <SummaryInformation Description="Mozilla VPN" />
+    <SummaryInformation Description="WG Desktop" />
 
     <Launch Condition="Installed OR (VersionNT &gt;= 603)" Message="This application is only supported on Windows 10 or higher." />
 
@@ -60,7 +60,7 @@
     -->
     <StandardDirectory Id="$(var.PlatformProgramFilesFolder)">
       <Directory Id="MozillaFolder" Name="Mozilla">
-        <Directory Id="MozillaVPNFolder" Name="Mozilla VPN" />
+        <Directory Id="MozillaVPNFolder" Name="WG Desktop" />
       </Directory>
     </StandardDirectory>
     <StandardDirectory Id="ProgramMenuFolder" />
@@ -70,8 +70,8 @@
     -->
     <ComponentGroup Id="MozillaVPNComponents">
       <Component Directory="MozillaVPNFolder" Id="MozillaVPNExecutable" Guid="EF353A73-A10B-4A2D-87AC-4389BBD9313B">
-        <File Id="MozillaVPNExecutable" Source="Mozilla VPN.exe" KeyPath="yes">
-          <Shortcut Id="MozillaVPNShortcut" Directory="ProgramMenuFolder" Name="Mozilla VPN" Description="A fast, secure and easy to use VPN. Built by the makers of Firefox." WorkingDirectory="MozillaVPNFolder" Advertise="yes" />
+        <File Id="MozillaVPNExecutable" Source="WG Desktop.exe" KeyPath="yes">
+          <Shortcut Id="MozillaVPNShortcut" Directory="ProgramMenuFolder" Name="WG Desktop" Description="A fast, secure and easy to use VPN. Built by the makers of Firefox." WorkingDirectory="MozillaVPNFolder" Advertise="yes" />
         </File>
         <File Source="wireguard.dll" />
         <File Source="mullvad-split-tunnel.cat" />
@@ -83,8 +83,8 @@
         <ServiceInstall
           Type="ownProcess"
           Name="MozillaVPNBroker"
-          DisplayName="Mozilla VPN (broker)"
-          Description="Provides connectivity between the Mozilla VPN client and any applicable tunnel interfaces."
+          DisplayName="WG Desktop (broker)"
+          Description="Provides connectivity between the WG Desktop client and any applicable tunnel interfaces."
           Start="auto"
           Arguments="windowsdaemon"
           ErrorControl="normal"
@@ -112,7 +112,7 @@
         <ServiceInstall
           Type="ownProcess"
           Name="MozillaVPNProxy"
-          DisplayName="Mozilla VPN (proxy)"
+          DisplayName="WG Desktop (proxy)"
           Description="Provides host network connectivity as a SOCKS proxy."
           Start="auto"
           Arguments="-p 8123 -s"
@@ -157,12 +157,12 @@
         </RegistryKey>
         <RegistryKey Root="HKCR" Key="mozilla-vpn">
           <RegistryValue Type="string" Name="URL Protocol" Value=""/>
-          <RegistryValue Type="string" Value="URL:Mozilla VPN"/>
+          <RegistryValue Type="string" Value="URL:WG Desktop"/>
           <RegistryKey Key="DefaultIcon">
-            <RegistryValue Type="string" Value="[MozillaVPNFolder]\Mozilla VPN.exe"/>
+            <RegistryValue Type="string" Value="[MozillaVPNFolder]\WG Desktop.exe"/>
           </RegistryKey>
           <RegistryKey Key="shell\open\command">
-            <RegistryValue Type="string" Value="&quot;[MozillaVPNFolder]\Mozilla VPN.exe&quot; ui &quot;%1&quot;"/>
+            <RegistryValue Type="string" Value="&quot;[MozillaVPNFolder]\WG Desktop.exe&quot; ui &quot;%1&quot;"/>
           </RegistryKey>
         </RegistryKey>
       </Component>
@@ -171,7 +171,7 @@
     <!--
       Features
     -->
-    <Feature Id="MozillaVPNFeature" Title="Mozilla VPN" Level="1">
+    <Feature Id="MozillaVPNFeature" Title="WG Desktop" Level="1">
       <ComponentGroupRef Id="MozillaVPNComponents" />
     </Feature>
     <Feature Id="MozillaVPNRegistryEntries" Title="Native Messaging Registry Entries" Level="1">
@@ -192,7 +192,7 @@
     <!--
       Force application closed
     -->
-    <Property Id="WixQuietExecCmdLine" Value='"[#SystemFolder]taskkill.exe" /F /IM "Mozilla VPN.exe" /IM "MozillaVPN.exe"'/>
+    <Property Id="WixQuietExecCmdLine" Value='"[#SystemFolder]taskkill.exe" /F /IM "WG Desktop.exe" /IM "MozillaVPN.exe"'/>
     <CustomAction Id="CloseApplication" BinaryRef="Wix4UtilCA_$(sys.BUILDARCHSHORT)" DllEntry="WixQuietExec" Execute="immediate" Return="ignore"/>
     <InstallExecuteSequence>
       <Custom Action="CloseApplication" After="StopServices" />

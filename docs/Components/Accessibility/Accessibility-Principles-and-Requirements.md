@@ -3,15 +3,15 @@
 ## Summary
 
 This document outlines the principles and requirements for
-accessibility in Mozilla VPN. For more information about these
-requirements and testing procedures, please refer to [Mozilla VPN
+accessibility in WG Desktop. For more information about these
+requirements and testing procedures, please refer to [WG Desktop
 Accessibility - Resources for
 Testing](https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/docs/Accessibility%20-%20Testing%20Resources.md).
 
 ## Motivation
 
 Accessibility is an important feature that ensures that all users,
-including those with disabilities, can use the Mozilla VPN Client
+including those with disabilities, can use the WG Desktop Client
 effectively. Following accessibility principles and requirements
 enhances the user experience, reaches a broader audience, and complies with
 accessibility standards across all supported platforms.
@@ -44,7 +44,7 @@ accessibility standards across all supported platforms.
 ## Accessibility Requirements for VPN Client
 
 For more information about these requirements, testing, and
-prioritization principles and guidelines, please refer to [Mozilla VPN
+prioritization principles and guidelines, please refer to [WG Desktop
 Accessibility \-- Resources for
 Testing](https://github.com/mozilla-mobile/mozilla-vpn-client/blob/main/docs/Accessibility%20-%20Testing%20Resources.md).
 

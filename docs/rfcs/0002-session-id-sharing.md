@@ -8,7 +8,7 @@
 
 ### The two processes: Main Application and Daemon
 
-The Mozilla VPN application is split in two processes: the main application and the daemon
+The WG Desktop application is split in two processes: the main application and the daemon
 (a background process). The main application is where the user interface runs and the
 daemon is what manages the VPN configuration and tunnel.
 
@@ -29,14 +29,14 @@ this process may go dormant intermittently after the application is backgrounded
 
 #### The daemon process may be started independently from the main application on mobile platforms
 
-Both the operating system and the Mozilla VPN application expose features that allow the user
+Both the operating system and the WG Desktop application expose features that allow the user
 to turn on the VPN without interacting with the main application. On mobile environments, when
 the VPN is turned on through any of these methods, the main application process is never launched
 while the daemon process is.
 
 ### The issue with mobile session based telemetry
 
-When analyzing incoming telemetry from the Mozilla VPN application, it's a recurring requirement
+When analyzing incoming telemetry from the WG Desktop application, it's a recurring requirement
 to be able to partition the incoming data by session. **A VPN session starts when the VPN is turned
 on through some user action and ends once it is turned off through some user action.**
 
@@ -51,7 +51,7 @@ not be running at these times.
 
 Moreover, on mobile platforms, the fact that the main application process may be killed whenever
 the application goes to the background makes the main application telemetry insufficient for collecting
-all the telemetry required to understand the health of the Mozilla VPN application and its usage patterns.
+all the telemetry required to understand the health of the WG Desktop application and its usage patterns.
 To address this issue, mobile daemons have a separate instance of Glean, used to collect telemetry
 while the application is backgrounded. In order to get a full picture of a mobile user's session,
 joining the daemon data with the main application is necessary. However, the telemetry clients in
@@ -80,7 +80,7 @@ any metric from a previous session.
 ## Proposed Solution
 
 A new metric will be introduced to mobile platforms: `shared_session_id`. This metric will be the
-primary session identifier metric for Mozilla VPN mobile telemetry. This metric will have lifetime
+primary session identifier metric for WG Desktop mobile telemetry. This metric will have lifetime
 `User`, with this lifetime, once a metric is set it can only be overwritten but never cleared from
 the telemetry storage.
 
@@ -208,7 +208,7 @@ If all data were collected on the daemon, instead of having the two Glean archit
 currently implemented that would not also fix the issue of joining daemon data with main application
 data, simply by not having main application data at all.
 
-The issue with this approach, is that most of the telemetry collected on the Mozilla VPN application
+The issue with this approach, is that most of the telemetry collected on the WG Desktop application
 is in the main application. Button clicks, configuration, performance metrics and so on. If there were
 only a Glean instance of the daemon process, every time an event that requires telemetry happened on
 the main application that would need to be passed through to the daemon. Not only does that significantly

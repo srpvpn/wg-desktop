@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.18)
 
 project(addons VERSION 1.0.0 LANGUAGES CXX
-        DESCRIPTION "Mozilla VPN Addons"
+        DESCRIPTION "WG Desktop Addons"
 )
 
 find_program(PYTHON_EXECUTABLE NAMES python3 python)

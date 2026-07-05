@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(testing_addons VERSION 1.0.0 LANGUAGES CXX
-        DESCRIPTION "Mozilla VPN Addons for Functional Testing"
+        DESCRIPTION "WG Desktop Addons for Functional Testing"
 )
 
 find_program(PYTHON_EXECUTABLE NAMES python3 python)

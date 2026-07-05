@@ -1,7 +1,7 @@
 {
   "api_version": "0.1",
   "id": "message_update_v2.32_legacy_macos",
-  "name": "Update to Mozilla VPN 2.32",
+  "name": "Update to WG Desktop 2.32",
   "type": "message",
   "conditions": {
     "max_client_version": "2.31.9",

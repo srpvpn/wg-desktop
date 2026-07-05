@@ -17,7 +17,7 @@
         "type": "olist",
         "content": [
           { "id": "l_1",
-            "content": "Open the Mozilla VPN app on your preferred device" },
+            "content": "Open the WG Desktop app on your preferred device" },
           { "id": "l_2",
             "content": "Sign in to your account" },
           { "id": "l_3",
@@ -31,7 +31,7 @@
         "type": "olist",
         "content": [
           { "id": "l_1",
-            "content": "Open Mozilla VPN in your chosen desktop or mobile device" },
+            "content": "Open WG Desktop in your chosen desktop or mobile device" },
           { "id": "l_2_0",
             "content": "Go to Settings and select “My devices”" },
           { "id": "l_3",

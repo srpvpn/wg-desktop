@@ -13,8 +13,8 @@
   "message": {
     "date": 1713463102,
     "id": "message_whats_new_v2.22",
-    "title": "You’ve updated to Mozilla VPN 2.22",
-    "subtitle": "You’re using the latest version of Mozilla VPN.",
+    "title": "You’ve updated to WG Desktop 2.22",
+    "subtitle": "You’re using the latest version of WG Desktop.",
     "badge": "whats_new",
     "notify": false,
     "blocks": [
@@ -26,12 +26,12 @@
       {
         "id": "c_1-3",
         "type": "text",
-        "content": "It also introduces a new option to reset Mozilla VPN to its default settings. This can be helpful if you’re experiencing instability or crashes with the application, and other troubleshooting steps haven’t resolved the issue."
+        "content": "It also introduces a new option to reset WG Desktop to its default settings. This can be helpful if you’re experiencing instability or crashes with the application, and other troubleshooting steps haven’t resolved the issue."
       },
       {
         "id": "c_1-4",
         "type": "text",
-        "content": "How to reset Mozilla VPN:"
+        "content": "How to reset WG Desktop:"
       },
       {
         "id": "c_2",

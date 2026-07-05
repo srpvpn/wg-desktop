@@ -37,12 +37,12 @@ tar -xf conda-ios.tar.xz
 source bin/activate
 conda-unpack
 
-# In previous iterations "Mozilla VPN" didn't use to have a space in it,
+# In previous iterations "WG Desktop" didn't use to have a space in it,
 # to avoid the pains of migrations we will just rename here. 
 # This is harmless, but still very hacky.
 WORKSPACE_ROOT="$( cd "$(dirname "$0")/.." ; pwd -P )"
 sed -i.bak -E \
-    -e "s/\"Mozilla VPN\" VERSION/\"MozillaVPN\" VERSION/" \
+    -e "s/\"WG Desktop\" VERSION/\"MozillaVPN\" VERSION/" \
     "CMakeLists.txt"
 
 qt-cmake -S . -GXcode \

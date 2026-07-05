@@ -26,13 +26,13 @@ const Logger = {
     for (let line of content.split('\n').map(line => line.trim())) {
       switch (nextLine) {
         case LOG:
-          if (line === 'Mozilla VPN logs') {
+          if (line === 'WG Desktop logs') {
             nextLine = SEPARATOR;
             this._currentContext = 'Client';
             break;
           }
 
-          if (line === 'Mozilla VPN backend logs') {
+          if (line === 'WG Desktop backend logs') {
             nextLine = SEPARATOR;
             this._currentContext = 'Backend';
             break;

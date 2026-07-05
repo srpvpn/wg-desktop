@@ -39,7 +39,7 @@ describe('Initialize', function() {
        await vpn.waitForQuery(queries.screenInitialize.PANEL_TITLE.visible());
        assert.equal(
            await vpn.getQueryProperty(
-               queries.screenInitialize.PANEL_TITLE, 'text'), 'Mozilla VPN');
+               queries.screenInitialize.PANEL_TITLE, 'text'), 'WG Desktop');
      });
 
   it('Panel description is set correctly based on StackView currentIndex',

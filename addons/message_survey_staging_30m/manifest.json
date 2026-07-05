@@ -16,7 +16,7 @@
     "id": "message_survey_staging_30m",
     "title": "Survey message 30m",
     "subtitle": "This survey message is presented after 30 minutes",
-    "promo_text": "Help Mozilla VPN improve",
+    "promo_text": "Help WG Desktop improve",
     "badge": "survey",
     "blocks": [
       { "id": "c_1",

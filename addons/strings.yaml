@@ -40,13 +40,13 @@
 
 commonStrings:
   updateTitle:
-    value: Update to Mozilla VPN %1
+    value: Update to WG Desktop %1
     comment: Title for update message. %1 is replaced by the version number, such as 2.24
   downloadTitle:
-    value: Download the new Mozilla VPN %1
+    value: Download the new WG Desktop %1
     comment: Alternative title used for some versions. %1 is replaced by the version number, such as 2.24
   subtitle:
-    value: We’ve released an updated version of Mozilla VPN! Update to the latest version for the best possible Mozilla VPN experience.
+    value: We’ve released an updated version of WG Desktop! Update to the latest version for the best possible WG Desktop experience.
     comment: Subtitle for default update message
   generalUpdateContent:
     value: This update includes minor bug fixes, UI adjustments and other performance improvements.
@@ -64,16 +64,16 @@ commonStrings:
     value: Get help
     comment: Button label
   whatsNewTitle:
-    value: You’ve updated to Mozilla VPN %1
+    value: You’ve updated to WG Desktop %1
     comment: Title for What's New message. %1 is replaced by the version number, such as 2.25
   latestVersionSubtitle:
-    value: You’re using the latest version of Mozilla VPN.
+    value: You’re using the latest version of WG Desktop.
     comment: Subtitle for default What's New message
   whatsNewClosing:
     value: Thank you for installing the latest version!
     comment: Closing for default What's New message
   translationsUpdated:
-    value: "[all] You can use Mozilla VPN in dozens of languages, and we’ve included the latest translations in this release."
+    value: "[all] You can use WG Desktop in dozens of languages, and we’ve included the latest translations in this release."
     comment: Bullet point explaining that translations are updated. Used in release notes. Should have tag that indicates it applies to all platforms.
   updatePromo:
     value: Update to the latest version
@@ -109,7 +109,7 @@ commonStrings:
     value: "[Windows] When you’ve been connected for a long time, has the connection timer in the app ever looked weird? While your device has always been protected in those cases, we’ve fixed that bug and now report the accurate time."
     comment: Bullet point with a specific update in 2.33. Should have tag that indicates it applies to Windows platform.
   bullet3:
-    value: "[iOS] If you are using that beautiful new iPhone Air, Mozilla VPN should now look even better on it."
+    value: "[iOS] If you are using that beautiful new iPhone Air, WG Desktop should now look even better on it."
     comment: Bullet point with a specific update in 2.33. Should have tag that indicates it applies to iOS platform.
   bullet31:
     value: "[Windows] If you use the Firefox extension, we’ve made some changes that should make it run even smoother."
@@ -145,7 +145,7 @@ commonStrings:
     value: "[Linux] Some behind-the-scenes changes that help us get new versions out to you more easily."
     comment: Bullet point with a specific update in 2.33. Should have tag that indicates it applies to Linux platform.
   bullet11:
-    value: "[all] You can use Mozilla VPN in dozens of languages, and we’ve included the latest translations in this release."
+    value: "[all] You can use WG Desktop in dozens of languages, and we’ve included the latest translations in this release."
     comment: Bullet point with a specific update in 2.33. Should have tag that indicates it applies to all platforms.
 
 234updateMessage:
@@ -193,7 +193,7 @@ commonStrings:
     value: "[Linux] Migrated PPA builds to use the Mozilla APT repository for future updates."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to Linux platform.
   bullet5:
-    value: "[Windows] In rare cases, Mozilla VPN could not be installed. This is now fixed."
+    value: "[Windows] In rare cases, WG Desktop could not be installed. This is now fixed."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to Windows platform.
   bullet6:
     value: "[Android] Improved filtering on language selection screen, especially for languages with non-Latin alphabets."
@@ -207,13 +207,13 @@ commonStrings:
     value: "[macOS] App exclusions are now available for macOS. Want to let some programs bypass the VPN completely? You now can."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to macOS platform.
   bullet2:
-    value: "[iOS] Exciting news: Mozilla VPN widgets are now available."
+    value: "[iOS] Exciting news: WG Desktop widgets are now available."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to iOS platform.
   bullet3:
-    value: "[iOS] ’Hey Siri, activate Mozilla VPN.’ The VPN can now be turned on and off with Siri. And with the Shortcuts app, you can now automate VPN activation and deactivation."
+    value: "[iOS] ’Hey Siri, activate WG Desktop.’ The VPN can now be turned on and off with Siri. And with the Shortcuts app, you can now automate VPN activation and deactivation."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to iOS platform.
   bullet4:
-    value: "[iOS] Add a switch for Mozilla VPN to Control Center or the lock screen. And on the latest iPhones, it’s even possible to choose Mozilla VPN to be the Action button function."
+    value: "[iOS] Add a switch for WG Desktop to Control Center or the lock screen. And on the latest iPhones, it’s even possible to choose WG Desktop to be the Action button function."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to iOS platform.
   bullet5:
     value: "[macOS] IPv6-only networks are now supported."
@@ -222,7 +222,7 @@ commonStrings:
     value: "[Windows] IPv6-only networks are now supported."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to Windows platform.
   bullet7:
-    value: "[Linux] Use GNOME+Wayland? Window decorations are back, so Mozilla VPN stands out from the background."
+    value: "[Linux] Use GNOME+Wayland? Window decorations are back, so WG Desktop stands out from the background."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to Linux platform.
   bullet8:
     value: "[Linux] Support for IPv6-only networks was introduced in the last release, though switching servers while using multihop on IPv6-only networks sometimes had issues. It no longer should."
@@ -230,7 +230,7 @@ commonStrings:
 
 238updateMessage:
   bullet1:
-    value: "[all] When contacting support, including logs is now optional. While Mozilla VPN logs have never included personal data, we now only default to including logs when it would help diagnose your issue."
+    value: "[all] When contacting support, including logs is now optional. While WG Desktop logs have never included personal data, we now only default to including logs when it would help diagnose your issue."
     comment: Bullet point with a specific update. Should have tag that indicates it applies to all platforms.
   bullet2:
     value: "[iOS] When on Airplane Mode, trying to start the VPN gives an error. However if starting via Siri or Shortcuts, the VPN would be turned on after Airplane Mode was deactivated. This no longer happens."
@@ -255,7 +255,7 @@ tryFirefoxExtension:
     value: Set different locations for different websites, to see the web as you prefer
     comment: Second bullet point
   bullet3:
-    value: Keep protection for Firefox on, even when the Mozilla VPN app is off
+    value: Keep protection for Firefox on, even when the WG Desktop app is off
     comment: Third bullet point
   finalLine:
     value: Not using Firefox to browse? Give it a try.

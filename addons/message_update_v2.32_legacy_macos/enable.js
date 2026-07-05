@@ -11,7 +11,7 @@ if (('updateTime' in api.settings)) {
 if (api.env.platform === 'macos' && api.env.versionString === '2.16.0') {
   api.addon.setTitle(
       'message.message_update_v2.32_legacy_macos.block.extra_1',
-      'Download the new Mozilla VPN');
+      'Download the new WG Desktop');
   api.addon.composer.remove('c_3');
   return;
 }
@@ -52,5 +52,5 @@ api.addon.composer.remove('c_3');
 
 api.addon.setTitle(
     'message.message_update_v2.32_legacy_macos.block.extra_1',
-    'Download the new Mozilla VPN');
+    'Download the new WG Desktop');
 })

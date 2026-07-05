@@ -5,7 +5,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(networkextension VERSION 0.1 LANGUAGES C CXX OBJC
-        DESCRIPTION "Mozilla VPN Network Extension"
+        DESCRIPTION "WG Desktop Network Extension"
         HOMEPAGE_URL "https://vpn.mozilla.org"
 )
 
@@ -18,7 +18,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
         set(BUILD_OSX_APP_IDENTIFIER org.mozilla.macos.FirefoxVPN CACHE STRING "OSX Application identifier")
     endif()
     if(NOT BUILD_VPN_DEVELOPMENT_TEAM)
-        set(BUILD_VPN_DEVELOPMENT_TEAM 43AQ936H96 CACHE STRING "Mozilla VPN Development Team")
+        set(BUILD_VPN_DEVELOPMENT_TEAM 43AQ936H96 CACHE STRING "WG Desktop Development Team")
     endif()
     set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM ${BUILD_VPN_DEVELOPMENT_TEAM})
 endif()
@@ -37,7 +37,7 @@ set_target_properties(networkextension PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION "${CMAKE_PROJECT_VERSION}"
     MACOSX_BUNDLE_COPYRIGHT "MPL-2.0"
     MACOSX_BUNDLE_GUI_IDENTIFIER "${BUILD_OSX_APP_IDENTIFIER}.network-extension"
-    MACOSX_BUNDLE_INFO_STRING "Mozilla VPN Network Extension"
+    MACOSX_BUNDLE_INFO_STRING "WG Desktop Network Extension"
     XCODE_GENERATE_SCHEME TRUE
     XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${BUILD_OSX_APP_IDENTIFIER}.network-extension"
     XCODE_ATTRIBUTE_PRODUCT_BUNDLE_PACKAGE_TYPE "SYSX"

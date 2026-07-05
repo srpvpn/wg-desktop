@@ -1,7 +1,7 @@
 {
   "name": "mozillavpn",
   "description": "A fast, secure and easy to use VPN. Built by the makers of Firefox. ",
-  "path": "Mozilla VPN.exe",
+  "path": "WG Desktop.exe",
   "type": "stdio",
   "allowed_extensions": [ "vpn@mozilla.com", "@testpilot-containers" ]
 }
