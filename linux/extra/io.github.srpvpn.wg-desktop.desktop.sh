@@ -52,11 +52,11 @@ Version=1.5
 Exec=${BINDIR}/mozillavpn ui %u
 Comment=A standalone WireGuard desktop client.
 Type=Application
-Icon=org.mozilla.vpn
+Icon=io.github.srpvpn.wg-desktop
 Terminal=false
 StartupNotify=true
 Categories=Network;Security;
-MimeType=x-scheme-handler/mozilla-vpn
+MimeType=x-scheme-handler/wg-desktop
 StartupWMClass=mozillavpn
 
 EOF

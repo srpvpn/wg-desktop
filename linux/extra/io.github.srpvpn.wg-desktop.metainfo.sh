@@ -64,7 +64,7 @@ fi
 cat << EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>org.mozilla.vpn</id>
+  <id>io.github.srpvpn.wg-desktop</id>
 
   <name>WG Desktop</name>
   <summary>A standalone WireGuard desktop client</summary>
@@ -85,17 +85,18 @@ cat << EOF
     <category>Security</category>
   </categories>
 
-  <developer id="org.wgdesktop">
+  <developer id="io.github.srpvpn">
     <name>WG Desktop</name>
   </developer>
 
-  <icon type="stock">org.mozilla.vpn</icon>
+  <icon type="stock">io.github.srpvpn.wg-desktop</icon>
   <branding>
     <color type="primary" scheme_preference="light">#f9f9fa</color>
     <color type="primary" scheme_preference="dark">#42414d</color>
   </branding>
 
-  <url type="homepage">https://www.wireguard.com</url>
+  <url type="homepage">https://github.com/srpvpn/wg-desktop</url>
+  <url type="bugtracker">https://github.com/srpvpn/wg-desktop/issues</url>
 
   <supports>
     <control>pointing</control>
@@ -119,6 +120,6 @@ cat << EOF
       <li>Connect and disconnect using the existing Linux VPN stack</li>
     </ul>
   </description>
-  <launchable type="desktop-id">org.mozilla.vpn.desktop</launchable>
+  <launchable type="desktop-id">io.github.srpvpn.wg-desktop.desktop</launchable>
 </component>
 EOF

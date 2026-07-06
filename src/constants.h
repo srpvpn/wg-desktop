@@ -74,8 +74,8 @@ constexpr const char* LOG_FILE_NAME = "mozillavpn.log";
 // `mozillavpn_it.qm
 constexpr const char* LOCALIZER_FILENAME_PREFIX = "mozillavpn";
 
-// Deep-Link Scheme for MacOS Authentication
-constexpr const char* DEEP_LINK_SCHEME = "mozilla-vpn";
+// Deep-Link Scheme for desktop callbacks
+constexpr const char* DEEP_LINK_SCHEME = "wg-desktop";
 
 // The app product name in guardian
 constexpr const char* AUTH_PROD_NAME = "vpn";
@@ -273,12 +273,12 @@ constexpr const char* APPLE_STORE_URL =
 
 #if defined(MZ_LINUX)
 constexpr const char* LINUX_CRYPTO_SETTINGS_KEY =
-    "org.mozilla.vpn.cryptosettings";
+    "io.github.srpvpn.wg-desktop.cryptosettings";
 constexpr const char* LINUX_CRYPTO_SETTINGS_DESC =
     "VPN settings encryption key";
 #endif
 
-constexpr const char* LINUX_APP_ID = "org.mozilla.vpn";
+constexpr const char* LINUX_APP_ID = "io.github.srpvpn.wg-desktop";
 
 constexpr const char* WINDOWS_DAEMON_PATH = "\\\\.\\pipe\\mozillavpn";
 constexpr const char* MACOS_DAEMON_PATH = "/var/run/mozillavpn/daemon.socket";

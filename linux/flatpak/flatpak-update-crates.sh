@@ -48,7 +48,7 @@ if [ $# -ge 1 ]; then
   CARGO_LOCK_FILE=$1
 else
   # Otherwise - we need to download the Cargo.lock from the source
-  CARGO_LOCK_URL=$(parse_cargo_url ${SRCDIR}/org.mozilla.vpn.yml)
+  CARGO_LOCK_URL=$(parse_cargo_url ${SRCDIR}/io.github.srpvpn.wg-desktop.yml)
   CARGO_LOCK_FILE=$TMPDIR/Cargo.lock
   echo "Generating dependencies from $CARGO_LOCK_URL" >&2
   curl -sSL $CARGO_LOCK_URL -o $CARGO_LOCK_FILE

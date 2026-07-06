@@ -33,13 +33,13 @@ jobs:
       - name: Run manifest linters
         continue-on-error: true
         shell: bash
-        run: flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest linux/flatpak/org.mozilla.vpn.yml
+        run: flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest linux/flatpak/io.github.srpvpn.wg-desktop.yml
 
       - name: Build flatpak
         uses: flathub-infra/flatpak-github-actions/flatpak-builder@master
         with:
-          bundle: mozillavpn.flatpak
-          manifest-path: linux/flatpak/org.mozilla.vpn.yml
+          bundle: wg-desktop.flatpak
+          manifest-path: linux/flatpak/io.github.srpvpn.wg-desktop.yml
           cache: ${{ github.event_name == 'push' }}
           cache-key: flatpak-builder-${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.sha }}
 

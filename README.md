@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://flathub.org/apps/org.wgdesktop.WGDesktop">
+  <a href="https://flathub.org/apps/io.github.srpvpn.wg-desktop">
     <img alt="Download on Flathub" src="https://flathub.org/api/badge?locale=en">
   </a>
 </p>
@@ -56,8 +56,8 @@ The intended distribution path is Flatpak/Flathub. Until the Flathub listing is
 published, build and install the Flatpak locally:
 
 ```bash
-flatpak-builder --force-clean --user --install build-flatpak linux/flatpak/org.mozilla.vpn.yml
-flatpak run org.mozilla.vpn
+flatpak-builder --force-clean --user --install build-flatpak linux/flatpak/io.github.srpvpn.wg-desktop.yml
+flatpak run io.github.srpvpn.wg-desktop
 ```
 
 On a normal Linux desktop, NetworkManager is expected to be available already.
@@ -70,14 +70,14 @@ Use the Flatpak SDK for the most reliable Linux build, because it provides the
 Qt/runtime versions expected by the project:
 
 ```bash
-flatpak-builder --run build-flatpak linux/flatpak/org.mozilla.vpn.yml \
+flatpak-builder --run build-flatpak linux/flatpak/io.github.srpvpn.wg-desktop.yml \
   cmake --build flatpak-unit-build --target mozillavpn -j2
 ```
 
 Run focused WireGuard profile tests with:
 
 ```bash
-flatpak-builder --run build-flatpak linux/flatpak/org.mozilla.vpn.yml \
+flatpak-builder --run build-flatpak linux/flatpak/io.github.srpvpn.wg-desktop.yml \
   env PYTHONPATH="$PWD/flatpak-unit-build/pydeps" \
   ctest --test-dir flatpak-unit-build -R 'TestWireGuard(Config|ProfileModel)' \
   --output-on-failure

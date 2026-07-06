@@ -111,6 +111,7 @@ else()
     # Network Manager controller
     target_sources(mozillavpn PRIVATE
         ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrtypes.h
+        ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrutils.h
         ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrdevice.h
         ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrdevice.cpp
         ${CMAKE_SOURCE_DIR}/src/platforms/linux/netmgrcontroller.h
@@ -120,55 +121,57 @@ endif()
 include(GNUInstallDirs)
 install(TARGETS mozillavpn)
 
+set(WG_DESKTOP_APP_ID io.github.srpvpn.wg-desktop)
+
 add_custom_command(
-    DEPENDS ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.desktop.sh
-    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
-    COMMAND ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.desktop.sh -b ${CMAKE_INSTALL_FULL_BINDIR} -o ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+    DEPENDS ${CMAKE_SOURCE_DIR}/linux/extra/${WG_DESKTOP_APP_ID}.desktop.sh
+    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.desktop
+    COMMAND ${CMAKE_SOURCE_DIR}/linux/extra/${WG_DESKTOP_APP_ID}.desktop.sh -b ${CMAKE_INSTALL_FULL_BINDIR} -o ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.desktop
 )
 
 add_custom_command(
-    DEPENDS ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.metainfo.sh
-    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
-    COMMAND ${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.metainfo.sh -d ${CMAKE_INSTALL_FULL_DATADIR} -o ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+    DEPENDS ${CMAKE_SOURCE_DIR}/linux/extra/${WG_DESKTOP_APP_ID}.metainfo.sh
+    OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.metainfo.xml
+    COMMAND ${CMAKE_SOURCE_DIR}/linux/extra/${WG_DESKTOP_APP_ID}.metainfo.sh -d ${CMAKE_INSTALL_FULL_DATADIR} -o ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.metainfo.xml
 )
 target_sources(mozillavpn PRIVATE
-    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
-    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+    ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.desktop
+    ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.metainfo.xml
 )
 set_source_files_properties(
-    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
-    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+    ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.desktop
+    ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.metainfo.xml
     PROPERTIES
         GENERATED TRUE
         HEADER_FILE_ONLY TRUE
 )
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.desktop
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.desktop
     DESTINATION ${CMAKE_INSTALL_DATADIR}/applications)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.metainfo.xml
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.metainfo.xml
     DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
 
-configure_file(${CMAKE_SOURCE_DIR}/linux/extra/org.mozilla.vpn.releases.xml.in
-    ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.releases.xml)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/org.mozilla.vpn.releases.xml
+configure_file(${CMAKE_SOURCE_DIR}/linux/extra/${WG_DESKTOP_APP_ID}.releases.xml.in
+    ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.releases.xml)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${WG_DESKTOP_APP_ID}.releases.xml
     DESTINATION ${CMAKE_INSTALL_DATADIR}/metainfo)
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/ui/resources/logo-generic.svg
-    RENAME org.mozilla.vpn.svg
+    RENAME ${WG_DESKTOP_APP_ID}.svg
     DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/scalable/apps)
 
-install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/16x16/org.mozilla.vpn.png
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/16x16/${WG_DESKTOP_APP_ID}.png
     DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/16x16/apps)
 
-install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/32x32/org.mozilla.vpn.png
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/32x32/${WG_DESKTOP_APP_ID}.png
     DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/32x32/apps)
 
-install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/48x48/org.mozilla.vpn.png
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/48x48/${WG_DESKTOP_APP_ID}.png
     DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/48x48/apps)
 
-install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/64x64/org.mozilla.vpn.png
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/64x64/${WG_DESKTOP_APP_ID}.png
     DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/64x64/apps)
 
-install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/128x128/org.mozilla.vpn.png
+install(FILES ${CMAKE_SOURCE_DIR}/linux/extra/icons/128x128/${WG_DESKTOP_APP_ID}.png
     DESTINATION ${CMAKE_INSTALL_DATADIR}/icons/hicolor/128x128/apps)
 
 if(NOT BUILD_FLATPAK)
