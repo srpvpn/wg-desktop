@@ -1,36 +1,80 @@
 # WG Desktop
 
-WG Desktop is a standalone Linux desktop client for local WireGuard profiles.
-It imports WireGuard `.conf` files, stores profiles locally, and connects using
-the existing Linux NetworkManager and Flatpak integration already present in
-this codebase.
+<p align="center">
+  <img src="src/ui/resources/logo-generic.svg" alt="WG Desktop logo" width="128">
+</p>
 
-## Scope
+<p align="center">
+  <strong>A clean, local-first WireGuard desktop client for Linux.</strong>
+</p>
 
-This build targets Linux desktop and Flatpak. Other platforms remain in the
-tree for source compatibility, but they are not part of the standalone WG
-Desktop migration.
+<p align="center">
+  Import a WireGuard config, pick a profile, press Connect. No account, no
+  subscription check, no hosted configuration service.
+</p>
+
+<p align="center">
+  <a href="https://flathub.org/apps/org.wgdesktop.WGDesktop">
+    <img alt="Download on Flathub" src="https://flathub.org/api/badge?locale=en">
+  </a>
+</p>
+
+<p align="center">
+  <img alt="Linux" src="https://img.shields.io/badge/Linux-first-111111?style=flat-square&logo=linux&logoColor=white">
+  <img alt="Flatpak" src="https://img.shields.io/badge/Flatpak-ready-4A90D9?style=flat-square&logo=flatpak&logoColor=white">
+  <img alt="WireGuard" src="https://img.shields.io/badge/WireGuard-profiles-88171A?style=flat-square">
+  <img alt="License" src="https://img.shields.io/badge/license-MPL--2.0-brightgreen?style=flat-square">
+</p>
+
+## Why WG Desktop?
+
+WG Desktop is built for people who already have WireGuard configs and want a
+friendly Linux desktop app around them. It keeps the hard parts boring:
+NetworkManager integration, privileged daemon interaction, Flatpak packaging,
+and the tunnel lifecycle are handled by the existing mature Linux stack in this
+codebase.
+
+Flatpak makes it especially practical: one install path, predictable runtime
+dependencies, clean desktop integration, and the same app experience across
+modern Linux distributions. That makes WG Desktop one of the most convenient
+ways to use plain WireGuard profiles on Linux without turning VPN setup into a
+system administration project.
 
 ## Features
 
-- Import a WireGuard `.conf` file.
-- Paste WireGuard configuration text.
+- Import WireGuard `.conf` files.
+- Paste WireGuard configuration text directly into the app.
 - Store multiple local profiles.
 - Rename, remove, and select the active profile.
 - Connect and disconnect through the existing Linux VPN backend.
-- Work without accounts, registration, subscriptions, or hosted configuration
-  services.
+- Work offline after installation.
+- Run without accounts, registration, subscriptions, or vendor-hosted config.
 
-## Build
+## Install
 
-Use the Flatpak build for Linux verification:
+The intended distribution path is Flatpak/Flathub. Until the Flathub listing is
+published, build and install the Flatpak locally:
 
 ```bash
 flatpak-builder --force-clean --user --install build-flatpak linux/flatpak/org.mozilla.vpn.yml
 flatpak run org.mozilla.vpn
 ```
 
-For focused development tests:
+On a normal Linux desktop, NetworkManager is expected to be available already.
+Minimal server-style environments may need NetworkManager and WireGuard tooling
+installed and enabled before VPN activation can work.
+
+## Development
+
+Use the Flatpak SDK for the most reliable Linux build, because it provides the
+Qt/runtime versions expected by the project:
+
+```bash
+flatpak-builder --run build-flatpak linux/flatpak/org.mozilla.vpn.yml \
+  cmake --build flatpak-unit-build --target mozillavpn -j2
+```
+
+Run focused WireGuard profile tests with:
 
 ```bash
 flatpak-builder --run build-flatpak linux/flatpak/org.mozilla.vpn.yml \
@@ -39,13 +83,13 @@ flatpak-builder --run build-flatpak linux/flatpak/org.mozilla.vpn.yml \
   --output-on-failure
 ```
 
-## Runtime Requirements
+## Project Scope
 
-On a normal Linux desktop installation, NetworkManager is expected to be
-available already. Server or minimal desktop environments may require installing
-and enabling NetworkManager and WireGuard tools before VPN activation can work.
+WG Desktop currently targets Linux desktop and Flatpak. The priority is to keep
+the Linux networking implementation stable while removing account/backend
+dependencies and improving the local WireGuard profile workflow.
 
-## Licensing
+## License
 
-This project remains licensed under the MPL-2.0 license. Existing source file
-license headers are preserved.
+WG Desktop is licensed under the Mozilla Public License 2.0. Existing source
+file license headers and third-party license notices are preserved.
