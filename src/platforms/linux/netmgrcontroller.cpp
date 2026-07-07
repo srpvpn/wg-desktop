@@ -24,6 +24,7 @@
 #include "mozillavpn.h"
 #include "netmgrdevice.h"
 #include "netmgrtypes.h"
+#include "netmgrutils.h"
 #include "settingsholder.h"
 
 constexpr uint32_t WG_FIREWALL_MARK = 0xca6c;
@@ -85,7 +86,7 @@ void NetmgrController::initialize(const Device* device, const Keys* keys) {
   m_wireguard.insert("fwmark", WG_FIREWALL_MARK);
   m_wireguard.insert("ip4-auto-default-route", 1);
   m_wireguard.insert("ip6-auto-default-route", 1);
-  m_wireguard.insert("peer-routes", false);
+  m_wireguard.insert("peer-routes", true);
 
   if (device && keys) {
     InterfaceConfig config;
@@ -203,6 +204,23 @@ void NetmgrController::initCompleted(const QDBusObjectPath& path,
 
 void NetmgrController::dbusInitError(const QDBusError& error) {
   logger.warning() << "initialization failed:" << error.message();
+
+  if (NetmgrUtils::isDuplicateUuidError(error.message())) {
+    QString path = QStringLiteral(DBUS_NM_PATH) + "/Settings";
+    QDBusInterface iface(DBUS_NM_SERVICE, path, nmInterface("Settings"),
+                         m_client->connection());
+    QDBusReply<QDBusObjectPath> reply =
+        iface.call("GetConnectionByUuid", m_uuid);
+    if (reply.isValid()) {
+      logger.info() << "Reusing existing connection:" << m_uuid;
+      initCompleted(reply.value(), QVariantMap());
+      return;
+    }
+
+    logger.warning() << "Unable to reuse duplicate connection:"
+                     << reply.error().message();
+  }
+
   emit initialized(false, false, QDateTime());
 }
 
@@ -271,24 +289,12 @@ void NetmgrController::activate(const InterfaceConfig& config,
   m_waitingForHandshakeTraffic = true;
   m_activationRxBytes = 0;
 
-  // Update routes and allowedIpAddreses
-  NetmgrDataList ipv4routes;
-  NetmgrDataList ipv6routes;
-  for (const IPAddress& i : config.m_allowedIPAddressRanges) {
-    QVariantMap route;
-    route.insert("dest", i.address().toString());
-    route.insert("prefix", (uint)i.prefixLength());
-    route.insert("table", WG_FIREWALL_MARK);
-    if (i.address().protocol() == QAbstractSocket::IPv6Protocol) {
-      ipv6routes.append(route);
-    } else {
-      ipv4routes.append(route);
-    }
-  }
-
+  // Let NetworkManager derive routes and policy rules from peer AllowedIPs.
+  // With ip*-auto-default-route enabled, default routes are placed in the
+  // WireGuard fwmark table and matching policy rules are installed.
   NetmgrDataList peers(wgPeer(config));
-  m_ipv4config.insert("route-data", ipv4routes);
-  m_ipv6config.insert("route-data", ipv6routes);
+  m_ipv4config.remove("route-data");
+  m_ipv6config.remove("route-data");
   m_wireguard.insert("peers", peers);
 
   // Keep the server details for later.

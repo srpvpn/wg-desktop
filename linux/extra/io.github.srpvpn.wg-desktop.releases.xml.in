@@ -1,7 +1,7 @@
-<!--
-  This is a placeholder releases file, please download the latest releases from
-  https://github.com/srpvpn/wg-desktop/releases
--->
 <releases>
-  <release version="@CMAKE_PROJECT_VERSION@" type="snapshot"/>
+  <release version="0.1.0" date="2026-07-07">
+    <description>
+      <p>Initial WG Desktop release prepared for Flathub packaging.</p>
+    </description>
+  </release>
 </releases>

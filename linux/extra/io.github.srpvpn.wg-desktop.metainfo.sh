@@ -97,6 +97,7 @@ cat << EOF
 
   <url type="homepage">https://github.com/srpvpn/wg-desktop</url>
   <url type="bugtracker">https://github.com/srpvpn/wg-desktop/issues</url>
+  <url type="vcs-browser">https://github.com/srpvpn/wg-desktop</url>
 
   <supports>
     <control>pointing</control>
@@ -104,7 +105,7 @@ cat << EOF
     <control>touch</control>
   </supports>
   <requires>
-    <display_length compare="gt">640</display_length>
+    <display_length compare="ge">768</display_length>
   </requires>
 
   <description>
@@ -120,6 +121,18 @@ cat << EOF
       <li>Connect and disconnect using the existing Linux VPN stack</li>
     </ul>
   </description>
+  <releases>
+    <release version="0.1.0" date="2026-07-07">
+      <description>
+        <p>Initial WG Desktop release prepared for Flathub packaging.</p>
+        <ul>
+          <li>Standalone local WireGuard profile import workflow</li>
+          <li>Local profile storage without account or hosted service requirements</li>
+          <li>Linux Flatpak packaging with existing NetworkManager integration</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
   <launchable type="desktop-id">io.github.srpvpn.wg-desktop.desktop</launchable>
 </component>
 EOF

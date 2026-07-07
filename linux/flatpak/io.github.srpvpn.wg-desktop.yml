@@ -38,6 +38,8 @@ modules:
     config-opts:
       - -DCMAKE_BUILD_TYPE=RelWithDebInfo
       - -DBUILD_FLATPAK=ON
+    post-install:
+      - install -Dm0644 LICENSE.md /app/share/licenses/io.github.srpvpn.wg-desktop/LICENSE.md
     sources:
       - type: dir
         path: ../..

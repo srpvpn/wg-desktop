@@ -267,6 +267,8 @@ target_sources(unit_tests PRIVATE
     testipfinder.h
     testmodels.cpp
     testmodels.h
+    testnetmgrutils.cpp
+    testnetmgrutils.h
     testreleasemonitor.cpp
     testreleasemonitor.h
     testserverlatency.cpp
