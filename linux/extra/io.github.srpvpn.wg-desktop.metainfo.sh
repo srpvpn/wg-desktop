@@ -121,6 +121,16 @@ cat << EOF
       <li>Connect and disconnect using the existing Linux VPN stack</li>
     </ul>
   </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Connect from the active WireGuard profile.</caption>
+      <image>https://raw.githubusercontent.com/srpvpn/wg-desktop/v0.1.0/docs/screenshots/wg-desktop-home.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Import, select, rename, and remove local WireGuard profiles.</caption>
+      <image>https://raw.githubusercontent.com/srpvpn/wg-desktop/v0.1.0/docs/screenshots/wg-desktop-profiles.png</image>
+    </screenshot>
+  </screenshots>
   <releases>
     <release version="0.1.0" date="2026-07-07">
       <description>

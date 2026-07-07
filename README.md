@@ -26,6 +26,11 @@
   <img alt="License" src="https://img.shields.io/badge/license-MPL--2.0-brightgreen?style=flat-square">
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/wg-desktop-home.png" alt="WG Desktop home screen" width="300">
+  <img src="docs/screenshots/wg-desktop-profiles.png" alt="WG Desktop profile management screen" width="300">
+</p>
+
 ## Why WG Desktop?
 
 WG Desktop is built for people who already have WireGuard configs and want a
