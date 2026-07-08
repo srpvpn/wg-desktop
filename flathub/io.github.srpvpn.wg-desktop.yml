@@ -43,8 +43,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/srpvpn/wg-desktop.git
-        tag: v0.1.0
-        commit: 0d343c629b590028c7140c6179b333682ba27ee9
+        commit: 748e40bfdadd2249acd48d83ef67d3ef055c3a91
 
       # Install vendored Rust crates
       - flatpak-vpn-crates.json
