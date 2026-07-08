@@ -292,6 +292,13 @@ void NetmgrController::activate(const InterfaceConfig& config,
   // Let NetworkManager derive routes and policy rules from peer AllowedIPs.
   // With ip*-auto-default-route enabled, default routes are placed in the
   // WireGuard fwmark table and matching policy rules are installed.
+  QStringList allowedIpRanges;
+  for (const IPAddress& ip : config.m_allowedIPAddressRanges) {
+    allowedIpRanges.append(ip.toString());
+  }
+  m_requiresIpv4DefaultRoute =
+      NetmgrUtils::hasIpv4DefaultRoute(allowedIpRanges);
+
   NetmgrDataList peers(wgPeer(config));
   m_ipv4config.remove("route-data");
   m_ipv6config.remove("route-data");
@@ -449,9 +456,35 @@ void NetmgrController::checkHandshakeTraffic() {
     return;
   }
 
+  if (!ipv4DefaultRouteReady()) {
+    return;
+  }
+
   m_handshakePollTimer.stop();
   m_waitingForHandshakeTraffic = false;
   emit connected(m_serverPublicKey);
+}
+
+bool NetmgrController::ipv4DefaultRouteReady() const {
+  if (!m_requiresIpv4DefaultRoute) {
+    return true;
+  }
+
+  QFile routeTable("/proc/net/route");
+  if (!routeTable.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    logger.warning() << "Unable to validate IPv4 route for WireGuard";
+    return false;
+  }
+
+  const QString contents = QString::fromLocal8Bit(routeTable.readAll());
+  if (!NetmgrUtils::mainRouteBlocksInterface(contents, "1.1.1.1",
+                                             WG_INTERFACE_NAME)) {
+    return true;
+  }
+
+  logger.warning() << "WireGuard received traffic, but IPv4 default traffic is"
+                   << "still routed through another interface";
+  return false;
 }
 
 // static

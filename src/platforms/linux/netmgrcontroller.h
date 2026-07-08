@@ -66,6 +66,7 @@ class NetmgrController final : public ControllerImpl {
   static uint64_t readSysfsFile(const QString& path);
   void applyInterfaceConfig(const InterfaceConfig& config);
   void setActiveConnection(const QString& path);
+  bool ipv4DefaultRouteReady() const;
   QVariant serializeConfig() const;
 
   static QString nmInterface(const QString& name);
@@ -94,6 +95,7 @@ class NetmgrController final : public ControllerImpl {
   QTimer m_handshakePollTimer;
   uint64_t m_activationRxBytes = 0;
   bool m_waitingForHandshakeTraffic = false;
+  bool m_requiresIpv4DefaultRoute = false;
 };
 
 #endif  // NETWORKMANAGERCONTROLLER_H

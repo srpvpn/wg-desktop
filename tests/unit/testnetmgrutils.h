@@ -11,4 +11,7 @@ class TestNetmgrUtils final : public TestHelper {
   void detectsDuplicateUuidErrors();
   void ignoresUnrelatedErrors();
   void requiresNewRxTrafficAfterActivation();
+  void detectsFullTunnelIpv4Profiles();
+  void validatesKernelRouteInterface();
+  void detectsBlockingMainRoutes();
 };
