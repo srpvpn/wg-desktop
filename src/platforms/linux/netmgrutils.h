@@ -14,6 +14,11 @@ inline bool isDuplicateUuidError(const QString& message) {
   return lower.contains("uuid") && lower.contains("already exists");
 }
 
+inline bool hasNewHandshakeTraffic(uint64_t baselineRxBytes,
+                                   uint64_t currentRxBytes) {
+  return currentRxBytes > baselineRxBytes;
+}
+
 }  // namespace NetmgrUtils
 
 #endif  // NETMGRUTILS_H

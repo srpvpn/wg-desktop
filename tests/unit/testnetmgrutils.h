@@ -10,4 +10,5 @@ class TestNetmgrUtils final : public TestHelper {
  private slots:
   void detectsDuplicateUuidErrors();
   void ignoresUnrelatedErrors();
+  void requiresNewRxTrafficAfterActivation();
 };

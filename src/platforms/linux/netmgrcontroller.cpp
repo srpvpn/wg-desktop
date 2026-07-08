@@ -424,13 +424,6 @@ void NetmgrController::deviceStateChanged(uint state, uint prev, uint reason) {
     m_activationRxBytes = m_device->rxBytes();
     logger.debug() << "WireGuard interface activated with rx baseline:"
                    << m_activationRxBytes;
-    if (m_activationRxBytes > 0) {
-      logger.debug() << "WireGuard handshake traffic already observed";
-      m_handshakePollTimer.stop();
-      m_waitingForHandshakeTraffic = false;
-      emit connected(m_serverPublicKey);
-      return;
-    }
     checkHandshakeTraffic();
     if (m_waitingForHandshakeTraffic) {
       m_handshakePollTimer.start();
@@ -452,7 +445,7 @@ void NetmgrController::checkHandshakeTraffic() {
   const uint64_t rxBytes = m_device->rxBytes();
   logger.debug() << "WireGuard handshake traffic check rx:" << rxBytes
                  << "baseline:" << m_activationRxBytes;
-  if (rxBytes <= m_activationRxBytes) {
+  if (!NetmgrUtils::hasNewHandshakeTraffic(m_activationRxBytes, rxBytes)) {
     return;
   }
 

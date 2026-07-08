@@ -15,4 +15,10 @@ void TestNetmgrUtils::ignoresUnrelatedErrors() {
   QVERIFY(!NetmgrUtils::isDuplicateUuidError("permission denied"));
 }
 
+void TestNetmgrUtils::requiresNewRxTrafficAfterActivation() {
+  QVERIFY(!NetmgrUtils::hasNewHandshakeTraffic(256, 256));
+  QVERIFY(!NetmgrUtils::hasNewHandshakeTraffic(256, 128));
+  QVERIFY(NetmgrUtils::hasNewHandshakeTraffic(256, 512));
+}
+
 static TestNetmgrUtils s_testNetmgrUtils;
