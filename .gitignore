@@ -56,6 +56,10 @@ src/mozillavpn_autogen/
 /flatpak-unit-build/
 dummybuild
 .flatpak-builder/
+flatpak-transfer-repo*/
+wg-desktop*.flatpak
+wg-desktop*.iso
+wg-desktop*.img
 
 # Node (for functional tests)
 node_modules

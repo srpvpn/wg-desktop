@@ -6,6 +6,9 @@
 
 #include <QCoreApplication>
 #include <QEventLoop>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 #include <QTextStream>
 
 #include "commandlineparser.h"
@@ -21,6 +24,56 @@ bool isTerminalState(Controller::State state) {
   return state == Controller::StateOff || state == Controller::StateOn ||
          state == Controller::StateConnectionError ||
          state == Controller::StatePermissionRequired;
+}
+
+QString stateName(Controller::State state) {
+  switch (state) {
+    case Controller::StateInitializing:
+      return "initializing";
+    case Controller::StatePermissionRequired:
+      return "permission-required";
+    case Controller::StateOff:
+      return "off";
+    case Controller::StateRegeneratingKey:
+      return "regenerating-key";
+    case Controller::StateConnecting:
+      return "connecting";
+    case Controller::StateConnectionError:
+      return "connection-error";
+    case Controller::StateConfirming:
+      return "confirming";
+    case Controller::StateOn:
+    case Controller::StateOnPartial:
+    case Controller::StateSilentSwitching:
+      return "on";
+    case Controller::StateDisconnecting:
+      return "disconnecting";
+    case Controller::StateSwitching:
+      return "switching";
+  }
+
+  Q_UNREACHABLE();
+}
+
+QString errorName(Controller::ErrorCode error) {
+  switch (error) {
+    case Controller::ErrorNone:
+      return "none";
+    case Controller::ErrorFatal:
+      return "fatal";
+    case Controller::ErrorSplitTunnelInit:
+      return "split-tunnel-init";
+    case Controller::ErrorSplitTunnelStart:
+      return "split-tunnel-start";
+    case Controller::ErrorSplitTunnelExclude:
+      return "split-tunnel-exclude";
+    case Controller::ErrorServerTimeout:
+      return "server-timeout";
+    case Controller::ErrorNoServerAvailable:
+      return "no-server-available";
+  }
+
+  Q_UNREACHABLE();
 }
 }  // namespace
 
@@ -38,12 +91,15 @@ int CommandStatus::run(QStringList& tokens) {
   CommandLineParser::Option hOption = CommandLineParser::helpOption();
   CommandLineParser::Option cacheOption("c", "cache",
                                         "Accepted for compatibility.");
+  CommandLineParser::Option jsonOption("j", "json",
+                                       "Output status as JSON.");
   CommandLineParser::Option testingOption("t", "testing",
                                           "Run in testing mode.");
 
   QList<CommandLineParser::Option*> options;
   options.append(&hOption);
   options.append(&cacheOption);
+  options.append(&jsonOption);
   options.append(&testingOption);
 
   CommandLineParser clp;
@@ -76,14 +132,6 @@ int CommandStatus::run(QStringList& tokens) {
     WireGuardProfileModel* profiles = vpn.wireGuardProfileModel();
     Q_ASSERT(profiles);
 
-    stream << "Profile count: " << profiles->rowCount({}) << Qt::endl;
-    stream << "Active profile: ";
-    if (profiles->hasProfiles()) {
-      stream << profiles->activeProfileName() << Qt::endl;
-    } else {
-      stream << "none" << Qt::endl;
-    }
-
     Controller controller;
 
     QEventLoop loop;
@@ -97,54 +145,26 @@ int CommandStatus::run(QStringList& tokens) {
       loop.exec();
     }
 
-    stream << "VPN state: ";
-    switch (controller.state()) {
-      case Controller::StateInitializing:
-        stream << "initializing";
-        break;
-
-      case Controller::StatePermissionRequired:
-        stream << "permission-required";
-        break;
-
-      case Controller::StateOff:
-        stream << "off";
-        break;
-
-      case Controller::StateRegeneratingKey:
-        stream << "regenerating-key";
-        break;
-
-      case Controller::StateConnecting:
-        stream << "connecting";
-        break;
-
-      case Controller::StateConnectionError:
-        stream << "connection-error";
-        break;
-
-      case Controller::StateConfirming:
-        stream << "confirming";
-        break;
-
-      case Controller::StateOn:
-        [[fallthrough]];
-      case Controller::StateOnPartial:
-        [[fallthrough]];
-      case Controller::StateSilentSwitching:
-        stream << "on";
-        break;
-
-      case Controller::StateDisconnecting:
-        stream << "disconnecting";
-        break;
-
-      case Controller::StateSwitching:
-        stream << "switching";
-        break;
+    if (jsonOption.m_set) {
+      QJsonObject status;
+      status["profile_count"] = profiles->rowCount({});
+      status["active_profile"] = profiles->hasProfiles()
+                                     ? profiles->activeProfileName()
+                                     : QJsonValue::Null;
+      status["vpn_state"] = stateName(controller.state());
+      status["error"] = errorName(controller.error());
+      stream << QJsonDocument(status).toJson(QJsonDocument::Compact)
+             << Qt::endl;
+    } else {
+      stream << "Profile count: " << profiles->rowCount({}) << Qt::endl;
+      stream << "Active profile: ";
+      if (profiles->hasProfiles()) {
+        stream << profiles->activeProfileName() << Qt::endl;
+      } else {
+        stream << "none" << Qt::endl;
+      }
+      stream << "VPN state: " << stateName(controller.state()) << Qt::endl;
     }
-
-    stream << Qt::endl;
 
     return 0;
   });
