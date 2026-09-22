@@ -108,8 +108,7 @@ int CommandStatus::run(QStringList& tokens) {
   }
 
   if (!tokens.isEmpty()) {
-    QList<CommandLineParser::Option*> options;
-    return CommandLineParser::unknownOption(this, tokens[1], tokens[0], options,
+    return CommandLineParser::unknownOption(this, tokens[0], appName, options,
                                             false);
   }
 
