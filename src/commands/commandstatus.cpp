@@ -148,8 +148,8 @@ int CommandStatus::run(QStringList& tokens) {
       QJsonObject status;
       status["profile_count"] = profiles->rowCount({});
       status["active_profile"] = profiles->hasProfiles()
-                                     ? profiles->activeProfileName()
-                                     : QJsonValue::Null;
+                                     ? QJsonValue(profiles->activeProfileName())
+                                     : QJsonValue(QJsonValue::Null);
       status["vpn_state"] = stateName(controller.state());
       status["error"] = errorName(controller.error());
       stream << QJsonDocument(status).toJson(QJsonDocument::Compact)
