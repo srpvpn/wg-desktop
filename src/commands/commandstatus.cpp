@@ -22,6 +22,8 @@
 namespace {
 bool isTerminalState(Controller::State state) {
   return state == Controller::StateOff || state == Controller::StateOn ||
+         state == Controller::StateOnPartial ||
+         state == Controller::StateSilentSwitching ||
          state == Controller::StateConnectionError ||
          state == Controller::StatePermissionRequired;
 }
