@@ -1,4 +1,14 @@
 <releases>
+  <release version="0.2.0" date="2026-10-12">
+    <description>
+      <p>WireGuard connection state validation and machine-readable status output.</p>
+      <ul>
+        <li>Validate WireGuard default route before reporting connected state</li>
+        <li>JSON output for the status command</li>
+        <li>Flatpak runtime updated to KDE 6.11</li>
+      </ul>
+    </description>
+  </release>
   <release version="0.1.0" date="2026-07-07">
     <description>
       <p>Initial WG Desktop release prepared for Flathub packaging.</p>
